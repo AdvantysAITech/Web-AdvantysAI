@@ -1,0 +1,56 @@
+/* Variables Globales de Advantys AI */
+:root {
+    --bg-main: #090d16;
+    --text-main: #ffffff;
+    --text-sub: #a1a1aa;
+    --color-red: #FF3935;
+    --color-coral: #FF6B43;
+    --color-orange: #E49166;
+    --font-main: 'Inter', sans-serif;
+}
+
+/* Reset básico para que todo se vea igual en cualquier navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    overflow-x: hidden;
+}
+
+/* Estilo por defecto para los enlaces del menú */
+.nav-link {
+    color: var(--text-sub);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* EFECTO ACTIVO: Se activa solo cuando coinciden el body y el link */
+.page-inicio .link-inicio,
+.page-sistema .link-sistema,
+.page-iso .link-iso,
+.page-partners .link-partners {
+    color: var(--text-main); /* Se vuelve blanco brillante */
+    font-weight: 600;
+}
+
+/* Opcional: Una pequeña línea sutil debajo del enlace activo con tu color coral */
+.page-inicio .link-inicio::after,
+.page-sistema .link-sistema::after,
+.page-iso .link-iso::after,
+.page-partners .link-partners::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-red), var(--color-coral));
+    border-radius: 2px;
+}

@@ -1,0 +1,782 @@
+/* =========================================
+   VARIABLES CORPORATIVAS DE ADVANTYS AI
+   ========================================= */
+:root {
+  /* Colores Base */
+  --bg-main: #090d16; /* Tono espacial unificado */
+  --bg-bento: rgba(24, 24, 27, 0.3);
+  --bg-header: rgba(2, 6, 23, 0.8);
+  
+  /* Textos */
+  --text-main: #ffffff;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
+  
+  /* Acentos y Bordes */
+  --color-red: #FF3935;
+  --color-coral: #FF6B43;
+  --color-orange: #E49166;
+  --accent-coral: #FF6B43;
+  --border-thin: rgba(39, 39, 42, 0.6);
+  --border-hover: rgba(255, 107, 67, 0.3);
+  
+  /* Degradados */
+  --gradient-brand: linear-gradient(to right, var(--color-red), var(--color-coral), var(--color-orange));
+  
+  /* Tipografía y Animaciones */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --transition-smooth: all 0.3s ease-in-out;
+}
+
+/* =========================================
+   RESET BÁSICO
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* =========================================
+   HEADER & NAVEGACIÓN
+   ========================================= */
+.header-wrapper {
+  width: 100%;
+  background-color: var(--bg-header);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-thin);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav-main {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-links {
+  display: none;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--text-main);
+}
+
+.nav-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--gradient-brand);
+  transition: var(--transition-smooth);
+  opacity: 0;
+}
+
+.nav-link:hover .nav-indicator {
+  width: 100%;
+  opacity: 1;
+}
+
+.cta-group {
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  transition: var(--transition-smooth);
+}
+
+.contact-link svg {
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+}
+
+.contact-link:hover {
+  color: var(--text-main);
+}
+
+.contact-link:hover svg {
+  color: var(--accent-coral);
+}
+
+.mobile-menu-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-menu-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+@media (min-width: 768px) {
+  .cta-group {
+    display: flex;
+  }
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-links {
+    display: flex;
+  }
+}
+
+/* =========================================
+   HERO CORPORATIVO [HOME-01]
+   ========================================= */
+.adv-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+  background-image: radial-gradient(circle at 50% 45%, rgba(255, 107, 67, 0.07) 0%, rgba(255, 57, 53, 0.02) 40%, rgba(9, 13, 22, 0) 70%);
+}
+
+/* =========================================
+   EFECTO DE MALLA TECNOLÓGICA (GRID)
+   ========================================= */
+.adv-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* Creación de la cuadrícula usando líneas de 1 pixel */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  
+  /* Tamaño de cada "celda" de la malla */
+  background-size: 40px 40px;
+  
+  /* Máscara mágica: hace que la malla sea visible en el centro y se desvanezca en los bordes */
+  -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+  mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+  
+  /* Posicionamiento en capas (z-index) */
+  z-index: 1; /* Se sitúa sobre el fondo oscuro, pero detrás de tu contenedor (que tiene z-index: 2) */
+  pointer-events: none; /* Crucial: evita que la malla invisible bloquee el cursor al intentar hacer clic en los botones */
+}
+
+.adv-hero__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.adv-hero__title {
+  font-size: clamp(2.25rem, 6vw, 4.25rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  max-width: 1050px;
+  margin: 0 0 1.5rem 0;
+  background: linear-gradient(135deg, var(--color-red) 0%, var(--color-coral) 50%, var(--color-orange) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+.adv-hero__subtitle {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 0 3.5rem 0;
+  font-weight: 400;
+}
+
+.adv-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.adv-hero__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.adv-hero__button--primary {
+  background: var(--gradient-brand);
+  color: var(--text-main);
+  border: none;
+  box-shadow: 0 4px 20px rgba(255, 107, 67, 0.2);
+}
+
+.adv-hero__button--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(255, 107, 67, 0.45);
+  filter: brightness(1.05);
+}
+
+.adv-hero__button--secondary {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.adv-hero__button--secondary:hover {
+  border-color: var(--color-coral);
+  background: rgba(255, 107, 67, 0.04);
+  box-shadow: 0 0 20px rgba(255, 107, 67, 0.15);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .adv-hero__container {
+    padding: 4rem 1rem;
+  }
+  .adv-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .adv-hero__button {
+    width: 100%;
+  }
+  .adv-hero__subtitle {
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* =========================================
+   FOOTER (Diseño Bento Grid)
+   ========================================= */
+.footer-wrapper {
+  width: 100%;
+  background-color: var(--bg-main);
+  border-top: 1px solid var(--border-thin);
+  padding: 4rem 0 2rem 0;
+  margin-top: auto;
+}
+
+.footer-bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.footer-card {
+  background-color: var(--bg-bento);
+  border: 1px solid var(--border-thin);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.brand-card {
+  grid-column: 1 / -1;
+}
+
+.footer-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-link {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  transition: var(--transition-smooth);
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+}
+
+.footer-link:hover {
+  color: var(--text-main);
+  transform: translateX(4px);
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.newsletter-input {
+  flex: 1;
+  background-color: rgba(9, 9, 11, 0.5);
+  border: 1px solid var(--border-thin);
+  border-radius: 0.5rem;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  color: var(--text-main);
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.newsletter-input:focus {
+  border-color: var(--accent-coral);
+  box-shadow: 0 0 0 1px rgba(255, 107, 67, 0.2);
+}
+
+.newsletter-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Botón Newsletter */
+.btn-primary {
+  background: var(--gradient-brand);
+  color: var(--text-main);
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 107, 67, 0.25);
+  transition: var(--transition-smooth);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 25px rgba(255, 107, 67, 0.5);
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-thin);
+}
+
+.footer-copyright {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.icon-link {
+  display: flex;
+  align-items: center;
+  transition: var(--transition-smooth);
+}
+
+.icon-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-link:hover {
+  color: var(--accent-coral);
+}
+
+@media (min-width: 640px) {
+  .footer-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .brand-card {
+    grid-column: span 2;
+  }
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-bento-grid {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  }
+  .brand-card {
+    grid-column: span 1;
+  }
+}
+
+/* =========================================
+   BOTÓN GLASSMORPHISM (Estilo Apple)
+   ========================================= */
+.btn-glass {
+  /* Layout y Tipografía */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px; /* Forma de píldora estilo Apple */
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+
+  /* 1. El secreto del cristal: Desenfoque + Saturación */
+  background: rgba(255, 255, 255, 0.03); /* Fondo casi imperceptible */
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%); /* Soporte Safari */
+
+  /* 2. Borde y grosor del cristal */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  /* 3. Luz interior (top highlight) y sombra suave */
+  box-shadow: 
+    0 4px 24px -1px rgba(0, 0, 0, 0.2), /* Sombra exterior de profundidad */
+    inset 0 1px 0 rgba(255, 255, 255, 0.15); /* Reflejo de luz en el borde superior interno */
+
+  /* Transición fluida */
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Efecto al pasar el ratón */
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.08); /* Se vuelve ligeramente más blanco */
+  border-color: rgba(255, 255, 255, 0.15); /* El borde se ilumina */
+  transform: translateY(-2px); /* Se eleva */
+  box-shadow: 
+    0 8px 32px -2px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+/* Animación del icono dentro del botón cristal */
+.btn-glass svg {
+  width: 18px;
+  height: 18px;
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+
+.btn-glass:hover svg {
+  opacity: 1;
+  transform: translateX(3px); /* La flecha o icono se mueve suavemente */
+}
+
+/* =========================================
+   BOTÓN PRIMARIO GLASSMORPHISM (Cristal Tintado)
+   ========================================= */
+.btn-glass-primary {
+  /* Layout y Tipografía */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px; /* Forma de píldora */
+  font-size: 0.95rem;
+  font-weight: 600; /* Ligeramente más grueso que el secundario */
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+
+  /* 1. Cristal tintado: Degradado corporativo muy transparente + Desenfoque */
+  background: linear-gradient(135deg, rgba(255, 57, 53, 0.15), rgba(228, 145, 102, 0.15));
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+
+  /* 2. Borde tintado sutil */
+  border: 1px solid rgba(255, 107, 67, 0.3);
+
+  /* 3. Luz interior blanca y resplandor exterior coral */
+  box-shadow: 
+    0 4px 24px -1px rgba(255, 107, 67, 0.15), /* Resplandor exterior */
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);   /* Reflejo del borde superior */
+
+  /* Transición fluida */
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Efecto al pasar el ratón */
+.btn-glass-primary:hover {
+  /* Aumentamos la opacidad del color para que "brille" */
+  background: linear-gradient(135deg, rgba(255, 57, 53, 0.25), rgba(228, 145, 102, 0.25));
+  border-color: rgba(255, 107, 67, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 32px -2px rgba(255, 107, 67, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Animación de la flecha en el botón primario */
+.btn-glass-primary svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.btn-glass-primary:hover svg {
+  /* La flecha diagonal sube y a la derecha */
+  transform: translate(3px, -3px); 
+}
+
+/* =========================================
+   ÁREA PRIVADA (Login Layout & Glass Card)
+   ========================================= */
+
+/* Contenedor principal a pantalla completa */
+.auth-layout {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 1rem;
+  background-color: var(--bg-main);
+  background-image: radial-gradient(circle at 50% 45%, rgba(255, 107, 67, 0.08) 0%, rgba(255, 57, 53, 0.02) 40%, rgba(9, 13, 22, 0) 70%);
+}
+
+/* Reutilizamos la malla tecnológica del Hero para el fondo del Login */
+.auth-layout::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Botón de volver al menú (Posicionado arriba a la izquierda) */
+.auth-back-link {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-sub);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+  z-index: 10;
+}
+
+.auth-back-link:hover {
+  color: var(--text-main);
+  transform: translateX(-4px);
+}
+
+/* Tarjeta Glassmorphism de Login */
+.auth-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 420px;
+  
+  /* Efecto Cristal (Saturación + Blur) */
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  
+  /* Bordes y sombras estilo Apple */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  padding: 3rem 2.5rem;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Cabecera del Login (Logo) */
+.auth-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.auth-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.auth-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+}
+
+.auth-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+}
+
+/* Formulario e Inputs */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.auth-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.auth-label {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  font-weight: 500;
+}
+
+/* Inputs adaptados para verse bien sobre el cristal */
+.auth-input {
+  background: rgba(0, 0, 0, 0.2); /* Fondo oscuro translúcido */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  padding: 0.875rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.auth-input::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.auth-input:focus {
+  border-color: var(--color-coral);
+  box-shadow: 0 0 0 1px rgba(255, 107, 67, 0.2);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.auth-forgot {
+  font-size: 0.8rem;
+  color: var(--color-coral);
+  align-self: flex-end;
+  margin-top: -0.5rem;
+  transition: var(--transition-smooth);
+}
+
+.auth-forgot:hover {
+  filter: brightness(1.2);
+  text-decoration: underline;
+}
+
+/* Modificador para que el botón de login ocupe todo el ancho */
+.btn-glass-primary.w-full {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 2.5rem 1.5rem;
+  }
+  .auth-back-link {
+    top: 1.5rem;
+    left: 1.5rem;
+  }
+}

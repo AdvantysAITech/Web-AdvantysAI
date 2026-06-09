@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área Privada - Advantys AI</title>
+  <link href="../assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+
+  <main class="auth-layout">
+    
+    <a href="../index.html" class="auth-back-link">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Volver al inicio
+    </a>
+
+    <div class="auth-card">
+      
+      <div class="auth-header">
+        <img src="../assets/images/Logo advantys blanco y color.png" alt="Advantys AI Logo" class="auth-logo">
+        <h1 class="auth-title">Área privada</h1>
+        <p class="auth-subtitle">Acceso exclusivo para miembros</p>
+      </div>
+
+      <form class="auth-form" action="#" method="POST" onsubmit="event.preventDefault();">
+        
+        <div class="auth-input-group">
+          <label for="email" class="auth-label">Correo electrónico</label>
+          <input type="email" id="email" class="auth-input" placeholder="ejemplo@advantys.ai" required>
+        </div>
+
+        <div class="auth-input-group">
+          <label for="password" class="auth-label">Contraseña</label>
+          <input type="password" id="password" class="auth-input" placeholder="••••••••" required>
+        </div>
+
+        <a href="#" class="auth-forgot">¿Olvidaste tu contraseña?</a>
+
+        <button type="submit" class="btn-glass-primary w-full" style="margin-top: 0.5rem;">
+          Iniciar Sesión
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </button>
+
+      </form>
+      
+    </div>
+    
+  </main>
+
+</body>
+</html>
