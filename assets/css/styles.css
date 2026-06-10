@@ -786,59 +786,43 @@ a {
     ADVANTYS AI - ADN CORPORATIVO (ASYMMETRIC BENTO GRID)
     ========================================
   */
-
-  .adv-dna {
+.adv-dna {
+    width: 100%;
+    padding: 5rem 1.5rem;
     background-color: var(--bg-main);
-    padding: 6rem 1.5rem;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .adv-dna::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80vw;
-    height: 80vw;
-    background: radial-gradient(circle, rgba(255, 107, 67, 0.03) 0%, rgba(9, 13, 22, 0) 70%);
-    pointer-events: none;
-    z-index: 0;
+    color: var(--text-main);
+    box-sizing: border-box;
   }
 
   .adv-dna__container {
-    width: 100%;
     max-width: 1280px;
-    position: relative;
-    z-index: 1;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
   }
 
   .adv-dna__header {
     text-align: center;
-    margin-bottom: 4rem;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .adv-dna__title {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: 2.5rem;
     font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
+    margin: 0 0 1rem 0;
     background: var(--gradient-brand);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
+    letter-spacing: -0.02em;
   }
 
   .adv-dna__subtitle {
-    font-size: clamp(1rem, 2vw, 1.125rem);
+    font-size: 1.125rem;
     color: var(--text-secondary);
-    max-width: 650px;
-    margin: 0 auto;
     line-height: 1.6;
+    margin: 0;
   }
 
   .adv-dna__grid {
@@ -847,114 +831,92 @@ a {
     gap: 1.5rem;
   }
 
-  /* Bento Grid Card */
   .adv-dna__card {
     background-color: var(--bg-bento);
-    border: 1px solid rgba(255, 107, 67, 0.2);
-    border-radius: 16px;
-    padding: 2.5rem 2rem;
+    border: 1px solid var(--border-thin);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: grid;
+    /* Icono a la izquierda, contenido a la derecha */
+    grid-template-columns: 3.5rem 1fr;
+    gap: 1.5rem;
+    align-items: start;
+    transition: all 0.3s ease;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .adv-dna__card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%);
-    pointer-events: none;
   }
 
   .adv-dna__card:hover {
-    transform: translateY(-4px);
     border-color: var(--border-hover);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 107, 67, 0.05);
+    transform: translateY(-4px);
+    background-color: rgba(39, 39, 42, 0.4);
   }
 
   .adv-dna__icon-wrapper {
-    width: 56px;
-    height: 56px;
-    border-radius: 12px;
-    background: rgba(2, 6, 23, 0.6);
-    border: 1px solid var(--border-thin);
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    align-items: flex-start;
+    padding-top: 0.25rem; /* Alineación óptica con el título */
+  }
+
+  /* Iconos sin caja de fondo y del tamaño de su contenedor (column) */
+  .adv-dna__icon-wrapper svg {
+    width: 100%;
+    height: auto;
     color: var(--color-coral);
+    stroke-width: 1.5;
     transition: all 0.3s ease;
   }
 
-  .adv-dna__card:hover .adv-dna__icon-wrapper {
-    border-color: rgba(255, 107, 67, 0.4);
-    box-shadow: 0 0 15px rgba(255, 107, 67, 0.15);
+  .adv-dna__card:hover .adv-dna__icon-wrapper svg {
     color: var(--color-red);
+    transform: scale(1.05);
+  }
+
+  .adv-dna__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
 
   .adv-dna__card-title {
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--text-main);
-    margin-bottom: 1rem;
+    margin: 0;
+    letter-spacing: -0.01em;
     line-height: 1.3;
   }
 
   .adv-dna__card-text {
-    font-size: 1rem;
-    color: var(--text-secondary);
+    font-size: 0.95rem;
     line-height: 1.6;
+    color: var(--text-muted);
     margin: 0;
   }
 
-  /* Desktop Layout: Asymmetric Bento (2 left, 1 tall right) */
+  /* Responsive Desktop - Bento Grid Asimétrico */
   @media (min-width: 992px) {
     .adv-dna__grid {
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: auto auto;
+    }
+    
+    .adv-dna__title {
+      font-size: 3.5rem;
+    }
+
+    .adv-dna__card {
+      padding: 2.5rem;
       gap: 2rem;
+      grid-template-columns: 4.5rem 1fr;
     }
 
-    .adv-dna__card:nth-child(1) {
-      grid-column: 1 / 2;
-      grid-row: 1 / 2;
-    }
-
-    .adv-dna__card:nth-child(2) {
-      grid-column: 1 / 2;
-      grid-row: 2 / 3;
-    }
-
-    .adv-dna__card:nth-child(3) {
-      grid-column: 2 / 3;
-      grid-row: 1 / 3;
-      justify-content: center;
-      padding: 4rem 3rem;
-    }
-    
-    .adv-dna__card:nth-child(3) .adv-dna__icon-wrapper {
-      width: 72px;
-      height: 72px;
-    }
-    
-    .adv-dna__card:nth-child(3) .adv-dna__icon-wrapper svg {
-      width: 32px;
-      height: 32px;
-    }
-    
-    .adv-dna__card:nth-child(3) .adv-dna__card-title {
-      font-size: 1.75rem;
-    }
-    
-    .adv-dna__card:nth-child(3) .adv-dna__card-text {
-      font-size: 1.125rem;
+    /* Pilar 3 ocupa dos filas de altura en el lado derecho */
+    .adv-dna__card--tall {
+      grid-row: span 2;
+      /* Ajuste para que el texto respire más en la tarjeta alta */
+      align-content: start; 
     }
   }
 /* 
