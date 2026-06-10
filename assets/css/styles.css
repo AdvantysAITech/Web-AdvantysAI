@@ -780,3 +780,525 @@ a {
     left: 1.5rem;
   }
 }
+
+/* 
+    ========================================
+    ADVANTYS AI - ADN CORPORATIVO (ASYMMETRIC BENTO GRID)
+    ========================================
+  */
+
+  .adv-dna {
+    background-color: var(--bg-main);
+    padding: 6rem 1.5rem;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .adv-dna::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    height: 80vw;
+    background: radial-gradient(circle, rgba(255, 107, 67, 0.03) 0%, rgba(9, 13, 22, 0) 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .adv-dna__container {
+    width: 100%;
+    max-width: 1280px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .adv-dna__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .adv-dna__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .adv-dna__subtitle {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .adv-dna__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Bento Grid Card */
+  .adv-dna__card {
+    background-color: var(--bg-bento);
+    border: 1px solid rgba(255, 107, 67, 0.2);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .adv-dna__card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+  }
+
+  .adv-dna__card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 107, 67, 0.05);
+  }
+
+  .adv-dna__icon-wrapper {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: rgba(2, 6, 23, 0.6);
+    border: 1px solid var(--border-thin);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    color: var(--color-coral);
+    transition: all 0.3s ease;
+  }
+
+  .adv-dna__card:hover .adv-dna__icon-wrapper {
+    border-color: rgba(255, 107, 67, 0.4);
+    box-shadow: 0 0 15px rgba(255, 107, 67, 0.15);
+    color: var(--color-red);
+  }
+
+  .adv-dna__card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  .adv-dna__card-text {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Desktop Layout: Asymmetric Bento (2 left, 1 tall right) */
+  @media (min-width: 992px) {
+    .adv-dna__grid {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto auto;
+      gap: 2rem;
+    }
+
+    .adv-dna__card:nth-child(1) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    .adv-dna__card:nth-child(2) {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
+    }
+
+    .adv-dna__card:nth-child(3) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 3;
+      justify-content: center;
+      padding: 4rem 3rem;
+    }
+    
+    .adv-dna__card:nth-child(3) .adv-dna__icon-wrapper {
+      width: 72px;
+      height: 72px;
+    }
+    
+    .adv-dna__card:nth-child(3) .adv-dna__icon-wrapper svg {
+      width: 32px;
+      height: 32px;
+    }
+    
+    .adv-dna__card:nth-child(3) .adv-dna__card-title {
+      font-size: 1.75rem;
+    }
+    
+    .adv-dna__card:nth-child(3) .adv-dna__card-text {
+      font-size: 1.125rem;
+    }
+  }
+/* 
+    ========================================
+    ADVANTYS AI - MATRIZ DE CAPACIDADES
+    ========================================
+  */
+
+  .adv-matrix {
+    background-color: var(--bg-main);
+    padding: 6rem 1.5rem;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .adv-matrix__container {
+    width: 100%;
+    max-width: 1100px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* --- CABECERA DE SECCIÓN --- */
+  .adv-matrix__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .adv-matrix__section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.25rem;
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .adv-matrix__section-subtitle {
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* --- GRID Y TARJETAS --- */
+  .adv-matrix__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .adv-matrix__card {
+    text-decoration: none;
+    background-color: var(--bg-bento);
+    border: 1px solid var(--border-thin);
+    border-radius: 16px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .adv-matrix__card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-brand);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .adv-matrix__card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    background-color: rgba(24, 24, 27, 0.5); /* Ligeramente más opaco al hacer hover */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255, 107, 67, 0.05);
+  }
+
+  .adv-matrix__card:hover::before {
+    opacity: 1;
+  }
+
+  .adv-matrix__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+  }
+
+  .adv-matrix__card:hover .adv-matrix__title {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .adv-matrix__desc {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+    transition: color 0.3s ease;
+  }
+
+  .adv-matrix__card:hover .adv-matrix__desc {
+    color: var(--text-secondary);
+  }
+
+  .adv-matrix__arrow {
+    position: absolute;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    color: var(--color-coral);
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: all 0.3s ease;
+    width: 24px;
+    height: 24px;
+  }
+
+  .adv-matrix__card:hover .adv-matrix__arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Desktop Layout */
+  @media (min-width: 768px) {
+    .adv-matrix__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+  /* 
+  ========================================
+  ADVANTYS AI - METODOLOGÍA (SCROLL STACKING)
+  ========================================
+*/
+
+.adv-method-stack {
+  background-color: var(--bg-main);
+  padding: 6rem 1.5rem;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  position: relative;
+}
+
+.adv-method-stack__container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* --- CABECERA --- */
+.adv-method-stack__header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.adv-method-stack__title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.adv-method-stack__subtitle {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto 1.5rem auto;
+  line-height: 1.6;
+}
+
+.adv-method-stack__highlight {
+  font-size: 1.125rem;
+  color: var(--text-main);
+  font-weight: 600;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* --- CONTENEDOR STICKY --- */
+.adv-method-stack__wrapper {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+/* --- TARJETAS BENTO (STACKING) --- */
+.adv-method-stack__card {
+  position: sticky;
+  /* Fondo casi sólido para evitar que el texto de las tarjetas apiladas se mezcle */
+  background: linear-gradient(145deg, #090d16 0%, rgba(24, 24, 27, 0.98) 100%);
+  border: 1px solid var(--border-thin);
+  border-radius: 20px;
+  padding: 2.5rem 1.5rem;
+  margin-bottom: 4rem; /* Espacio de scroll entre tarjetas */
+  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.6);
+  transition: border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.adv-method-stack__card:hover {
+  border-color: var(--border-hover);
+}
+
+/* Offsets de anclaje (Sticky Tops) - Mobile */
+.adv-method-stack__card--1 { top: 100px; z-index: 10; }
+.adv-method-stack__card--2 { top: 120px; z-index: 20; }
+.adv-method-stack__card--3 { top: 140px; z-index: 30; }
+
+/* --- CONTENIDO DE TARJETA --- */
+.adv-method-stack__phase-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.adv-method-stack__step {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-coral);
+  font-weight: 700;
+}
+
+.adv-method-stack__card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.adv-method-stack__card-desc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.adv-method-stack__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.adv-method-stack__list-item {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.adv-method-stack__list-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  background: var(--gradient-brand);
+}
+
+/* --- FOOTER / CONCLUSIÓN --- */
+.adv-method-stack__footer {
+  margin-top: 6rem;
+  background-color: var(--bg-bento);
+  border: 1px solid var(--border-thin);
+  border-radius: 20px;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.adv-method-stack__footer-title {
+  font-size: 1.5rem;
+  color: var(--text-main);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.adv-method-stack__footer-text {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.adv-method-stack__footer-text strong {
+  color: var(--color-coral);
+  font-weight: 600;
+}
+
+/* --- RESPONSIVE DESKTOP --- */
+@media (min-width: 768px) {
+  .adv-method-stack {
+    padding: 8rem 1.5rem;
+  }
+  
+  .adv-method-stack__card {
+    flex-direction: row;
+    padding: 4rem;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .adv-method-stack__phase-info {
+    flex: 1;
+  }
+
+  .adv-method-stack__list-wrapper {
+    flex: 1;
+    border-left: 1px solid var(--border-thin);
+    padding-left: 3rem;
+  }
+
+  /* Offsets de anclaje (Sticky Tops) - Desktop */
+  .adv-method-stack__card--1 { top: 120px; }
+  .adv-method-stack__card--2 { top: 150px; }
+  .adv-method-stack__card--3 { top: 180px; }
+}
