@@ -56,7 +56,7 @@ a {
 }
 
 /* =========================================
-   HEADER TIPO ISLA (APPLE STYLE)
+   HEADER TIPO ISLA (APPLE STYLE) + GLASS PILL
    ========================================= */
 .adv-header-island {
   position: sticky;
@@ -66,24 +66,22 @@ a {
   justify-content: center;
   width: 100%;
   padding: 0 1rem;
-  pointer-events: none; /* Permite hacer scroll o click a los lados de la isla */
+  pointer-events: none;
 }
 
 .adv-nav-island {
-  pointer-events: auto; /* Reactiva la interactividad dentro de la isla */
+  pointer-events: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  padding: 0.5rem 0.5rem 0.5rem 1rem;
-  border-radius: 9999px; /* Bordes totalmente redondeados (pill-shape) */
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  border-radius: 9999px;
   
-  /* Glassmorphism Premium */
-  background: rgba(9, 13, 22, 0.65); /* Basado en --bg-main */
+  background: rgba(9, 13, 22, 0.65);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   
-  /* Detalles de iluminación (bordes y sombras) */
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 
     0 10px 40px -10px rgba(0, 0, 0, 0.5), 
@@ -91,17 +89,17 @@ a {
   transition: var(--transition-smooth);
 }
 
-/* Contenedor del Logo en la Isla */
+/* Control del Logo (Evita que se descuadre o se haga gigante) */
 .adv-logo-island {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 36px;
+  height: 32px; /* Límite de altura estricto */
   transition: var(--transition-smooth);
 }
 
 .adv-logo-island img {
-  height: 70%;
+  height: 100%;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
@@ -115,47 +113,63 @@ a {
 .adv-links-island {
   display: none;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.5rem;
+  position: relative; /* Crucial para la posición absoluta del glass pill */
 }
 
 .adv-link-island {
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-secondary);
-  transition: var(--transition-smooth);
+  transition: color 0.3s ease;
   position: relative;
-  padding: 0.25rem 0;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  z-index: 2; /* Texto por encima de la pastilla de cristal */
+  cursor: pointer;
 }
 
-.adv-link-island:hover {
+.adv-link-island:hover,
+.adv-link-island.active {
   color: var(--text-main);
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  font-weight: 600;
 }
 
-.adv-link-island::after {
-  content: '';
+/* =========================================
+   LA PASTILLA GLASSMORPHISM DENTRO DE LA ISLA
+   ========================================= */
+.nav-glass-pill {
   position: absolute;
-  bottom: -4px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
-  background: var(--gradient-brand);
-  border-radius: 2px;
-  transition: var(--transition-smooth);
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 100%; /* Toma la altura del texto dinámicamente */
+  border-radius: 9999px;
+  
+  /* Efecto Glass Premium */
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.15), 
+    0 4px 12px rgba(0, 0, 0, 0.2);
+    
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.3, 1);
+  z-index: 1; /* Detrás del texto */
+  pointer-events: none;
   opacity: 0;
 }
 
-.adv-link-island:hover::after {
-  width: 100%;
+.nav-glass-pill.is-visible {
   opacity: 1;
-  box-shadow: 0 0 8px var(--color-coral);
 }
 
-/* Área Privada (Botón de la Isla) */
-.adv-cta-island {
-  display: none;
-}
+/* Ocultar antiguas líneas si quedaban restos */
+.adv-link-island::after { display: none !important; }
+
+/* Botón Área Privada */
+.adv-cta-island { display: none; }
 
 .adv-btn-private {
   display: inline-flex;
@@ -174,7 +188,6 @@ a {
 .adv-btn-private:hover {
   background: rgba(255, 107, 67, 0.1);
   border-color: rgba(255, 107, 67, 0.4);
-  color: var(--text-main);
   box-shadow: 0 4px 12px rgba(255, 107, 67, 0.15);
 }
 
@@ -185,11 +198,9 @@ a {
   transition: var(--transition-smooth);
 }
 
-.adv-btn-private:hover svg {
-  color: var(--color-coral);
-}
+.adv-btn-private:hover svg { color: var(--color-coral); }
 
-/* Menú Móvil (Hamburguesa) */
+/* Menú Móvil Hamburguesa */
 .adv-mobile-btn-island {
   display: flex;
   align-items: center;
@@ -203,26 +214,14 @@ a {
   transition: var(--transition-smooth);
 }
 
-.adv-mobile-btn-island:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
+.adv-mobile-btn-island:hover { background: rgba(255, 255, 255, 0.1); }
+.adv-mobile-btn-island svg { width: 22px; height: 22px; }
 
-.adv-mobile-btn-island svg {
-  width: 22px;
-  height: 22px;
-}
-
-/* Responsive: Activar Desktop View */
+/* Responsive Media Query */
 @media (min-width: 1024px) {
-  .adv-links-island {
-    display: flex;
-  }
-  .adv-cta-island {
-    display: block;
-  }
-  .adv-mobile-btn-island {
-    display: none;
-  }
+  .adv-links-island { display: flex; }
+  .adv-cta-island { display: block; }
+  .adv-mobile-btn-island { display: none; }
 }
 
 /* =========================================
@@ -3035,4 +3034,131 @@ a {
 .adv-btn--subscribe:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(255, 107, 67, 0.4);
+}
+
+/* =========================================
+   ÁREA PRIVADA: PORTAL DE PLATAFORMAS (DASHBOARD)
+   ========================================= */
+
+/* Utilidad para transición de JS */
+.hidden {
+  display: none !important;
+}
+
+.adv-portal {
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+  /* Animación fluida de entrada */
+  animation: portalFadeIn 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes portalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.adv-portal__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.adv-portal__title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+.adv-portal__subtitle {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.adv-portal__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .adv-portal__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tarjetas del Portal (Bento Glassmorphism) */
+.adv-portal__card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  padding: 3rem 2rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 
+    0 15px 35px -10px rgba(0, 0, 0, 0.5), 
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.adv-portal__card:hover {
+  border-color: var(--border-hover);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-6px);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.7), 
+    0 0 30px -10px rgba(255, 107, 67, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Iconos de Herramientas */
+.adv-portal__icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 1rem;
+  background: rgba(255, 107, 67, 0.1);
+  border: 1px solid rgba(255, 107, 67, 0.2);
+  color: var(--color-coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.adv-portal__card:hover .adv-portal__icon {
+  background: var(--gradient-brand);
+  color: var(--text-main);
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(255, 107, 67, 0.3);
+}
+
+.adv-portal__card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+}
+
+.adv-portal__card-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
