@@ -2092,3 +2092,947 @@ a {
   background: linear-gradient(135deg, rgba(24, 24, 27, 0.4) 0%, rgba(2, 6, 23, 0.9) 100%);
   border: 1px solid var(--border-thin);
 }
+
+/* ===================================================
+   COMPONENTE: CAROUSEL PREMIUM DE SOLUCIONES IA
+   =================================================== */
+
+.adv-page-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* --- Hero Soluciones --- */
+.adv-hero-solutions {
+  padding: 6rem 1rem 4rem;
+  background-image: radial-gradient(circle at 50% 0%, rgba(255, 107, 67, 0.08) 0%, transparent 60%);
+  border-bottom: 1px solid var(--border-thin);
+}
+
+.adv-hero-solutions__container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.adv-hero-solutions__title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.adv-highlight {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+.adv-hero-solutions__text {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.adv-hero-solutions__subtext {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-weight: 500;
+  border-top: 1px solid var(--border-thin);
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* --- Estructura del Carrusel Nactivo --- */
+.adv-solutions-carousel {
+  padding: 5rem 0;
+  background-color: var(--bg-main);
+  overflow: hidden; /* Evita desbordamiento horizontal de página */
+}
+
+.adv-carousel {
+  position: relative;
+  width: 100%;
+}
+
+.adv-carousel__track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-linecap: round;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 1rem 0 3rem 0; /* Padding inferior para desatacar la sombra en hover */
+  
+  /* Ocultar barra de scroll nativa en todos los navegadores */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE/Edge */
+}
+
+.adv-carousel__track::-webkit-scrollbar {
+  display: none; /* Safari y Chrome */
+}
+
+/* --- Tarjeta del Carrusel (Como Enlace) --- */
+.adv-carousel-card {
+  flex: 0 0 100%; /* Pantallas móviles: 1 tarjeta por vista */
+  scroll-snap-align: center;
+  background: var(--bg-bento);
+  border: 1px solid var(--border-thin);
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Importante para recortar la foto superior */
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+/* --- Espacio para Foto de la Solución --- */
+.adv-carousel-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px; /* Altura controlada corporativa */
+  overflow: hidden;
+  background-color: #0c111d; /* Fallback oscuro de carga */
+}
+
+.adv-carousel-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(35%) brightness(75%); /* Estética integrada en el diseño oscuro */
+  transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1), filter 0.5s ease;
+}
+
+/* Capa de degradado sutil sobre la foto para unificar con el bento grid */
+.adv-carousel-card__image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 40%, rgba(9, 13, 22, 0.8) 100%);
+  pointer-events: none;
+}
+
+/* --- Bloque de Contenido --- */
+.adv-carousel-card__content {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Iconos sobre la tarjeta */
+.adv-carousel-card__icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 107, 67, 0.1);
+  border: 1px solid rgba(255, 107, 67, 0.2);
+  border-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-coral);
+  margin-bottom: 1.25rem;
+  transition: var(--transition-smooth);
+}
+
+.adv-carousel-card__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.adv-carousel-card__desc {
+  font-size: 0.95rem;
+  color: var(--color-coral);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.adv-carousel-card__intro {
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+/* Listas internas */
+.adv-carousel-card__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  border-top: 1px solid var(--border-thin);
+  padding-top: 1.5rem;
+}
+
+.adv-carousel-card__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.adv-carousel-card__item strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.adv-carousel-card__bullet {
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-coral);
+  margin-top: 0.4rem;
+  box-shadow: 0 0 8px var(--color-coral);
+}
+
+/* ===================================================
+   EFECTOS HOVER (Interacciones Premium)
+   =================================================== */
+.adv-carousel-card:hover {
+  border-color: var(--border-hover);
+  background: rgba(24, 24, 27, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px -15px rgba(0, 0, 0, 0.8), 
+              0 0 30px -10px rgba(255, 107, 67, 0.15);
+}
+
+/* Animación de la Imagen al hacer hover en la tarjeta */
+.adv-carousel-card:hover .adv-carousel-card__image {
+  transform: scale(1.06);
+  filter: grayscale(0%) brightness(90%);
+}
+
+/* Iluminación sutil del icono en hover */
+.adv-carousel-card:hover .adv-carousel-card__icon {
+  background: var(--gradient-brand);
+  color: var(--text-main);
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(255, 107, 67, 0.3);
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN (Media Queries)
+   =================================================== */
+
+/* Tablets en adelante: Mostrar 2 tarjetas completas por vista */
+@media (min-width: 768px) {
+  .adv-carousel-card {
+    flex: 0 0 calc(50% - 1rem); /* Divide el contenedor en dos restando la mitad del gap */
+    scroll-snap-align: start;
+  }
+}
+
+/* Pantallas de Escritorio (Desktop): 3 tarjetas por vista */
+@media (min-width: 1200px) {
+  .adv-carousel-card {
+    flex: 0 0 calc(33.333% - 1.334rem); /* Divide el contenedor en tres restando proporciones del gap */
+  }
+}
+
+/* ===================================================
+   COMPONENTE: PROGRAMA DE PARTNERS
+   =================================================== */
+
+.adv-page-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* --- Utilities --- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.mt-4 { margin-top: 1.5rem; }
+
+/* --- Hero --- */
+.adv-hero {
+  padding: 6rem 1rem 4rem;
+  background-image: radial-gradient(circle at 50% 0%, rgba(255, 107, 67, 0.08) 0%, transparent 60%);
+  border-bottom: 1px solid var(--border-thin);
+  text-align: center;
+}
+
+.adv-hero__container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.adv-hero__title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-main);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.adv-highlight {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+}
+
+.adv-hero__text {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.adv-hero__subtext {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-weight: 500;
+  border-top: 1px solid var(--border-thin);
+  padding-top: 1.5rem;
+}
+
+/* --- Beneficios / Bento Grid --- */
+.adv-benefits {
+  padding: 5rem 0;
+  background-color: var(--bg-main);
+}
+
+.adv-section-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.adv-section-title {
+  font-size: 2rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.adv-section-desc {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.adv-bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .adv-bento-grid--2col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.adv-bento-card {
+  background: var(--bg-bento);
+  border: 1px solid var(--border-thin);
+  border-radius: 1.25rem;
+  padding: 2.5rem;
+  transition: var(--transition-smooth);
+}
+
+.adv-bento-card:hover {
+  border-color: var(--border-hover);
+  background: rgba(24, 24, 27, 0.4);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px -10px rgba(0, 0, 0, 0.7), 
+              0 0 20px -5px rgba(255, 107, 67, 0.1);
+}
+
+.adv-bento-card__icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 107, 67, 0.1);
+  border: 1px solid rgba(255, 107, 67, 0.2);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-coral);
+  margin-bottom: 1.5rem;
+}
+
+.adv-bento-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.adv-bento-card__intro {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --- Formulario de Partner --- */
+.adv-form-section {
+  padding: 4rem 0 6rem;
+  background-color: var(--bg-main);
+}
+
+.adv-form-wrapper {
+  background: var(--bg-bento);
+  border: 1px solid var(--border-thin);
+  border-radius: 1.5rem;
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.adv-form-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border-thin);
+  padding-bottom: 2rem;
+}
+
+.adv-form-title {
+  font-size: 1.75rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+
+.adv-form-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.adv-form__fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 3rem 0;
+}
+
+.adv-form__legend {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-coral);
+  margin-bottom: 1.5rem;
+  display: block;
+  width: 100%;
+}
+
+.adv-form__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .adv-form__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.adv-form__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.adv-form__label {
+  font-size: 0.875rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.adv-form__input {
+  width: 100%;
+  background: rgba(9, 13, 22, 0.6);
+  border: 1px solid var(--border-thin);
+  color: var(--text-main);
+  padding: 0.875rem 1rem;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.adv-form__input:focus {
+  outline: none;
+  border-color: var(--color-coral);
+  box-shadow: 0 0 0 2px rgba(255, 107, 67, 0.2);
+}
+
+.adv-form__textarea {
+  resize: vertical;
+}
+
+/* Checkboxes y Radios Personalizados */
+.adv-form__checkbox-grid,
+.adv-form__radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .adv-form__checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.adv-form__check-label,
+.adv-form__radio-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.adv-form__check-label:hover,
+.adv-form__radio-label:hover {
+  color: var(--text-main);
+}
+
+.adv-form__checkbox,
+.adv-form__radio {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: rgba(9, 13, 22, 0.8);
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 1px solid var(--border-thin);
+  border-radius: 0.25em;
+  display: grid;
+  place-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.adv-form__radio {
+  border-radius: 50%;
+}
+
+.adv-form__checkbox::before,
+.adv-form__radio::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--text-main);
+}
+
+.adv-form__checkbox::before {
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.adv-form__radio::before {
+  border-radius: 50%;
+}
+
+.adv-form__checkbox:checked,
+.adv-form__radio:checked {
+  background: var(--gradient-brand);
+  border-color: transparent;
+}
+
+.adv-form__checkbox:checked::before,
+.adv-form__radio:checked::before {
+  transform: scale(1);
+}
+
+/* Submit Button */
+.adv-btn--submit {
+  width: 100%;
+  padding: 1.25rem;
+  border: none;
+  background: var(--gradient-brand);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.adv-btn--submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 67, 0.4);
+}
+
+/* ===================================================
+   COMPONENTE: CENTRO DE CONOCIMIENTO (BLOG Y NEWS)
+   =================================================== */
+
+/* --- Hero --- */
+.adv-hero {
+  padding: 6rem 1rem 4rem;
+  background-image: radial-gradient(circle at 50% 0%, rgba(255, 107, 67, 0.08) 0%, transparent 60%);
+  border-bottom: 1px solid var(--border-thin);
+  text-align: center;
+}
+
+/* --- Layout Principal del Blog --- */
+.adv-blog {
+  padding: 4rem 0 6rem;
+  background-color: var(--bg-main);
+}
+
+.adv-blog-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .adv-blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Estilos de las Tarjetas (Bento Cards) --- */
+.adv-blog-card {
+  background: var(--bg-bento);
+  border: 1px solid var(--border-thin);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.adv-blog-card:hover {
+  border-color: var(--border-hover);
+  background: rgba(24, 24, 27, 0.5);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6), 
+              0 0 15px -5px rgba(255, 107, 67, 0.1);
+}
+
+/* Cabecera de la Tarjeta (Badge + Meta) */
+.adv-blog-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Etiquetas (Badges) */
+.adv-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 99px;
+  display: inline-flex;
+}
+
+.adv-badge--regulatory {
+  background: rgba(161, 161, 170, 0.15);
+  color: #d4d4d8;
+  border: 1px solid rgba(161, 161, 170, 0.3);
+}
+
+.adv-badge--news {
+  background: rgba(228, 145, 102, 0.15);
+  color: var(--color-orange);
+  border: 1px solid rgba(228, 145, 102, 0.3);
+}
+
+.adv-badge--success {
+  background: linear-gradient(135deg, rgba(255, 57, 53, 0.15), rgba(255, 107, 67, 0.15));
+  color: var(--color-coral);
+  border: 1px solid rgba(255, 107, 67, 0.4);
+}
+
+/* Meta Data (Fecha y Valoración) */
+.adv-blog-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.adv-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--color-coral);
+  font-weight: 600;
+}
+
+.adv-rating svg {
+  width: 14px;
+  height: 14px;
+}
+
+.adv-rating__text {
+  color: var(--text-secondary);
+}
+
+/* Tipografía de la Tarjeta */
+.adv-blog-card__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.adv-blog-card__title a {
+  color: var(--text-main);
+  transition: color 0.2s ease;
+}
+
+.adv-blog-card__title a:hover {
+  color: var(--color-coral);
+}
+
+.adv-blog-card__summary {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Palabras Clave (Tags) */
+.adv-blog-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.adv-tag {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-thin);
+}
+
+/* Enlaces de lectura */
+.adv-blog-card__link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-coral);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: var(--transition-smooth);
+}
+
+.adv-blog-card__link span {
+  transition: transform 0.2s ease;
+}
+
+.adv-blog-card__link:hover span {
+  transform: translateX(4px);
+}
+
+/* --- Diseño Especial para Caso de Éxito Destacado --- */
+@media (min-width: 1024px) {
+  .adv-blog-card--featured {
+    grid-column: span 2; /* Ocupa todo el ancho en Desktop */
+  }
+
+  .adv-blog-card__content-split {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    align-items: stretch;
+  }
+}
+
+.adv-blog-card__results-box {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border-thin);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.adv-result-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.adv-result-item__label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.adv-result-item__text {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.adv-result-item--highlight .adv-result-item__label {
+  color: var(--color-coral);
+}
+
+.adv-result-item--highlight .adv-result-item__text {
+  color: var(--text-main);
+}
+
+.adv-result-item--highlight strong {
+  color: var(--color-coral);
+  font-size: 1.1rem;
+}
+
+/* --- Newsletter Block --- */
+.adv-newsletter-block {
+  padding: 0 0 5rem 0;
+  background-color: var(--bg-main);
+}
+
+.adv-newsletter-wrapper {
+  background: linear-gradient(180deg, rgba(24, 24, 27, 0.4) 0%, rgba(9, 13, 22, 1) 100%);
+  border: 1px solid var(--border-thin);
+  border-radius: 1.5rem;
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Resplandor sutil en el fondo del Newsletter */
+.adv-newsletter-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 100px;
+  background: var(--color-coral);
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+.adv-newsletter__icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.5rem;
+  color: var(--color-coral);
+  background: rgba(255, 107, 67, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adv-newsletter__icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.adv-newsletter__title {
+  font-size: 1.75rem;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.adv-newsletter__desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+}
+
+.adv-newsletter__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .adv-newsletter__form {
+    flex-direction: row;
+  }
+}
+
+.adv-newsletter__input {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-thin);
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  color: var(--text-main);
+  font-size: 1rem;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.adv-newsletter__input:focus {
+  border-color: var(--color-coral);
+  box-shadow: 0 0 0 2px rgba(255, 107, 67, 0.2);
+}
+
+.adv-btn--subscribe {
+  background: var(--gradient-brand);
+  color: #fff;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 15px rgba(255, 107, 67, 0.25);
+}
+
+.adv-btn--subscribe:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 67, 0.4);
+}
