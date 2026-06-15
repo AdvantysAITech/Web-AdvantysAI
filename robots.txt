@@ -1,0 +1,13 @@
+# Bloquear temporalmente el rastreo general (entorno de pruebas)
+User-agent: *
+Disallow: /
+
+# Excepciones críticas: Permitir crawlers de IA para Capa GEO
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
