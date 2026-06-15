@@ -6,13 +6,51 @@
   padding: 6rem 1rem 4rem;
   background-image: radial-gradient(circle at 50% 0%, rgba(255, 107, 67, 0.08) 0%, transparent 60%);
   border-bottom: 1px solid var(--border-thin);
+  text-align: center; /* Alineación forzada aquí */
 }
 
-.adv-hero-solutions__container { max-width: 900px; margin: 0 auto; text-align: center; }
-.adv-hero-solutions__title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 800; line-height: 1.15; color: var(--text-main); margin-bottom: 1.5rem; letter-spacing: -0.02em; }
-.adv-hero-solutions__text { font-size: 1.125rem; color: var(--text-secondary); line-height: 1.7; margin-bottom: 1rem; }
-.adv-hero-solutions__subtext { font-size: 1rem; color: var(--text-muted); line-height: 1.6; font-weight: 500; border-top: 1px solid var(--border-thin); padding-top: 1.5rem; margin-top: 1.5rem; }
+.adv-hero-solutions__container { 
+  max-width: 900px; 
+  margin: 0 auto; 
+}
 
+.adv-hero-solutions__title { 
+  font-size: clamp(2rem, 4vw, 3.5rem); 
+  font-weight: 800; 
+  line-height: 1.15; 
+  color: var(--text-main); 
+  margin-bottom: 1.5rem; 
+  letter-spacing: -0.02em; 
+}
+
+/* El texto degradado */
+.adv-highlight {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  display: inline-block;
+}
+
+.adv-hero-solutions__text { 
+  font-size: 1.125rem; 
+  color: var(--text-secondary); 
+  line-height: 1.7; 
+  margin-bottom: 1rem; 
+}
+
+.adv-hero-solutions__subtext { 
+  font-size: 1rem; 
+  color: var(--text-muted); 
+  line-height: 1.6; 
+  font-weight: 500; 
+  border-top: 1px solid var(--border-thin); 
+  padding-top: 1.5rem; 
+  margin-top: 1.5rem; 
+}
+
+/* --- Carrusel --- */
 .adv-solutions-carousel { padding: 5rem 0; background-color: var(--bg-main); overflow: hidden; }
 .adv-carousel { position: relative; width: 100%; }
 .adv-carousel__track {
