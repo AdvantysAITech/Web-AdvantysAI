@@ -1,0 +1,25 @@
+/* =========================================
+   BASE: RESET Y ESTILOS GENÉRICOS
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Utilidad para transiciones de JS (usada en el Login) */
+.hidden {
+  display: none !important;
+}

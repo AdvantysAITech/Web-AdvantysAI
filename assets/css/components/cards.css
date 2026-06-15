@@ -1,0 +1,84 @@
+/* =========================================
+   COMPONENTS: TARJETAS BENTO Y GLASS PANELS
+   ========================================= */
+
+/* Panel Glassmorphism Base (Usado en consultoría, ISO y closures) */
+.adv-glass-panel {
+  background: var(--bg-bento);
+  border: 1px solid var(--border-thin);
+  border-radius: 16px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Tarjeta Bento Standard (Usada en Ecosistema, Partners, Metodología ISO) */
+.adv-bento-card {
+  background: var(--bg-bento);
+  border: 1px solid var(--border-thin);
+  border-radius: 16px;
+  padding: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.adv-bento-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255, 107, 67, 0.05);
+  background-color: rgba(24, 24, 27, 0.5);
+}
+
+.adv-bento-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(2, 6, 23, 0.6);
+  border: 1px solid var(--border-thin);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-coral);
+  margin-bottom: 1.5rem;
+  transition: var(--transition-smooth);
+}
+
+.adv-bento-card:hover .adv-bento-card__icon {
+  border-color: rgba(255, 107, 67, 0.4);
+  box-shadow: 0 0 15px rgba(255, 107, 67, 0.15);
+  color: var(--color-orange);
+}
+
+.adv-bento-card__title {
+  color: var(--text-main);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.adv-bento-card__desc,
+.adv-bento-card__intro {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Tarjeta del Blog (Variante de Bento Card) */
+.adv-blog-card {
+  background: var(--bg-bento);
+  border: 1px solid var(--border-thin);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-smooth);
+}
+
+.adv-blog-card:hover {
+  border-color: var(--border-hover);
+  background: rgba(24, 24, 27, 0.5);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6), 
+              0 0 15px -5px rgba(255, 107, 67, 0.1);
+}

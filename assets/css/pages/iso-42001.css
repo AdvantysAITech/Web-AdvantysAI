@@ -1,0 +1,96 @@
+/* =========================================
+   PAGE: ISO 42001 & AI ACT
+   ========================================= */
+
+.adv-iso-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.adv-iso-subtitle {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  max-width: 800px;
+}
+
+.adv-iso-text {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* --- HERO ISO --- */
+.adv-hero-iso {
+  position: relative;
+  padding: 6rem 0 4rem;
+  overflow: hidden;
+  background-image: radial-gradient(circle at 50% 10%, rgba(255, 107, 67, 0.08) 0%, transparent 60%);
+}
+
+.adv-hero-iso__container { display: flex; flex-direction: column; align-items: center; text-align: center; }
+
+.adv-hero-iso__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  max-width: 900px;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.adv-hero-iso__lead {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 800px;
+  margin-bottom: 2.5rem;
+}
+
+.adv-hero-iso__lead strong { color: var(--text-main); }
+.adv-hero-iso__actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+
+/* --- STATEMENT --- */
+.adv-statement { padding: 4rem 0 6rem; }
+.adv-statement__grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+
+@media (min-width: 992px) {
+  .adv-statement__grid { grid-template-columns: 1fr 1fr; }
+}
+
+.adv-statement__visual {
+  padding: 3rem 2.5rem;
+  box-shadow: inset 0 0 30px rgba(255, 107, 67, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.adv-check-list { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
+.adv-check-list li { position: relative; padding-left: 2rem; color: var(--text-main); font-size: 1.05rem; font-weight: 500; }
+.adv-check-list li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--color-coral); font-weight: bold; font-size: 1.1rem; }
+
+/* --- METODOLOGÍA (Bento List) --- */
+.adv-methodology { padding: 4rem 0 6rem; }
+.adv-bento-card__phase { font-family: monospace; font-size: 0.75rem; color: var(--color-coral); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; }
+
+/* --- BENEFICIOS --- */
+.adv-benefits { padding: 4rem 0 6rem; }
+.adv-benefits__grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; margin-top: 3rem; }
+
+@media (min-width: 768px) { .adv-benefits__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) {
+  .adv-benefits__grid { grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border-thin); padding-top: 4rem; }
+}
+
+.adv-benefit-item__title { color: var(--text-main); font-size: 1.125rem; margin-bottom: 0.75rem; border-left: 2px solid var(--color-coral); padding-left: 1rem; }
+.adv-benefit-item__text { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; padding-left: 1rem; }
+
+/* --- BOTTOM CTA --- */
+.adv-cta-closure { padding-bottom: 6rem; }
+.adv-cta-closure__inner { text-align: center; padding: 5rem 2rem; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; background: linear-gradient(135deg, rgba(24, 24, 27, 0.4) 0%, rgba(2, 6, 23, 0.9) 100%); border: 1px solid var(--border-thin); }

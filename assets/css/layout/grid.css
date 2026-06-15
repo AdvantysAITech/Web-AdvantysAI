@@ -1,0 +1,29 @@
+/* =========================================
+   LAYOUT: GRID Y CONTENEDORES GLOBALES
+   ========================================= */
+
+/* Contenedor unificado para toda la web */
+.container {
+  width: 100%;
+  max-width: 1280px; 
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Wrapper general de las páginas internas para forzar un flujo en columna */
+.adv-page-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Utilidades generales */
+.adv-text-center { 
+  text-align: center; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+.mt-4 { 
+  margin-top: 1.5rem; 
+}

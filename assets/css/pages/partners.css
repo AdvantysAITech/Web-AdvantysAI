@@ -1,0 +1,9 @@
+/* =========================================
+   PAGE: PARTNERS PROGRAM
+   ========================================= */
+
+.adv-form-section { padding: 4rem 0 6rem; background-color: var(--bg-main); }
+.adv-form-wrapper { background: var(--bg-bento); border: 1px solid var(--border-thin); border-radius: 1.5rem; padding: 3rem 2rem; max-width: 900px; margin: 0 auto; }
+.adv-form-header { text-align: center; margin-bottom: 3rem; border-bottom: 1px solid var(--border-thin); padding-bottom: 2rem; }
+.adv-form-title { font-size: 1.75rem; color: var(--text-main); margin-bottom: 1rem; }
+.adv-form-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }

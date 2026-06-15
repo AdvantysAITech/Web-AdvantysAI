@@ -1,0 +1,37 @@
+/* =========================================
+   PAGE: ÁREA PRIVADA (AUTH & PORTAL)
+   ========================================= */
+
+.auth-layout { min-height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 2rem 1rem; background-color: var(--bg-main); background-image: radial-gradient(circle at 50% 45%, rgba(255, 107, 67, 0.08) 0%, rgba(255, 57, 53, 0.02) 40%, rgba(9, 13, 22, 0) 70%); }
+.auth-layout::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px); background-size: 40px 40px; -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%); mask-image: radial-gradient(circle at center, black 40%, transparent 100%); z-index: 1; pointer-events: none; }
+
+.auth-back-link { position: absolute; top: 2rem; left: 2rem; display: inline-flex; align-items: center; gap: 0.5rem; color: var(--text-sub); font-size: 0.875rem; font-weight: 500; transition: var(--transition-smooth); z-index: 10; }
+.auth-back-link:hover { color: var(--text-main); transform: translateX(-4px); }
+
+.auth-card { position: relative; z-index: 2; width: 100%; max-width: 420px; background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 1.5rem; padding: 3rem 2.5rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1); }
+.auth-header { display: flex; flex-direction: column; align-items: center; margin-bottom: 2.5rem; }
+.auth-logo { width: 80px; height: 80px; object-fit: contain; margin-bottom: 1rem; }
+.auth-title { font-size: 1.5rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.25rem; }
+.auth-subtitle { font-size: 0.875rem; color: var(--text-sub); }
+.auth-form { display: flex; flex-direction: column; gap: 1.5rem; }
+.auth-forgot { font-size: 0.8rem; color: var(--color-coral); align-self: flex-end; margin-top: -0.5rem; transition: var(--transition-smooth); }
+.auth-forgot:hover { filter: brightness(1.2); text-decoration: underline; }
+
+@media (max-width: 480px) { .auth-card { padding: 2.5rem 1.5rem; } .auth-back-link { top: 1.5rem; left: 1.5rem; } }
+
+/* --- Portal Dashboard --- */
+.adv-portal { width: 100%; max-width: 800px; position: relative; z-index: 2; animation: portalFadeIn 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards; }
+@keyframes portalFadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+.adv-portal__header { text-align: center; margin-bottom: 3rem; }
+.adv-portal__title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; line-height: 1.2; margin-bottom: 0.5rem; background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; text-fill-color: transparent; }
+.adv-portal__subtitle { font-size: 1rem; color: var(--text-secondary); }
+.adv-portal__grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+@media (min-width: 768px) { .adv-portal__grid { grid-template-columns: repeat(2, 1fr); } }
+
+.adv-portal__card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 1.5rem; padding: 3rem 2rem; text-decoration: none; display: flex; flex-direction: column; align-items: center; text-align: center; transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05); }
+.adv-portal__card:hover { border-color: var(--border-hover); background: rgba(255, 255, 255, 0.05); transform: translateY(-6px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 30px -10px rgba(255, 107, 67, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1); }
+.adv-portal__icon { width: 64px; height: 64px; border-radius: 1rem; background: rgba(255, 107, 67, 0.1); border: 1px solid rgba(255, 107, 67, 0.2); color: var(--color-coral); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; transition: var(--transition-smooth); }
+.adv-portal__card:hover .adv-portal__icon { background: var(--gradient-brand); color: var(--text-main); border-color: transparent; box-shadow: 0 4px 15px rgba(255, 107, 67, 0.3); }
+.adv-portal__card-title { font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.75rem; }
+.adv-portal__card-desc { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }

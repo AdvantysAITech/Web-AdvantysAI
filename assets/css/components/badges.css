@@ -1,0 +1,105 @@
+/* =========================================
+   COMPONENTS: BADGES Y ETIQUETAS
+   ========================================= */
+
+/* Badges Genéricos del Blog y Noticias */
+.adv-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.75rem;
+  border-radius: 99px;
+  display: inline-flex;
+}
+
+.adv-badge--regulatory {
+  background: rgba(161, 161, 170, 0.15);
+  color: #d4d4d8;
+  border: 1px solid rgba(161, 161, 170, 0.3);
+}
+
+.adv-badge--news {
+  background: rgba(228, 145, 102, 0.15);
+  color: var(--color-orange);
+  border: 1px solid rgba(228, 145, 102, 0.3);
+}
+
+.adv-badge--success {
+  background: linear-gradient(135deg, rgba(255, 57, 53, 0.15), rgba(255, 107, 67, 0.15));
+  color: var(--color-coral);
+  border: 1px solid rgba(255, 107, 67, 0.4);
+}
+
+/* Badges de Heros (ISO y Sistema Advantys) */
+.adv-badge-iso,
+.adv-badge-system {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.adv-badge-iso {
+  background: rgba(255, 107, 67, 0.1);
+  border: 1px solid rgba(255, 107, 67, 0.3);
+  color: var(--color-coral);
+}
+
+.adv-badge-system {
+  background: rgba(228, 145, 102, 0.1);
+  border: 1px solid rgba(228, 145, 102, 0.3);
+  color: var(--color-orange);
+}
+
+/* Badges de Métricas (Platform Showcase) */
+.adv-metric-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-header);
+  border: 1px solid var(--border-hover);
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.adv-metric-badge__value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: var(--gradient-brand);
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.25rem;
+}
+
+.adv-metric-badge__text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+@media (min-width: 768px) {
+  .adv-metric-badge { padding: 1rem 2rem; }
+  .adv-metric-badge__value { font-size: 1.75rem; }
+  .adv-metric-badge__text { font-size: 0.875rem; }
+}
+
+/* Tags de Palabras Clave (Blog) */
+.adv-tag {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-thin);
+}

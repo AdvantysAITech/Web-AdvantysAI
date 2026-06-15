@@ -1,0 +1,147 @@
+/* =========================================
+   COMPONENTS: BOTONES Y CTAS
+   ========================================= */
+   
+/* Botón Newsletter (Footer) */
+.btn-primary {
+  background: var(--gradient-brand);
+  color: var(--text-main);
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 107, 67, 0.25);
+  transition: var(--transition-smooth);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 25px rgba(255, 107, 67, 0.5);
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Botón Glassmorphism (Estilo Secundario) */
+.btn-glass {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 24px -1px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 32px -2px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn-glass svg {
+  width: 18px;
+  height: 18px;
+  opacity: 0.8;
+  transition: transform 0.3s ease;
+}
+
+.btn-glass:hover svg {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+/* Botón Glassmorphism Primario (Cristal Tintado Corporativo) */
+.btn-glass-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, rgba(255, 57, 53, 0.15), rgba(228, 145, 102, 0.15));
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 107, 67, 0.3);
+  box-shadow: 
+    0 4px 24px -1px rgba(255, 107, 67, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-glass-primary:hover {
+  background: linear-gradient(135deg, rgba(255, 57, 53, 0.25), rgba(228, 145, 102, 0.25));
+  border-color: rgba(255, 107, 67, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 32px -2px rgba(255, 107, 67, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-glass-primary svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.btn-glass-primary:hover svg {
+  transform: translate(3px, -3px); 
+}
+
+/* Modificador ancho completo */
+.btn-glass-primary.w-full {
+  width: 100%;
+}
+
+/* Botones genéricos de Formularios (Submit y Subscribe) */
+.adv-btn--submit,
+.adv-btn--subscribe {
+  background: var(--gradient-brand);
+  color: #fff;
+  border: none;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 15px rgba(255, 107, 67, 0.25);
+}
+
+.adv-btn--submit {
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.adv-btn--subscribe {
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  white-space: nowrap;
+}
+
+.adv-btn--submit:hover,
+.adv-btn--subscribe:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 107, 67, 0.4);
+}
