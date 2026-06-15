@@ -18,7 +18,7 @@
 .adv-hero-system { position: relative; padding: 6rem 0 4rem; overflow: hidden; background-image: radial-gradient(circle at 50% 0%, rgba(228, 145, 102, 0.08) 0%, transparent 60%); }
 .adv-hero-system__container { display: flex; flex-direction: column; align-items: center; text-align: center; }
 
-.adv-hero-system__title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; max-width: 950px; background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; text-fill-color: transparent; }
+.adv-hero-system__title { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; max-width: 950px; background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;}
 .adv-hero-system__lead { font-size: clamp(1.05rem, 2vw, 1.25rem); color: var(--text-secondary); line-height: 1.6; max-width: 800px; margin-bottom: 2.5rem; }
 .adv-hero-system__lead strong { color: var(--text-main); }
 .adv-hero-system__actions { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }

@@ -29,7 +29,6 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
   display: inline-block;
 }
 
@@ -54,7 +53,7 @@
 .adv-solutions-carousel { padding: 5rem 0; background-color: var(--bg-main); overflow: hidden; }
 .adv-carousel { position: relative; width: 100%; }
 .adv-carousel__track {
-  display: flex; gap: 2rem; overflow-x: auto; scroll-linecap: round; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 1rem 0 3rem 0; 
+  display: flex; gap: 2rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 1rem 0 3rem 0; 
   scrollbar-width: none; -ms-overflow-style: none;
 }
 .adv-carousel__track::-webkit-scrollbar { display: none; }
