@@ -11,6 +11,20 @@
   -webkit-backdrop-filter: blur(16px);
 }
 
+/* FIX: Grid de Bento — usado en iso-42001.html y partners.html pero no estaba definido */
+.adv-bento-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .adv-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Tarjeta Bento Standard (Usada en Ecosistema, Partners, Metodología ISO) */
 .adv-bento-card {
   background: var(--bg-bento);
@@ -81,4 +95,14 @@
   background: rgba(24, 24, 27, 0.5);
   box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6), 
               0 0 15px -5px rgba(255, 107, 67, 0.1);
+}
+
+/* FIX: .adv-highlight — estaba duplicado en blog.css y soluciones-ia.css,
+   se centraliza aquí como componente global */
+.adv-highlight {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }

@@ -17,9 +17,13 @@
   font-weight: 500;
 }
 
-.auth-label { color: var(--text-sub); }
+/* FIX: auth-label usaba --text-sub (indefinida), ahora usa --text-secondary */
+.auth-label { color: var(--text-secondary); }
 
 .newsletter-input,
+/* FIX: unificamos .adv-newsletter__input con .newsletter-input para que ambas clases
+   usadas en blog.html y footer funcionen con los mismos estilos */
+.adv-newsletter__input,
 .auth-input,
 .adv-form__input {
   background: rgba(0, 0, 0, 0.2); 
@@ -31,9 +35,11 @@
   outline: none;
   transition: var(--transition-smooth);
   font-family: inherit;
+  width: 100%;
 }
 
-.newsletter-input {
+.newsletter-input,
+.adv-newsletter__input {
   background-color: rgba(9, 9, 11, 0.5);
   padding: 0.625rem 1rem;
   border-radius: 0.5rem;
@@ -41,6 +47,7 @@
 }
 
 .newsletter-input:focus,
+.adv-newsletter__input:focus,
 .auth-input:focus,
 .adv-form__input:focus {
   border-color: var(--color-coral);
@@ -49,7 +56,8 @@
 }
 
 .auth-input::placeholder,
-.adv-newsletter__input::placeholder {
+.adv-newsletter__input::placeholder,
+.newsletter-input::placeholder {
   color: rgba(255, 255, 255, 0.2);
 }
 

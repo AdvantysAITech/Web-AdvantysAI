@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Advantys AI</title>
+  <title>Soluciones IA Verticales | Advantys AI</title>
   <meta name="robots" content="noindex, nofollow">
   <link href="../assets/css/main.css" rel="stylesheet">
   <link href="../assets/css/pages/soluciones-ia.css" rel="stylesheet">
 </head>
 
-<body>
-<!-- HEADER SECTION -->
+<body class="page-soluciones">
+
+  <!-- HEADER SECTION -->
 <header class="adv-header-island">
   <div class="adv-nav-island">
     
     <a href="/" class="adv-logo-island">
       <img src="../assets/images/Logo advantys blanco y color.png" alt="Advantys AI Logo">
     </a>
-
+ 
     <nav class="adv-links-island">
       <div class="nav-glass-pill" id="nav-glasser"></div>
       
@@ -27,7 +28,7 @@
       <a href="partners.html" class="adv-link-island">Partners</a>
       <a href="blog.html" class="adv-link-island">Noticias</a>
     </nav>
-
+ 
     <div class="adv-cta-island">
       <a href="area-privada.html" class="adv-btn-private">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -36,252 +37,290 @@
         Área privada
       </a>
     </div>
-
-    <button class="adv-mobile-btn-island" aria-label="Abrir menú">
+ 
+    <button class="adv-mobile-btn-island" aria-label="Abrir menú" id="mobile-menu-toggle">
       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
       
   </div>
+ 
+  <div class="adv-mobile-menu" id="mobile-menu">
+    <button class="adv-mobile-menu__close" aria-label="Cerrar menú" id="mobile-menu-close">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <nav class="adv-mobile-menu__links">
+      <a href="soluciones-ia.html" class="adv-mobile-link">Soluciones IA</a>
+      <a href="iso-42001.html" class="adv-mobile-link">Auditoría ISO 42001</a>
+      <a href="sistema-advantys.html" class="adv-mobile-link">Sistema Advantys</a>
+      <a href="partners.html" class="adv-mobile-link">Partners</a>
+      <a href="blog.html" class="adv-mobile-link">Noticias</a>
+      <a href="area-privada.html" class="adv-mobile-link adv-mobile-link--cta">Área privada</a>
+    </nav>
+  </div>
 </header>
   <!-- HEADER END -->
 
   <main class="adv-page-content">
   
-  <section class="adv-hero-solutions">
-    <div class="adv-hero-solutions__container">
-      <h1 class="adv-hero-solutions__title">
-        Soluciones de IA verticales: <br>
-        <span class="adv-highlight">Especialización sectorial para la máxima rentabilidad</span>
-      </h1>
-      <p class="adv-hero-solutions__text">
-        En los mercados de alto nivel, la experiencia generalista no es suficiente. Cada industria opera bajo regulaciones, dinámicas de mercado y estructuras de costes radicalmente diferentes. Por ello, hemos empaquetado nuestro conocimiento y tecnología en 6 soluciones verticales de Inteligencia Artificial y Automatización, diseñadas específicamente para resolver los cuellos de botella críticos de los principales sectores económicos.
-      </p>
-      <p class="adv-hero-solutions__subtext">
-        Desplgamos sistemas predictivos y de optimización de procesos probados que impactan directamente en el margen de beneficio de su compañía.
-      </p>
-    </div>
-  </section>
+    <section class="adv-hero-solutions">
+      <div class="adv-hero-solutions__container">
+        <h1 class="adv-hero-solutions__title">
+          Soluciones de IA verticales: <br>
+          <span class="adv-highlight">Especialización sectorial para la máxima rentabilidad</span>
+        </h1>
+        <p class="adv-hero-solutions__text">
+          En los mercados de alto nivel, la experiencia generalista no es suficiente. Cada industria opera bajo regulaciones, dinámicas de mercado y estructuras de costes radicalmente diferentes. Por ello, hemos empaquetado nuestro conocimiento y tecnología en 6 soluciones verticales de Inteligencia Artificial y Automatización, diseñadas específicamente para resolver los cuellos de botella críticos de los principales sectores económicos.
+        </p>
+        <p class="adv-hero-solutions__subtext">
+          Desplegamos sistemas predictivos y de optimización de procesos probados que impactan directamente en el margen de beneficio de su compañía.
+        </p>
+      </div>
+    </section>
 
-  <section class="adv-solutions-carousel">
-  <div class="container">
-    
-    <div class="adv-carousel">
-      <div class="adv-carousel__track">
+    <section class="adv-solutions-carousel">
+      <div class="container">
+        
+        <div class="adv-carousel" style="display: flex; align-items: center; gap: 1rem;">
+          
+          <button id="carousel-prev" class="adv-carousel-card__icon" aria-label="Desplazar a la izquierda" 
+                  style="flex-shrink: 0; margin-bottom: 0; padding: 0; cursor: pointer; transition: all 0.3s ease; opacity: 0.3; pointer-events: none;"
+                  onmouseover="this.style.transform='scale(1.1)'; this.style.borderColor='var(--color-coral)';" 
+                  onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(255, 107, 67, 0.2)';">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+          </button>
 
-        <article class="adv-carousel-card">
-          <a href="soluciones/agroalimentario.html" class="adv-carousel-card__link-img" aria-label="Ver soluciones para Sector Agroalimentario">
-            <div class="adv-carousel-card__image-wrapper">
-              <img src="../assets/images/solutions/agroalimentario.jpg" alt="Sector Agroalimentario" class="adv-carousel-card__image">
-              <div class="adv-carousel-card__image-overlay"></div>
-            </div>
-          </a>
-          <div class="adv-carousel-card__content">
-            <div class="adv-carousel-card__icon">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            </div>
-            <a href="soluciones/agroalimentario.html" class="adv-carousel-card__link-title">
-              <h2 class="adv-carousel-card__title">Sector agroalimentario</h2>
-            </a>
-            <p class="adv-carousel-card__desc">Optimización de la cadena y eficiencia predictiva</p>
-            <p class="adv-carousel-card__intro">La volatilidad de las materias primas, los tiempos de caducidad y las exigencias de sostenibilidad requieren una precisión quirúrgica. Nuestra IA transforma la incertidumbre agrícola y logística en datos predictivos de alta rentabilidad.</p>
-            <ul class="adv-carousel-card__list">
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Predicción de demanda y mermas:</strong> Algoritmos avanzados para anticipar las necesidades del mercado.</span>
-              </li>
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Cadena de frío y distribución:</strong> Sensores inteligentes para predecir anomalías operativas.</span>
-              </li>
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Margen de compra:</strong> Análisis predictivo de costes de materias primas.</span>
-              </li>
-            </ul>
-            <a href="soluciones/agroalimentario.html" class="adv-carousel-card__action-btn">Ver caso de uso &rarr;</a>
+          <div class="adv-carousel__track" id="carousel-track" style="flex-grow: 1; min-width: 0;">
+
+            <article class="adv-carousel-card">
+              <a href="soluciones/agroalimentario.html" class="adv-carousel-card__link-img" aria-label="Ver soluciones para Sector Agroalimentario">
+                <div class="adv-carousel-card__image-wrapper">
+                  <img src="../assets/images/solutions/agroalimentario.jpg" alt="Sector Agroalimentario" class="adv-carousel-card__image">
+                  <div class="adv-carousel-card__image-overlay"></div>
+                </div>
+              </a>
+              <div class="adv-carousel-card__content">
+                <div class="adv-carousel-card__icon">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <a href="soluciones/agroalimentario.html" class="adv-carousel-card__link-title">
+                  <h2 class="adv-carousel-card__title">Sector agroalimentario</h2>
+                </a>
+                <p class="adv-carousel-card__desc">Optimización de la cadena y eficiencia predictiva</p>
+                <p class="adv-carousel-card__intro">La volatilidad de las materias primas, los tiempos de caducidad y las exigencias de sostenibilidad requieren una precisión quirúrgica. Nuestra IA transforma la incertidumbre agrícola y logística en datos predictivos de alta rentabilidad.</p>
+                <ul class="adv-carousel-card__list">
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Predicción de demanda y mermas:</strong> Algoritmos avanzados para anticipar las necesidades del mercado.</span>
+                  </li>
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Cadena de frío y distribución:</strong> Sensores inteligentes para predecir anomalías operativas.</span>
+                  </li>
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Margen de compra:</strong> Análisis predictivo de costes de materias primas.</span>
+                  </li>
+                </ul>
+                <a href="soluciones/agroalimentario.html" class="adv-carousel-card__action-btn">Ver caso de uso &rarr;</a>
+              </div>
+            </article>
+
+            <article class="adv-carousel-card">
+              <a href="soluciones/transporte-logistica.html" class="adv-carousel-card__link-img" aria-label="Ver soluciones para Sector Transporte y Logística">
+                <div class="adv-carousel-card__image-wrapper">
+                  <img src="../assets/images/solutions/logistica.jpg" alt="Sector Transporte y Logística" class="adv-carousel-card__image">
+                  <div class="adv-carousel-card__image-overlay"></div>
+                </div>
+              </a>
+              <div class="adv-carousel-card__content">
+                <div class="adv-carousel-card__icon">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                </div>
+                <a href="soluciones/transporte-logistica.html" class="adv-carousel-card__link-title">
+                  <h2 class="adv-carousel-card__title">Sector transporte y logística</h2>
+                </a>
+                <p class="adv-carousel-card__desc">Inteligencia de rutas y flotas a gran escala</p>
+                <p class="adv-carousel-card__intro">En el transporte, cada kilómetro en vacío o minuto de retraso drena el flujo de caja. Aplicamos Inteligencia Artificial para llevar la eficiencia logística al límite teórico.</p>
+                <ul class="adv-carousel-card__list">
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Enrutamiento dinámico:</strong> Algoritmos que reorganizan las rutas de distribución en tiempo real.</span>
+                  </li>
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Mantenimiento predictivo:</strong> Anticipación a las averías mecánicas reduciendo el Downtime a cero.</span>
+                  </li>
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Asignación de cargas:</strong> Optimización de la capacidad de flotas para maximizar beneficio.</span>
+                  </li>
+                </ul>
+                <a href="soluciones/transporte-logistica.html" class="adv-carousel-card__action-btn">Ver caso de uso &rarr;</a>
+              </div>
+            </article>
+
+            <article class="adv-carousel-card">
+              <a href="soluciones/packaging.html" class="adv-carousel-card__link-img" aria-label="Ver soluciones para Sector Packaging">
+                <div class="adv-carousel-card__image-wrapper">
+                  <img src="../assets/images/solutions/packaging.jpg" alt="Sector Packaging" class="adv-carousel-card__image">
+                  <div class="adv-carousel-card__image-overlay"></div>
+                </div>
+              </a>
+              <div class="adv-carousel-card__content">
+                <div class="adv-carousel-card__icon">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                </div>
+                <a href="soluciones/packaging.html" class="adv-carousel-card__link-title">
+                  <h2 class="adv-carousel-card__title">Sector packaging</h2>
+                </a>
+                <p class="adv-carousel-card__desc">Innovación y eficiencia estructural en línea</p>
+                <p class="adv-carousel-card__intro">El sector del embalaje se enfrenta al reto de la personalización, los costes de materiales y la velocidad de entrega. Integramos IA en el corazón del diseño y la producción.</p>
+                <ul class="adv-carousel-card__list">
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Uso de materiales:</strong> Diseño generativo que reduce costes manteniendo la resistencia estructural.</span>
+                  </li>
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Visión Artificial:</strong> Control de calidad automatizado detectando micro-defectos a alta velocidad.</span>
+                  </li>
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Planificación de demanda:</strong> Sincronización exacta entre órdenes de compra y producción.</span>
+                  </li>
+                </ul>
+                <a href="soluciones/packaging.html" class="adv-carousel-card__action-btn">Ver caso de uso &rarr;</a>
+              </div>
+            </article>
+
+            <article class="adv-carousel-card">
+              <a href="soluciones/alojamientos-turisticos.html" class="adv-carousel-card__link-img" aria-label="Ver soluciones para Alojamientos Turísticos">
+                <div class="adv-carousel-card__image-wrapper">
+                  <img src="../assets/images/solutions/hoteles.jpg" alt="Sector Alojamientos Turísticos" class="adv-carousel-card__image">
+                  <div class="adv-carousel-card__image-overlay"></div>
+                </div>
+              </a>
+              <div class="adv-carousel-card__content">
+                <div class="adv-carousel-card__icon">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                </div>
+                <a href="soluciones/alojamientos-turisticos.html" class="adv-carousel-card__link-title">
+                  <h2 class="adv-carousel-card__title">Sector alojamientos turísticos</h2>
+                </a>
+                <p class="adv-carousel-card__desc">Automatización del registro de huéspedes (ROAT)</p>
+                <p class="adv-carousel-card__intro">La estricta normativa del ROAT obliga a registrar la identidad en plazos limitados bajo severas sanciones. Eliminamos la carga manual y la fricción con nuestro Check-in Digital 100% Autónomo.</p>
+                <ul class="adv-carousel-card__list">
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Lectura mediante IA (OCR):</strong> Extracción y validación instantánea de datos desde el DNI/Pasaporte.</span>
+                  </li>
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Contrato y Tasa Turística:</strong> Firma digital integrada y pasarela de cobro inmediato seguro.</span>
+                  </li>
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Conexión API ROAT:</strong> Envío inmediato automatizado de información blindando ante inspecciones.</span>
+                  </li>
+                </ul>
+                <a href="soluciones/alojamientos-turisticos.html" class="adv-carousel-card__action-btn">Ver caso de uso &rarr;</a>
+              </div>
+            </article>
+
+            <article class="adv-carousel-card">
+              <a href="soluciones/industrial.html" class="adv-carousel-card__link-img" aria-label="Ver soluciones para Sector Industrial">
+                <div class="adv-carousel-card__image-wrapper">
+                  <img src="../assets/images/solutions/industrial.jpg" alt="Sector Industrial" class="adv-carousel-card__image">
+                  <div class="adv-carousel-card__image-overlay"></div>
+                </div>
+              </a>
+              <div class="adv-carousel-card__content">
+                <div class="adv-carousel-card__icon">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                </div>
+                <a href="soluciones/industrial.html" class="adv-carousel-card__link-title">
+                  <h2 class="adv-carousel-card__title">Sector industrial (Industria 4.0)</h2>
+                </a>
+                <p class="adv-carousel-card__desc">Cero errores, máxima producción</p>
+                <p class="adv-carousel-card__intro">Los cuellos de botella en las plantas de fabricación paralizan el negocio. Nuestra IA sectorial introduce la automatización cognitiva en la producción industrial pesada y ligera.</p>
+                <ul class="adv-carousel-card__list">
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Rendimiento de Activos (OEE):</strong> Análisis en tiempo real para optimizar velocidad y energía.</span>
+                  </li>
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Gobernanza de Supply Chain:</strong> Modelos predictivos evitando roturas de stock críticas.</span>
+                  </li>
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Visión Computacional:</strong> Monitorización para garantizar cumplimiento estricto de estándares.</span>
+                  </li>
+                </ul>
+                <a href="soluciones/industrial.html" class="adv-carousel-card__action-btn">Ver caso de uso &rarr;</a>
+              </div>
+            </article>
+
+            <article class="adv-carousel-card">
+              <a href="soluciones/servicios.html" class="adv-carousel-card__link-img" aria-label="Ver soluciones para Sector Empresas de Servicios">
+                <div class="adv-carousel-card__image-wrapper">
+                  <img src="../assets/images/solutions/servicios.jpg" alt="Sector Empresas de Servicios" class="adv-carousel-card__image">
+                  <div class="adv-carousel-card__image-overlay"></div>
+                </div>
+              </a>
+              <div class="adv-carousel-card__content">
+                <div class="adv-carousel-card__icon">
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <a href="soluciones/servicios.html" class="adv-carousel-card__link-title">
+                  <h2 class="adv-carousel-card__title">Sector empresas de servicios</h2>
+                </a>
+                <p class="adv-carousel-card__desc">Automatización operativa y escalabilidad</p>
+                <p class="adv-carousel-card__intro">Para las compañías cuyo activo es el tiempo y el conocimiento, la IA actúa como el mayor multiplicador de productividad posible, eliminando las tareas repetitivas de gestión.</p>
+                <ul class="adv-carousel-card__list">
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Back-Office Inteligente:</strong> Procesamiento automático de contratos y facturas sin intervención humana.</span>
+                  </li>
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Asignación de Tickets:</strong> Resolución automatizada de incidencias en flujos complejos de atención.</span>
+                  </li>
+                  <li class="adv-carousel-card__item">
+                    <span class="adv-carousel-card__bullet"></span>
+                    <span><strong>Retención de Clientes:</strong> Modelos que detectan cuentas en riesgo preventivamente para acción comercial.</span>
+                  </li>
+                </ul>
+                <a href="soluciones/servicios.html" class="adv-carousel-card__action-btn">Ver caso de uso &rarr;</a>
+              </div>
+            </article>
+
           </div>
-        </article>
 
-        <article class="adv-carousel-card">
-          <a href="soluciones/transporte-logistica.html" class="adv-carousel-card__link-img" aria-label="Ver soluciones para Sector Transporte y Logística">
-            <div class="adv-carousel-card__image-wrapper">
-              <img src="../assets/images/solutions/logistica.jpg" alt="Sector Transporte y Logística" class="adv-carousel-card__image">
-              <div class="adv-carousel-card__image-overlay"></div>
-            </div>
-          </a>
-          <div class="adv-carousel-card__content">
-            <div class="adv-carousel-card__icon">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
-            </div>
-            <a href="soluciones/transporte-logistica.html" class="adv-carousel-card__link-title">
-              <h2 class="adv-carousel-card__title">Sector transporte y logística</h2>
-            </a>
-            <p class="adv-carousel-card__desc">Inteligencia de rutas y flotas a gran escala</p>
-            <p class="adv-carousel-card__intro">En el transporte, cada kilómetro en vacío o minuto de retraso drena el flujo de caja. Aplicamos Inteligencia Artificial para llevar la eficiencia logística al límite teórico.</p>
-            <ul class="adv-carousel-card__list">
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Enrutamiento dinámico:</strong> Algoritmos que reorganizan las rutas de distribución en tiempo real.</span>
-              </li>
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Mantenimiento predictivo:</strong> Anticipación a las averías mecánicas reduciendo el Downtime a cero.</span>
-              </li>
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Asignación de cargas:</strong> Optimización de la capacidad de flotas para maximizar beneficio.</span>
-              </li>
-            </ul>
-            <a href="soluciones/transporte-logistica.html" class="adv-carousel-card__action-btn">Ver caso de uso &rarr;</a>
-          </div>
-        </article>
+          <button id="carousel-next" class="adv-carousel-card__icon" aria-label="Desplazar a la derecha" 
+                  style="flex-shrink: 0; margin-bottom: 0; padding: 0; cursor: pointer; transition: all 0.3s ease;"
+                  onmouseover="this.style.transform='scale(1.1)'; this.style.borderColor='var(--color-coral)';" 
+                  onmouseout="this.style.transform='scale(1)'; this.style.borderColor='rgba(255, 107, 67, 0.2)';">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+          </button>
 
-        <article class="adv-carousel-card">
-          <a href="soluciones/packaging.html" class="adv-carousel-card__link-img" aria-label="Ver soluciones para Sector Packaging">
-            <div class="adv-carousel-card__image-wrapper">
-              <img src="../assets/images/solutions/packaging.jpg" alt="Sector Packaging" class="adv-carousel-card__image">
-              <div class="adv-carousel-card__image-overlay"></div>
-            </div>
-          </a>
-          <div class="adv-carousel-card__content">
-            <div class="adv-carousel-card__icon">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
-            </div>
-            <a href="soluciones/packaging.html" class="adv-carousel-card__link-title">
-              <h2 class="adv-carousel-card__title">Sector packaging</h2>
-            </a>
-            <p class="adv-carousel-card__desc">Innovación y eficiencia estructural en línea</p>
-            <p class="adv-carousel-card__intro">El sector del embalaje se enfrenta al reto de la personalización, los costes de materiales y la velocidad de entrega. Integramos IA en el corazón del diseño y la production.</p>
-            <ul class="adv-carousel-card__list">
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Uso de materiales:</strong> Diseño generativo que reduce costes manteniendo la resistencia estructural.</span>
-              </li>
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Visión Artificial:</strong> Control de calidad automatizado detectando micro-defectos a alta velocidad.</span>
-              </li>
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Planificación de demanda:</strong> Sincronización exacta entre órdenes de compra y producción.</span>
-              </li>
-            </ul>
-            <a href="soluciones/packaging.html" class="adv-carousel-card__action-btn">Ver caso de uso &rarr;</a>
-          </div>
-        </article>
-
-        <article class="adv-carousel-card">
-          <a href="soluciones/alojamientos-turisticos.html" class="adv-carousel-card__link-img" aria-label="Ver soluciones para Alojamientos Turísticos">
-            <div class="adv-carousel-card__image-wrapper">
-              <img src="../assets/images/solutions/hoteles.jpg" alt="Sector Alojamientos Turísticos" class="adv-carousel-card__image">
-              <div class="adv-carousel-card__image-overlay"></div>
-            </div>
-          </a>
-          <div class="adv-carousel-card__content">
-            <div class="adv-carousel-card__icon">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-            </div>
-            <a href="soluciones/alojamientos-turisticos.html" class="adv-carousel-card__link-title">
-              <h2 class="adv-carousel-card__title">Sector alojamientos turísticos</h2>
-            </a>
-            <p class="adv-carousel-card__desc">Automatización del registro de huéspedes (ROAT)</p>
-            <p class="adv-carousel-card__intro">La estricta normativa del ROAT obliga a registrar la identidad en plazos limitados bajo severas sanciones. Eliminamos la carga manual y la fricción con nuestro Check-in Digital 100% Autónomo.</p>
-            <ul class="adv-carousel-card__list">
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Lectura mediante IA (OCR):</strong> Extracción y validación instantánea de datos desde el DNI/Pasaporte.</span>
-              </li>
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Contrato y Tasa Turística:</strong> Firma digital integrada y pasarela de cobro inmediato seguro.</span>
-              </li>
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Conexión API ROAT:</strong> Envío inmediato automatizado de información blindando ante inspecciones.</span>
-              </li>
-            </ul>
-            <a href="soluciones/alojamientos-turisticos.html" class="adv-carousel-card__action-btn">Ver caso de uso &rarr;</a>
-          </div>
-        </article>
-
-        <article class="adv-carousel-card">
-          <a href="soluciones/industrial.html" class="adv-carousel-card__link-img" aria-label="Ver soluciones para Sector Industrial">
-            <div class="adv-carousel-card__image-wrapper">
-              <img src="../assets/images/solutions/industrial.jpg" alt="Sector Industrial" class="adv-carousel-card__image">
-              <div class="adv-carousel-card__image-overlay"></div>
-            </div>
-          </a>
-          <div class="adv-carousel-card__content">
-            <div class="adv-carousel-card__icon">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-            </div>
-            <a href="soluciones/industrial.html" class="adv-carousel-card__link-title">
-              <h2 class="adv-carousel-card__title">Sector industrial (Industria 4.0)</h2>
-            </a>
-            <p class="adv-carousel-card__desc">Cero errores, máxima producción</p>
-            <p class="adv-carousel-card__intro">Los cuellos de botella en las plantas de fabricación paralizan el negocio. Nuestra IA sectorial introduce la automatización cognitiva en la producción industrial pesada y ligera.</p>
-            <ul class="adv-carousel-card__list">
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Rendimiento de Activos (OEE):</strong> Análisis en tiempo real para optimizar velocidad y energía.</span>
-              </li>
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Gobernanza de Supply Chain:</strong> Modelos predictivos evitando roturas de stock críticas.</span>
-              </li>
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Visión Computacional:</strong> Monitorización para garantizar cumplimiento estricto de estándares.</span>
-              </li>
-            </ul>
-            <a href="soluciones/industrial.html" class="adv-carousel-card__action-btn">Ver caso de uso &rarr;</a>
-          </div>
-        </article>
-
-        <article class="adv-carousel-card">
-          <a href="soluciones/servicios.html" class="adv-carousel-card__link-img" aria-label="Ver soluciones para Sector Empresas de Servicios">
-            <div class="adv-carousel-card__image-wrapper">
-              <img src="../assets/images/solutions/servicios.jpg" alt="Sector Empresas de Servicios" class="adv-carousel-card__image">
-              <div class="adv-carousel-card__image-overlay"></div>
-            </div>
-          </a>
-          <div class="adv-carousel-card__content">
-            <div class="adv-carousel-card__icon">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-            </div>
-            <a href="soluciones/servicios.html" class="adv-carousel-card__link-title">
-              <h2 class="adv-carousel-card__title">Sector empresas de servicios</h2>
-            </a>
-            <p class="adv-carousel-card__desc">Automatización operativa y escalabilidad</p>
-            <p class="adv-carousel-card__intro">Para las compañías cuyo activo es el tiempo y el conocimiento, la IA actúa como el mayor multiplicador de productividad posible, eliminando las tareas repetitivas de gestión.</p>
-            <ul class="adv-carousel-card__list">
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Back-Office Inteligente:</strong> Procesamiento automático de contratos y facturas sin intervención humana.</span>
-              </li>
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Asignación de Tickets:</strong> Resolución automatizada de incidencias en flujos complejos de atención.</span>
-              </li>
-              <li class="adv-carousel-card__item">
-                <span class="adv-carousel-card__bullet"></span>
-                <span><strong>Retención de Clientes:</strong> Modelos que detectan cuentas en riesgo preventivamente para acción comercial.</span>
-              </li>
-            </ul>
-            <a href="soluciones/servicios.html" class="adv-carousel-card__action-btn">Ver caso de uso &rarr;</a>
-          </div>
-        </article>
+        </div>
 
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
-</main>
+    <section class="adv-process-closure">
+      <div class="adv-container">
 
-    <!-- FOOTER SECTION -->
+      </div>
+    </section>
+
+  </main>
+
   <footer class="footer-wrapper">
     <div class="container">
 
@@ -302,10 +341,10 @@
         <div class="footer-card">
           <h3 class="footer-heading">Plataforma</h3>
           <nav class="footer-nav">
-            <a href="#" class="footer-link">Soluciones IA</a>
+            <a href="soluciones-ia.html" class="footer-link">Soluciones IA</a>
             <a href="sistema-advantys.html" class="footer-link">Sistema Advantys</a>
             <a href="iso-42001.html" class="footer-link">Auditoría ISO 42001</a>
-            <a href="casos-exito.html" class="footer-link">Casos de éxito</a>
+            <a href="casos-exito.html" class="footer-link">Casos de Éxito</a>
             <a href="partners.html" class="footer-link">Partners</a>
           </nav>
         </div>
@@ -364,9 +403,55 @@
 
     </div>
   </footer>
-  <!-- FOOTER END -->
-
   <script src="../assets/js/main.js"></script>
-</body>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.getElementById('carousel-track');
+      const btnPrev = document.getElementById('carousel-prev');
+      const btnNext = document.getElementById('carousel-next');
+
+      if (track && btnPrev && btnNext) {
+        // Cálculo del ancho dinámico del hijo (tarjeta) y del gap (espacio) 
+        const getScrollAmount = () => {
+          const card = track.querySelector('.adv-carousel-card');
+          // 32px asume ~2rem de gap configurado en CSS
+          return card ? card.offsetWidth + 32 : 400; 
+        };
+        
+        btnPrev.addEventListener('click', () => {
+          track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+        });
+
+        btnNext.addEventListener('click', () => {
+          track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        });
+
+        // Ocultar botones en los extremos para una UX limpia
+        const updateButtonVisibility = () => {
+          if (track.scrollLeft <= 0) {
+            btnPrev.style.opacity = '0.3';
+            btnPrev.style.pointerEvents = 'none';
+          } else {
+            btnPrev.style.opacity = '1';
+            btnPrev.style.pointerEvents = 'auto';
+          }
+
+          // Se le resta 1px de margen de error de redondeo del scroll en algunos navegadores
+          if (track.scrollWidth - track.clientWidth - track.scrollLeft <= 1) {
+            btnNext.style.opacity = '0.3';
+            btnNext.style.pointerEvents = 'none';
+          } else {
+            btnNext.style.opacity = '1';
+            btnNext.style.pointerEvents = 'auto';
+          }
+        };
+
+        track.addEventListener('scroll', updateButtonVisibility);
+        // Validamos estado inicial al cargar
+        updateButtonVisibility();
+      }
+    });
+  </script>
+</body>
 </html>

@@ -2,12 +2,26 @@
    PAGE: PARTNERS PROGRAM
    ========================================= */
 
-/* --- Hero Específico de Partners --- */
+/* Acentos y Bordes */
+  --color-red: #FF3935;
+  --color-coral: #FF6B43;
+  --color-orange: #E49166;
+  --accent-coral: #FF6B43;
+  --border-thin: rgba(39, 39, 42, 0.6);
+  --border-hover: rgba(255, 107, 67, 0.3);
+  
+  /* Degradados */
+  --gradient-brand: linear-gradient(to right, var(--color-red), var(--color-coral), var(--color-orange));
+
+/* --- Hero de Partners ---
+   FIX: Hereda la estructura base de .adv-hero definida en blog.css (subpáginas).
+   Solo se añaden aquí los estilos específicos de Partners que difieren. */
 .adv-hero {
   padding: 6rem 1rem 4rem;
   background-image: radial-gradient(circle at 50% 0%, rgba(255, 107, 67, 0.08) 0%, transparent 60%);
   border-bottom: 1px solid var(--border-thin);
-  text-align: center; /* Fuerza el centrado */
+  text-align: center;
+  display: block;
 }
 
 .adv-hero__container {
@@ -19,7 +33,7 @@
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 800;
   line-height: 1.15;
-  color: var(--text-main);
+  color: var(--gradient-brand);
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
 }
@@ -44,7 +58,7 @@
 .adv-benefits { padding: 5rem 0; background-color: var(--bg-main); }
 
 .adv-section-header { text-align: center; max-width: 800px; margin: 0 auto 3rem; }
-.adv-section-title { font-size: 2rem; color: var(--text-main); margin-bottom: 1rem; font-weight: 700;}
+.adv-section-title { font-size: 2rem; color: var(--text-main); margin-bottom: 1rem; font-weight: 700; }
 .adv-section-desc { color: var(--text-secondary); line-height: 1.6; font-size: 1.05rem; }
 
 /* Modificador del Bento Grid para 2 columnas en Partners */
@@ -54,7 +68,15 @@
 
 /* --- Formulario de Partner --- */
 .adv-form-section { padding: 4rem 0 6rem; background-color: var(--bg-main); }
-.adv-form-wrapper { background: var(--bg-bento); border: 1px solid var(--border-thin); border-radius: 1.5rem; padding: 3rem 2rem; max-width: 900px; margin: 0 auto; }
+
+/* FIX: .adv-form-container no tenía estilos — se añade como contenedor de ancho
+   reducido para que el formulario no ocupe el 100% del contenedor global */
+.adv-form-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.adv-form-wrapper { background: var(--bg-bento); border: 1px solid var(--border-thin); border-radius: 1.5rem; padding: 3rem 2rem; }
 .adv-form-header { text-align: center; margin-bottom: 3rem; border-bottom: 1px solid var(--border-thin); padding-bottom: 2rem; }
 .adv-form-title { font-size: 1.75rem; color: var(--text-main); margin-bottom: 1rem; font-weight: 700; }
 .adv-form-desc { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }

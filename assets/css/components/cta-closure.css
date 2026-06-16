@@ -1,0 +1,15 @@
+/* =========================================
+   COMPONENTS: CTA DE CIERRE (CLOSURE)
+   ========================================= */
+.adv-cta-closure { padding-bottom: 6rem; }
+
+.adv-cta-closure__inner {
+  text-align: center;
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, rgba(24, 24, 27, 0.4) 0%, rgba(2, 6, 23, 0.9) 100%);
+  border: 1px solid var(--border-thin);
+}

@@ -1,5 +1,11 @@
 /* =========================================
    ADVANTYS AI - MAIN STYLESHEET
+   Orden de importación importante:
+   1. Variables primero (todas las custom properties deben existir antes de usarse)
+   2. Reset
+   3. Layout global (grid, header, footer)
+   4. Componentes reutilizables — .adv-highlight y .adv-bento-grid van aquí,
+      NO en los CSS de página para evitar duplicación
    ========================================= */
 
 /* 1. Base (Variables y Reseteos) */

@@ -17,7 +17,7 @@
     <a href="/" class="adv-logo-island">
       <img src="../assets/images/Logo advantys blanco y color.png" alt="Advantys AI Logo">
     </a>
-
+ 
     <nav class="adv-links-island">
       <div class="nav-glass-pill" id="nav-glasser"></div>
       
@@ -27,7 +27,7 @@
       <a href="pages/partners.html" class="adv-link-island">Partners</a>
       <a href="pages/blog.html" class="adv-link-island">Noticias</a>
     </nav>
-
+ 
     <div class="adv-cta-island">
       <a href="pages/area-privada.html" class="adv-btn-private">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -36,13 +36,29 @@
         Área privada
       </a>
     </div>
-
-    <button class="adv-mobile-btn-island" aria-label="Abrir menú">
+ 
+    <button class="adv-mobile-btn-island" aria-label="Abrir menú" id="mobile-menu-toggle">
       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
       
+  </div>
+ 
+  <div class="adv-mobile-menu" id="mobile-menu">
+    <button class="adv-mobile-menu__close" aria-label="Cerrar menú" id="mobile-menu-close">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <nav class="adv-mobile-menu__links">
+      <a href="pages/soluciones-ia.html" class="adv-mobile-link">Soluciones IA</a>
+      <a href="pages/iso-42001.html" class="adv-mobile-link">Auditoría ISO 42001</a>
+      <a href="pages/sistema-advantys.html" class="adv-mobile-link">Sistema Advantys</a>
+      <a href="pages/partners.html" class="adv-mobile-link">Partners</a>
+      <a href="pages/blog.html" class="adv-mobile-link">Noticias</a>
+      <a href="pages/area-privada.html" class="adv-mobile-link adv-mobile-link--cta">Área privada</a>
+    </nav>
   </div>
 </header>
   <!-- HEADER END -->
@@ -53,7 +69,7 @@
       
       <!-- Titular Principal Corporativo -->
       <h1 class="adv-hero__title">
-        Optimizando el tejido empresarial global a través de la Inteligencia Artificial.
+        Optimizando el tejido empresarial global a través de la IA.
       </h1>
       
       <!-- Manifiesto de Intenciones -->
@@ -130,40 +146,40 @@
 
     <div class="adv-dna__grid">
       <!-- Pilar 1: ROI -->
-      <article class="adv-dna__card">
-        <div class="adv-dna__icon-wrapper">
+      <article class="adv-dna__card adv-bento-card">
+        <div class="adv-dna__icon-wrapper adv-bento-card__icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
             <polyline points="16 7 22 7 22 13"></polyline>
           </svg>
         </div>
-        <h3 class="adv-dna__card-title">Obsesión por la rentabilidad (ROI)</h3>
-        <p class="adv-dna__card-text">No implantamos Inteligencia Artificial porque sea la tendencia del mercado. Desarrollamos soluciones algorítmicas con un único mandato: optimizar de forma drástica los costes operativos y multiplicar el margen de beneficio neto de nuestros clientes.</p>
+        <h3 class="adv-dna__card-title adv-bento-card__title">Obsesión por la rentabilidad (ROI)</h3>
+        <p class="adv-dna__card-text adv-bento-card__desc">No implantamos Inteligencia Artificial porque sea la tendencia del mercado. Desarrollamos soluciones algorítmicas con un único mandato: optimizar de forma drástica los costes operativos y multiplicar el margen de beneficio neto de nuestros clientes.</p>
       </article>
 
       <!-- Pilar 2: Valores e Identidad -->
-      <article class="adv-dna__card">
-        <div class="adv-dna__icon-wrapper">
+      <article class="adv-dna__card adv-bento-card">
+        <div class="adv-dna__icon-wrapper adv-bento-card__icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
             <path d="M9 12l2 2 4-4"></path>
           </svg>
         </div>
-        <h3 class="adv-dna__card-title">Identidad y valores</h3>
-        <p class="adv-dna__card-text">Sustentamos nuestro trabajo en el rigor de ingeniería absoluto, la transparencia algorítmica y la excelencia en la ejecución consultiva. Auditamos y diseñamos bajo los estándares más exigentes (ISO 42001 / AI Act) garantizando un cumplimiento normativo impecable.</p>
+        <h3 class="adv-dna__card-title adv-bento-card__title">Identidad y valores</h3>
+        <p class="adv-dna__card-text adv-bento-card__desc">Sustentamos nuestro trabajo en el rigor de ingeniería absoluto, la transparencia algorítmica y la excelencia en la ejecución consultiva. Auditamos y diseñamos bajo los estándares más exigentes (ISO 42001 / AI Act) garantizando un cumplimiento normativo impecable.</p>
       </article>
 
       <!-- Pilar 3: Perspectiva Global -->
-      <article class="adv-dna__card">
-        <div class="adv-dna__icon-wrapper">
+      <article class="adv-dna__card adv-bento-card">
+        <div class="adv-dna__icon-wrapper adv-bento-card__icon">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
             <line x1="2" y1="12" x2="22" y2="12"></line>
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
           </svg>
         </div>
-        <h3 class="adv-dna__card-title">Perspectiva Global</h3>
-        <p class="adv-dna__card-text">Diseñamos soluciones dotadas de arquitecturas de alta escalabilidad y visión internacional. Nuestros sistemas están preparados desde el primer despliegue para operar sin fricción en mercados globales, superando barreras y adaptándose a estándares transfronterizos.</p>
+        <h3 class="adv-dna__card-title adv-bento-card__title">Perspectiva Global</h3>
+        <p class="adv-dna__card-text adv-bento-card__desc">Diseñamos soluciones dotadas de arquitecturas de alta escalabilidad y visión internacional. Nuestros sistemas están preparados desde el primer despliegue para operar sin fricción en mercados globales, superando barreras y adaptándose a estándares transfronterizos.</p>
       </article>
     </div>
   </div>

@@ -3,7 +3,7 @@
    ========================================= */
 :root {
   /* Colores Base */
-  --bg-main: #090d16; /* Tono espacial unificado */
+  --bg-main: #090d16;
   --bg-bento: rgba(24, 24, 27, 0.3);
   --bg-header: rgba(2, 6, 23, 0.8);
   
@@ -11,6 +11,7 @@
   --text-main: #ffffff;
   --text-secondary: #a1a1aa;
   --text-muted: #71717a;
+  --text-sub: #a1a1aa; /* FIX: alias de --text-secondary, usado en area-privada.css */
   
   /* Acentos y Bordes */
   --color-red: #FF3935;

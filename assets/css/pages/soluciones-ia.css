@@ -6,7 +6,7 @@
   padding: 6rem 1rem 4rem;
   background-image: radial-gradient(circle at 50% 0%, rgba(255, 107, 67, 0.08) 0%, transparent 60%);
   border-bottom: 1px solid var(--border-thin);
-  text-align: center; /* Alineación forzada aquí */
+  text-align: center;
 }
 
 .adv-hero-solutions__container { 
@@ -23,14 +23,7 @@
   letter-spacing: -0.02em; 
 }
 
-/* El texto degradado */
-.adv-highlight {
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
+/* FIX: .adv-highlight eliminado aquí — centralizado en components/cards.css */
 
 .adv-hero-solutions__text { 
   font-size: 1.125rem; 
@@ -60,7 +53,23 @@
 
 .adv-carousel-card {
   flex: 0 0 100%; 
-  scroll-snap-align: center; background: var(--bg-bento); border: 1px solid var(--border-thin); border-radius: 1.5rem; display: flex; flex-direction: column; overflow: hidden; text-decoration: none; color: inherit; transition: var(--transition-smooth);
+  scroll-snap-align: center;
+  background: var(--bg-bento);
+  border: 1px solid var(--border-thin);
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+/* FIX: .adv-carousel-card__link-img — usada en el HTML pero no definida */
+.adv-carousel-card__link-img {
+  display: block;
+  text-decoration: none;
+  overflow: hidden;
 }
 
 .adv-carousel-card__image-wrapper { position: relative; width: 100%; height: 220px; overflow: hidden; background-color: #0c111d; }
@@ -68,6 +77,13 @@
 .adv-carousel-card__image-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent 40%, rgba(9, 13, 22, 0.8) 100%); pointer-events: none; }
 .adv-carousel-card__content { padding: 2.5rem; display: flex; flex-direction: column; flex-grow: 1; }
 .adv-carousel-card__icon { width: 44px; height: 44px; background: rgba(255, 107, 67, 0.1); border: 1px solid rgba(255, 107, 67, 0.2); border-radius: 0.625rem; display: flex; align-items: center; justify-content: center; color: var(--color-coral); margin-bottom: 1.25rem; transition: var(--transition-smooth); }
+
+/* FIX: .adv-carousel-card__link-title — usada en HTML pero no definida */
+.adv-carousel-card__link-title {
+  text-decoration: none;
+  color: inherit;
+}
+
 .adv-carousel-card__title { font-size: 1.35rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
 .adv-carousel-card__desc { font-size: 0.95rem; color: var(--color-coral); font-weight: 600; margin-bottom: 1.25rem; }
 .adv-carousel-card__intro { font-size: 0.925rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 2rem; flex-grow: 1; }
@@ -76,6 +92,25 @@
 .adv-carousel-card__item { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.45; }
 .adv-carousel-card__item strong { color: var(--text-main); font-weight: 600; }
 .adv-carousel-card__bullet { flex-shrink: 0; width: 5px; height: 5px; border-radius: 50%; background-color: var(--color-coral); margin-top: 0.4rem; box-shadow: 0 0 8px var(--color-coral); }
+
+/* FIX: .adv-carousel-card__action-btn — usada en HTML como CTA de cada card
+   pero no estaba definida en el CSS */
+.adv-carousel-card__action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-coral);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.adv-carousel-card__action-btn:hover {
+  color: var(--color-orange);
+  transform: translateX(3px);
+}
 
 .adv-carousel-card:hover { border-color: var(--border-hover); background: rgba(24, 24, 27, 0.4); transform: translateY(-4px); box-shadow: 0 16px 40px -15px rgba(0, 0, 0, 0.8), 0 0 30px -10px rgba(255, 107, 67, 0.15); }
 .adv-carousel-card:hover .adv-carousel-card__image { transform: scale(1.06); filter: grayscale(0%) brightness(90%); }

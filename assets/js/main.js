@@ -58,3 +58,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+// 7. Menú móvil
+document.addEventListener('DOMContentLoaded', () => {
+  const mobileToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileClose = document.getElementById('mobile-menu-close');
+
+  if (!mobileToggle || !mobileMenu) return;
+
+  function closeMenu() {
+    mobileMenu.classList.remove('is-open');
+    document.body.classList.remove('no-scroll');
+  }
+
+  mobileToggle.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('is-open');
+    document.body.classList.toggle('no-scroll', isOpen);
+  });
+
+  // Cerrar con el botón X del panel
+  if (mobileClose) {
+    mobileClose.addEventListener('click', closeMenu);
+  }
+
+  // Cerrar al pulsar un enlace
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+});

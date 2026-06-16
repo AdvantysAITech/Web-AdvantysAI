@@ -17,7 +17,7 @@
     <a href="/" class="adv-logo-island">
       <img src="../assets/images/Logo advantys blanco y color.png" alt="Advantys AI Logo">
     </a>
-
+ 
     <nav class="adv-links-island">
       <div class="nav-glass-pill" id="nav-glasser"></div>
       
@@ -27,7 +27,7 @@
       <a href="partners.html" class="adv-link-island">Partners</a>
       <a href="blog.html" class="adv-link-island">Noticias</a>
     </nav>
-
+ 
     <div class="adv-cta-island">
       <a href="area-privada.html" class="adv-btn-private">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -36,13 +36,29 @@
         Área privada
       </a>
     </div>
-
-    <button class="adv-mobile-btn-island" aria-label="Abrir menú">
+ 
+    <button class="adv-mobile-btn-island" aria-label="Abrir menú" id="mobile-menu-toggle">
       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
       
+  </div>
+ 
+  <div class="adv-mobile-menu" id="mobile-menu">
+    <button class="adv-mobile-menu__close" aria-label="Cerrar menú" id="mobile-menu-close">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <nav class="adv-mobile-menu__links">
+      <a href="soluciones-ia.html" class="adv-mobile-link">Soluciones IA</a>
+      <a href="iso-42001.html" class="adv-mobile-link">Auditoría ISO 42001</a>
+      <a href="sistema-advantys.html" class="adv-mobile-link">Sistema Advantys</a>
+      <a href="partners.html" class="adv-mobile-link">Partners</a>
+      <a href="blog.html" class="adv-mobile-link">Noticias</a>
+      <a href="area-privada.html" class="adv-mobile-link adv-mobile-link--cta">Área privada</a>
+    </nav>
   </div>
 </header>
   <!-- HEADER END -->
@@ -83,7 +99,7 @@
             <span class="adv-tag">Reglamento UE</span>
             <span class="adv-tag">Cumplimiento IA</span>
           </div>
-          <p class="adv-blog-card__summary">
+          <p class="adv-blog-card__summary adv-bento-card__desc">
             Existe la falsa creencia de que el nuevo Reglamento Europeo de IA solo afecta a multinacionales. Si lideras una PYME que utiliza herramientas de IA para gestión o ventas en Europa, debes cumplir la normativa. Analizamos los pasos clave: autoevaluación, exigencia a proveedores y gobernanza simplificada para evitar sanciones y ganar confianza.
           </p>
           <a href="#" class="adv-blog-card__link">Leer análisis completo <span>&rarr;</span></a>
@@ -108,7 +124,7 @@
             <span class="adv-tag">Eficiencia operativa</span>
             <span class="adv-tag">Sistemas globales</span>
           </div>
-          <p class="adv-blog-card__summary">
+          <p class="adv-blog-card__summary adv-bento-card__desc">
             Un estudio macroeconómico revela que las empresas pierden un 15% de rentabilidad anual por la desconexión de sus sistemas digitales. La acumulación de software inconexo genera silos de datos. Los fondos de inversión ya exigen auditorías operativas severas, penalizando la burocracia y premiando organizaciones con procesos automatizados unificados.
           </p>
           <a href="#" class="adv-blog-card__link">Leer noticia completa <span>&rarr;</span></a>
@@ -135,7 +151,7 @@
                 <span class="adv-tag">Automatización ventas</span>
                 <span class="adv-tag">Eficiencia</span>
               </div>
-              <p class="adv-blog-card__summary">
+              <p class="adv-blog-card__summary adv-bento-card__desc">
                 Una firma internacional de servicios se enfrentaba a un cuello de botella crítico: sus equipos perdían horas diarias transcribiendo datos a mano y saltando entre plataformas, provocando retrasos en las propuestas y pérdida de clientes.
               </p>
             </div>
@@ -173,7 +189,7 @@
             <span class="adv-tag">Check-in Digital</span>
             <span class="adv-tag">Hoteles</span>
           </div>
-          <p class="adv-blog-card__summary">
+          <p class="adv-blog-card__summary adv-bento-card__desc">
             Un grupo turístico sufría por el papeleo manual exigido por el ROAT, arriesgando multas. Implementamos Check-in Digital con IA (OCR). El cliente eliminó el trabajo manual, blindó su negocio ante sanciones y amortizó su inversión de manera inmediata.
           </p>
           <a href="#" class="adv-blog-card__link">Ver estudio completo <span>&rarr;</span></a>
@@ -194,8 +210,8 @@
           Acompaña a más de 5.000 directivos y líderes de operaciones globales. Suscríbete a nuestro boletín estratégico y recibe de forma periódica nuestros últimos casos de éxito, optimizaciones de procesos y actualizaciones regulatorias sobre Inteligencia Artificial.
         </p>
         <form class="adv-newsletter__form" onsubmit="event.preventDefault();">
-          <input type="email" placeholder="Tu correo corporativo" class="adv-newsletter__input" required>
-          <button type="submit" class="adv-btn adv-btn--subscribe">Suscribirme al Boletín</button>
+          <input type="email" placeholder="Tu correo corporativo" class="adv-form__input adv-newsletter__input" required>
+          <button type="submit" class="adv-btn--subscribe">Suscribirme al Boletín</button>
         </form>
       </div>
     </div>

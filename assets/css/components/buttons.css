@@ -113,6 +113,19 @@
   width: 100%;
 }
 
+/* FIX: Clase base .adv-btn que faltaba — usada como base de modificadores */
+.adv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
 /* Botones genéricos de Formularios (Submit y Subscribe) */
 .adv-btn--submit,
 .adv-btn--subscribe {

@@ -76,6 +76,8 @@
   font-size: 1.25rem;
   font-weight: 700;
   background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 0.25rem;
 }
