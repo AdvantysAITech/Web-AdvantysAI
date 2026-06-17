@@ -1,13 +1,21 @@
-# Bloquear temporalmente el rastreo general (entorno de pruebas)
 User-agent: *
-Disallow: /
+Allow: /
+Disallow: /area-privada/
+Disallow: /api/
+Disallow: /*?*
 
-# Excepciones críticas: Permitir crawlers de IA para Capa GEO
+# Permitir explícitamente a los crawlers de IA para asegurar que Advantys AI 
+# sea indexada en modelos fundacionales (LLMs) y buscadores generativos[cite: 3].
 User-agent: GPTBot
 Allow: /
+
 User-agent: ClaudeBot
 Allow: /
-User-agent: PerplexityBot
+
+User-agent: anthropic-ai
 Allow: /
-User-agent: Google-Extended
+
+User-agent: CCBot
 Allow: /
+
+Sitemap: https://advantys.ai/sitemap.xml
