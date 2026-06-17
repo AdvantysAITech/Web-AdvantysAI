@@ -242,3 +242,64 @@ body.no-scroll { overflow: hidden; }
 @media (min-width: 1024px) {
   .adv-mobile-menu { display: none; }
 }
+
+/* =========================================
+   COMPONENTS: DROPDOWN MENU (HEADER)
+   ========================================= */
+.adv-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* El enlace que actúa como disparador debe mantener la posición de la píldora JS */
+.adv-dropdown .adv-link-island {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.adv-dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(15px);
+  background: rgba(9, 13, 22, 0.95);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 0.5rem;
+  min-width: 240px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  z-index: 100;
+}
+
+/* Al poner el ratón sobre el bloque contenedor, se muestra el menú */
+.adv-dropdown:hover .adv-dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(8px);
+}
+
+.adv-dropdown-content a {
+  color: var(--text-secondary);
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.adv-dropdown-content a:hover {
+  background: rgba(255, 107, 67, 0.1);
+  color: var(--color-coral);
+  transform: translateX(4px);
+}

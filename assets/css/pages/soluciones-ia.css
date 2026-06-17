@@ -118,3 +118,68 @@
 
 @media (min-width: 768px) { .adv-carousel-card { flex: 0 0 calc(50% - 1rem); scroll-snap-align: start; } }
 @media (min-width: 1200px) { .adv-carousel-card { flex: 0 0 calc(33.333% - 1.334rem); } }
+
+/* =========================================
+   COMPONENTS: BREADCRUMBS RESPONSIVE
+   ========================================= */
+.adv-breadcrumbs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+
+  position: sticky;
+  top: 6rem;
+  z-index: 90;
+}
+
+.adv-breadcrumbs ol {
+  list-style: none;
+  display: inline-flex;
+  flex-wrap: wrap; /* Hace que salte de línea en móviles si es muy largo */
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding: 0.5rem 1.25rem;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 99px; /* Diseño en forma de píldora */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.adv-breadcrumbs li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.adv-breadcrumbs li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.3s ease;
+}
+
+.adv-breadcrumbs li a:hover {
+  color: var(--text-main);
+}
+
+.adv-breadcrumbs li:not(:last-child)::after {
+  content: '/';
+  color: rgba(255, 255, 255, 0.2);
+  margin-left: 0.25rem;
+}
+
+.adv-breadcrumbs [aria-current="page"] {
+  color: var(--color-coral);
+  font-weight: 600;
+}

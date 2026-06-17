@@ -73,7 +73,6 @@
 
 .adv-check-list { list-style: none; display: flex; flex-direction: column; gap: 1.25rem; }
 .adv-check-list li { position: relative; padding-left: 2rem; color: var(--text-main); font-size: 1.05rem; font-weight: 500; }
-.adv-check-list li::before { content: '✓'; position: absolute; left: 0; top: 0; color: var(--color-coral); font-weight: bold; font-size: 1.1rem; }
 
 /* --- METODOLOGÍA (Bento List) --- */
 .adv-methodology { padding: 4rem 0 6rem; }
@@ -94,3 +93,107 @@
 /* --- BOTTOM CTA --- */
 .adv-cta-closure { padding-bottom: 6rem; }
 .adv-cta-closure__inner { text-align: center; padding: 5rem 2rem; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; background: linear-gradient(135deg, rgba(24, 24, 27, 0.4) 0%, rgba(2, 6, 23, 0.9) 100%); border: 1px solid var(--border-thin); }
+
+/* Paleta Búnker Digital para ISO 42001 */
+.adv-bunker-section {
+  /* Puedes elegir #0B1F3A (azul marino) o #1E293B (gris pizarra) en vez del #111111 general */
+  background-color: #0B1F3A; 
+}
+
+/* Bordes simulando "certificados" para las tarjetas o bloques de esta página */
+.adv-certificate-card {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.02); /* Fondo sutil opcional */
+  border-radius: 8px; /* Ajusta según tu diseño */
+}
+
+/* Color para sellos, checks y badges de certificación */
+.adv-compliance-color {
+  color: #108981; 
+}
+
+/* =========================================
+   COMPONENTE: ACORDEÓN (Doble Audiencia)
+   ========================================= */
+.adv-accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+}
+
+.adv-accordion {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Estilo búnker/certificado */
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.adv-accordion:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-coral);
+}
+
+.adv-accordion__summary {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  list-style: none; /* Oculta la flecha por defecto en la mayoría de navegadores */
+}
+
+/* Oculta la flecha nativa en navegadores basados en WebKit (Chrome/Safari) */
+.adv-accordion__summary::-webkit-details-marker {
+  display: none;
+}
+
+.adv-accordion__header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.adv-accordion__title {
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin: 0;
+  font-weight: 600;
+}
+
+.adv-accordion__icon {
+  color: var(--color-coral);
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+/* Gira la flecha cuando el acordeón está abierto */
+.adv-accordion[open] .adv-accordion__icon {
+  transform: rotate(180deg);
+}
+
+.adv-accordion__content {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Bloque para la capa técnica (El detalle para el CTO/Auditor) */
+.adv-technical-block {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-left: 2px solid var(--color-coral);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.95rem;
+}
+
+.adv-technical-block strong {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+  font-family: var(--font-heading, monospace); /* Usa la fuente técnica si la tienes */
+}
