@@ -189,6 +189,40 @@
   font-size: 0.95rem;
 }
 
+/* --- DISCLOSURE BLOCK (doble audiencia CEO / CTO) --- */
+.adv-disclosure-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid rgba(255, 107, 67, 0.4);
+  color: var(--color-coral);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.adv-disclosure-btn:hover {
+  background: rgba(255, 107, 67, 0.08);
+  border-color: var(--color-coral);
+}
+
+.adv-disclosure-caret {
+  transition: transform 0.3s ease;
+  font-size: 0.85rem;
+}
+
+.adv-disclosure-btn[aria-expanded="true"] .adv-disclosure-caret {
+  transform: rotate(180deg);
+}
+
+.adv-disclosure-panel {
+  margin-top: 1rem;
+}
+
 .adv-technical-block strong {
   display: flex;
   align-items: center;
