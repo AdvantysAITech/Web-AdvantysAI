@@ -145,66 +145,182 @@
           <p class="adv-form-desc">Completa la evaluación de encaje técnico y de negocio. Nuestro equipo de alianzas revisará tu perfil corporativo y te contactará en 24h hábiles.</p>
         </div>
         
-        <form class="adv-form" action="#" method="POST" onsubmit="event.preventDefault();">
-          
-          <fieldset class="adv-form__fieldset">
-            <legend class="adv-form__legend">Datos Corporativos</legend>
-            
+        <form class="adv-form" id="partners-form" onsubmit="event.preventDefault();">
+
+          <!-- Step indicator -->
+          <div class="adv-steps" aria-label="Progreso del formulario">
+            <div class="adv-steps__item adv-steps__item--active" data-step="1">
+              <span class="adv-steps__num">1</span>
+              <span class="adv-steps__label">Tipo de empresa</span>
+            </div>
+            <div class="adv-steps__divider"></div>
+            <div class="adv-steps__item" data-step="2">
+              <span class="adv-steps__num">2</span>
+              <span class="adv-steps__label">Cartera y modalidad</span>
+            </div>
+            <div class="adv-steps__divider"></div>
+            <div class="adv-steps__item" data-step="3">
+              <span class="adv-steps__num">3</span>
+              <span class="adv-steps__label">Tus datos</span>
+            </div>
+          </div>
+
+          <!-- STEP 1: Tipo de empresa -->
+          <div class="adv-form-panel" id="adv-step-1">
+            <p class="adv-form-panel__question">¿Qué tipo de empresa representas?</p>
+            <p class="adv-form-panel__hint">Selecciona el perfil que mejor define tu actividad. Esto determinará el modelo de alianza más adecuado.</p>
+
+            <div class="adv-tipo-grid">
+              <button type="button" class="adv-tipo-card" data-value="consultoria">
+                <i class="ph ph-briefcase adv-tipo-card__icon"></i>
+                <span class="adv-tipo-card__title">Consultoría de Negocio</span>
+                <span class="adv-tipo-card__desc">Estrategia, transformación digital y optimización de procesos para clientes empresariales</span>
+                <span class="adv-tipo-card__tag">Ideal: Partner Referidor</span>
+              </button>
+              <button type="button" class="adv-tipo-card" data-value="agencia">
+                <i class="ph ph-code adv-tipo-card__icon"></i>
+                <span class="adv-tipo-card__title">Agencia Tecnológica / Integrador</span>
+                <span class="adv-tipo-card__desc">Desarrollo, implantación y soporte de soluciones tecnológicas para terceros</span>
+                <span class="adv-tipo-card__tag">Ideal: Partner Integrador</span>
+              </button>
+              <button type="button" class="adv-tipo-card" data-value="software">
+                <i class="ph ph-package adv-tipo-card__icon"></i>
+                <span class="adv-tipo-card__title">Fabricante de Software (ISV)</span>
+                <span class="adv-tipo-card__desc">Producto propio con base de clientes instalada que desea añadir capacidades IA</span>
+                <span class="adv-tipo-card__tag">Ideal: Partner Integrador</span>
+              </button>
+              <button type="button" class="adv-tipo-card" data-value="independiente">
+                <i class="ph ph-user-circle adv-tipo-card__icon"></i>
+                <span class="adv-tipo-card__title">Consultor Independiente</span>
+                <span class="adv-tipo-card__desc">Freelance o boutique con cartera de clientes propia en sectores industriales o de servicios</span>
+                <span class="adv-tipo-card__tag">Ideal: Partner Referidor</span>
+              </button>
+            </div>
+
+            <input type="hidden" name="tipo_empresa" id="input-tipo-empresa">
+          </div>
+
+          <!-- STEP 2: Cartera y modalidad -->
+          <div class="adv-form-panel adv-form-panel--hidden" id="adv-step-2">
+
+            <p class="adv-form-panel__question">¿Cuál es el tamaño de tu cartera de clientes?</p>
+            <p class="adv-form-panel__hint">Número aproximado de clientes activos a los que prestas servicio actualmente.</p>
+
+            <div class="adv-pill-group" role="group" aria-label="Tamaño de cartera">
+              <button type="button" class="adv-pill" data-value="micro">Menos de 10</button>
+              <button type="button" class="adv-pill" data-value="small">10 – 50</button>
+              <button type="button" class="adv-pill" data-value="medium">50 – 200</button>
+              <button type="button" class="adv-pill" data-value="large">Más de 200</button>
+            </div>
+            <input type="hidden" name="cartera" id="input-cartera">
+
+            <p class="adv-form-panel__question" style="margin-top: 2.5rem;">¿Con qué modalidad quieres colaborar?</p>
+            <p class="adv-form-panel__hint">Te sugerimos la más habitual para tu perfil, pero puedes elegir la que prefieras.</p>
+
+            <div class="adv-modalidad-grid">
+              <button type="button" class="adv-modalidad-card" data-value="referidor">
+                <div class="adv-modalidad-card__head">
+                  <i class="ph ph-handshake adv-modalidad-card__icon"></i>
+                  <span class="adv-modalidad-card__rec" id="rec-referidor" aria-hidden="true">Recomendado</span>
+                </div>
+                <span class="adv-modalidad-card__title">Partner Referidor</span>
+                <span class="adv-modalidad-card__desc">Identificas la oportunidad, nosotros ejecutamos. Ingresos recurrentes por comisión sin responsabilidad técnica.</span>
+                <ul class="adv-modalidad-card__list">
+                  <li><i class="ph ph-check"></i> Comisión % por licencia activa</li>
+                  <li><i class="ph ph-check"></i> Cero soporte técnico</li>
+                  <li><i class="ph ph-check"></i> Venta liderada por Advantys</li>
+                </ul>
+              </button>
+
+              <button type="button" class="adv-modalidad-card" data-value="integrador">
+                <div class="adv-modalidad-card__head">
+                  <i class="ph ph-wrench adv-modalidad-card__icon"></i>
+                  <span class="adv-modalidad-card__rec" id="rec-integrador" aria-hidden="true">Recomendado</span>
+                </div>
+                <span class="adv-modalidad-card__title">Partner Integrador</span>
+                <span class="adv-modalidad-card__desc">Añade el Sistema Advantys a tu stack. Facturas tus servicios, con ingeniería IA de nivel 2 de nuestra parte.</span>
+                <ul class="adv-modalidad-card__list">
+                  <li><i class="ph ph-check"></i> Acceso completo a APIs</li>
+                  <li><i class="ph ph-check"></i> Soporte de ingeniería N2</li>
+                  <li><i class="ph ph-check"></i> Control total de tu pricing</li>
+                </ul>
+              </button>
+            </div>
+            <input type="hidden" name="modalidad" id="input-modalidad">
+
+            <div class="adv-step-nav">
+              <button type="button" class="adv-step-nav__back" id="btn-back-1">
+                <i class="ph ph-arrow-left"></i> Volver
+              </button>
+              <button type="button" class="adv-step-nav__next" id="btn-next-2" disabled>
+                Continuar <i class="ph ph-arrow-right"></i>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- STEP 3: Datos y envío -->
+          <div class="adv-form-panel adv-form-panel--hidden" id="adv-step-3">
+
+            <!-- Resumen de selecciones -->
+            <div class="adv-summary" id="adv-summary" aria-label="Resumen de tu perfil">
+              <p class="adv-summary__label">Tu perfil de alianza</p>
+              <div class="adv-summary__row">
+                <span class="adv-summary__key"><i class="ph ph-buildings"></i> Tipo de empresa</span>
+                <span class="adv-summary__val" id="sum-tipo">—</span>
+              </div>
+              <div class="adv-summary__row">
+                <span class="adv-summary__key"><i class="ph ph-users-three"></i> Cartera de clientes</span>
+                <span class="adv-summary__val" id="sum-cartera">—</span>
+              </div>
+              <div class="adv-summary__row">
+                <span class="adv-summary__key"><i class="ph ph-handshake"></i> Modalidad</span>
+                <span class="adv-summary__val" id="sum-modalidad">—</span>
+              </div>
+              <div class="adv-summary__tier" id="sum-tier">
+                <i class="ph ph-star"></i>
+                <span id="sum-tier-label">—</span>
+              </div>
+            </div>
+
+            <p class="adv-form-panel__question" style="margin-top: 2rem;">¿Con quién hablamos?</p>
+            <p class="adv-form-panel__hint">Datos de contacto de la persona responsable de la alianza en tu empresa.</p>
+
             <div class="adv-form__grid">
               <div class="adv-form__group">
-                <label class="adv-form__label">Nombre completo</label>
-                <input type="text" class="adv-form__input" required placeholder="Ej. Carlos Martínez">
+                <label class="adv-form__label" for="input-nombre">Nombre completo</label>
+                <input type="text" id="input-nombre" name="nombre" class="adv-form__input" required placeholder="Ej. Carlos Martínez">
               </div>
-              
               <div class="adv-form__group">
-                <label class="adv-form__label">Email corporativo</label>
-                <input type="email" class="adv-form__input" required placeholder="carlos@tuempresa.com">
-              </div>
-
-              <div class="adv-form__group">
-                <label class="adv-form__label">Tipo de empresa</label>
-                <select class="adv-form__input adv-form__select" required>
-                  <option value="" disabled selected>Selecciona tu vertical...</option>
-                  <option value="consultoria">Consultoría de Negocio / Estrategia</option>
-                  <option value="agencia">Agencia Tecnológica / Integrador</option>
-                  <option value="software">Fabricante de Software (ISV)</option>
-                  <option value="independiente">Consultor Independiente</option>
-                </select>
-              </div>
-
-              <div class="adv-form__group">
-                <label class="adv-form__label">Modalidad de Interés</label>
-                <select class="adv-form__input adv-form__select" required>
-                  <option value="" disabled selected>¿Cómo deseas colaborar?</option>
-                  <option value="referidor">Partner referidor (Comisión %)</option>
-                  <option value="integrador">Partner integrador (Reseller tech)</option>
-                </select>
+                <label class="adv-form__label" for="input-email">Email corporativo</label>
+                <input type="email" id="input-email" name="email" class="adv-form__input" required placeholder="carlos@tuempresa.com">
               </div>
             </div>
-          </fieldset>
 
-          <fieldset class="adv-form__fieldset">
-            <div class="adv-form__group adv-form__group--full">
-              <label class="adv-form__label">Perfil de tus clientes y tamaño de cartera</label>
-              <textarea class="adv-form__input adv-form__textarea" rows="4" placeholder="Breve descripción del volumen, facturación media y sector principal de tu cartera de clientes..." required></textarea>
+            <div class="adv-form__group adv-form__group--full" style="margin-top: 1.25rem;">
+              <label class="adv-form__check-label">
+                <input type="checkbox" class="adv-form__checkbox" id="input-privacy" required>
+                Entiendo y acepto la <a href="politica-priv.html" class="adv-form__link" target="_blank">política de privacidad</a> y el tratamiento de mis datos para evaluar la alianza estratégica.
+              </label>
             </div>
-          </fieldset>
 
-          <div class="adv-form__group" style="margin-bottom: 2rem;">
-            <label class="adv-form__check-label">
-              <input type="checkbox" class="adv-form__checkbox" required>
-              Entiendo y acepto la política de privacidad y el tratamiento de mis datos para evaluar la alianza estratégica.
-            </label>
+            <div class="adv-step-nav" style="margin-top: 2rem;">
+              <button type="button" class="adv-step-nav__back" id="btn-back-2">
+                <i class="ph ph-arrow-left"></i> Volver
+              </button>
+              <button type="submit" class="adv-step-nav__next adv-step-nav__submit" id="btn-submit" disabled>
+                <i class="ph ph-paper-plane-tilt"></i> Solicitar evaluación
+              </button>
+            </div>
+
+            <!-- Estado de envío -->
+            <div class="adv-form-success adv-form-panel--hidden" id="adv-success">
+              <i class="ph ph-check-circle adv-form-success__icon"></i>
+              <p class="adv-form-success__title">Solicitud enviada</p>
+              <p class="adv-form-success__desc">Nuestro equipo de alianzas revisará tu perfil y te contactará en un plazo de 24h hábiles.</p>
+            </div>
+
           </div>
-
-          <div class="adv-tier-preview" id="tier-preview" aria-live="polite" style="margin-bottom: 2rem; padding: 1rem 1.5rem; border: 1px dashed var(--border-thin); border-radius: 0.75rem; background: rgba(0,0,0,0.2);">
-            <span class="adv-tier-preview__label" style="display: block; color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 0.5rem;">Nivel de alianza estimado según sus respuestas:</span>
-            <span class="adv-tier-badge adv-tier-badge--pending" id="tier-badge" style="color: var(--color-coral); font-weight: 700; font-size: 1.1rem;">Complete el formulario superior</span>
-          </div>
-
-          <button type="submit" class="adv-btn-primary" style="width: 100%; display: inline-flex; justify-content: center; align-items: center; padding: 1rem; background: var(--gradient-brand); color: #fff; border-radius: 0.75rem; font-weight: 600; font-size: 1rem; border: none; cursor: pointer; transition: all 0.3s ease;">
-            Solicitar evaluación de alianza
-          </button>
 
         </form>
       </div>
@@ -288,5 +404,6 @@
   </footer>
 
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/partners-form.js"></script>
 </body>
 </html>
