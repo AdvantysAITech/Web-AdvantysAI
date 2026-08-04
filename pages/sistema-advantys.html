@@ -8,6 +8,7 @@
   <meta name="googlebot" content="noindex, nofollow">
   <link href="../assets/css/main.css" rel="stylesheet">
   <link href="../assets/css/pages/sistema-advantys.css" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
 </head>
 
 <body>
@@ -103,6 +104,52 @@
   </div>
 </section>
 
+<!-- 2. BEFORE/AFTER SLIDER: El Caos vs Advantys -->
+<section class="adv-compare-section">
+  <div class="container">
+    <div class="adv-compare-header">
+      <span class="adv-badge-system">Transformación real</span>
+      <h2 class="adv-system-title adv-text-center">Del caos digital al control total</h2>
+      <p class="adv-system-subtitle adv-text-center">Arrastra para comparar cómo cambia la operativa de tu empresa con el Sistema Advantys.</p>
+    </div>
+
+    <div class="adv-compare-wrapper" id="adv-compare">
+      <!-- BEFORE PANEL -->
+      <div class="adv-compare-panel adv-compare-panel--before">
+        <div class="adv-compare-label adv-compare-label--before">
+          <i class="ph ph-warning-circle"></i> Antes — El caos digital
+        </div>
+        <div class="adv-compare-mockup">
+          <!-- BEFORE IMAGE — swap src to update -->
+          <img src="../assets/images/Logo advantys blanco y color.png" alt="Antes del Sistema Advantys" class="adv-compare-img">
+        </div>
+      </div>
+
+      <!-- AFTER PANEL -->
+      <div class="adv-compare-panel adv-compare-panel--after">
+        <div class="adv-compare-label adv-compare-label--after">
+          <i class="ph ph-check-circle"></i> Después — Sistema Advantys
+        </div>
+        <div class="adv-compare-mockup">
+          <!-- AFTER IMAGE — swap src to update -->
+          <img src="../assets/images/image.png" alt="Después — Sistema Advantys" class="adv-compare-img">
+        </div>
+      </div>
+
+      <!-- SLIDER HANDLE -->
+      <div class="adv-compare-slider" id="adv-compare-slider" role="slider" aria-label="Comparador antes y después" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" tabindex="0">
+        <div class="adv-compare-handle">
+          <i class="ph ph-arrows-left-right"></i>
+        </div>
+      </div>
+    </div>
+
+    <p class="adv-compare-hint">
+      <i class="ph ph-hand-pointing"></i> Arrastra el divisor para comparar
+    </p>
+  </div>
+</section>
+
 <!-- 2. BENTO GRID: 3 Áreas de Alto Rendimiento -->
 <section id="ecosistema" class="adv-ecosystem">
   <div class="container">
@@ -157,7 +204,87 @@
   </div>
 </section>
 
-<!-- 3. CONSULTORÍA Y ARQUITECTURA DIGITAL -->
+<!-- 3. ARQUITECTURA HUMANA: 3 PASOS -->
+<section class="adv-arch-section">
+  <div class="container">
+    <div class="adv-arch-header">
+      <span class="adv-badge-system">Cómo funciona</span>
+      <h2 class="adv-system-title adv-text-center">De tus datos a decisiones inteligentes en tres pasos</h2>
+      <p class="adv-system-subtitle adv-text-center">El Sistema Advantys conecta tu información dispersa con resultados accionables de forma automática y segura.</p>
+    </div>
+
+    <div class="adv-arch-flow">
+
+      <!-- NODE 1: Tus Datos -->
+      <div class="adv-arch-node" data-step="1">
+        <div class="adv-arch-node__step">01</div>
+        <div class="adv-arch-node__icon">
+          <i class="ph ph-database"></i>
+        </div>
+        <h3 class="adv-arch-node__title">Tus datos</h3>
+        <p class="adv-arch-node__desc">Toda la información de tu empresa, centralizada desde cualquier fuente.</p>
+        <ul class="adv-arch-node__pills">
+          <li>ERP &amp; CRM</li>
+          <li>Formularios web</li>
+          <li>Hojas de cálculo</li>
+          <li>APIs externas</li>
+        </ul>
+      </div>
+
+      <!-- CONNECTOR 1 → 2 -->
+      <div class="adv-arch-connector">
+        <div class="adv-arch-connector__track">
+          <div class="adv-arch-connector__dot"></div>
+        </div>
+        <span class="adv-arch-connector__label">Ingesta <br /> segura</span>
+      </div>
+
+      <!-- NODE 2: Motor IA (centro) -->
+      <div class="adv-arch-node adv-arch-node--center" data-step="2">
+        <div class="adv-arch-node__glow"></div>
+        <div class="adv-arch-node__step">02</div>
+        <div class="adv-arch-node__icon">
+          <i class="ph ph-brain"></i>
+        </div>
+        <h3 class="adv-arch-node__title">Motor IA Advantys</h3>
+        <p class="adv-arch-node__desc">Procesamiento, automatización y decisión inteligente en tiempo real.</p>
+        <ul class="adv-arch-node__pills">
+          <li>Scoring predictivo</li>
+          <li>Flujos automáticos</li>
+          <li>NLP &amp; clasificación</li>
+          <li>Detección de anomalías</li>
+        </ul>
+      </div>
+
+      <!-- CONNECTOR 2 → 3 -->
+      <div class="adv-arch-connector">
+        <div class="adv-arch-connector__track">
+          <div class="adv-arch-connector__dot"></div>
+        </div>
+        <span class="adv-arch-connector__label">Resultados en <br /> tiempo real</span>
+      </div>
+
+      <!-- NODE 3: Dashboard -->
+      <div class="adv-arch-node" data-step="3">
+        <div class="adv-arch-node__step">03</div>
+        <div class="adv-arch-node__icon">
+          <i class="ph ph-chart-bar"></i>
+        </div>
+        <h3 class="adv-arch-node__title">Dashboard &amp; acción</h3>
+        <p class="adv-arch-node__desc">Visibilidad total sobre tu operativa y acciones automáticas sobre cada oportunidad.</p>
+        <ul class="adv-arch-node__pills">
+          <li>KPIs en vivo</li>
+          <li>Alertas automáticas</li>
+          <li>Reportes directivos</li>
+          <li>Integraciones nativas</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 4. CONSULTORÍA Y ARQUITECTURA DIGITAL -->
 <section id="consultoria" class="adv-consulting">
   <div class="container">
     <div class="adv-consulting__wrapper adv-glass-panel">
@@ -290,6 +417,104 @@
   <!-- FOOTER END -->
 
   <script src="../assets/js/main.js"></script>
+  <script>
+  /* Arch diagram — scroll-triggered entrance */
+  (function () {
+    var flow = document.querySelector('.adv-arch-flow');
+    if (!flow) return;
+
+    /* Ordered sequence: node1, connector1, node2, connector2, node3 */
+    var sequence = [
+      flow.querySelector('[data-step="1"]'),
+      flow.querySelectorAll('.adv-arch-connector')[0],
+      flow.querySelector('[data-step="2"]'),
+      flow.querySelectorAll('.adv-arch-connector')[1],
+      flow.querySelector('[data-step="3"]'),
+    ].filter(Boolean);
+
+    var delays = [0, 200, 350, 550, 700]; /* ms offset per element */
+    var triggered = false;
+
+    function runSequence() {
+      if (triggered) return;
+      triggered = true;
+      sequence.forEach(function (el, i) {
+        setTimeout(function () { el.classList.add('is-visible'); }, delays[i]);
+      });
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          runSequence();
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+
+    observer.observe(flow);
+  })();
+  </script>
+  <script>
+  (function () {
+    var wrapper = document.getElementById('adv-compare');
+    var slider  = document.getElementById('adv-compare-slider');
+    var after   = wrapper && wrapper.querySelector('.adv-compare-panel--after');
+    if (!wrapper || !slider || !after) return;
+
+    var dragging = false;
+
+    function setPos(pct) {
+      pct = Math.max(5, Math.min(95, pct));
+      slider.style.left = pct + '%';
+      slider.setAttribute('aria-valuenow', Math.round(pct));
+      after.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+    }
+
+    function onMove(clientX) {
+      var rect = wrapper.getBoundingClientRect();
+      setPos(((clientX - rect.left) / rect.width) * 100);
+    }
+
+    slider.addEventListener('mousedown', function (e) {
+      dragging = true;
+      slider.classList.add('is-dragging');
+      e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', function (e) {
+      if (dragging) onMove(e.clientX);
+    });
+
+    document.addEventListener('mouseup', function () {
+      dragging = false;
+      slider.classList.remove('is-dragging');
+    });
+
+    slider.addEventListener('touchstart', function (e) {
+      dragging = true;
+      slider.classList.add('is-dragging');
+    }, { passive: true });
+
+    document.addEventListener('touchmove', function (e) {
+      if (dragging) onMove(e.touches[0].clientX);
+    }, { passive: true });
+
+    document.addEventListener('touchend', function () {
+      dragging = false;
+      slider.classList.remove('is-dragging');
+    });
+
+    /* keyboard: left/right arrows */
+    slider.addEventListener('keydown', function (e) {
+      var cur = parseFloat(slider.style.left) || 50;
+      if (e.key === 'ArrowLeft')  setPos(cur - 5);
+      if (e.key === 'ArrowRight') setPos(cur + 5);
+    });
+
+    setPos(50);
+  })();
+  </script>
 </body>
 
 </html>
