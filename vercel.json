@@ -32,6 +32,10 @@
     { "source": "/pages/politica-cookies.html", "destination": "/politica-cookies", "permanent": true },
     { "source": "/pages/politica-privacidad.html", "destination": "/politica-privacidad", "permanent": true },
     { "source": "/politica-priv", "destination": "/politica-privacidad", "permanent": true },
+    { "source": "/pages/educacion.html", "destination": "/educacion", "permanent": true },
+    { "source": "/pages/hospitality.html", "destination": "/hospitality", "permanent": true },
+    { "source": "/pages/residencia-fiscal.html", "destination": "/residencia-fiscal", "permanent": true },
+    { "source": "/pages/trazabilidad-agroalimentaria.html", "destination": "/trazabilidad-agroalimentaria", "permanent": true },
     { "source": "/pages/sistema-advantys.html", "destination": "/sistema-advantys", "permanent": true },
     { "source": "/pages/soluciones-ia.html", "destination": "/soluciones-ia", "permanent": true }
   ]
