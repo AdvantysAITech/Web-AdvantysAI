@@ -1,0 +1,188 @@
+/* =========================================
+   PÁGINA: POLÍTICA DE PRIVACIDAD
+   ========================================= */
+
+.adv-legal-section {
+  padding: 4rem 0 6rem;
+}
+
+.adv-legal-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.adv-legal-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  font-family: var(--font-body);
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--color-coral);
+  margin-bottom: 1.4rem;
+}
+.adv-legal-eyebrow::before {
+  content: '';
+  width: 22px; height: 2px;
+  background: var(--gradient-brand);
+  flex-shrink: 0;
+}
+
+.adv-legal-h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -.03em;
+  color: var(--text-main);
+  margin-bottom: .8rem;
+}
+
+.adv-legal-date {
+  font-family: var(--font-body);
+  font-size: .8rem;
+  color: var(--text-muted);
+  margin-bottom: 3.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-thin);
+}
+
+.adv-legal-body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: .95rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.adv-legal-body h2 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -.02em;
+  margin: 2.5rem 0 .8rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-thin);
+}
+.adv-legal-body h2:first-of-type {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.adv-legal-body p { margin-bottom: 1rem; }
+
+.adv-legal-body strong {
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.adv-legal-body ul {
+  list-style: none;
+  padding: 0; margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.adv-legal-body ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: .65rem;
+  font-size: .92rem;
+  color: var(--text-secondary);
+}
+.adv-legal-body ul li::before {
+  content: '→';
+  color: var(--color-coral);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: .85rem;
+  margin-top: .1rem;
+}
+
+.adv-legal-body a {
+  color: var(--color-coral);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.adv-legal-body a:hover { opacity: .8; }
+
+.adv-legal-info-box {
+  background: var(--bg-bento);
+  border: 1px solid var(--border-thin);
+  border-left: 3px solid var(--color-red);
+  border-radius: 8px;
+  padding: 1.5rem 1.8rem;
+  margin: 1.5rem 0 2rem;
+  font-size: .9rem;
+}
+.adv-legal-info-box p { margin: 0 0 .4rem; color: var(--text-secondary); }
+.adv-legal-info-box p:last-child { margin: 0; }
+
+.adv-legal-notice-box {
+  background: rgba(255, 57, 53, 0.06);
+  border: 1px solid rgba(255, 57, 53, 0.25);
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin: 0 0 2.5rem;
+  font-size: .85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.adv-legal-notice-box strong { color: var(--color-coral); }
+
+/* Tabla de finalidades de tratamiento */
+.adv-legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0 2rem;
+  font-size: .85rem;
+}
+.adv-legal-table th {
+  background: var(--bg-bento);
+  color: var(--text-main);
+  font-weight: 600;
+  font-family: var(--font-body);
+  padding: .9rem 1.1rem;
+  text-align: left;
+  border: 1px solid var(--border-thin);
+}
+.adv-legal-table td {
+  padding: .8rem 1.1rem;
+  border: 1px solid var(--border-thin);
+  color: var(--text-secondary);
+  vertical-align: top;
+  line-height: 1.55;
+}
+.adv-legal-table tr:nth-child(even) td {
+  background: rgba(255,255,255,.02);
+}
+.adv-legal-table-wrapper {
+  overflow-x: auto;
+  margin: 1.5rem 0 2rem;
+}
+.adv-legal-table-wrapper .adv-legal-table {
+  margin: 0;
+  min-width: 640px;
+}
+
+.adv-legal-footer-links {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-thin);
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.adv-legal-footer-links a {
+  font-family: var(--font-body);
+  font-size: .82rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+.adv-legal-footer-links a:hover { color: var(--color-coral); }
