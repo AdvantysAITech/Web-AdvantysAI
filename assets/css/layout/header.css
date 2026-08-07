@@ -76,6 +76,19 @@
 /* Ocultar antiguas líneas si quedaban restos */
 .adv-link-island::after { display: none !important; }
 
+/* Estado bloqueado (sección aún no disponible) */
+.adv-link-island--disabled,
+.adv-link-island--disabled:hover {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.adv-link-island--disabled i.ph-lock { font-size: 0.8em; }
+
 /* La pastilla Glassmorphism animada por JS */
 .nav-glass-pill {
   position: absolute;
@@ -226,6 +239,18 @@
 }
 
 .adv-mobile-link:hover { color: var(--color-coral); }
+
+/* Estado bloqueado (sección aún no disponible) */
+.adv-mobile-link--disabled,
+.adv-mobile-link--disabled:hover {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.adv-mobile-link--disabled i.ph-lock { font-size: 0.65em; }
 
 .adv-mobile-link--cta {
   margin-top: 0.5rem;
