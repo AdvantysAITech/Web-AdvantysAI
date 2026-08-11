@@ -1,0 +1,271 @@
+/* =========================================
+   PLANTILLA COMPARTIDA: PÁGINAS DE SOLUCIÓN VERTICAL
+   (Educación, Hospitality, Residencia Fiscal, Trazabilidad Agroalimentaria)
+   ========================================= */
+
+/* BREADCRUMB (píldora, igual que en soluciones-ia.css) */
+.adv-breadcrumbs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  width: 100%;
+  position: sticky;
+  top: 6rem;
+  z-index: 90;
+}
+
+.adv-breadcrumbs ol {
+  list-style: none;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding: 0.5rem 1.25rem;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 99px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.adv-breadcrumbs li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.adv-breadcrumbs li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.3s ease;
+}
+
+.adv-breadcrumbs li a:hover {
+  color: var(--text-main);
+}
+
+.adv-breadcrumbs li:not(:last-child)::after {
+  content: '/';
+  color: rgba(255, 255, 255, 0.2);
+  margin-left: 0.25rem;
+}
+
+.adv-breadcrumbs [aria-current="page"] {
+  color: var(--color-coral);
+  font-weight: 600;
+}
+
+/* HERO */
+.adv-vertical-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
+  padding: 3rem 0 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.adv-vertical-hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.adv-vertical-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5vw, 3.75rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--text-main);
+  margin: 1.2rem auto 1.5rem;
+  max-width: 20ch;
+}
+
+.adv-vertical-hero__tagline {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--color-coral);
+  margin: -1rem auto 1.5rem;
+}
+
+.adv-vertical-hero__lead {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 62ch;
+  margin: 0 auto 2.25rem;
+}
+
+.adv-vertical-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* SECCIONES GENERALES */
+.adv-vertical-section {
+  padding: 3rem 0;
+  border-top: 1px solid var(--border-thin);
+}
+.adv-vertical-section__header {
+  max-width: 780px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+.adv-vertical-section__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+}
+.adv-vertical-section__lead {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+.adv-vertical-section__lead--wide {
+  max-width: 780px;
+  margin: 1.5rem auto 0;
+  text-align: center;
+}
+
+/* Lista con marcador (problema / diferenciadores) — bloque centrado, texto alineado a la izquierda */
+.adv-vertical-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 68ch;
+  text-align: left;
+}
+.adv-vertical-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+.adv-vertical-list li::before {
+  content: '';
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: 0.5rem;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+}
+.adv-vertical-list strong { color: var(--text-main); font-weight: 600; }
+
+/* Módulos de la solución (reutiliza .adv-bento-grid / .adv-bento-card) */
+.adv-vertical-modules {
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .adv-vertical-modules {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .adv-vertical-modules {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Bloque "para quién" con roadmap geográfico */
+.adv-vertical-roadmap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  align-items: center;
+  margin-top: 1.5rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--text-main);
+}
+.adv-vertical-roadmap span {
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  background: var(--bg-bento);
+  border: 1px solid var(--border-thin);
+  font-size: 0.85rem;
+}
+.adv-vertical-roadmap i { color: var(--color-coral); }
+
+/* Precio de plan (usado en tarjetas de pricing dentro de .adv-bento-card) */
+.adv-vertical-price {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-top: auto;
+  padding-top: 1rem;
+}
+.adv-vertical-price span {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+.adv-bento-card--highlight {
+  border-color: var(--border-hover);
+  background: linear-gradient(160deg, rgba(255, 57, 53, 0.08), rgba(255, 107, 67, 0.04));
+}
+
+/* CTA final: doble audiencia (cliente / inversor) */
+.adv-vertical-cta {
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--border-thin);
+}
+.adv-vertical-cta__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+@media (min-width: 768px) {
+  .adv-vertical-cta__grid { grid-template-columns: 1fr 1fr; }
+}
+.adv-vertical-cta__card {
+  background: var(--bg-bento);
+  border: 1px solid var(--border-thin);
+  border-radius: 16px;
+  padding: 2rem;
+}
+.adv-vertical-cta__card--highlight {
+  border-color: var(--border-hover);
+  background: linear-gradient(160deg, rgba(255, 57, 53, 0.08), rgba(255, 107, 67, 0.04));
+}
+.adv-vertical-cta__card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 0.6rem;
+}
+.adv-vertical-cta__card p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}

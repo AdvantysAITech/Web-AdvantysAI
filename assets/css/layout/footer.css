@@ -72,6 +72,17 @@
   transform: translateX(4px);
 }
 
+/* Estado bloqueado (sección aún no disponible) */
+.footer-link--disabled,
+.footer-link--disabled:hover {
+  gap: 0.4rem;
+  color: var(--text-muted);
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+}
+.footer-link--disabled i.ph-lock { font-size: 0.85em; }
+
 .newsletter-form {
   display: flex;
   gap: 0.5rem;

@@ -43,7 +43,7 @@
 }
 
 /* --- Carrusel --- */
-.adv-solutions-carousel { padding: 5rem 0; background-color: var(--bg-main); overflow: hidden; }
+.adv-solutions-carousel { padding: 5rem 0; background-color: transparent; overflow: hidden; }
 .adv-carousel { position: relative; width: 100%; }
 .adv-carousel__track {
   display: flex; gap: 2rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 1rem 0 3rem 0; 

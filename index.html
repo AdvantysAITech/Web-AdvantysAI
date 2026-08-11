@@ -6,12 +6,17 @@
   <title>Advantys AI</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
-  <link href="assets/css/main.css" rel="stylesheet">
-  <link href="assets/css/pages/home.css" rel="stylesheet">
+  <link href="/assets/css/main.css" rel="stylesheet">
+  <link href="/assets/css/pages/home.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
 </head>
+
+<script src="/assets/js/footer-contact-form.js"></script>
+
 <body>
 
 <!-- HEADER SECTION -->
@@ -19,35 +24,33 @@
   <div class="adv-nav-island">
     
     <a href="/" class="adv-logo-island">
-      <img src="../assets/images/Logo advantys blanco y color.png" alt="Advantys AI Logo">
+      <img src="/assets/images/Logo advantys blanco y color.png" alt="Advantys AI Logo">
     </a>
  
     <nav class="adv-links-island">
       <div class="nav-glass-pill" id="nav-glasser"></div>
       
       <div class="adv-dropdown">
-        <a href="pages/soluciones-ia.html" class="adv-link-island">
+        <a href="/soluciones-ia" class="adv-link-island">
           Soluciones IA 
           <i class="ph ph-caret-down" style="font-size: 0.9em;"></i>
         </a>
         <div class="adv-dropdown-content">
-          <a href="pages/agroalimentario.html">Agroalimentario</a>
-          <a href="pages/transporte-logistica.html">Transporte y logística</a>
-          <a href="pages/packaging.html">Packaging</a>
-          <a href="pages/alojamientos-turisticos.html">Alojamientos turísticos</a>
-          <a href="pages/industrial.html">Sector industrial</a>
-          <a href="pages/servicios.html">Empresas de servicios</a>
+          <a href="/educacion">Advantys AI Educación</a>
+          <a href="/hospitality">Advantys AI Hospitality</a>
+          <a href="/residencia-fiscal">Advantys AI Residencia Fiscal</a>
+          <a href="/trazabilidad-agroalimentaria">Advantys AI Trazabilidad Agroalimentaria</a>
         </div>
       </div>
       
-      <a href="pages/iso-42001.html" class="adv-link-island">Auditoría ISO 42001</a>
-      <a href="pages/sistema-advantys.html" class="adv-link-island">Sistema Advantys</a>
-      <a href="pages/partners.html" class="adv-link-island">Partners</a>
-      <a href="pages/blog.html" class="adv-link-island">Noticias</a>
+      <a href="/iso-42001" class="adv-link-island">Auditoría ISO 42001</a>
+      <a href="/sistema-advantys" class="adv-link-island">Sistema Advantys</a>
+      <a href="/partners" class="adv-link-island">Partners</a>
+      <span class="adv-link-island adv-link-island--disabled" aria-disabled="true" title="Próximamente">Noticias <i class="ph ph-lock"></i></span>
     </nav>
  
     <div class="adv-cta-island">
-      <a href="pages/area-privada.html" class="adv-btn-private">
+      <a href="/area-privada" class="adv-btn-private">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.071 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path>
         </svg>
@@ -70,12 +73,12 @@
       </svg>
     </button>
     <nav class="adv-mobile-menu__links">
-      <a href="pages/soluciones-ia.html" class="adv-mobile-link">Soluciones IA</a>
-      <a href="pages/iso-42001.html" class="adv-mobile-link">Auditoría ISO 42001</a>
-      <a href="pages/sistema-advantys.html" class="adv-mobile-link">Sistema Advantys</a>
-      <a href="pages/partners.html" class="adv-mobile-link">Partners</a>
-      <a href="pages/blog.html" class="adv-mobile-link">Noticias</a>
-      <a href="pages/area-privada.html" class="adv-mobile-link adv-mobile-link--cta">Área privada</a>
+      <a href="/soluciones-ia" class="adv-mobile-link">Soluciones IA</a>
+      <a href="/iso-42001" class="adv-mobile-link">Auditoría ISO 42001</a>
+      <a href="/sistema-advantys" class="adv-mobile-link">Sistema Advantys</a>
+      <a href="/partners" class="adv-mobile-link">Partners</a>
+      <span class="adv-mobile-link adv-mobile-link--disabled" aria-disabled="true" title="Próximamente">Noticias <i class="ph ph-lock"></i></span>
+      <a href="/area-privada" class="adv-mobile-link adv-mobile-link--cta">Área privada</a>
     </nav>
   </div>
 </header>
@@ -83,75 +86,36 @@
   
   <!-- HERO CORPORATIVO [HOME-01] -->
   <section class="adv-hero">
+    <div id="advantys-globe-mount" class="adv-hero__canvas"></div>
+
     <div class="adv-hero__container">
-      
+
       <!-- Titular Principal Corporativo -->
       <h1 class="adv-hero__title">
         Optimizando el tejido empresarial global a través de la IA.
       </h1>
-      
+
       <!-- Manifiesto de Intenciones -->
       <p class="adv-hero__subtitle">
         En Advantys AI diseñamos, implantamos y auditamos soluciones de IA vertical orientadas estrictamente a la rentabilidad operativa y la eficiencia interna de corporaciones internacionales.
       </p>
-      
+
       <!-- Bloque de Conversión Estratégica (CTAs) -->
       <div class="adv-hero__actions">
         <a href="#" class="btn-glass-primary">
         Agendar consultoría estratégica
-        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
         </svg>
         </a>
-        <a href="#" class="btn-glass">
+        <a href="pages/sistema-advantys.html" class="btn-glass">
         Conocer sistema Advantys
         </a>
-        
       </div>
-      
+
     </div>
   </section>
-  <!-- ADVANTYS PLATFORM SHOWCASE -->
-<section class="adv-hero-showcase">
-  <div class="adv-hero-showcase__container">
-    
-    <!-- Halo de luz de fondo (Efecto Cyber-Enterprise) -->
-    <div class="adv-hero-showcase__glow"></div>
-
-    <!-- Contenedor Bento de la captura -->
-    <div class="adv-hero-showcase__bento">
-      <div class="adv-hero-showcase__header">
-        <div class="adv-hero-showcase__dots">
-          <span></span><span></span><span></span>
-        </div>
-        <span class="adv-hero-showcase__label">Sistema Advantys // Core Processes</span>
-      </div>
-
-      <div class="adv-hero-showcase__image-wrapper">
-        <!-- Reemplazar el src por la captura real del software -->
-        <img src="assets/images/image.png" alt="Interfaz del Sistema Advantys mostrando métricas de eficiencia y cumplimiento ISO 42001" class="adv-hero-showcase__img">
-        
-        <!-- Overlay de gradiente para fundir con el fondo y añadir profundidad -->
-        <div class="adv-hero-showcase__fade"></div>
-      </div>
-      
-      <!-- Métricas flotantes persuasivas -->
-      <div class="adv-hero-showcase__metrics">
-        <div class="adv-metric-badge">
-          <span class="adv-metric-badge__value">+300%</span>
-          <span class="adv-metric-badge__text">Eficiencia Operativa</span>
-        </div>
-        <div class="adv-metric-badge">
-          <span class="adv-metric-badge__value">ISO 42001</span>
-          <span class="adv-metric-badge__text">Auditoría Automatizada</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
   <!-- HERO END -->
 
   <!-- ADN CORPORATIVO & VISION -->
@@ -216,10 +180,10 @@
     <div class="adv-matrix__grid">
       
       <!-- Caja 1: Soluciones IA Verticales -->
-      <a href="pages/soluciones-ia.html" class="adv-matrix__card">
+      <a href="/soluciones-ia" class="adv-matrix__card">
         <h3 class="adv-matrix__title">Soluciones IA verticales</h3>
         <p class="adv-matrix__desc">
-          Arquitecturas predictivas y generativas adaptadas a las realidades operativas de sectores clave: Agro, Transporte, Packaging, Salud, Legal y Finanzas.
+          Arquitecturas predictivas y generativas para nuestras cuatro soluciones verticales: Educación, Hospitality, Residencia Fiscal y Trazabilidad Agroalimentaria.
         </p>
         <svg class="adv-matrix__arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -227,7 +191,7 @@
       </a>
 
       <!-- Caja 2: Proyectos Ad-Hoc -->
-      <a href="pages/ad-hoc.html" class="adv-matrix__card">
+      <a href="/ad-hoc" class="adv-matrix__card">
         <h3 class="adv-matrix__title">Proyectos Ad-Hoc</h3>
         <p class="adv-matrix__desc">
           Desarrollos a medida diseñados desde cero para resolver desafíos complejos de ingeniería, donde el software estándar carece de alcance y precisión.
@@ -238,7 +202,7 @@
       </a>
 
       <!-- Caja 3: Sistema Advantys -->
-      <a href="pages/sistema-advantys.html" class="adv-matrix__card">
+      <a href="/sistema-advantys" class="adv-matrix__card">
         <h3 class="adv-matrix__title">Sistema Advantys</h3>
         <p class="adv-matrix__desc">
           Nuestra metodología propia de transformación digital. Sistematizamos el conocimiento y automatizamos flujos críticos para proteger y expandir el núcleo de tu empresa.
@@ -249,7 +213,7 @@
       </a>
 
       <!-- Caja 4: Auditoría e ISO 42001 -->
-      <a href="pages/iso-42001.html" class="adv-matrix__card">
+      <a href="/iso-42001" class="adv-matrix__card">
         <h3 class="adv-matrix__title">Auditoría e ISO 42001</h3>
         <p class="adv-matrix__desc">
           Aseguramiento algorítmico y cumplimiento del reglamento UE AI Act 2024/1689. Auditoría técnica estructurada para la mitigación de riesgos y obtención de certificación.
@@ -272,7 +236,7 @@
     <header class="adv-method-stack__header">
       <h2 class="adv-method-stack__title">Así trabajamos</h2>
       <p class="adv-method-stack__subtitle">En el entorno corporativo internacional, la capacidad de adaptación y la precisión operativa no son ventajas competitivas; son requisitos de supervivencia. Nuestro enfoque combina la rigurosidad de la consultoría estratégica tradicional con la flexibilidad de las metodologías más avanzadas del mercado.</p>
-      <p class="adv-method-stack__highlight">No replicamos fórmulas genéricas. Diseñamos un camino a medida para optimizar, escalar y asegurar el futuro de su organización.</p>
+      <p class="adv-method-stack__highlight">No replicamos fórmulas genéricas. Diseñamos un camino a medida para optimizar, escalar y asegurar el futuro de tu organización.</p>
     </header>
 
     <!-- STACKING WRAPPER -->
@@ -283,7 +247,7 @@
         <div class="adv-method-stack__phase-info">
           <span class="adv-method-stack__step">Fase 01</span>
           <h3 class="adv-method-stack__card-title">Mapeo de procesos y diagnóstico profundo</h3>
-          <p class="adv-method-stack__card-desc">Antes de proponer una solución, entendemos su realidad a la perfección. Nos sumergimos en la arquitectura de su organización para visibilizar los flujos de trabajo actuales.</p>
+          <p class="adv-method-stack__card-desc">Antes de proponer una solución, entendemos tu realidad a la perfección. Nos sumergimos en la arquitectura de tu organización para visibilizar los flujos de trabajo actuales.</p>
         </div>
         <div class="adv-method-stack__list-wrapper">
           <ul class="adv-method-stack__list">
@@ -315,7 +279,7 @@
         <div class="adv-method-stack__phase-info">
           <span class="adv-method-stack__step">Fase 03</span>
           <h3 class="adv-method-stack__card-title">Implementación con metodología Agile</h3>
-          <p class="adv-method-stack__card-desc">La estrategia solo es útil si se ejecuta con éxito. Implementamos los nuevos modelos permitiendo que su organización absorba el cambio de manera orgánica, rápida y sin fricciones.</p>
+          <p class="adv-method-stack__card-desc">La estrategia solo es útil si se ejecuta con éxito. Implementamos los nuevos modelos permitiendo que tu organización absorba el cambio de manera orgánica, rápida y sin fricciones.</p>
         </div>
         <div class="adv-method-stack__list-wrapper">
           <ul class="adv-method-stack__list">
@@ -331,7 +295,7 @@
     <!-- FOOTER -->
     <footer class="adv-method-stack__footer">
       <h3 class="adv-method-stack__footer-title">¿Por qué nuestro enfoque marca la diferencia?</h3>
-      <p class="adv-method-stack__footer-text"><strong>Visión global, ejecución ágil.</strong> Fusionamos la profundidad analítica de la consultoría internacional con la velocidad del ecosistema tech. El resultado es una estructura organizacional esbelta, resiliente y preparada para el liderazgo de su sector.</p>
+      <p class="adv-method-stack__footer-text"><strong>Visión global, ejecución ágil.</strong> Fusionamos la profundidad analítica de la consultoría internacional con la velocidad del ecosistema tech. El resultado es una estructura organizacional esbelta, resiliente y preparada para el liderazgo de tu sector.</p>
     </footer>
 
   </div>
@@ -348,7 +312,7 @@
         <!-- Brand Info -->
         <div class="footer-card brand-card">
           <a href="/" class="logo-area" style="margin-bottom: 1rem;">
-            <img src="assets/images/Logo advantys blanco y color.png" alt="Advantys AI Logo" style="width: 120px; height: 120px; object-fit: contain;">
+            <img src="/assets/images/Logo advantys blanco y color.png" alt="Advantys AI Logo" style="width: 120px; height: 120px; object-fit: contain;">
           </a>
           <p class="footer-text">
             Impulsando el futuro corporativo mediante soluciones de Inteligencia Artificial seguras, éticas y alineadas con los más altos estándares de auditoría tecnológica.
@@ -359,11 +323,11 @@
         <div class="footer-card">
           <h3 class="footer-heading">Plataforma</h3>
           <nav class="footer-nav">
-            <a href="pages/soluciones-ia.html" class="footer-link">Soluciones IA</a>
-            <a href="pages/sistema-advantys.html" class="footer-link">Sistema Advantys</a>
-            <a href="pages/iso-42001.html" class="footer-link">Auditoría ISO 42001</a>
-            <a href="pages/casos-exito.html" class="footer-link">Casos de Éxito</a>
-            <a href="pages/partners.html" class="footer-link">Partners</a>
+            <a href="/soluciones-ia" class="footer-link">Soluciones IA</a>
+            <a href="/sistema-advantys" class="footer-link">Sistema Advantys</a>
+            <a href="/iso-42001" class="footer-link">Auditoría ISO 42001</a>
+            <a href="/casos-exito" class="footer-link">Casos de Éxito</a>
+            <a href="/partners" class="footer-link">Partners</a>
           </nav>
         </div>
 
@@ -371,11 +335,11 @@
         <div class="footer-card">
           <h3 class="footer-heading">Empresa</h3>
           <nav class="footer-nav">
-            <a href="pages/about-us.html" class="footer-link">Sobre Nosotros</a>
-            <a href="pages/blog.html" class="footer-link">Noticias y Blog</a>
-            <a href="pages/aviso-legal.html" class="footer-link">Aviso Legal</a>
-            <a href="pages/politica-priv.html" class="footer-link">Política de Privacidad</a>
-            <a href="pages/politica-cookies.html" class="footer-link">Política de Cookies</a>
+            <a href="/about-us" class="footer-link">Sobre Nosotros</a>
+            <span class="footer-link footer-link--disabled" aria-disabled="true" title="Próximamente">Noticias y Blog <i class="ph ph-lock"></i></span>
+            <a href="/aviso-legal" class="footer-link">Aviso Legal</a>
+            <a href="/politica-priv" class="footer-link">Política de Privacidad</a>
+            <a href="/politica-cookies" class="footer-link">Política de Cookies</a>
           </nav>
         </div>
 
@@ -402,10 +366,111 @@
 
       </div>
 
+      <!-- FOOTER: FORMULARIO DE CONTACTO GENERAL -->
+      <div class="adv-footer-contact">
+        <div class="adv-footer-contact__intro">
+          <h3 class="footer-heading">¿Hablamos?</h3>
+          <p class="footer-text">Cuéntanos qué necesitas y te contactamos en menos de 24h.</p>
+        </div>
+
+        <form id="adv-footer-contact-form" class="adv-footer-contact__form" novalidate>
+
+          <div class="adv-form__grid adv-form__grid--footer">
+
+            <div class="adv-form__group">
+              <label class="adv-form__label" for="footer-contact-name">Nombre completo</label>
+              <input type="text" id="footer-contact-name" name="name" class="adv-form__input"
+                    placeholder="Nombre y apellidos" autocomplete="name" required>
+              <span class="adv-form__error" data-error-for="footer-contact-name"></span>
+            </div>
+
+            <div class="adv-form__group">
+              <label class="adv-form__label" for="footer-contact-email">Email</label>
+              <input type="email" id="footer-contact-email" name="email" class="adv-form__input"
+                    placeholder="tunombre@empresa.com" autocomplete="email" required>
+              <span class="adv-form__error" data-error-for="footer-contact-email"></span>
+            </div>
+
+            <div class="adv-form__group">
+              <label class="adv-form__label" for="footer-contact-phone">Teléfono</label>
+              <input type="tel" id="footer-contact-phone" name="phone" class="adv-form__input"
+                    placeholder="+376 000 000" autocomplete="tel" required>
+              <span class="adv-form__error" data-error-for="footer-contact-phone"></span>
+            </div>
+
+            <div class="adv-form__group">
+              <label class="adv-form__label" for="footer-contact-company">Empresa</label>
+              <input type="text" id="footer-contact-company" name="company" class="adv-form__input"
+                    placeholder="Nombre de tu empresa" autocomplete="organization" required>
+              <span class="adv-form__error" data-error-for="footer-contact-company"></span>
+            </div>
+
+            <div class="adv-form__group">
+              <label class="adv-form__label" for="footer-contact-location">Ciudad / País</label>
+              <input type="text" id="footer-contact-location" name="location" class="adv-form__input"
+                    placeholder="Ciudad, país" autocomplete="address-level2" required>
+              <span class="adv-form__error" data-error-for="footer-contact-location"></span>
+            </div>
+
+            <div class="adv-form__group">
+              <label class="adv-form__label" for="footer-contact-line">¿Qué te interesa?</label>
+              <select id="footer-contact-line" name="line" class="adv-form__input adv-form__select" required>
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="Consultoria Tecnologica">Implantar una solución en mi empresa</option>
+                <option value="Joint Venture Builder">Invertir o participar en una spin-off de Advantys</option>
+                <option value="Auditoria ISO 42001">Auditoría ISO 42001</option>
+              </select>
+              <span class="adv-form__error" data-error-for="footer-contact-line"></span>
+            </div>
+
+          </div>
+
+          <!-- Bloque condicional — solo visible si Línea de negocio = Joint Venture Builder (RF-16) -->
+          <div class="adv-form__grid adv-form__grid--footer adv-footer-contact__jv" id="footer-contact-jv-block" hidden>
+
+            <div class="adv-form__group">
+              <label class="adv-form__label" for="footer-contact-role">Rol</label>
+              <select id="footer-contact-role" name="role" class="adv-form__input adv-form__select">
+                <option value="" disabled selected>Selecciona una opción</option>
+                <option value="Cliente Final">Quiero implantarla (Cliente Final)</option>
+                <option value="Inversor">Quiero invertir (Inversor)</option>
+              </select>
+              <span class="adv-form__error" data-error-for="footer-contact-role"></span>
+            </div>
+
+            <div class="adv-form__group">
+              <label class="adv-form__label" for="footer-contact-spinoff">Spin-off</label>
+              <select id="footer-contact-spinoff" name="spinoff" class="adv-form__input adv-form__select">
+                <option value="" disabled selected>Selecciona una spin-off</option>
+                <!-- Opciones inyectadas por footer-contact-form.js — placeholder hasta sincronizar con GHL -->
+              </select>
+              <span class="adv-form__error" data-error-for="footer-contact-spinoff"></span>
+            </div>
+
+          </div>
+
+          <button type="submit" class="adv-contact-submit adv-footer-contact__submit" id="footer-contact-submit">
+            <span class="adv-contact-submit__label">Enviar</span>
+            <svg class="adv-contact-submit__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+
+          <p class="adv-contact-legal">
+            Al enviar este formulario aceptas nuestra
+            <a href="/politica-privacidad">Política de Privacidad</a>.
+          </p>
+
+          <div class="adv-contact-feedback" id="footer-contact-feedback" role="status" aria-live="polite"></div>
+
+        </form>
+      </div>
+      <!-- FOOTER: FORMULARIO DE CONTACTO GENERAL END -->
+
       <!-- Bottom Bar -->
       <div class="footer-bottom">
         <p class="footer-copyright">
-          &copy; 2026 Advantys AI. Todos los derechos reservados.
+          &copy; 2026 Advantys Ai SL. Todos los derechos reservados.
         </p>
         
         <!-- Social Links -->
@@ -423,7 +488,215 @@
   </footer>
   <!-- FOOTER END -->
 
-  <script src="assets/js/main.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script>
+    (function () {
+      const NODE_COUNT = 150;
+      const RADIUS = 2.15;
+      const CONNECT_DIST = 0.85;
+
+      function initAdvantysGlobeHero() {
+        const mount = document.getElementById('advantys-globe-mount');
+        if (!mount || typeof THREE === 'undefined') return;
+
+        const COLOR_A = new THREE.Color('#FE4237');
+        const COLOR_B = new THREE.Color('#FE7447');
+
+        const prefersReducedMotion = window.matchMedia(
+          '(prefers-reduced-motion: reduce)'
+        ).matches;
+
+        function fibonacciSphere(samples, radius) {
+          const points = [];
+          const offset = 2 / samples;
+          const increment = Math.PI * (3 - Math.sqrt(5));
+          for (let i = 0; i < samples; i++) {
+            const y = i * offset - 1 + offset / 2;
+            const r = Math.sqrt(Math.max(0, 1 - y * y));
+            const phi = i * increment;
+            const x = Math.cos(phi) * r;
+            const z = Math.sin(phi) * r;
+            points.push(new THREE.Vector3(x * radius, y * radius, z * radius));
+          }
+          return points;
+        }
+
+        function makeGlowTexture() {
+          const size = 128;
+          const canvas = document.createElement('canvas');
+          canvas.width = size;
+          canvas.height = size;
+          const ctx = canvas.getContext('2d');
+          const gradient = ctx.createRadialGradient(
+            size / 2, size / 2, 0,
+            size / 2, size / 2, size / 2
+          );
+          gradient.addColorStop(0, 'rgba(255,255,255,1)');
+          gradient.addColorStop(0.25, 'rgba(255,190,140,0.9)');
+          gradient.addColorStop(1, 'rgba(255,120,40,0)');
+          ctx.fillStyle = gradient;
+          ctx.fillRect(0, 0, size, size);
+          return new THREE.CanvasTexture(canvas);
+        }
+
+        // --- Escena base ---
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+        camera.position.set(0, 0, 6.4);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        mount.appendChild(renderer.domElement);
+
+        const group = new THREE.Group();
+        scene.add(group);
+
+        // --- Nodos del "tejido" sobre la esfera ---
+        const nodePositions = fibonacciSphere(NODE_COUNT, RADIUS);
+        const posArray = new Float32Array(NODE_COUNT * 3);
+        const colorArray = new Float32Array(NODE_COUNT * 3);
+
+        nodePositions.forEach((p, i) => {
+          posArray[i * 3] = p.x;
+          posArray[i * 3 + 1] = p.y;
+          posArray[i * 3 + 2] = p.z;
+          const t = (p.y / RADIUS + 1) / 2;
+          const c = COLOR_A.clone().lerp(COLOR_B, t);
+          colorArray[i * 3] = c.r;
+          colorArray[i * 3 + 1] = c.g;
+          colorArray[i * 3 + 2] = c.b;
+        });
+
+        const nodeGeometry = new THREE.BufferGeometry();
+        nodeGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        nodeGeometry.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
+
+        const glowTexture = makeGlowTexture();
+        const nodeMaterial = new THREE.PointsMaterial({
+          size: 0.13,
+          map: glowTexture,
+          vertexColors: true,
+          transparent: true,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending,
+          sizeAttenuation: true,
+        });
+        const nodes = new THREE.Points(nodeGeometry, nodeMaterial);
+        group.add(nodes);
+
+        // --- Conexiones entre nodos cercanos ---
+        const linePositions = [];
+        const lineColors = [];
+        for (let i = 0; i < nodePositions.length; i++) {
+          for (let j = i + 1; j < nodePositions.length; j++) {
+            const d = nodePositions[i].distanceTo(nodePositions[j]);
+            if (d < CONNECT_DIST) {
+              linePositions.push(
+                nodePositions[i].x, nodePositions[i].y, nodePositions[i].z,
+                nodePositions[j].x, nodePositions[j].y, nodePositions[j].z
+              );
+              const t1 = (nodePositions[i].y / RADIUS + 1) / 2;
+              const c1 = COLOR_A.clone().lerp(COLOR_B, t1);
+              lineColors.push(c1.r, c1.g, c1.b, c1.r, c1.g, c1.b);
+            }
+          }
+        }
+        const lineGeometry = new THREE.BufferGeometry();
+        lineGeometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+        lineGeometry.setAttribute('color', new THREE.Float32BufferAttribute(lineColors, 3));
+        const lineMaterial = new THREE.LineBasicMaterial({
+          vertexColors: true,
+          transparent: true,
+          opacity: 0.28,
+          blending: THREE.AdditiveBlending,
+          depthWrite: false,
+        });
+        const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
+        group.add(lines);
+
+        // --- Esfera de cristal envolvente ---
+        const glassGeometry = new THREE.SphereGeometry(RADIUS * 1.03, 48, 48);
+        const glassMaterial = new THREE.MeshBasicMaterial({
+          color: 0x2a1512,
+          transparent: true,
+          opacity: 0.06,
+          side: THREE.BackSide,
+        });
+        const glass = new THREE.Mesh(glassGeometry, glassMaterial);
+        group.add(glass);
+
+        // --- Polvo ambiental de fondo ---
+        const dustCount = 200;
+        const dustPositions = new Float32Array(dustCount * 3);
+        for (let i = 0; i < dustCount; i++) {
+          dustPositions[i * 3] = (Math.random() - 0.5) * 16;
+          dustPositions[i * 3 + 1] = (Math.random() - 0.5) * 16;
+          dustPositions[i * 3 + 2] = (Math.random() - 0.5) * 10 - 3;
+        }
+        const dustGeometry = new THREE.BufferGeometry();
+        dustGeometry.setAttribute('position', new THREE.BufferAttribute(dustPositions, 3));
+        const dustMaterial = new THREE.PointsMaterial({
+          size: 0.025,
+          color: 0xffffff,
+          transparent: true,
+          opacity: 0.25,
+          map: glowTexture,
+          blending: THREE.AdditiveBlending,
+          depthWrite: false,
+        });
+        const dust = new THREE.Points(dustGeometry, dustMaterial);
+        scene.add(dust);
+
+        // --- Resize responsivo ---
+        function resize() {
+          const w = mount.clientWidth;
+          const h = mount.clientHeight;
+          camera.aspect = w / h;
+          camera.updateProjectionMatrix();
+          renderer.setSize(w, h);
+        }
+        resize();
+        const ro = new ResizeObserver(resize);
+        ro.observe(mount);
+
+        // --- Interacción con el cursor ---
+        const mouse = { x: 0, y: 0 };
+        function onMouseMove(e) {
+          mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+          mouse.y = (e.clientY / window.innerHeight) * 2 - 1;
+        }
+        window.addEventListener('mousemove', onMouseMove);
+
+        // --- Loop de animación ---
+        let autoAngle = 0;
+        let frameId;
+        function animate() {
+          if (!prefersReducedMotion) {
+            autoAngle += 0.0016;
+            group.rotation.y += (autoAngle + mouse.x * 0.25 - group.rotation.y) * 0.03;
+            group.rotation.x += (mouse.y * 0.12 - group.rotation.x) * 0.03;
+            dust.rotation.y += 0.00025;
+          }
+          renderer.render(scene, camera);
+          frameId = requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Limpieza opcional si en algún momento se quita el hero del DOM
+        window.addEventListener('beforeunload', () => {
+          cancelAnimationFrame(frameId);
+          ro.disconnect();
+          window.removeEventListener('mousemove', onMouseMove);
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAdvantysGlobeHero);
+      } else {
+        initAdvantysGlobeHero();
+      }
+    })();
+  </script>
 
 </body>
 </html>

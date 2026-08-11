@@ -26,12 +26,15 @@
 /* --- HERO ISO --- */
 .adv-hero-iso {
   position: relative;
-  padding: 6rem 0 4rem;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding: 8rem 0 6rem;
   overflow: hidden;
   background-image: radial-gradient(circle at 50% 10%, rgba(255, 107, 67, 0.08) 0%, transparent 60%);
 }
 
-.adv-hero-iso__container { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.adv-hero-iso__container { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; text-align: center; }
 
 .adv-hero-iso__title {
   font-size: clamp(2.5rem, 5vw, 4rem);

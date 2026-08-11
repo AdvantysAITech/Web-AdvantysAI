@@ -9,25 +9,24 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
   padding: 4rem 0;
   background-image: radial-gradient(circle at 50% 45%, rgba(255, 107, 67, 0.07) 0%, rgba(255, 57, 53, 0.02) 40%, rgba(9, 13, 22, 0) 70%);
 }
 
-.adv-hero::before {
-  content: '';
+.adv-hero__canvas {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
-  background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-  -webkit-mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
-  mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
-  z-index: 1; 
-  pointer-events: none; 
+  z-index: 0;
+  pointer-events: none;
+}
+
+.adv-hero__canvas canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .adv-hero__container {
@@ -46,7 +45,8 @@
 .adv-hero__title {
   font-size: clamp(2.25rem, 6vw, 4.25rem);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.25;
+  padding-bottom: 0.1em;
   letter-spacing: -0.03em;
   max-width: 1050px;
   margin: 0 0 1.5rem 0;
@@ -83,7 +83,6 @@
 
 /* --- 2. ADN CORPORATIVO --- */
 .adv-dna {
-  background-color: var(--bg-main);
   padding: 6rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -197,7 +196,6 @@
 
 /* --- 3. MATRIZ DE CAPACIDADES --- */
 .adv-matrix {
-  background-color: var(--bg-main);
   padding: 6rem 1.5rem;
   display: flex;
   justify-content: center;
@@ -325,7 +323,6 @@
 
 /* --- 4. METODOLOGÍA (SCROLL STACKING) --- */
 .adv-method-stack {
-  background-color: var(--bg-main);
   padding: 6rem 1.5rem;
   position: relative;
 }
@@ -482,7 +479,6 @@
   position: relative;
   width: 100%;
   padding: 4rem 1rem 8rem 1rem;
-  background-color: var(--bg-main);
   display: flex;
   justify-content: center;
   overflow: hidden;

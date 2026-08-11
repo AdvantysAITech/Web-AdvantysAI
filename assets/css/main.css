@@ -22,3 +22,7 @@
 @import url('components/cards.css');
 @import url('components/forms.css');
 @import url('components/badges.css');
+
+@import url('components/hero-backgrounds.css');
+@import url('components/footer-contact.css');
+@import url('components/vertical-cta-form.css');

@@ -1,0 +1,484 @@
+/* =========================================
+   COMPONENTE: FONDOS ANIMADOS DE HERO
+   Convertidos desde los diseños .jsx (isoBg, edu, hosp, traz, fiscal)
+   Cada variante es una capa 100% CSS/SVG, sin JS.
+   Uso: primer <div> hijo dentro de una sección con position:relative
+   y overflow:hidden. El resto del contenido de la sección necesita
+   position:relative; z-index:1 para quedar por encima de esta capa.
+   ========================================= */
+
+.adv-herobg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Cuadrícula técnica + viñeta radial, compartida por Edu/Hosp/Fiscal/Traz --- */
+.adv-herobg__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+.adv-herobg__grid--accent {
+  background-image:
+    linear-gradient(rgba(254, 116, 71, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(254, 116, 71, 0.18) 1px, transparent 1px);
+}
+.adv-herobg__vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 0%, var(--bg-main) 75%);
+}
+.adv-herobg__vignette--wide {
+  background: radial-gradient(ellipse at center, transparent 0%, var(--bg-main) 85%);
+}
+
+/* =========================================
+   1) ISO 42001 — radar + orbes + partículas
+   ========================================= */
+@keyframes advbgRadarSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes advbgOrbDriftA { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(40px,-30px) scale(1.08); } }
+@keyframes advbgOrbDriftB { 0%, 100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-50px,25px) scale(1.05); } }
+@keyframes advbgParticleRise { 0% { transform: translateY(0); opacity:0; } 10% { opacity:0.5; } 90% { opacity:0.5; } 100% { transform: translateY(-120px); opacity:0; } }
+
+.adv-herobg--iso .adv-herobg__grid-plain {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+.adv-herobg--iso .adv-herobg__radar {
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  width: 1100px;
+  height: 1100px;
+  transform: translateX(-50%);
+  -webkit-mask-image: radial-gradient(circle, black 0%, transparent 62%);
+  mask-image: radial-gradient(circle, black 0%, transparent 62%);
+}
+.adv-herobg--iso .adv-herobg__radar-sweep {
+  width: 100%;
+  height: 100%;
+  background: conic-gradient(from 0deg, transparent 0deg, rgba(254,116,71,0.22) 12deg, transparent 45deg, transparent 360deg);
+  animation: advbgRadarSpin 9s linear infinite;
+}
+.adv-herobg--iso .adv-herobg__orb-a {
+  position: absolute; top: 10%; left: 18%; width: 380px; height: 380px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(254,66,55,0.22) 0%, transparent 70%);
+  filter: blur(40px);
+  animation: advbgOrbDriftA 12s ease-in-out infinite;
+}
+.adv-herobg--iso .adv-herobg__orb-b {
+  position: absolute; top: 5%; right: 15%; width: 420px; height: 420px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(254,116,71,0.2) 0%, transparent 70%);
+  filter: blur(46px);
+  animation: advbgOrbDriftB 15s ease-in-out infinite;
+}
+.adv-herobg--iso .adv-herobg__particle {
+  position: absolute;
+  bottom: 5%;
+  border-radius: 50%;
+  background: #FE7447;
+  animation-name: advbgParticleRise;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+/* 16 partículas — valores calculados a partir de left=(i*6.3)%100, delay=(i*0.7)%8, duration=7+(i%5), size=2+(i%3) */
+.adv-herobg--iso .adv-herobg__particle:nth-child(1)  { left: 0%;    width: 2px; height: 2px; animation-duration: 7s;  animation-delay: 0s; }
+.adv-herobg--iso .adv-herobg__particle:nth-child(2)  { left: 6.3%;  width: 3px; height: 3px; animation-duration: 8s;  animation-delay: 0.7s; }
+.adv-herobg--iso .adv-herobg__particle:nth-child(3)  { left: 12.6%; width: 4px; height: 4px; animation-duration: 9s;  animation-delay: 1.4s; }
+.adv-herobg--iso .adv-herobg__particle:nth-child(4)  { left: 18.9%; width: 2px; height: 2px; animation-duration: 10s; animation-delay: 2.1s; }
+.adv-herobg--iso .adv-herobg__particle:nth-child(5)  { left: 25.2%; width: 3px; height: 3px; animation-duration: 11s; animation-delay: 2.8s; }
+.adv-herobg--iso .adv-herobg__particle:nth-child(6)  { left: 31.5%; width: 4px; height: 4px; animation-duration: 7s;  animation-delay: 3.5s; }
+.adv-herobg--iso .adv-herobg__particle:nth-child(7)  { left: 37.8%; width: 2px; height: 2px; animation-duration: 8s;  animation-delay: 4.2s; }
+.adv-herobg--iso .adv-herobg__particle:nth-child(8)  { left: 44.1%; width: 3px; height: 3px; animation-duration: 9s;  animation-delay: 4.9s; }
+.adv-herobg--iso .adv-herobg__particle:nth-child(9)  { left: 50.4%; width: 4px; height: 4px; animation-duration: 10s; animation-delay: 5.6s; }
+.adv-herobg--iso .adv-herobg__particle:nth-child(10) { left: 56.7%; width: 2px; height: 2px; animation-duration: 11s; animation-delay: 6.3s; }
+.adv-herobg--iso .adv-herobg__particle:nth-child(11) { left: 63%;   width: 3px; height: 3px; animation-duration: 7s;  animation-delay: 7s; }
+.adv-herobg--iso .adv-herobg__particle:nth-child(12) { left: 69.3%; width: 4px; height: 4px; animation-duration: 8s;  animation-delay: 7.7s; }
+.adv-herobg--iso .adv-herobg__particle:nth-child(13) { left: 75.6%; width: 2px; height: 2px; animation-duration: 9s;  animation-delay: 0.4s; }
+.adv-herobg--iso .adv-herobg__particle:nth-child(14) { left: 81.9%; width: 3px; height: 3px; animation-duration: 10s; animation-delay: 1.1s; }
+.adv-herobg--iso .adv-herobg__particle:nth-child(15) { left: 88.2%; width: 4px; height: 4px; animation-duration: 11s; animation-delay: 1.8s; }
+.adv-herobg--iso .adv-herobg__particle:nth-child(16) { left: 94.5%; width: 2px; height: 2px; animation-duration: 7s;  animation-delay: 2.5s; }
+
+/* =========================================
+   2a) EDUCACIÓN — grafo de nodos trazando conexiones + barrido de auditoría
+   ========================================= */
+@keyframes advbgNodePulse {
+  0%, 100% { opacity: 0.35; r: 2.5px; }
+  50%      { opacity: 1;    r: 4px; }
+}
+@keyframes advbgLineFlow {
+  to { stroke-dashoffset: -40; }
+}
+@keyframes advbgScanSweep {
+  0%   { transform: translateY(-10%); opacity: 0; }
+  10%  { opacity: 0.55; }
+  90%  { opacity: 0.55; }
+  100% { transform: translateY(110%); opacity: 0; }
+}
+
+.adv-herobg--edu .adv-herobg__graph {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.adv-herobg--edu .adv-herobg__graph-lines line {
+  stroke: #FE7447;
+  stroke-width: 1;
+  fill: none;
+  opacity: 0.55;
+  stroke-dasharray: 6 5;
+  animation-name: advbgLineFlow;
+  animation-duration: 2.6s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.adv-herobg--edu .adv-herobg__graph-nodes circle {
+  fill: #FE7447;
+  animation-name: advbgNodePulse;
+  animation-duration: 3.4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.adv-herobg--edu .adv-herobg__scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(180deg, transparent, rgba(254,116,71,0.14), transparent);
+  animation: advbgScanSweep 7s ease-in-out infinite;
+}
+
+/* --- Delays individuales de líneas (17) y nodos (15) --- */
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(1)  { animation-delay: 0s; }
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(2)  { animation-delay: 0.3s; }
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(3)  { animation-delay: 0.6s; }
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(4)  { animation-delay: 0.9s; }
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(5)  { animation-delay: 0.2s; }
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(6)  { animation-delay: 0.5s; }
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(7)  { animation-delay: 0.8s; }
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(8)  { animation-delay: 1.1s; }
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(9)  { animation-delay: 0.15s; }
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(10) { animation-delay: 0.45s; }
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(11) { animation-delay: 0.75s; }
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(12) { animation-delay: 0.25s; }
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(13) { animation-delay: 0.55s; }
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(14) { animation-delay: 0.85s; }
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(15) { animation-delay: 1.15s; }
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(16) { animation-delay: 0.35s; }
+.adv-herobg--edu .adv-herobg__graph-lines line:nth-child(17) { animation-delay: 0.65s; }
+
+.adv-herobg--edu .adv-herobg__graph-nodes circle:nth-child(1)  { animation-delay: 0s; }
+.adv-herobg--edu .adv-herobg__graph-nodes circle:nth-child(2)  { animation-delay: 0.4s; }
+.adv-herobg--edu .adv-herobg__graph-nodes circle:nth-child(3)  { animation-delay: 0.8s; }
+.adv-herobg--edu .adv-herobg__graph-nodes circle:nth-child(4)  { animation-delay: 1.2s; }
+.adv-herobg--edu .adv-herobg__graph-nodes circle:nth-child(5)  { animation-delay: 1.6s; }
+.adv-herobg--edu .adv-herobg__graph-nodes circle:nth-child(6)  { animation-delay: 0.2s; }
+.adv-herobg--edu .adv-herobg__graph-nodes circle:nth-child(7)  { animation-delay: 0.6s; }
+.adv-herobg--edu .adv-herobg__graph-nodes circle:nth-child(8)  { animation-delay: 1s; }
+.adv-herobg--edu .adv-herobg__graph-nodes circle:nth-child(9)  { animation-delay: 1.4s; }
+.adv-herobg--edu .adv-herobg__graph-nodes circle:nth-child(10) { animation-delay: 1.8s; }
+.adv-herobg--edu .adv-herobg__graph-nodes circle:nth-child(11) { animation-delay: 0.1s; }
+.adv-herobg--edu .adv-herobg__graph-nodes circle:nth-child(12) { animation-delay: 0.5s; }
+.adv-herobg--edu .adv-herobg__graph-nodes circle:nth-child(13) { animation-delay: 0.9s; }
+.adv-herobg--edu .adv-herobg__graph-nodes circle:nth-child(14) { animation-delay: 1.3s; }
+.adv-herobg--edu .adv-herobg__graph-nodes circle:nth-child(15) { animation-delay: 1.7s; }
+
+/* =========================================
+   2b) HOSPITALITY — ficha de check-in digitalizándose:
+       escáner de documento + firma que se dibuja sola + sello de
+       validación + pulso de envío hacia el Govern d'Andorra
+   ========================================= */
+@keyframes advbgHospScan {
+  0%   { transform: translateY(0);      opacity: 0; }
+  8%   { opacity: 0.9; }
+  92%  { opacity: 0.9; }
+  100% { transform: translateY(178px); opacity: 0; }
+}
+@keyframes advbgHospSign {
+  0%   { stroke-dashoffset: 150; opacity: 0; }
+  8%   { opacity: 1; }
+  45%  { stroke-dashoffset: 0; }
+  75%  { stroke-dashoffset: 0; opacity: 1; }
+  90%  { opacity: 0; }
+  100% { stroke-dashoffset: 150; opacity: 0; }
+}
+@keyframes advbgHospCheck {
+  0%, 50%  { opacity: 0; transform: scale(0.6); }
+  58%      { opacity: 1; transform: scale(1.15); }
+  66%      { transform: scale(1); }
+  88%      { opacity: 1; transform: scale(1); }
+  96%, 100% { opacity: 0; transform: scale(0.7); }
+}
+@keyframes advbgHospDot {
+  0%, 100% { opacity: 0; }
+  15%, 35% { opacity: 1; }
+  45%      { opacity: 0; }
+}
+
+.adv-herobg--hosp .adv-herobg__checkin {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.adv-herobg--hosp .adv-herobg__send-line {
+  stroke: #FE7447;
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  opacity: 0.22;
+}
+.adv-herobg--hosp .adv-herobg__send-dots circle {
+  fill: #FE9066;
+  animation-name: advbgHospDot;
+  animation-duration: 2.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.adv-herobg--hosp .adv-herobg__send-dots circle:nth-child(1) { animation-delay: 0s; }
+.adv-herobg--hosp .adv-herobg__send-dots circle:nth-child(2) { animation-delay: 0.3s; }
+.adv-herobg--hosp .adv-herobg__send-dots circle:nth-child(3) { animation-delay: 0.6s; }
+.adv-herobg--hosp .adv-herobg__send-dots circle:nth-child(4) { animation-delay: 0.9s; }
+.adv-herobg--hosp .adv-herobg__send-dots circle:nth-child(5) { animation-delay: 1.2s; }
+
+.adv-herobg--hosp .adv-herobg__card {
+  fill: rgba(254, 116, 71, 0.05);
+  stroke: #FE7447;
+  stroke-width: 1;
+  opacity: 0.5;
+}
+.adv-herobg--hosp .adv-herobg__card-photo {
+  fill: rgba(254, 116, 71, 0.14);
+}
+.adv-herobg--hosp .adv-herobg__card-field {
+  fill: #FE7447;
+  opacity: 0.3;
+}
+.adv-herobg--hosp .adv-herobg__card-field--wide {
+  opacity: 0.16;
+}
+
+.adv-herobg--hosp .adv-herobg__signature {
+  fill: none;
+  stroke: #FE9066;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: advbgHospSign 6s ease-in-out infinite;
+}
+
+.adv-herobg--hosp .adv-herobg__scan {
+  fill: rgba(254, 144, 102, 0.6);
+  animation: advbgHospScan 3s ease-in-out infinite;
+}
+
+.adv-herobg--hosp .adv-herobg__check {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: advbgHospCheck 6s ease-in-out infinite;
+}
+.adv-herobg--hosp .adv-herobg__check circle {
+  fill: #090d16;
+  stroke: #FE7447;
+  stroke-width: 1.5;
+}
+.adv-herobg--hosp .adv-herobg__check path {
+  fill: none;
+  stroke: #FE9066;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* =========================================
+   3) TRAZABILIDAD AGROALIMENTARIA — recorrido de checkpoints:
+      línea de trazabilidad ascendente con puntos que se
+      iluminan en secuencia, de origen a exportación
+   ========================================= */
+@keyframes advbgTrazLineFlow {
+  to { stroke-dashoffset: -30; }
+}
+@keyframes advbgTrazNodeLight {
+  0%, 100% { opacity: 0.25; }
+  12%      { opacity: 1; }
+  24%      { opacity: 0.4; }
+}
+
+.adv-herobg--traz .adv-herobg__path {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.adv-herobg--traz .adv-herobg__path-line {
+  fill: none;
+  stroke: #FE7447;
+  stroke-width: 1.2;
+  stroke-dasharray: 5 5;
+  opacity: 0.3;
+  animation: advbgTrazLineFlow 3s linear infinite;
+}
+.adv-herobg--traz .adv-herobg__path-nodes circle {
+  fill: #FE9066;
+  animation-name: advbgTrazNodeLight;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.adv-herobg--traz .adv-herobg__path-nodes circle:nth-child(1) { animation-delay: 0s; }
+.adv-herobg--traz .adv-herobg__path-nodes circle:nth-child(2) { animation-delay: 0.8s; }
+.adv-herobg--traz .adv-herobg__path-nodes circle:nth-child(3) { animation-delay: 1.6s; }
+.adv-herobg--traz .adv-herobg__path-nodes circle:nth-child(4) { animation-delay: 2.4s; }
+.adv-herobg--traz .adv-herobg__path-nodes circle:nth-child(5) { animation-delay: 3.2s; }
+
+/* =========================================
+   4) RESIDENCIA FISCAL — patrón guilloché + sello de visado
+      + escáner biométrico de huella dactilar
+   ========================================= */
+@keyframes advbgStamp {
+  0%   { transform: scale(1.5) rotate(-10deg); opacity: 0; }
+  6%   { opacity: 1; }
+  14%  { transform: scale(0.92) rotate(-6deg); }
+  20%  { transform: scale(1.04) rotate(-8deg); }
+  26%  { transform: scale(1) rotate(-7deg); }
+  80%  { transform: scale(1) rotate(-7deg); opacity: 1; }
+  92%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes advbgInkRing {
+  0%, 18% { transform: scale(0.6); opacity: 0; }
+  24%     { transform: scale(1); opacity: 0.6; }
+  40%     { transform: scale(1.35); opacity: 0; }
+  100%    { opacity: 0; }
+}
+@keyframes advbgGuillocheDrift {
+  0%, 100% { transform: translate(-50%, -50%) translateX(0); }
+  50%      { transform: translate(-50%, -50%) translateX(6px); }
+}
+.adv-herobg--fiscal .adv-herobg__guilloche {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 420px;
+  height: 260px;
+  transform: translate(-50%, -50%);
+  animation: advbgGuillocheDrift 10s ease-in-out infinite;
+}
+.adv-herobg--fiscal .adv-herobg__guilloche path {
+  fill: none;
+  stroke: #FE7447;
+  stroke-width: 0.7;
+  opacity: 0.08;
+}
+.adv-herobg--fiscal .adv-herobg__stamp-wrap {
+  position: absolute;
+  bottom: 6%;
+  right: 5%;
+  width: 108px;
+  height: 108px;
+}
+.adv-herobg--fiscal .adv-herobg__ink-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #FE7447;
+  animation: advbgInkRing 5s ease-out infinite;
+}
+.adv-herobg--fiscal .adv-herobg__stamp-svg {
+  animation: advbgStamp 5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+/* --- Huella dactilar + escáner biométrico (verificación en el propio dispositivo) --- */
+@keyframes advbgFpScan {
+  0%   { transform: translateY(0);   opacity: 0; }
+  8%   { opacity: 0.9; }
+  92%  { opacity: 0.9; }
+  100% { transform: translateY(86px); opacity: 0; }
+}
+@keyframes advbgFpRing {
+  0%, 55%  { opacity: 0; transform: scale(0.7); }
+  62%      { opacity: 0.7; transform: scale(1); }
+  78%      { opacity: 0; transform: scale(1.35); }
+  100%     { opacity: 0; }
+}
+@keyframes advbgFpCheck {
+  0%, 55%  { opacity: 0; transform: scale(0.6); }
+  63%      { opacity: 1; transform: scale(1.1); }
+  70%      { transform: scale(1); }
+  90%      { opacity: 1; }
+  98%, 100% { opacity: 0; transform: scale(0.7); }
+}
+
+.adv-herobg--fiscal .adv-herobg__fingerprint-wrap {
+  position: absolute;
+  top: 8%;
+  left: 6%;
+  width: 96px;
+  height: 96px;
+}
+
+@media (max-width: 767px) {
+  .adv-herobg--fiscal .adv-herobg__fingerprint-wrap {
+    top: 2%;
+    left: 2%;
+    width: 64px;
+    height: 64px;
+    opacity: 0.5;
+  }
+}
+
+.adv-herobg--fiscal .adv-herobg__fp-bracket {
+  fill: none;
+  stroke: #FE7447;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  opacity: 0.6;
+}
+.adv-herobg--fiscal .adv-herobg__fp-ridge {
+  fill: none;
+  stroke: #FE9066;
+  stroke-width: 2;
+  stroke-linecap: round;
+  opacity: 0.55;
+}
+.adv-herobg--fiscal .adv-herobg__fp-ring {
+  fill: none;
+  stroke: #FE9066;
+  stroke-width: 1.5;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: advbgFpRing 4.8s ease-in-out infinite;
+}
+.adv-herobg--fiscal .adv-herobg__fp-scan {
+  fill: rgba(254, 144, 102, 0.8);
+  animation: advbgFpScan 4.8s ease-in-out infinite;
+}
+.adv-herobg--fiscal .adv-herobg__fp-check {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: advbgFpCheck 4.8s ease-in-out infinite;
+}
+.adv-herobg--fiscal .adv-herobg__fp-check circle {
+  fill: #090d16;
+  stroke: #FE7447;
+  stroke-width: 1.5;
+}
+.adv-herobg--fiscal .adv-herobg__fp-check path {
+  fill: none;
+  stroke: #FE9066;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
