@@ -108,30 +108,24 @@
     <div class="adv-compare-header">
       <span class="adv-badge-system">Transformación real</span>
       <h2 class="adv-system-title adv-text-center">Del caos digital al control total</h2>
-      <p class="adv-system-subtitle adv-text-center">Arrastra para comparar cómo cambia la operativa de tu empresa con el Sistema Advantys.</p>
+      <p class="adv-system-subtitle adv-text-center">Arrastra para comparar cómo cambia el proceso completo de captación, ventas y atención al cliente con el Sistema Advantys.</p>
     </div>
 
     <div class="adv-compare-wrapper" id="adv-compare">
-      <!-- BEFORE PANEL -->
-      <div class="adv-compare-panel adv-compare-panel--before">
-        <div class="adv-compare-label adv-compare-label--before">
-          <i class="ph ph-warning-circle"></i> Antes — El caos digital
-        </div>
-        <div class="adv-compare-mockup">
-          <!-- BEFORE IMAGE — swap src to update -->
-          <img src="/assets/images/Logo advantys blanco y color.png" alt="Antes del Sistema Advantys" class="adv-compare-img">
-        </div>
-      </div>
-
-      <!-- AFTER PANEL -->
+      <!-- AFTER PANEL (diagrama de flujo ordenado, capa base) -->
       <div class="adv-compare-panel adv-compare-panel--after">
         <div class="adv-compare-label adv-compare-label--after">
           <i class="ph ph-check-circle"></i> Después — Sistema Advantys
         </div>
-        <div class="adv-compare-mockup">
-          <!-- AFTER IMAGE — swap src to update -->
-          <img src="/assets/images/image.png" alt="Después — Sistema Advantys" class="adv-compare-img">
+        <div class="adv-flow" id="adv-flow"><!-- generado por JS --></div>
+      </div>
+
+      <!-- BEFORE PANEL (caos, capa recortada por el slider) -->
+      <div class="adv-compare-panel adv-compare-panel--before">
+        <div class="adv-compare-label adv-compare-label--before">
+          <i class="ph ph-warning-circle"></i> Antes — El caos digital
         </div>
+        <div class="adv-chaos" id="adv-chaos"><!-- generado por JS --></div>
       </div>
 
       <!-- SLIDER HANDLE -->
@@ -415,6 +409,230 @@
   <!-- FOOTER END -->
 
   <script src="/assets/js/main.js"></script>
+
+  <script>
+  (function () {
+    var NODES = [
+      { id: "formulario", label: "Formulario Web", phase: 0 },
+      { id: "ads", label: "Anuncios (Ads)", phase: 0 },
+      { id: "whatsapp", label: "WhatsApp", phase: 0 },
+      { id: "llamadas", label: "Llamadas", phase: 0 },
+      { id: "rrss", label: "Redes Sociales", phase: 0 },
+      { id: "contacto", label: "Primer Contacto", phase: 1 },
+      { id: "cualificacion", label: "Cualificación", phase: 1 },
+      { id: "propuesta", label: "Propuesta", phase: 1 },
+      { id: "negociacion", label: "Negociación", phase: 1 },
+      { id: "cierre", label: "Cierre", phase: 1 },
+      { id: "onboarding", label: "Onboarding", phase: 2 },
+      { id: "soporte", label: "Soporte", phase: 2 },
+      { id: "seguimiento", label: "Seguimiento", phase: 2 },
+      { id: "facturacion", label: "Facturación", phase: 2 },
+    ];
+
+    var CHAOS_POS = [
+      { top: 8, left: 5, rot: -11 }, { top: 14, left: 40, rot: 7 },
+      { top: 4, left: 74, rot: -6 }, { top: 32, left: 14, rot: 6 },
+      { top: 20, left: 60, rot: -9 }, { top: 46, left: 2, rot: 9 },
+      { top: 56, left: 29, rot: -5 }, { top: 36, left: 54, rot: 6 },
+      { top: 48, left: 80, rot: -8 }, { top: 70, left: 9, rot: 5 },
+      { top: 76, left: 39, rot: -7 }, { top: 62, left: 64, rot: 8 },
+      { top: 86, left: 66, rot: -4 }, { top: 80, left: 87, rot: 6 },
+    ];
+
+    var ALERTS = [
+      { top: 12, left: 24 }, { top: 58, left: 47 },
+      { top: 26, left: 86 }, { top: 72, left: 21 },
+    ];
+
+    var SVG_NS = "http://www.w3.org/2000/svg";
+
+    function svgEl(tag, attrs) {
+      var el = document.createElementNS(SVG_NS, tag);
+      for (var k in attrs) el.setAttribute(k, attrs[k]);
+      return el;
+    }
+
+    function renderChaos() {
+      var mount = document.getElementById('adv-chaos');
+      if (!mount) return;
+
+      var svg = svgEl('svg', {
+        class: 'adv-chaos__svg', preserveAspectRatio: 'none', viewBox: '0 0 100 100'
+      });
+
+      var lines = [];
+      for (var i = 0; i < NODES.length; i++) {
+        var a = CHAOS_POS[i];
+        var b1 = CHAOS_POS[(i + 3) % NODES.length];
+        var b2 = CHAOS_POS[(i + 6) % NODES.length];
+        lines.push([a, b1]);
+        lines.push([a, b2]);
+      }
+      lines.forEach(function (pair) {
+        var line = svgEl('line', {
+          x1: pair[0].left, y1: pair[0].top, x2: pair[1].left, y2: pair[1].top,
+          stroke: '#FE4237', 'stroke-width': '0.22', opacity: '0.26'
+        });
+        svg.appendChild(line);
+      });
+      mount.appendChild(svg);
+
+      ALERTS.forEach(function (a) {
+        var div = document.createElement('div');
+        div.className = 'adv-chaos__alert';
+        div.style.top = a.top + '%';
+        div.style.left = a.left + '%';
+        div.textContent = '!';
+        mount.appendChild(div);
+      });
+
+      NODES.forEach(function (n, i) {
+        var p = CHAOS_POS[i];
+        var div = document.createElement('div');
+        div.className = 'adv-chaos__node';
+        div.style.top = p.top + '%';
+        div.style.left = p.left + '%';
+        div.style.transform = 'rotate(' + p.rot + 'deg)';
+        div.textContent = n.label;
+        mount.appendChild(div);
+      });
+    }
+
+    function renderFlow() {
+      var mount = document.getElementById('adv-flow');
+      if (!mount) return;
+
+      function build() {
+        mount.innerHTML = '';
+        var W = mount.clientWidth || 1140;
+        var H = W / 2.1;
+
+        var capX = 0.06 * W, capW = 0.16 * W, trunkL = 0.265 * W;
+        var vX0 = 0.3 * W, vW = 0.072 * W, vGap = 0.014 * W, vH = 0.17 * H;
+        var trunkR = 0.735 * W, atX = 0.78 * W, atW = 0.16 * W;
+        var topM = 0.34 * H, botM = 0.08 * H, capH = 0.085 * H, atH = 0.085 * H;
+        var vY = topM + (H - topM - botM) / 2;
+
+        var capRows = [0, 1, 2, 3, 4].map(function (i) { return topM + (i * (H - topM - botM)) / 4; });
+        var atRows = [0, 1, 2, 3].map(function (i) { return topM + (i * (H - topM - botM)) / 3; });
+
+        var captacion = NODES.filter(function (n) { return n.phase === 0; });
+        var ventas = NODES.filter(function (n) { return n.phase === 1; });
+        var atencion = NODES.filter(function (n) { return n.phase === 2; });
+
+        var ventasBoxes = ventas.map(function (n, i) {
+          var left = vX0 + i * (vW + vGap);
+          return Object.assign({}, n, { left: left, top: vY - vH / 2, w: vW, h: vH });
+        });
+
+        var fanIn = captacion.map(function (n, i) {
+          var y = capRows[i], startX = capX + capW, endX = vX0;
+          return 'M ' + startX + ' ' + y + ' L ' + trunkL + ' ' + y + ' L ' + trunkL + ' ' + vY + ' L ' + endX + ' ' + vY;
+        });
+
+        var backbone = [0, 1, 2, 3].map(function (i) {
+          var startX = ventasBoxes[i].left + vW, endX = ventasBoxes[i + 1].left;
+          return { startX: startX, endX: endX, midX: (startX + endX) / 2 };
+        });
+
+        var lastVentasRight = ventasBoxes[4].left + vW;
+        var fanOut = atencion.map(function (n, i) {
+          var y = atRows[i], endX = atX;
+          return 'M ' + lastVentasRight + ' ' + vY + ' L ' + trunkR + ' ' + vY + ' L ' + trunkR + ' ' + y + ' L ' + endX + ' ' + y;
+        });
+
+        var svg = svgEl('svg', { width: W, height: H, viewBox: '0 0 ' + W + ' ' + H, class: 'adv-flow__svg' });
+
+        var defs = svgEl('defs', {});
+        var grad = svgEl('linearGradient', { id: 'edgeGrad', x1: '0', y1: '0', x2: '1', y2: '0' });
+        var s1 = svgEl('stop', { offset: '0%', 'stop-color': '#FE4237' });
+        var s2 = svgEl('stop', { offset: '100%', 'stop-color': '#FE7447' });
+        grad.appendChild(s1); grad.appendChild(s2);
+        var marker = svgEl('marker', { id: 'arrowHead', viewBox: '0 0 10 10', refX: '8.5', refY: '5', markerWidth: '6', markerHeight: '6', orient: 'auto-start-reverse' });
+        var arrowPath = svgEl('path', { d: 'M0,0 L10,5 L0,10 z', fill: '#FE7447' });
+        marker.appendChild(arrowPath);
+        defs.appendChild(grad); defs.appendChild(marker);
+        svg.appendChild(defs);
+
+        fanIn.concat(fanOut).forEach(function (d) {
+          svg.appendChild(svgEl('path', { d: d, fill: 'none', stroke: 'url(#edgeGrad)', 'stroke-width': '1.6', opacity: '0.85', 'marker-end': 'url(#arrowHead)' }));
+        });
+
+        backbone.forEach(function (b) {
+          svg.appendChild(svgEl('line', { x1: b.startX, y1: vY, x2: b.endX, y2: vY, stroke: 'url(#edgeGrad)', 'stroke-width': '2', opacity: '0.95' }));
+        });
+        backbone.forEach(function (b) {
+          var pts = (b.midX - 6) + ',' + (vY - 5) + ' ' + (b.midX - 6) + ',' + (vY + 5) + ' ' + (b.midX + 6) + ',' + vY;
+          svg.appendChild(svgEl('polygon', { points: pts, fill: '#FE7447' }));
+        });
+
+        mount.appendChild(svg);
+
+        function phaseLabel(text, left) {
+          var div = document.createElement('div');
+          div.className = 'adv-flow__phase-label';
+          div.style.top = (topM - 56) + 'px';
+          div.style.left = left + 'px';
+          div.textContent = text;
+          mount.appendChild(div);
+        }
+        phaseLabel('CAPTACIÓN DE LEADS', capX + capW / 2);
+        phaseLabel('VENTAS', vX0 + (5 * vW + 4 * vGap) / 2);
+        phaseLabel('ATENCIÓN AL CLIENTE', atX + atW / 2);
+
+        captacion.forEach(function (n, i) {
+          var div = document.createElement('div');
+          div.className = 'adv-flow__box adv-flow__box--edge';
+          div.style.left = capX + 'px';
+          div.style.top = (capRows[i] - capH / 2) + 'px';
+          div.style.width = capW + 'px';
+          div.style.height = capH + 'px';
+          div.style.fontSize = '11px';
+          div.textContent = n.label;
+          mount.appendChild(div);
+        });
+
+        ventasBoxes.forEach(function (n) {
+          var div = document.createElement('div');
+          div.className = 'adv-flow__box adv-flow__box--core';
+          div.style.left = n.left + 'px';
+          div.style.top = n.top + 'px';
+          div.style.width = n.w + 'px';
+          div.style.height = n.h + 'px';
+          div.textContent = n.label;
+          mount.appendChild(div);
+        });
+
+        atencion.forEach(function (n, i) {
+          var div = document.createElement('div');
+          div.className = 'adv-flow__box adv-flow__box--edge';
+          div.style.left = atX + 'px';
+          div.style.top = (atRows[i] - atH / 2) + 'px';
+          div.style.width = atW + 'px';
+          div.style.height = atH + 'px';
+          div.textContent = n.label;
+          mount.appendChild(div);
+        });
+      }
+
+      build();
+      var ro = new ResizeObserver(function () { build(); });
+      ro.observe(mount);
+    }
+
+    function init() {
+      renderChaos();
+      renderFlow();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+  </script>
+
   <script>
   /* Arch diagram — scroll-triggered entrance */
   (function () {
@@ -454,64 +672,64 @@
   })();
   </script>
   <script>
-  (function () {
-    var wrapper = document.getElementById('adv-compare');
-    var slider  = document.getElementById('adv-compare-slider');
-    var after   = wrapper && wrapper.querySelector('.adv-compare-panel--after');
-    if (!wrapper || !slider || !after) return;
+    (function () {
+      var wrapper = document.getElementById('adv-compare');
+      var slider  = document.getElementById('adv-compare-slider');
+      var before  = wrapper && wrapper.querySelector('.adv-compare-panel--before');
+      if (!wrapper || !slider || !before) return;
 
-    var dragging = false;
+      var dragging = false;
 
-    function setPos(pct) {
-      pct = Math.max(5, Math.min(95, pct));
-      slider.style.left = pct + '%';
-      slider.setAttribute('aria-valuenow', Math.round(pct));
-      after.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
-    }
+      function setPos(pct) {
+        pct = Math.max(5, Math.min(95, pct));
+        slider.style.left = pct + '%';
+        slider.setAttribute('aria-valuenow', Math.round(pct));
+        /* "before" (caos) se recorta desde la derecha: visible de 0% a pct% */
+        before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
+      }
 
-    function onMove(clientX) {
-      var rect = wrapper.getBoundingClientRect();
-      setPos(((clientX - rect.left) / rect.width) * 100);
-    }
+      function onMove(clientX) {
+        var rect = wrapper.getBoundingClientRect();
+        setPos(((clientX - rect.left) / rect.width) * 100);
+      }
 
-    slider.addEventListener('mousedown', function (e) {
-      dragging = true;
-      slider.classList.add('is-dragging');
-      e.preventDefault();
-    });
+      slider.addEventListener('mousedown', function (e) {
+        dragging = true;
+        slider.classList.add('is-dragging');
+        e.preventDefault();
+      });
 
-    document.addEventListener('mousemove', function (e) {
-      if (dragging) onMove(e.clientX);
-    });
+      document.addEventListener('mousemove', function (e) {
+        if (dragging) onMove(e.clientX);
+      });
 
-    document.addEventListener('mouseup', function () {
-      dragging = false;
-      slider.classList.remove('is-dragging');
-    });
+      document.addEventListener('mouseup', function () {
+        dragging = false;
+        slider.classList.remove('is-dragging');
+      });
 
-    slider.addEventListener('touchstart', function (e) {
-      dragging = true;
-      slider.classList.add('is-dragging');
-    }, { passive: true });
+      slider.addEventListener('touchstart', function () {
+        dragging = true;
+        slider.classList.add('is-dragging');
+      }, { passive: true });
 
-    document.addEventListener('touchmove', function (e) {
-      if (dragging) onMove(e.touches[0].clientX);
-    }, { passive: true });
+      document.addEventListener('touchmove', function (e) {
+        if (dragging) onMove(e.touches[0].clientX);
+      }, { passive: true });
 
-    document.addEventListener('touchend', function () {
-      dragging = false;
-      slider.classList.remove('is-dragging');
-    });
+      document.addEventListener('touchend', function () {
+        dragging = false;
+        slider.classList.remove('is-dragging');
+      });
 
-    /* keyboard: left/right arrows */
-    slider.addEventListener('keydown', function (e) {
-      var cur = parseFloat(slider.style.left) || 50;
-      if (e.key === 'ArrowLeft')  setPos(cur - 5);
-      if (e.key === 'ArrowRight') setPos(cur + 5);
-    });
+      slider.addEventListener('keydown', function (e) {
+        var cur = parseFloat(slider.style.left) || 50;
+        if (e.key === 'ArrowLeft')  setPos(cur - 5);
+        if (e.key === 'ArrowRight') setPos(cur + 5);
+      });
 
-    setPos(50);
-  })();
+      setPos(50);
+    })();
   </script>
 </body>
 
