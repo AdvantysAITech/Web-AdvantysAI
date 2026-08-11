@@ -1,0 +1,140 @@
+/* =========================================
+   COMPONENTS: FORMULARIO DE CONTACTO — FOOTER
+   ========================================= */
+
+.adv-footer-contact {
+  background-color: var(--bg-bento);
+  border: 1px solid var(--border-thin);
+  border-radius: 1rem;
+  padding: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.adv-footer-contact__intro {
+  margin-bottom: 1.75rem;
+}
+
+.adv-footer-contact__intro .footer-heading { margin-bottom: 0.5rem; }
+.adv-footer-contact__intro .footer-text { margin-bottom: 0; }
+
+.adv-form__grid--footer {
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .adv-form__grid--footer { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .adv-form__grid--footer { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Bloque condicional Joint Venture Builder */
+.adv-footer-contact__jv {
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.adv-footer-contact__jv[hidden] {
+  display: none;
+}
+
+/* Select — reutiliza el estilo de adv-form__input y añade la flecha */
+.adv-form__select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-opacity='0.5' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding-right: 2.75rem;
+  cursor: pointer;
+}
+
+.adv-form__select option {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+.adv-footer-contact__submit {
+  margin-bottom: 1rem;
+}
+
+/* --- Botón, feedback y legal — replican adv-contact-* de contacto.css,
+   pero como componente global para que funcionen en cualquier página --- */
+
+.adv-contact-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--gradient-brand);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  margin-top: 0.5rem;
+}
+
+.adv-contact-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 57, 53, 0.25);
+}
+
+.adv-contact-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.adv-contact-submit__icon {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.2s;
+}
+
+.adv-contact-submit.is-loading .adv-contact-submit__icon {
+  animation: adv-contact-spin 0.8s linear infinite;
+}
+
+@keyframes adv-contact-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.adv-contact-legal {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+}
+
+.adv-contact-legal a {
+  color: var(--color-coral);
+  text-decoration: underline;
+}
+
+.adv-contact-feedback {
+  font-size: 0.9rem;
+  text-align: center;
+  min-height: 1.2em;
+}
+
+.adv-contact-feedback--success {
+  color: var(--color-success, #108981);
+}
+
+.adv-contact-feedback--error {
+  color: var(--color-red);
+}
+
+.adv-footer-contact__submit {
+  width: 100%;
+  margin-bottom: 1rem;
+}
