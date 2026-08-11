@@ -55,7 +55,7 @@
 }
 
 /* --- Beneficios / Bento Grid Header --- */
-.adv-benefits { padding: 5rem 0; background-color: var(--bg-main); }
+.adv-solutions-carousel { padding: 5rem 0; background-color: transparent; overflow: hidden; }
 
 .adv-section-header { text-align: center; max-width: 800px; margin: 0 auto 3rem; }
 .adv-section-title { font-size: 2rem; color: var(--text-main); margin-bottom: 1rem; font-weight: 700; }
@@ -67,7 +67,7 @@
 }
 
 /* --- Formulario de Partner --- */
-.adv-form-section { padding: 4rem 0 6rem; background-color: var(--bg-main); }
+.adv-solutions-carousel { padding: 5rem 0; background-color: transparent; overflow: hidden; }
 
 /* FIX: .adv-form-container no tenía estilos — se añade como contenedor de ancho
    reducido para que el formulario no ocupe el 100% del contenedor global */
