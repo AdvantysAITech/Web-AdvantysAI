@@ -1,0 +1,18 @@
+/* =========================================
+   COMPONENTS: FORMULARIO CTA — PÁGINAS DE SPIN-OFF
+   ========================================= */
+
+.adv-vertical-cta__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.adv-vertical-cta__submit {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.adv-vertical-cta__form .adv-contact-feedback {
+  text-align: left;
+}

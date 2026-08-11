@@ -130,3 +130,22 @@
     padding: 1.75rem 1.25rem;
   }
 }
+
+.adv-solicitud-context {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -0.5rem;
+}
+
+.adv-solicitud-context__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 107, 67, 0.1);
+  border: 1px solid rgba(255, 107, 67, 0.3);
+  color: var(--color-coral);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+}
