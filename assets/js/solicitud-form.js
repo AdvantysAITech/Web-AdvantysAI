@@ -12,8 +12,8 @@
   if (!form) return;
 
   const params = new URLSearchParams(window.location.search);
-  const role = params.get('role');       // 'Cliente Final' | 'Inversor'
-  const spinoff = params.get('spinoff'); // nombre exacto de la spin-off
+  const urlRole = params.get('role');       // 'Cliente Final' | 'Inversor'
+  const urlSpinoff = params.get('spinoff'); // nombre exacto de la spin-off
 
   const titleEl = document.getElementById('solicitud-title');
   const subtitleEl = document.getElementById('solicitud-subtitle');
@@ -38,13 +38,26 @@
     location: document.getElementById('solicitud-location'),
   };
 
-  let resolvedRole = role;
-  let resolvedSpinoff = spinoff;
+  // --- Poblar el select de Spin-offs (placeholder estático, sync GHL pendiente) ---
+  SPIN_OFFS.forEach((name) => {
+    const opt = document.createElement('option');
+    opt.value = name;
+    opt.textContent = name;
+    spinoffSelect.appendChild(opt);
+  });
 
-  if (role && spinoff) {
-    // --- Caso normal: viene de un botón "Solicitar demo" / "Quiero invertir" ---
+  // --- Actualiza título / subtítulo / chip según el Rol y Spin-off actuales ---
+  function updateContext() {
+    const role = roleSelect.value;
+    const spinoff = spinoffSelect.value;
+
+    if (!role || !spinoff) {
+      contextEl.hidden = true;
+      return;
+    }
+
     contextEl.hidden = false;
-    contextChip.textContent = `${spinoff} · ${role === 'Inversor' ? 'Inversor' : 'Cliente Final'}`;
+    contextChip.textContent = `${spinoff} · ${role}`;
 
     if (role === 'Inversor') {
       titleEl.textContent = `Quiero invertir en ${spinoff}`;
@@ -53,6 +66,21 @@
       titleEl.textContent = `Solicitar información — ${spinoff}`;
       subtitleEl.textContent = 'Déjanos tus datos y agendamos una demo personalizada de la solución.';
     }
+  }
+
+  if (urlRole && urlSpinoff) {
+    // --- Caso normal: viene de un botón "Solicitar demo" / "Quiero invertir" ---
+    // Mostramos Rol y Spin-off YA preseleccionados, pero editables por si el usuario
+    // quiere corregirlos (ej. llegó al enlace equivocado).
+    fallbackRole.hidden = false;
+    fallbackSpinoff.hidden = false;
+    roleSelect.required = true;
+    spinoffSelect.required = true;
+
+    roleSelect.value = urlRole;
+    spinoffSelect.value = urlSpinoff;
+
+    updateContext();
   } else {
     // --- Fallback: acceso directo sin parámetros ---
     fallbackLine.hidden = false;
@@ -64,15 +92,18 @@
       fallbackSpinoff.hidden = !isJv;
       roleSelect.required = isJv;
       spinoffSelect.required = isJv;
-    });
-
-    SPIN_OFFS.forEach((name) => {
-      const opt = document.createElement('option');
-      opt.value = name;
-      opt.textContent = name;
-      spinoffSelect.appendChild(opt);
+      if (!isJv) {
+        roleSelect.value = '';
+        spinoffSelect.value = '';
+        contextEl.hidden = true;
+      }
     });
   }
+
+  // Si el usuario cambia manualmente el Rol o la Spin-off (venga de URL o de fallback),
+  // el título/subtítulo/chip se mantienen sincronizados.
+  roleSelect.addEventListener('change', updateContext);
+  spinoffSelect.addEventListener('change', updateContext);
 
   function clearErrors() {
     form.querySelectorAll('.adv-form__error').forEach((el) => { el.textContent = ''; });
@@ -100,17 +131,10 @@
     if (fields.company.value.trim().length < 2) { setError('company', 'Introduce el nombre de tu empresa.'); valid = false; }
     if (fields.location.value.trim().length < 2) { setError('location', 'Introduce ciudad y país.'); valid = false; }
 
-    if (!role || !spinoff) {
-      if (!lineSelect.value) valid = false;
-      if (lineSelect.value === 'Joint Venture Builder') {
-        if (!roleSelect.value) valid = false;
-        if (!spinoffSelect.value) valid = false;
-        resolvedRole = roleSelect.value;
-        resolvedSpinoff = spinoffSelect.value;
-      } else {
-        resolvedRole = null;
-        resolvedSpinoff = null;
-      }
+    if (!fallbackLine.hidden && !lineSelect.value) valid = false;
+    if (!fallbackRole.hidden) {
+      if (!roleSelect.value) valid = false;
+      if (!spinoffSelect.value) valid = false;
     }
 
     return valid;
@@ -131,7 +155,7 @@
     event.preventDefault();
     if (!validate()) return;
 
-    const isJv = Boolean(resolvedRole && resolvedSpinoff);
+    const isJv = !fallbackRole.hidden;
 
     const payload = {
       nombre: fields.name.value.trim(),
@@ -139,9 +163,9 @@
       telefono: fields.phone.value.trim(),
       empresa: fields.company.value.trim(),
       ciudad_pais: fields.location.value.trim(),
-      linea_negocio: (role && spinoff) || isJv ? 'Joint Venture Builder' : (lineSelect ? lineSelect.value : 'Joint Venture Builder'),
-      rol_jv: resolvedRole,
-      spinoff: resolvedSpinoff,
+      linea_negocio: isJv ? 'Joint Venture Builder' : (lineSelect.value || 'Joint Venture Builder'),
+      rol_jv: isJv ? roleSelect.value : null,
+      spinoff: isJv ? spinoffSelect.value : null,
       fuente: 'Web Advantys — Página de solicitud',
       fecha: new Date().toISOString(),
     };
