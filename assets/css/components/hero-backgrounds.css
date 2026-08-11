@@ -303,65 +303,45 @@
 }
 
 /* =========================================
-   3) TRAZABILIDAD AGROALIMENTARIA — cadena de bloques fluyendo
+   3) TRAZABILIDAD AGROALIMENTARIA — recorrido de checkpoints:
+      línea de trazabilidad ascendente con puntos que se
+      iluminan en secuencia, de origen a exportación
    ========================================= */
-@keyframes advbgChainFlow { from { transform: translateX(0); } to { transform: translateX(-1120px); } }
-@keyframes advbgBlockPulse { 0%, 100% { transform: scale(1); opacity: 0.55; } 50% { transform: scale(1.22); opacity: 1; } }
+@keyframes advbgTrazLineFlow {
+  to { stroke-dashoffset: -30; }
+}
+@keyframes advbgTrazNodeLight {
+  0%, 100% { opacity: 0.25; }
+  12%      { opacity: 1; }
+  24%      { opacity: 0.4; }
+}
 
-.adv-herobg--traz .adv-herobg__chain-track {
+.adv-herobg--traz .adv-herobg__path {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 4%;
-  height: 32px;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
-  mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
-.adv-herobg--traz .adv-herobg__chain {
-  display: flex;
-  align-items: center;
-  width: 2240px;
-  animation: advbgChainFlow 16s linear infinite;
+.adv-herobg--traz .adv-herobg__path-line {
+  fill: none;
+  stroke: #FE7447;
+  stroke-width: 1.2;
+  stroke-dasharray: 5 5;
+  opacity: 0.3;
+  animation: advbgTrazLineFlow 3s linear infinite;
 }
-.adv-herobg--traz .adv-herobg__chain-unit {
-  display: flex;
-  align-items: center;
-  width: 70px;
-  flex-shrink: 0;
-}
-.adv-herobg--traz .adv-herobg__chain-block {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
-  background: linear-gradient(135deg, #FE4237, #FE9066);
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  animation-name: advbgBlockPulse;
-  animation-duration: 2.4s;
+.adv-herobg--traz .adv-herobg__path-nodes circle {
+  fill: #FE9066;
+  animation-name: advbgTrazNodeLight;
+  animation-duration: 5s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
 }
-.adv-herobg--traz .adv-herobg__chain-line {
-  flex: 1;
-  height: 1.5px;
-  background: linear-gradient(90deg, rgba(254,144,102,0.55), rgba(254,144,102,0.15));
-}
-.adv-herobg--traz .adv-herobg__chain-unit:nth-child(1)  .adv-herobg__chain-block, .adv-herobg--traz .adv-herobg__chain-unit:nth-child(17) .adv-herobg__chain-block { animation-delay: 0s; }
-.adv-herobg--traz .adv-herobg__chain-unit:nth-child(2)  .adv-herobg__chain-block, .adv-herobg--traz .adv-herobg__chain-unit:nth-child(18) .adv-herobg__chain-block { animation-delay: 0.28s; }
-.adv-herobg--traz .adv-herobg__chain-unit:nth-child(3)  .adv-herobg__chain-block, .adv-herobg--traz .adv-herobg__chain-unit:nth-child(19) .adv-herobg__chain-block { animation-delay: 0.56s; }
-.adv-herobg--traz .adv-herobg__chain-unit:nth-child(4)  .adv-herobg__chain-block, .adv-herobg--traz .adv-herobg__chain-unit:nth-child(20) .adv-herobg__chain-block { animation-delay: 0.84s; }
-.adv-herobg--traz .adv-herobg__chain-unit:nth-child(5)  .adv-herobg__chain-block, .adv-herobg--traz .adv-herobg__chain-unit:nth-child(21) .adv-herobg__chain-block { animation-delay: 1.12s; }
-.adv-herobg--traz .adv-herobg__chain-unit:nth-child(6)  .adv-herobg__chain-block, .adv-herobg--traz .adv-herobg__chain-unit:nth-child(22) .adv-herobg__chain-block { animation-delay: 1.4s; }
-.adv-herobg--traz .adv-herobg__chain-unit:nth-child(7)  .adv-herobg__chain-block, .adv-herobg--traz .adv-herobg__chain-unit:nth-child(23) .adv-herobg__chain-block { animation-delay: 1.68s; }
-.adv-herobg--traz .adv-herobg__chain-unit:nth-child(8)  .adv-herobg__chain-block, .adv-herobg--traz .adv-herobg__chain-unit:nth-child(24) .adv-herobg__chain-block { animation-delay: 1.96s; }
-.adv-herobg--traz .adv-herobg__chain-unit:nth-child(9)  .adv-herobg__chain-block, .adv-herobg--traz .adv-herobg__chain-unit:nth-child(25) .adv-herobg__chain-block { animation-delay: 2.24s; }
-.adv-herobg--traz .adv-herobg__chain-unit:nth-child(10) .adv-herobg__chain-block, .adv-herobg--traz .adv-herobg__chain-unit:nth-child(26) .adv-herobg__chain-block { animation-delay: 0.12s; }
-.adv-herobg--traz .adv-herobg__chain-unit:nth-child(11) .adv-herobg__chain-block, .adv-herobg--traz .adv-herobg__chain-unit:nth-child(27) .adv-herobg__chain-block { animation-delay: 0.4s; }
-.adv-herobg--traz .adv-herobg__chain-unit:nth-child(12) .adv-herobg__chain-block, .adv-herobg--traz .adv-herobg__chain-unit:nth-child(28) .adv-herobg__chain-block { animation-delay: 0.68s; }
-.adv-herobg--traz .adv-herobg__chain-unit:nth-child(13) .adv-herobg__chain-block, .adv-herobg--traz .adv-herobg__chain-unit:nth-child(29) .adv-herobg__chain-block { animation-delay: 0.96s; }
-.adv-herobg--traz .adv-herobg__chain-unit:nth-child(14) .adv-herobg__chain-block, .adv-herobg--traz .adv-herobg__chain-unit:nth-child(30) .adv-herobg__chain-block { animation-delay: 1.24s; }
-.adv-herobg--traz .adv-herobg__chain-unit:nth-child(15) .adv-herobg__chain-block, .adv-herobg--traz .adv-herobg__chain-unit:nth-child(31) .adv-herobg__chain-block { animation-delay: 1.52s; }
-.adv-herobg--traz .adv-herobg__chain-unit:nth-child(16) .adv-herobg__chain-block, .adv-herobg--traz .adv-herobg__chain-unit:nth-child(32) .adv-herobg__chain-block { animation-delay: 1.8s; }
+.adv-herobg--traz .adv-herobg__path-nodes circle:nth-child(1) { animation-delay: 0s; }
+.adv-herobg--traz .adv-herobg__path-nodes circle:nth-child(2) { animation-delay: 0.8s; }
+.adv-herobg--traz .adv-herobg__path-nodes circle:nth-child(3) { animation-delay: 1.6s; }
+.adv-herobg--traz .adv-herobg__path-nodes circle:nth-child(4) { animation-delay: 2.4s; }
+.adv-herobg--traz .adv-herobg__path-nodes circle:nth-child(5) { animation-delay: 3.2s; }
 
 /* =========================================
    4) RESIDENCIA FISCAL — patrón guilloché + sello de visado
