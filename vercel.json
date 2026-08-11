@@ -17,7 +17,8 @@
     { "source": "/politica-cookies", "destination": "/pages/politica-cookies.html" },
     { "source": "/politica-privacidad", "destination": "/pages/politica-privacidad.html" },
     { "source": "/sistema-advantys", "destination": "/pages/sistema-advantys.html" },
-    { "source": "/soluciones-ia", "destination": "/pages/soluciones-ia.html" }
+    { "source": "/soluciones-ia", "destination": "/pages/soluciones-ia.html" },
+    { "source": "/solicitud", "destination": "/pages/solicitud.html" }
   ],
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
@@ -37,6 +38,7 @@
     { "source": "/pages/residencia-fiscal.html", "destination": "/residencia-fiscal", "permanent": true },
     { "source": "/pages/trazabilidad-agroalimentaria.html", "destination": "/trazabilidad-agroalimentaria", "permanent": true },
     { "source": "/pages/sistema-advantys.html", "destination": "/sistema-advantys", "permanent": true },
-    { "source": "/pages/soluciones-ia.html", "destination": "/soluciones-ia", "permanent": true }
+    { "source": "/pages/soluciones-ia.html", "destination": "/soluciones-ia", "permanent": true },
+    { "source": "/pages/solicitud.html", "destination": "/solicitud", "permanent": true }
   ]
 }
