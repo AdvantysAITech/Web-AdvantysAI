@@ -292,10 +292,76 @@
           Solicitar evaluación técnica
         </a>
       </div>
+
       <div class="adv-consulting__visual">
-        <div class="adv-tech-layer"></div>
-        <div class="adv-tech-layer"></div>
-        <div class="adv-tech-layer"></div>
+        <div class="adv-blueprint__grid"></div>
+
+        <div class="adv-blueprint__corner adv-blueprint__corner--tl"></div>
+        <div class="adv-blueprint__corner adv-blueprint__corner--tr"></div>
+        <div class="adv-blueprint__corner adv-blueprint__corner--br"></div>
+        <div class="adv-blueprint__corner adv-blueprint__corner--bl"></div>
+
+        <div class="adv-blueprint__scan"></div>
+
+        <svg viewBox="-200 -90 700 500" width="100%" height="100%" class="adv-blueprint__svg">
+          <defs>
+            <linearGradient id="bpGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#FE4237" />
+              <stop offset="100%" stop-color="#FE7447" />
+            </linearGradient>
+          </defs>
+
+          <g class="adv-blueprint__float">
+            <polygon
+              points="150,35 235,85 255,175 190,255 95,240 45,140"
+              fill="url(#bpGrad)"
+              fill-opacity="0.05"
+              stroke="url(#bpGrad)"
+              stroke-width="1.6"
+              stroke-dasharray="6 5"
+              class="adv-blueprint__outline"
+            >
+              <animate attributeName="stroke-dashoffset" from="0" to="-44" dur="3s" repeatCount="indefinite" />
+            </polygon>
+
+            <line x1="150" y1="35" x2="150" y2="255" stroke="#FE7447" stroke-opacity="0.15" stroke-width="1" />
+            <line x1="45" y1="140" x2="255" y2="175" stroke="#FE7447" stroke-opacity="0.15" stroke-width="1" />
+
+            <!-- Vértice 1: Infraestructura actual -->
+            <g>
+              <circle cx="150" cy="35" r="3.4" fill="#FE7447">
+                <animate attributeName="opacity" values="0.55;1;0.55" dur="2.4s" begin="0s" repeatCount="indefinite" />
+              </circle>
+              <line x1="150" y1="35" x2="150" y2="-20" stroke="rgba(255,255,255,0.28)" stroke-width="1" />
+              <text x="150" y="-32" text-anchor="middle" font-size="12.5" font-family="system-ui, sans-serif" font-weight="600" fill="#d8d8de">Infraestructura actual</text>
+            </g>
+
+            <!-- Vértice 2: Volumen de flujos -->
+            <g>
+              <circle cx="255" cy="175" r="3.4" fill="#FE7447">
+                <animate attributeName="opacity" values="0.55;1;0.55" dur="2.4s" begin="0.3s" repeatCount="indefinite" />
+              </circle>
+              <line x1="255" y1="175" x2="300" y2="175" stroke="rgba(255,255,255,0.28)" stroke-width="1" />
+              <text x="310" y="179" text-anchor="start" font-size="12.5" font-family="system-ui, sans-serif" font-weight="600" fill="#d8d8de">Volumen de flujos</text>
+            </g>
+
+            <!-- Vértice 3: Requerimientos de integración -->
+            <g>
+              <circle cx="190" cy="255" r="3.4" fill="#FE7447">
+                <animate attributeName="opacity" values="0.55;1;0.55" dur="2.4s" begin="0.6s" repeatCount="indefinite" />
+              </circle>
+              <line x1="190" y1="255" x2="190" y2="320" stroke="rgba(255,255,255,0.28)" stroke-width="1" />
+              <text x="190" y="338" text-anchor="middle" font-size="12.5" font-family="system-ui, sans-serif" font-weight="600" fill="#d8d8de">Requerimientos de integración</text>
+            </g>
+
+            <!-- Vértice de salida: Propuesta a medida -->
+            <circle cx="45" cy="140" r="5" fill="#fff">
+              <animate attributeName="r" values="4.5;6;4.5" dur="2s" repeatCount="indefinite" />
+            </circle>
+            <line x1="45" y1="140" x2="0" y2="90" stroke="rgba(255,255,255,0.45)" stroke-width="1.2" />
+            <text x="-10" y="86" text-anchor="end" font-size="13" font-family="system-ui, sans-serif" font-weight="700" fill="#ffffff">Propuesta a medida</text>
+          </g>
+        </svg>
       </div>
     </div>
   </div>

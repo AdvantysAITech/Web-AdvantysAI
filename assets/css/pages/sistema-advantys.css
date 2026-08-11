@@ -496,7 +496,64 @@
 @media (min-width: 992px) { .adv-consulting__wrapper { grid-template-columns: 3fr 2fr; } }
 
 .adv-consulting__content { padding: 3rem; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 2; }
-.adv-consulting__visual { background: linear-gradient(135deg, rgba(2, 6, 23, 0.9) 0%, rgba(9, 13, 22, 1) 100%); border-left: 1px solid var(--border-thin); display: flex; align-items: center; justify-content: center; position: relative; min-height: 300px; overflow: hidden; }
+.adv-consulting__visual {
+  position: relative;
+  min-height: 340px;
+  border-left: 1px solid var(--border-thin);
+  background: radial-gradient(ellipse at 60% 40%, #170e0d 0%, #0a0a0d 65%, #08080a 100%);
+  overflow: hidden;
+}
+
+
+/* --- Rejilla técnica de fondo --- */
+.adv-blueprint__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+/* --- Esquinas tipo visor de escaneo --- */
+.adv-blueprint__corner {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-top: 2px solid rgba(254,116,71,0.55);
+  border-left: 2px solid rgba(254,116,71,0.55);
+}
+.adv-blueprint__corner--tl { top: 22px; left: 22px; transform: rotate(0deg); }
+.adv-blueprint__corner--tr { top: 22px; right: 22px; transform: rotate(90deg); }
+.adv-blueprint__corner--br { bottom: 22px; right: 22px; transform: rotate(180deg); }
+.adv-blueprint__corner--bl { bottom: 22px; left: 22px; transform: rotate(270deg); }
+
+/* --- Haz de escaneo animado --- */
+.adv-blueprint__scan {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(254,116,71,0.9), transparent);
+  box-shadow: 0 0 16px 2px rgba(254,116,71,0.6);
+  animation: advantysScan 4.5s linear infinite;
+}
+
+.adv-blueprint__svg { position: relative; display: block; }
+
+.adv-blueprint__float { animation: advantysFloat 6s ease-in-out infinite; }
+
+@keyframes advantysScan {
+  0%   { transform: translateY(-10%); opacity: 0; }
+  8%   { opacity: 1; }
+  92%  { opacity: 1; }
+  100% { transform: translateY(1100%); opacity: 0; }
+}
+
+@keyframes advantysFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%      { transform: translateY(-8px); }
+}
 
 .adv-tech-layer { position: absolute; width: 150px; height: 150px; border: 1px solid var(--border-hover); border-radius: 16px; transform: rotateX(60deg) rotateZ(-45deg); background: rgba(255, 107, 67, 0.05); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); transition: var(--transition-smooth); }
 .adv-tech-layer:nth-child(1) { transform: rotateX(60deg) rotateZ(-45deg) translateZ(-40px); opacity: 0.3; }

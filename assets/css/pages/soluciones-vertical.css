@@ -65,12 +65,26 @@
 
 /* HERO */
 .adv-vertical-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 80vh;
   padding: 3rem 0 4rem;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
 }
+
+.adv-vertical-hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
 .adv-vertical-hero__title {
   font-family: var(--font-heading);
   font-size: clamp(2.4rem, 5vw, 3.75rem);
@@ -81,6 +95,7 @@
   margin: 1.2rem auto 1.5rem;
   max-width: 20ch;
 }
+
 .adv-vertical-hero__tagline {
   font-family: var(--font-heading);
   font-style: italic;
@@ -88,6 +103,7 @@
   color: var(--color-coral);
   margin: -1rem auto 1.5rem;
 }
+
 .adv-vertical-hero__lead {
   font-size: 1.05rem;
   color: var(--text-secondary);
@@ -95,6 +111,7 @@
   max-width: 62ch;
   margin: 0 auto 2.25rem;
 }
+
 .adv-vertical-hero__actions {
   display: flex;
   flex-wrap: wrap;
