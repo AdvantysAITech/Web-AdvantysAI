@@ -11,6 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
 </head>
 <body>
@@ -82,23 +83,24 @@
   
   <!-- HERO CORPORATIVO [HOME-01] -->
   <section class="adv-hero">
+    <div id="advantys-globe-mount" class="adv-hero__canvas"></div>
+
     <div class="adv-hero__container">
-      
+
       <!-- Titular Principal Corporativo -->
       <h1 class="adv-hero__title">
         Optimizando el tejido empresarial global a través de la IA.
       </h1>
-      
+
       <!-- Manifiesto de Intenciones -->
       <p class="adv-hero__subtitle">
         En Advantys AI diseñamos, implantamos y auditamos soluciones de IA vertical orientadas estrictamente a la rentabilidad operativa y la eficiencia interna de corporaciones internacionales.
       </p>
-      
+
       <!-- Bloque de Conversión Estratégica (CTAs) -->
       <div class="adv-hero__actions">
         <a href="#" class="btn-glass-primary">
         Agendar consultoría estratégica
-        
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
@@ -107,50 +109,10 @@
         <a href="pages/sistema-advantys.html" class="btn-glass">
         Conocer sistema Advantys
         </a>
-        
       </div>
-      
+
     </div>
   </section>
-  <!-- ADVANTYS PLATFORM SHOWCASE -->
-<section class="adv-hero-showcase">
-  <div class="adv-hero-showcase__container">
-    
-    <!-- Halo de luz de fondo (Efecto Cyber-Enterprise) -->
-    <div class="adv-hero-showcase__glow"></div>
-
-    <!-- Contenedor Bento de la captura -->
-    <div class="adv-hero-showcase__bento">
-      <div class="adv-hero-showcase__header">
-        <div class="adv-hero-showcase__dots">
-          <span></span><span></span><span></span>
-        </div>
-        <span class="adv-hero-showcase__label">Sistema Advantys // Core Processes</span>
-      </div>
-
-      <div class="adv-hero-showcase__image-wrapper">
-        <!-- Reemplazar el src por la captura real del software -->
-        <img src="/assets/images/image.png" alt="Interfaz del Sistema Advantys mostrando métricas de eficiencia y cumplimiento ISO 42001" class="adv-hero-showcase__img">
-        
-        <!-- Overlay de gradiente para fundir con el fondo y añadir profundidad -->
-        <div class="adv-hero-showcase__fade"></div>
-      </div>
-      
-      <!-- Métricas flotantes persuasivas -->
-      <div class="adv-hero-showcase__metrics">
-        <div class="adv-metric-badge">
-          <span class="adv-metric-badge__value">+300%</span>
-          <span class="adv-metric-badge__text">Eficiencia Operativa</span>
-        </div>
-        <div class="adv-metric-badge">
-          <span class="adv-metric-badge__value">ISO 42001</span>
-          <span class="adv-metric-badge__text">Auditoría Automatizada</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
   <!-- HERO END -->
 
   <!-- ADN CORPORATIVO & VISION -->
@@ -423,6 +385,214 @@
   <!-- FOOTER END -->
 
   <script src="/assets/js/main.js"></script>
+  <script>
+    (function () {
+      const NODE_COUNT = 150;
+      const RADIUS = 2.15;
+      const CONNECT_DIST = 0.85;
+
+      function initAdvantysGlobeHero() {
+        const mount = document.getElementById('advantys-globe-mount');
+        if (!mount || typeof THREE === 'undefined') return;
+
+        const COLOR_A = new THREE.Color('#FE4237');
+        const COLOR_B = new THREE.Color('#FE7447');
+
+        const prefersReducedMotion = window.matchMedia(
+          '(prefers-reduced-motion: reduce)'
+        ).matches;
+
+        function fibonacciSphere(samples, radius) {
+          const points = [];
+          const offset = 2 / samples;
+          const increment = Math.PI * (3 - Math.sqrt(5));
+          for (let i = 0; i < samples; i++) {
+            const y = i * offset - 1 + offset / 2;
+            const r = Math.sqrt(Math.max(0, 1 - y * y));
+            const phi = i * increment;
+            const x = Math.cos(phi) * r;
+            const z = Math.sin(phi) * r;
+            points.push(new THREE.Vector3(x * radius, y * radius, z * radius));
+          }
+          return points;
+        }
+
+        function makeGlowTexture() {
+          const size = 128;
+          const canvas = document.createElement('canvas');
+          canvas.width = size;
+          canvas.height = size;
+          const ctx = canvas.getContext('2d');
+          const gradient = ctx.createRadialGradient(
+            size / 2, size / 2, 0,
+            size / 2, size / 2, size / 2
+          );
+          gradient.addColorStop(0, 'rgba(255,255,255,1)');
+          gradient.addColorStop(0.25, 'rgba(255,190,140,0.9)');
+          gradient.addColorStop(1, 'rgba(255,120,40,0)');
+          ctx.fillStyle = gradient;
+          ctx.fillRect(0, 0, size, size);
+          return new THREE.CanvasTexture(canvas);
+        }
+
+        // --- Escena base ---
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+        camera.position.set(0, 0, 6.4);
+
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        mount.appendChild(renderer.domElement);
+
+        const group = new THREE.Group();
+        scene.add(group);
+
+        // --- Nodos del "tejido" sobre la esfera ---
+        const nodePositions = fibonacciSphere(NODE_COUNT, RADIUS);
+        const posArray = new Float32Array(NODE_COUNT * 3);
+        const colorArray = new Float32Array(NODE_COUNT * 3);
+
+        nodePositions.forEach((p, i) => {
+          posArray[i * 3] = p.x;
+          posArray[i * 3 + 1] = p.y;
+          posArray[i * 3 + 2] = p.z;
+          const t = (p.y / RADIUS + 1) / 2;
+          const c = COLOR_A.clone().lerp(COLOR_B, t);
+          colorArray[i * 3] = c.r;
+          colorArray[i * 3 + 1] = c.g;
+          colorArray[i * 3 + 2] = c.b;
+        });
+
+        const nodeGeometry = new THREE.BufferGeometry();
+        nodeGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        nodeGeometry.setAttribute('color', new THREE.BufferAttribute(colorArray, 3));
+
+        const glowTexture = makeGlowTexture();
+        const nodeMaterial = new THREE.PointsMaterial({
+          size: 0.13,
+          map: glowTexture,
+          vertexColors: true,
+          transparent: true,
+          depthWrite: false,
+          blending: THREE.AdditiveBlending,
+          sizeAttenuation: true,
+        });
+        const nodes = new THREE.Points(nodeGeometry, nodeMaterial);
+        group.add(nodes);
+
+        // --- Conexiones entre nodos cercanos ---
+        const linePositions = [];
+        const lineColors = [];
+        for (let i = 0; i < nodePositions.length; i++) {
+          for (let j = i + 1; j < nodePositions.length; j++) {
+            const d = nodePositions[i].distanceTo(nodePositions[j]);
+            if (d < CONNECT_DIST) {
+              linePositions.push(
+                nodePositions[i].x, nodePositions[i].y, nodePositions[i].z,
+                nodePositions[j].x, nodePositions[j].y, nodePositions[j].z
+              );
+              const t1 = (nodePositions[i].y / RADIUS + 1) / 2;
+              const c1 = COLOR_A.clone().lerp(COLOR_B, t1);
+              lineColors.push(c1.r, c1.g, c1.b, c1.r, c1.g, c1.b);
+            }
+          }
+        }
+        const lineGeometry = new THREE.BufferGeometry();
+        lineGeometry.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+        lineGeometry.setAttribute('color', new THREE.Float32BufferAttribute(lineColors, 3));
+        const lineMaterial = new THREE.LineBasicMaterial({
+          vertexColors: true,
+          transparent: true,
+          opacity: 0.28,
+          blending: THREE.AdditiveBlending,
+          depthWrite: false,
+        });
+        const lines = new THREE.LineSegments(lineGeometry, lineMaterial);
+        group.add(lines);
+
+        // --- Esfera de cristal envolvente ---
+        const glassGeometry = new THREE.SphereGeometry(RADIUS * 1.03, 48, 48);
+        const glassMaterial = new THREE.MeshBasicMaterial({
+          color: 0x2a1512,
+          transparent: true,
+          opacity: 0.06,
+          side: THREE.BackSide,
+        });
+        const glass = new THREE.Mesh(glassGeometry, glassMaterial);
+        group.add(glass);
+
+        // --- Polvo ambiental de fondo ---
+        const dustCount = 200;
+        const dustPositions = new Float32Array(dustCount * 3);
+        for (let i = 0; i < dustCount; i++) {
+          dustPositions[i * 3] = (Math.random() - 0.5) * 16;
+          dustPositions[i * 3 + 1] = (Math.random() - 0.5) * 16;
+          dustPositions[i * 3 + 2] = (Math.random() - 0.5) * 10 - 3;
+        }
+        const dustGeometry = new THREE.BufferGeometry();
+        dustGeometry.setAttribute('position', new THREE.BufferAttribute(dustPositions, 3));
+        const dustMaterial = new THREE.PointsMaterial({
+          size: 0.025,
+          color: 0xffffff,
+          transparent: true,
+          opacity: 0.25,
+          map: glowTexture,
+          blending: THREE.AdditiveBlending,
+          depthWrite: false,
+        });
+        const dust = new THREE.Points(dustGeometry, dustMaterial);
+        scene.add(dust);
+
+        // --- Resize responsivo ---
+        function resize() {
+          const w = mount.clientWidth;
+          const h = mount.clientHeight;
+          camera.aspect = w / h;
+          camera.updateProjectionMatrix();
+          renderer.setSize(w, h);
+        }
+        resize();
+        const ro = new ResizeObserver(resize);
+        ro.observe(mount);
+
+        // --- Interacción con el cursor ---
+        const mouse = { x: 0, y: 0 };
+        function onMouseMove(e) {
+          mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+          mouse.y = (e.clientY / window.innerHeight) * 2 - 1;
+        }
+        window.addEventListener('mousemove', onMouseMove);
+
+        // --- Loop de animación ---
+        let autoAngle = 0;
+        let frameId;
+        function animate() {
+          if (!prefersReducedMotion) {
+            autoAngle += 0.0016;
+            group.rotation.y += (autoAngle + mouse.x * 0.25 - group.rotation.y) * 0.03;
+            group.rotation.x += (mouse.y * 0.12 - group.rotation.x) * 0.03;
+            dust.rotation.y += 0.00025;
+          }
+          renderer.render(scene, camera);
+          frameId = requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Limpieza opcional si en algún momento se quita el hero del DOM
+        window.addEventListener('beforeunload', () => {
+          cancelAnimationFrame(frameId);
+          ro.disconnect();
+          window.removeEventListener('mousemove', onMouseMove);
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initAdvantysGlobeHero);
+      } else {
+        initAdvantysGlobeHero();
+      }
+    })();
+  </script>
 
 </body>
 </html>
