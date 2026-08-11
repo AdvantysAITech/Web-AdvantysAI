@@ -159,8 +159,7 @@
   animation: advbgScanSweep 7s ease-in-out infinite;
 }
 
-/* --- Delays individuales de líneas (17) y nodos (15), calculados a mano para que
-       el grafo no parpadee de forma sincronizada --- */
+/* --- Delays individuales de líneas (17) y nodos (15) --- */
 .adv-herobg--edu .adv-herobg__graph-lines line:nth-child(1)  { animation-delay: 0s; }
 .adv-herobg--edu .adv-herobg__graph-lines line:nth-child(2)  { animation-delay: 0.3s; }
 .adv-herobg--edu .adv-herobg__graph-lines line:nth-child(3)  { animation-delay: 0.6s; }
@@ -196,25 +195,111 @@
 .adv-herobg--edu .adv-herobg__graph-nodes circle:nth-child(15) { animation-delay: 1.7s; }
 
 /* =========================================
-   2b) HOSPITALITY — luz difusa en movimiento (sin cambios)
+   2b) HOSPITALITY — ficha de check-in digitalizándose:
+       escáner de documento + firma que se dibuja sola + sello de
+       validación + pulso de envío hacia el Govern d'Andorra
    ========================================= */
-@keyframes advbgLightMove {
-  0%   { transform: translate(-10%, -10%); }
-  25%  { transform: translate(60%, 10%); }
-  50%  { transform: translate(30%, 60%); }
-  75%  { transform: translate(-15%, 35%); }
-  100% { transform: translate(-10%, -10%); }
+@keyframes advbgHospScan {
+  0%   { transform: translateY(0);      opacity: 0; }
+  8%   { opacity: 0.9; }
+  92%  { opacity: 0.9; }
+  100% { transform: translateY(178px); opacity: 0; }
 }
-.adv-herobg--hosp .adv-herobg__light {
+@keyframes advbgHospSign {
+  0%   { stroke-dashoffset: 150; opacity: 0; }
+  8%   { opacity: 1; }
+  45%  { stroke-dashoffset: 0; }
+  75%  { stroke-dashoffset: 0; opacity: 1; }
+  90%  { opacity: 0; }
+  100% { stroke-dashoffset: 150; opacity: 0; }
+}
+@keyframes advbgHospCheck {
+  0%, 50%  { opacity: 0; transform: scale(0.6); }
+  58%      { opacity: 1; transform: scale(1.15); }
+  66%      { transform: scale(1); }
+  88%      { opacity: 1; transform: scale(1); }
+  96%, 100% { opacity: 0; transform: scale(0.7); }
+}
+@keyframes advbgHospDot {
+  0%, 100% { opacity: 0; }
+  15%, 35% { opacity: 1; }
+  45%      { opacity: 0; }
+}
+
+.adv-herobg--hosp .adv-herobg__checkin {
   position: absolute;
-  top: -20%;
-  left: -20%;
-  width: 55%;
-  height: 55%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(254,116,71,0.28) 0%, rgba(254,66,55,0.12) 45%, transparent 72%);
-  filter: blur(60px);
-  animation: advbgLightMove 16s ease-in-out infinite;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.adv-herobg--hosp .adv-herobg__send-line {
+  stroke: #FE7447;
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  opacity: 0.22;
+}
+.adv-herobg--hosp .adv-herobg__send-dots circle {
+  fill: #FE9066;
+  animation-name: advbgHospDot;
+  animation-duration: 2.2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.adv-herobg--hosp .adv-herobg__send-dots circle:nth-child(1) { animation-delay: 0s; }
+.adv-herobg--hosp .adv-herobg__send-dots circle:nth-child(2) { animation-delay: 0.3s; }
+.adv-herobg--hosp .adv-herobg__send-dots circle:nth-child(3) { animation-delay: 0.6s; }
+.adv-herobg--hosp .adv-herobg__send-dots circle:nth-child(4) { animation-delay: 0.9s; }
+.adv-herobg--hosp .adv-herobg__send-dots circle:nth-child(5) { animation-delay: 1.2s; }
+
+.adv-herobg--hosp .adv-herobg__card {
+  fill: rgba(254, 116, 71, 0.05);
+  stroke: #FE7447;
+  stroke-width: 1;
+  opacity: 0.5;
+}
+.adv-herobg--hosp .adv-herobg__card-photo {
+  fill: rgba(254, 116, 71, 0.14);
+}
+.adv-herobg--hosp .adv-herobg__card-field {
+  fill: #FE7447;
+  opacity: 0.3;
+}
+.adv-herobg--hosp .adv-herobg__card-field--wide {
+  opacity: 0.16;
+}
+
+.adv-herobg--hosp .adv-herobg__signature {
+  fill: none;
+  stroke: #FE9066;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: advbgHospSign 6s ease-in-out infinite;
+}
+
+.adv-herobg--hosp .adv-herobg__scan {
+  fill: rgba(254, 144, 102, 0.6);
+  animation: advbgHospScan 3s ease-in-out infinite;
+}
+
+.adv-herobg--hosp .adv-herobg__check {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: advbgHospCheck 6s ease-in-out infinite;
+}
+.adv-herobg--hosp .adv-herobg__check circle {
+  fill: #090d16;
+  stroke: #FE7447;
+  stroke-width: 1.5;
+}
+.adv-herobg--hosp .adv-herobg__check path {
+  fill: none;
+  stroke: #FE9066;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 /* =========================================
