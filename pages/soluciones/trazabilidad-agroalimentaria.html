@@ -125,7 +125,7 @@
             <polyline points="7 7 17 7 17 17"></polyline>
           </svg>
         </a>
-        <a href="/solicitud?role=Inversor&spinoff=Trazabilidad%20Industrial" class="btn-glass">Soy inversor</a>
+        <a href="#inversores" class="btn-glass">Soy inversor</a>
       </div>
     </div>
   </section>
@@ -228,16 +228,85 @@
   <!-- CTA FINAL: DOBLE AUDIENCIA -->
   <section class="adv-vertical-cta container" id="inversores">
     <div class="adv-vertical-cta__grid">
+
       <div class="adv-vertical-cta__card adv-vertical-cta__card--highlight">
         <h3>¿Gestionas una cooperativa o almacén hortofrutícola?</h3>
         <p>Solicita una propuesta adaptada a tu instalación y descubre cómo la liquidación diferenciada por calidad real puede mejorar tu relación con los agricultores socios.</p>
-        <a href="/solicitud?role=Cliente%20Final&spinoff=Trazabilidad%20Industrial" class="btn-glass-primary">Solicitar propuesta</a>
+        <form class="adv-vertical-cta__form" data-role="Cliente Final" data-spinoff="Trazabilidad Industrial" data-source="Web Advantys — Trazabilidad — Cliente" novalidate>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="traz-cli-name">Nombre completo</label>
+            <input type="text" id="traz-cli-name" name="name" class="adv-form__input" placeholder="Nombre y apellidos" autocomplete="name" required>
+            <span class="adv-form__error" data-error-for="name"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="traz-cli-email">Email</label>
+            <input type="email" id="traz-cli-email" name="email" class="adv-form__input" placeholder="tunombre@empresa.com" autocomplete="email" required>
+            <span class="adv-form__error" data-error-for="email"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="traz-cli-phone">Teléfono</label>
+            <input type="tel" id="traz-cli-phone" name="phone" class="adv-form__input" placeholder="+376 000 000" autocomplete="tel" required>
+            <span class="adv-form__error" data-error-for="phone"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="traz-cli-company">Empresa</label>
+            <input type="text" id="traz-cli-company" name="company" class="adv-form__input" placeholder="Nombre de tu empresa" autocomplete="organization" required>
+            <span class="adv-form__error" data-error-for="company"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="traz-cli-location">Ciudad / País</label>
+            <input type="text" id="traz-cli-location" name="location" class="adv-form__input" placeholder="Ciudad, país" autocomplete="address-level2" required>
+            <span class="adv-form__error" data-error-for="location"></span>
+          </div>
+          <button type="submit" class="adv-contact-submit adv-vertical-cta__submit">
+            <span class="adv-contact-submit__label">Solicitar propuesta</span>
+            <svg class="adv-contact-submit__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+          <div class="adv-contact-feedback" data-feedback role="status" aria-live="polite"></div>
+        </form>
       </div>
+
       <div class="adv-vertical-cta__card">
         <h3>¿Eres inversor?</h3>
         <p>Advantys AI Trazabilidad Agroalimentaria es una de nuestras iniciativas del Joint Venture Builder. Si te interesa participar en su capitalización, hablamos.</p>
-        <a href="/solicitud?role=Inversor&spinoff=Trazabilidad%20Industrial" class="btn-glass">Quiero saber más</a>
+        <form class="adv-vertical-cta__form" data-role="Inversor" data-spinoff="Trazabilidad Industrial" data-source="Web Advantys — Trazabilidad — Inversor" novalidate>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="traz-inv-name">Nombre completo</label>
+            <input type="text" id="traz-inv-name" name="name" class="adv-form__input" placeholder="Nombre y apellidos" autocomplete="name" required>
+            <span class="adv-form__error" data-error-for="name"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="traz-inv-email">Email</label>
+            <input type="email" id="traz-inv-email" name="email" class="adv-form__input" placeholder="tunombre@empresa.com" autocomplete="email" required>
+            <span class="adv-form__error" data-error-for="email"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="traz-inv-phone">Teléfono</label>
+            <input type="tel" id="traz-inv-phone" name="phone" class="adv-form__input" placeholder="+376 000 000" autocomplete="tel" required>
+            <span class="adv-form__error" data-error-for="phone"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="traz-inv-company">Empresa</label>
+            <input type="text" id="traz-inv-company" name="company" class="adv-form__input" placeholder="Nombre de tu empresa" autocomplete="organization" required>
+            <span class="adv-form__error" data-error-for="company"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="traz-inv-location">Ciudad / País</label>
+            <input type="text" id="traz-inv-location" name="location" class="adv-form__input" placeholder="Ciudad, país" autocomplete="address-level2" required>
+            <span class="adv-form__error" data-error-for="location"></span>
+          </div>
+          <button type="submit" class="adv-contact-submit adv-vertical-cta__submit">
+            <span class="adv-contact-submit__label">Quiero saber más</span>
+            <svg class="adv-contact-submit__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+          <div class="adv-contact-feedback" data-feedback role="status" aria-live="polite"></div>
+        </form>
       </div>
+
     </div>
   </section>
   <!-- CTA FINAL END -->
@@ -422,8 +491,9 @@
 <!-- FOOTER END -->
 
 <script src="/assets/js/main.js"></script>
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/vertical-cta-form.js"></script>
+<script src="/assets/js/footer-contact-form.js"></script>
 
-  <script src="/assets/js/config.js"></script>
-  <script src="/assets/js/footer-contact-form.js"></script>
 </body>
 </html>

@@ -79,6 +79,8 @@
   </div>
 </header>
 
+<main class="adv-page-content">
+
   <!-- HERO -->
   <section class="adv-vertical-hero container">
     <div class="adv-herobg adv-herobg--hosp">
@@ -249,16 +251,85 @@
   <!-- CTA FINAL: DOBLE AUDIENCIA -->
   <section class="adv-vertical-cta container" id="inversores">
     <div class="adv-vertical-cta__grid">
+
       <div class="adv-vertical-cta__card adv-vertical-cta__card--highlight">
         <h3>¿Gestionas un hotel o piso turístico?</h3>
         <p>Solicita una demo de Advantys AI Hospitality y digitaliza tu registro ROAT desde el primer día.</p>
-        <a href="mailto:contacto@advantys.ai?subject=Quiero%20una%20demo%20de%20Advantys%20AI%20Hospitality" class="btn-glass-primary">Solicitar demo</a>
+        <form class="adv-vertical-cta__form" data-role="Cliente Final" data-spinoff="ROAT" data-source="Web Advantys — Hospitality — Cliente" novalidate>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="hosp-cli-name">Nombre completo</label>
+            <input type="text" id="hosp-cli-name" name="name" class="adv-form__input" placeholder="Nombre y apellidos" autocomplete="name" required>
+            <span class="adv-form__error" data-error-for="name"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="hosp-cli-email">Email</label>
+            <input type="email" id="hosp-cli-email" name="email" class="adv-form__input" placeholder="tunombre@empresa.com" autocomplete="email" required>
+            <span class="adv-form__error" data-error-for="email"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="hosp-cli-phone">Teléfono</label>
+            <input type="tel" id="hosp-cli-phone" name="phone" class="adv-form__input" placeholder="+376 000 000" autocomplete="tel" required>
+            <span class="adv-form__error" data-error-for="phone"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="hosp-cli-company">Empresa</label>
+            <input type="text" id="hosp-cli-company" name="company" class="adv-form__input" placeholder="Nombre de tu empresa" autocomplete="organization" required>
+            <span class="adv-form__error" data-error-for="company"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="hosp-cli-location">Ciudad / País</label>
+            <input type="text" id="hosp-cli-location" name="location" class="adv-form__input" placeholder="Ciudad, país" autocomplete="address-level2" required>
+            <span class="adv-form__error" data-error-for="location"></span>
+          </div>
+          <button type="submit" class="adv-contact-submit adv-vertical-cta__submit">
+            <span class="adv-contact-submit__label">Solicitar demo</span>
+            <svg class="adv-contact-submit__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+          <div class="adv-contact-feedback" data-feedback role="status" aria-live="polite"></div>
+        </form>
       </div>
+
       <div class="adv-vertical-cta__card">
         <h3>¿Eres inversor?</h3>
         <p>Advantys AI Hospitality es una de nuestras iniciativas del Joint Venture Builder. Si te interesa participar en su capitalización, hablamos.</p>
-        <a href="mailto:jacob.ruiz@advantys.ai?subject=Inter%C3%A9s%20inversor%20-%20Advantys%20AI%20Hospitality" class="btn-glass">Quiero saber más</a>
+        <form class="adv-vertical-cta__form" data-role="Inversor" data-spinoff="ROAT" data-source="Web Advantys — Hospitality — Inversor" novalidate>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="hosp-inv-name">Nombre completo</label>
+            <input type="text" id="hosp-inv-name" name="name" class="adv-form__input" placeholder="Nombre y apellidos" autocomplete="name" required>
+            <span class="adv-form__error" data-error-for="name"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="hosp-inv-email">Email</label>
+            <input type="email" id="hosp-inv-email" name="email" class="adv-form__input" placeholder="tunombre@empresa.com" autocomplete="email" required>
+            <span class="adv-form__error" data-error-for="email"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="hosp-inv-phone">Teléfono</label>
+            <input type="tel" id="hosp-inv-phone" name="phone" class="adv-form__input" placeholder="+376 000 000" autocomplete="tel" required>
+            <span class="adv-form__error" data-error-for="phone"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="hosp-inv-company">Empresa</label>
+            <input type="text" id="hosp-inv-company" name="company" class="adv-form__input" placeholder="Nombre de tu empresa" autocomplete="organization" required>
+            <span class="adv-form__error" data-error-for="company"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="hosp-inv-location">Ciudad / País</label>
+            <input type="text" id="hosp-inv-location" name="location" class="adv-form__input" placeholder="Ciudad, país" autocomplete="address-level2" required>
+            <span class="adv-form__error" data-error-for="location"></span>
+          </div>
+          <button type="submit" class="adv-contact-submit adv-vertical-cta__submit">
+            <span class="adv-contact-submit__label">Quiero saber más</span>
+            <svg class="adv-contact-submit__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+          <div class="adv-contact-feedback" data-feedback role="status" aria-live="polite"></div>
+        </form>
       </div>
+
     </div>
   </section>
   <!-- CTA FINAL END -->
@@ -342,6 +413,8 @@
 <!-- FOOTER END -->
 
 <script src="/assets/js/main.js"></script>
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/vertical-cta-form.js"></script>
 
 </body>
 </html>
