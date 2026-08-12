@@ -413,7 +413,6 @@
             <a href="/soluciones-ia" class="footer-link">Soluciones IA</a>
             <a href="/sistema-advantys" class="footer-link">Sistema Advantys</a>
             <a href="/iso-42001" class="footer-link">Auditoría ISO 42001</a>
-            <a href="/casos-exito" class="footer-link">Casos de Éxito</a>
             <a href="/pages/partners.html" class="footer-link">Partners</a>
           </nav>
         </div>
@@ -422,7 +421,6 @@
         <div class="footer-card">
           <h3 class="footer-heading">Empresa</h3>
           <nav class="footer-nav">
-            <a href="/about-us" class="footer-link">Sobre nosotros</a>
             <span class="adv-link-island adv-link-island--disabled" aria-disabled="true" title="Próximamente">Noticias <i class="ph ph-lock"></i></span>
             <a href="/aviso-legal" class="footer-link">Aviso legal</a>
             <a href="/politica-priv" class="footer-link">Política de privacidad</a>
@@ -578,226 +576,322 @@
   <script src="/assets/js/main.js"></script>
 
   <script>
-  (function () {
-    var NODES = [
-      { id: "formulario", label: "Formulario Web", phase: 0 },
-      { id: "ads", label: "Anuncios (Ads)", phase: 0 },
-      { id: "whatsapp", label: "WhatsApp", phase: 0 },
-      { id: "llamadas", label: "Llamadas", phase: 0 },
-      { id: "rrss", label: "Redes Sociales", phase: 0 },
-      { id: "contacto", label: "Primer Contacto", phase: 1 },
-      { id: "cualificacion", label: "Cualificación", phase: 1 },
-      { id: "propuesta", label: "Propuesta", phase: 1 },
-      { id: "negociacion", label: "Negociación", phase: 1 },
-      { id: "cierre", label: "Cierre", phase: 1 },
-      { id: "onboarding", label: "Onboarding", phase: 2 },
-      { id: "soporte", label: "Soporte", phase: 2 },
-      { id: "seguimiento", label: "Seguimiento", phase: 2 },
-      { id: "facturacion", label: "Facturación", phase: 2 },
-    ];
+    (function () {
+      var NODES = [
+        { id: "formulario", label: "Formulario Web", phase: 0 },
+        { id: "ads", label: "Anuncios (Ads)", phase: 0 },
+        { id: "whatsapp", label: "WhatsApp", phase: 0 },
+        { id: "llamadas", label: "Llamadas", phase: 0 },
+        { id: "rrss", label: "Redes Sociales", phase: 0 },
+        { id: "contacto", label: "Primer Contacto", phase: 1 },
+        { id: "cualificacion", label: "Cualificación", phase: 1 },
+        { id: "propuesta", label: "Propuesta", phase: 1 },
+        { id: "negociacion", label: "Negociación", phase: 1 },
+        { id: "cierre", label: "Cierre", phase: 1 },
+        { id: "onboarding", label: "Onboarding", phase: 2 },
+        { id: "soporte", label: "Soporte", phase: 2 },
+        { id: "seguimiento", label: "Seguimiento", phase: 2 },
+        { id: "facturacion", label: "Facturación", phase: 2 },
+      ];
 
-    var CHAOS_POS = [
-      { top: 8, left: 5, rot: -11 }, { top: 14, left: 40, rot: 7 },
-      { top: 4, left: 74, rot: -6 }, { top: 32, left: 14, rot: 6 },
-      { top: 20, left: 60, rot: -9 }, { top: 46, left: 2, rot: 9 },
-      { top: 56, left: 29, rot: -5 }, { top: 36, left: 54, rot: 6 },
-      { top: 48, left: 80, rot: -8 }, { top: 70, left: 9, rot: 5 },
-      { top: 76, left: 39, rot: -7 }, { top: 62, left: 64, rot: 8 },
-      { top: 86, left: 66, rot: -4 }, { top: 80, left: 87, rot: 6 },
-    ];
+      var CHAOS_POS = [
+        { top: 8, left: 5, rot: -11 }, { top: 14, left: 40, rot: 7 },
+        { top: 4, left: 74, rot: -6 }, { top: 32, left: 14, rot: 6 },
+        { top: 20, left: 60, rot: -9 }, { top: 46, left: 2, rot: 9 },
+        { top: 56, left: 29, rot: -5 }, { top: 36, left: 54, rot: 6 },
+        { top: 48, left: 80, rot: -8 }, { top: 70, left: 9, rot: 5 },
+        { top: 76, left: 39, rot: -7 }, { top: 62, left: 64, rot: 8 },
+        { top: 86, left: 66, rot: -4 }, { top: 80, left: 87, rot: 6 },
+      ];
 
-    var ALERTS = [
-      { top: 12, left: 24 }, { top: 58, left: 47 },
-      { top: 26, left: 86 }, { top: 72, left: 21 },
-    ];
+      var ALERTS = [
+        { top: 12, left: 24 }, { top: 58, left: 47 },
+        { top: 26, left: 86 }, { top: 72, left: 21 },
+      ];
 
-    var SVG_NS = "http://www.w3.org/2000/svg";
+      var SVG_NS = "http://www.w3.org/2000/svg";
 
-    function svgEl(tag, attrs) {
-      var el = document.createElementNS(SVG_NS, tag);
-      for (var k in attrs) el.setAttribute(k, attrs[k]);
-      return el;
-    }
-
-    function renderChaos() {
-      var mount = document.getElementById('adv-chaos');
-      if (!mount) return;
-
-      var svg = svgEl('svg', {
-        class: 'adv-chaos__svg', preserveAspectRatio: 'none', viewBox: '0 0 100 100'
-      });
-
-      var lines = [];
-      for (var i = 0; i < NODES.length; i++) {
-        var a = CHAOS_POS[i];
-        var b1 = CHAOS_POS[(i + 3) % NODES.length];
-        var b2 = CHAOS_POS[(i + 6) % NODES.length];
-        lines.push([a, b1]);
-        lines.push([a, b2]);
+      function svgEl(tag, attrs) {
+        var el = document.createElementNS(SVG_NS, tag);
+        for (var k in attrs) el.setAttribute(k, attrs[k]);
+        return el;
       }
-      lines.forEach(function (pair) {
-        var line = svgEl('line', {
-          x1: pair[0].left, y1: pair[0].top, x2: pair[1].left, y2: pair[1].top,
-          stroke: '#FE4237', 'stroke-width': '0.22', opacity: '0.26'
-        });
-        svg.appendChild(line);
-      });
-      mount.appendChild(svg);
 
-      ALERTS.forEach(function (a) {
-        var div = document.createElement('div');
-        div.className = 'adv-chaos__alert';
-        div.style.top = a.top + '%';
-        div.style.left = a.left + '%';
-        div.textContent = '!';
-        mount.appendChild(div);
-      });
+      function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
 
-      NODES.forEach(function (n, i) {
-        var p = CHAOS_POS[i];
-        var div = document.createElement('div');
-        div.className = 'adv-chaos__node';
-        div.style.top = p.top + '%';
-        div.style.left = p.left + '%';
-        div.style.transform = 'rotate(' + p.rot + 'deg)';
-        div.textContent = n.label;
-        mount.appendChild(div);
-      });
-    }
+      function renderChaos() {
+        var mount = document.getElementById('adv-chaos');
+        if (!mount) return;
 
-    function renderFlow() {
-      var mount = document.getElementById('adv-flow');
-      if (!mount) return;
-
-      function build() {
-        mount.innerHTML = '';
-        var W = mount.clientWidth || 1140;
-        var H = W / 2.1;
-
-        var capX = 0.06 * W, capW = 0.16 * W, trunkL = 0.265 * W;
-        var vX0 = 0.3 * W, vW = 0.072 * W, vGap = 0.014 * W, vH = 0.17 * H;
-        var trunkR = 0.735 * W, atX = 0.78 * W, atW = 0.16 * W;
-        var topM = 0.34 * H, botM = 0.08 * H, capH = 0.085 * H, atH = 0.085 * H;
-        var vY = topM + (H - topM - botM) / 2;
-
-        var capRows = [0, 1, 2, 3, 4].map(function (i) { return topM + (i * (H - topM - botM)) / 4; });
-        var atRows = [0, 1, 2, 3].map(function (i) { return topM + (i * (H - topM - botM)) / 3; });
-
-        var captacion = NODES.filter(function (n) { return n.phase === 0; });
-        var ventas = NODES.filter(function (n) { return n.phase === 1; });
-        var atencion = NODES.filter(function (n) { return n.phase === 2; });
-
-        var ventasBoxes = ventas.map(function (n, i) {
-          var left = vX0 + i * (vW + vGap);
-          return Object.assign({}, n, { left: left, top: vY - vH / 2, w: vW, h: vH });
+        var svg = svgEl('svg', {
+          class: 'adv-chaos__svg', preserveAspectRatio: 'none', viewBox: '0 0 100 100'
         });
 
-        var fanIn = captacion.map(function (n, i) {
-          var y = capRows[i], startX = capX + capW, endX = vX0;
-          return 'M ' + startX + ' ' + y + ' L ' + trunkL + ' ' + y + ' L ' + trunkL + ' ' + vY + ' L ' + endX + ' ' + vY;
+        var lines = [];
+        for (var i = 0; i < NODES.length; i++) {
+          var a = CHAOS_POS[i];
+          var b1 = CHAOS_POS[(i + 3) % NODES.length];
+          var b2 = CHAOS_POS[(i + 6) % NODES.length];
+          lines.push([a, b1]);
+          lines.push([a, b2]);
+        }
+        lines.forEach(function (pair) {
+          var line = svgEl('line', {
+            x1: pair[0].left, y1: pair[0].top, x2: pair[1].left, y2: pair[1].top,
+            stroke: '#FE4237', 'stroke-width': '0.22', opacity: '0.26'
+          });
+          svg.appendChild(line);
         });
-
-        var backbone = [0, 1, 2, 3].map(function (i) {
-          var startX = ventasBoxes[i].left + vW, endX = ventasBoxes[i + 1].left;
-          return { startX: startX, endX: endX, midX: (startX + endX) / 2 };
-        });
-
-        var lastVentasRight = ventasBoxes[4].left + vW;
-        var fanOut = atencion.map(function (n, i) {
-          var y = atRows[i], endX = atX;
-          return 'M ' + lastVentasRight + ' ' + vY + ' L ' + trunkR + ' ' + vY + ' L ' + trunkR + ' ' + y + ' L ' + endX + ' ' + y;
-        });
-
-        var svg = svgEl('svg', { width: W, height: H, viewBox: '0 0 ' + W + ' ' + H, class: 'adv-flow__svg' });
-
-        var defs = svgEl('defs', {});
-        var grad = svgEl('linearGradient', { id: 'edgeGrad', x1: '0', y1: '0', x2: '1', y2: '0' });
-        var s1 = svgEl('stop', { offset: '0%', 'stop-color': '#FE4237' });
-        var s2 = svgEl('stop', { offset: '100%', 'stop-color': '#FE7447' });
-        grad.appendChild(s1); grad.appendChild(s2);
-        var marker = svgEl('marker', { id: 'arrowHead', viewBox: '0 0 10 10', refX: '8.5', refY: '5', markerWidth: '6', markerHeight: '6', orient: 'auto-start-reverse' });
-        var arrowPath = svgEl('path', { d: 'M0,0 L10,5 L0,10 z', fill: '#FE7447' });
-        marker.appendChild(arrowPath);
-        defs.appendChild(grad); defs.appendChild(marker);
-        svg.appendChild(defs);
-
-        fanIn.concat(fanOut).forEach(function (d) {
-          svg.appendChild(svgEl('path', { d: d, fill: 'none', stroke: 'url(#edgeGrad)', 'stroke-width': '1.6', opacity: '0.85', 'marker-end': 'url(#arrowHead)' }));
-        });
-
-        backbone.forEach(function (b) {
-          svg.appendChild(svgEl('line', { x1: b.startX, y1: vY, x2: b.endX, y2: vY, stroke: 'url(#edgeGrad)', 'stroke-width': '2', opacity: '0.95' }));
-        });
-        backbone.forEach(function (b) {
-          var pts = (b.midX - 6) + ',' + (vY - 5) + ' ' + (b.midX - 6) + ',' + (vY + 5) + ' ' + (b.midX + 6) + ',' + vY;
-          svg.appendChild(svgEl('polygon', { points: pts, fill: '#FE7447' }));
-        });
-
         mount.appendChild(svg);
 
-        function phaseLabel(text, left) {
+        ALERTS.forEach(function (a) {
+          var div = document.createElement('div');
+          div.className = 'adv-chaos__alert';
+          div.style.top = a.top + '%';
+          div.style.left = a.left + '%';
+          div.textContent = '!';
+          mount.appendChild(div);
+        });
+
+        NODES.forEach(function (n, i) {
+          var p = CHAOS_POS[i];
+          var div = document.createElement('div');
+          div.className = 'adv-chaos__node';
+          div.style.top = p.top + '%';
+          div.style.left = p.left + '%';
+          div.style.transform = 'rotate(' + p.rot + 'deg)';
+          div.textContent = n.label;
+          mount.appendChild(div);
+        });
+      }
+
+      function renderFlow() {
+        var mount = document.getElementById('adv-flow');
+        if (!mount) return;
+
+        /* --- helpers compartidos --- */
+        function defsFor(svg) {
+          var defs = svgEl('defs', {});
+          var grad = svgEl('linearGradient', { id: 'edgeGrad', x1: '0', y1: '0', x2: '1', y2: '0' });
+          grad.appendChild(svgEl('stop', { offset: '0%', 'stop-color': '#FE4237' }));
+          grad.appendChild(svgEl('stop', { offset: '100%', 'stop-color': '#FE7447' }));
+          var marker = svgEl('marker', {
+            id: 'arrowHead', viewBox: '0 0 10 10', refX: '8.5', refY: '5',
+            markerWidth: '6', markerHeight: '6', orient: 'auto-start-reverse'
+          });
+          marker.appendChild(svgEl('path', { d: 'M0,0 L10,5 L0,10 z', fill: '#FE7447' }));
+          defs.appendChild(grad); defs.appendChild(marker);
+          svg.appendChild(defs);
+        }
+
+        function makeBox(cls, left, top, w, h, font, label) {
+          var div = document.createElement('div');
+          div.className = 'adv-flow__box ' + cls;
+          div.style.left = left + 'px';
+          div.style.top = top + 'px';
+          div.style.width = w + 'px';
+          div.style.height = h + 'px';
+          div.style.fontSize = font + 'px';
+          div.textContent = label;
+          mount.appendChild(div);
+        }
+
+        function makeLabel(text, x, y, centered) {
           var div = document.createElement('div');
           div.className = 'adv-flow__phase-label';
-          div.style.top = (topM - 56) + 'px';
-          div.style.left = left + 'px';
+          div.style.left = x + 'px';
+          div.style.top = y + 'px';
+          if (!centered) div.style.transform = 'none';
           div.textContent = text;
           mount.appendChild(div);
         }
-        phaseLabel('CAPTACIÓN DE LEADS', capX + capW / 2);
-        phaseLabel('VENTAS', vX0 + (5 * vW + 4 * vGap) / 2);
-        phaseLabel('ATENCIÓN AL CLIENTE', atX + atW / 2);
 
-        captacion.forEach(function (n, i) {
-          var div = document.createElement('div');
-          div.className = 'adv-flow__box adv-flow__box--edge';
-          div.style.left = capX + 'px';
-          div.style.top = (capRows[i] - capH / 2) + 'px';
-          div.style.width = capW + 'px';
-          div.style.height = capH + 'px';
-          div.style.fontSize = '11px';
-          div.textContent = n.label;
-          mount.appendChild(div);
-        });
+        /* =========================================================
+          LAYOUT ANCHO (>= 760px): flujo horizontal (como hasta ahora)
+          ========================================================= */
+        function buildWide(W, H) {
+          var capX = 0.06 * W, capW = 0.16 * W, trunkL = 0.265 * W;
+          var vX0 = 0.3 * W, vW = 0.072 * W, vGap = 0.014 * W, vH = 0.17 * H;
+          var trunkR = 0.735 * W, atX = 0.78 * W, atW = 0.16 * W;
+          var topM = 0.34 * H, botM = 0.08 * H, capH = 0.085 * H, atH = 0.085 * H;
+          var vY = topM + (H - topM - botM) / 2;
 
-        ventasBoxes.forEach(function (n) {
-          var div = document.createElement('div');
-          div.className = 'adv-flow__box adv-flow__box--core';
-          div.style.left = n.left + 'px';
-          div.style.top = n.top + 'px';
-          div.style.width = n.w + 'px';
-          div.style.height = n.h + 'px';
-          div.textContent = n.label;
-          mount.appendChild(div);
-        });
+          var capRows = [0, 1, 2, 3, 4].map(function (i) { return topM + (i * (H - topM - botM)) / 4; });
+          var atRows = [0, 1, 2, 3].map(function (i) { return topM + (i * (H - topM - botM)) / 3; });
 
-        atencion.forEach(function (n, i) {
-          var div = document.createElement('div');
-          div.className = 'adv-flow__box adv-flow__box--edge';
-          div.style.left = atX + 'px';
-          div.style.top = (atRows[i] - atH / 2) + 'px';
-          div.style.width = atW + 'px';
-          div.style.height = atH + 'px';
-          div.textContent = n.label;
-          mount.appendChild(div);
-        });
+          var captacion = NODES.filter(function (n) { return n.phase === 0; });
+          var ventas = NODES.filter(function (n) { return n.phase === 1; });
+          var atencion = NODES.filter(function (n) { return n.phase === 2; });
+
+          var ventasBoxes = ventas.map(function (n, i) {
+            var left = vX0 + i * (vW + vGap);
+            return Object.assign({}, n, { left: left, top: vY - vH / 2, w: vW, h: vH });
+          });
+
+          var fanIn = captacion.map(function (n, i) {
+            var y = capRows[i], startX = capX + capW, endX = vX0;
+            return 'M ' + startX + ' ' + y + ' L ' + trunkL + ' ' + y + ' L ' + trunkL + ' ' + vY + ' L ' + endX + ' ' + vY;
+          });
+
+          var backbone = [0, 1, 2, 3].map(function (i) {
+            var startX = ventasBoxes[i].left + vW, endX = ventasBoxes[i + 1].left;
+            return { startX: startX, endX: endX, midX: (startX + endX) / 2 };
+          });
+
+          var lastVentasRight = ventasBoxes[4].left + vW;
+          var fanOut = atencion.map(function (n, i) {
+            var y = atRows[i];
+            return 'M ' + lastVentasRight + ' ' + vY + ' L ' + trunkR + ' ' + vY + ' L ' + trunkR + ' ' + y + ' L ' + atX + ' ' + y;
+          });
+
+          var svg = svgEl('svg', { width: W, height: H, viewBox: '0 0 ' + W + ' ' + H, class: 'adv-flow__svg' });
+          defsFor(svg);
+
+          fanIn.concat(fanOut).forEach(function (d) {
+            svg.appendChild(svgEl('path', { d: d, fill: 'none', stroke: 'url(#edgeGrad)', 'stroke-width': '1.6', opacity: '0.85', 'marker-end': 'url(#arrowHead)' }));
+          });
+          backbone.forEach(function (b) {
+            svg.appendChild(svgEl('line', { x1: b.startX, y1: vY, x2: b.endX, y2: vY, stroke: 'url(#edgeGrad)', 'stroke-width': '2', opacity: '0.95' }));
+          });
+          backbone.forEach(function (b) {
+            var pts = (b.midX - 6) + ',' + (vY - 5) + ' ' + (b.midX - 6) + ',' + (vY + 5) + ' ' + (b.midX + 6) + ',' + vY;
+            svg.appendChild(svgEl('polygon', { points: pts, fill: '#FE7447' }));
+          });
+          mount.appendChild(svg);
+
+          makeLabel('CAPTACIÓN DE LEADS', capX + capW / 2, topM - 56, true);
+          makeLabel('VENTAS', vX0 + (5 * vW + 4 * vGap) / 2, topM - 56, true);
+          makeLabel('ATENCIÓN AL CLIENTE', atX + atW / 2, topM - 56, true);
+
+          captacion.forEach(function (n, i) {
+            makeBox('adv-flow__box--edge', capX, capRows[i] - capH / 2, capW, capH, 11, n.label);
+          });
+          ventasBoxes.forEach(function (n) {
+            makeBox('adv-flow__box--core', n.left, n.top, n.w, n.h, 10, n.label);
+          });
+          atencion.forEach(function (n, i) {
+            makeBox('adv-flow__box--edge', atX, atRows[i] - atH / 2, atW, atH, 11, n.label);
+          });
+        }
+
+        /* =========================================================
+          LAYOUT ESTRECHO (< 760px): flujo vertical, ocupa todo el panel
+          ========================================================= */
+        function buildNarrow(W, H) {
+          var padX = 0.045 * W;
+          var gap = 0.018 * W;
+          var cx = W / 2;
+
+          var capW = (W - 2 * padX - 4 * gap) / 5;
+          var capH = 0.058 * H;
+          var capY = 0.155 * H;
+          var trunkIn = 0.25 * H;
+
+          var vW = 0.52 * W;
+          var vX = (W - vW) / 2;
+          var vTop = 0.30 * H;
+          var vBot = 0.795 * H;
+          var vGap = 0.022 * H;
+          var vH = (vBot - vTop - 4 * vGap) / 5;
+
+          var trunkOut = 0.862 * H;
+          var atH = 0.058 * H;
+          var atY = 0.888 * H;
+          var atW = (W - 2 * padX - 3 * gap) / 4;
+
+          var capFont = clamp(0.0255 * W, 7.5, 11);
+          var vFont = clamp(0.032 * W, 9, 13);
+
+          var captacion = NODES.filter(function (n) { return n.phase === 0; });
+          var ventas = NODES.filter(function (n) { return n.phase === 1; });
+          var atencion = NODES.filter(function (n) { return n.phase === 2; });
+
+          var svg = svgEl('svg', { width: W, height: H, viewBox: '0 0 ' + W + ' ' + H, class: 'adv-flow__svg' });
+          defsFor(svg);
+
+          /* Fan-in: cada canal baja al troncal y entra en el primer paso de ventas */
+          captacion.forEach(function (n, i) {
+            var x = padX + i * (capW + gap) + capW / 2;
+            var d = 'M ' + x + ' ' + (capY + capH) + ' L ' + x + ' ' + trunkIn + ' L ' + cx + ' ' + trunkIn + ' L ' + cx + ' ' + vTop;
+            svg.appendChild(svgEl('path', {
+              d: d, fill: 'none', stroke: 'url(#edgeGrad)', 'stroke-width': '1.4',
+              opacity: '0.85', 'marker-end': 'url(#arrowHead)'
+            }));
+          });
+
+          /* Columna de ventas: conectores verticales entre pasos */
+          for (var i = 0; i < 4; i++) {
+            var y1 = vTop + i * (vH + vGap) + vH;
+            var y2 = y1 + vGap;
+            svg.appendChild(svgEl('line', {
+              x1: cx, y1: y1, x2: cx, y2: y2,
+              stroke: 'url(#edgeGrad)', 'stroke-width': '2', opacity: '0.95'
+            }));
+            var my = (y1 + y2) / 2;
+            var pts = (cx - 5) + ',' + (my - 5) + ' ' + (cx + 5) + ',' + (my - 5) + ' ' + cx + ',' + (my + 5);
+            svg.appendChild(svgEl('polygon', { points: pts, fill: '#FE7447' }));
+          }
+
+          /* Fan-out: del último paso de ventas a cada bloque de atención */
+          atencion.forEach(function (n, i) {
+            var x = padX + i * (atW + gap) + atW / 2;
+            var d = 'M ' + cx + ' ' + vBot + ' L ' + cx + ' ' + trunkOut + ' L ' + x + ' ' + trunkOut + ' L ' + x + ' ' + atY;
+            svg.appendChild(svgEl('path', {
+              d: d, fill: 'none', stroke: 'url(#edgeGrad)', 'stroke-width': '1.4',
+              opacity: '0.85', 'marker-end': 'url(#arrowHead)'
+            }));
+          });
+
+          mount.appendChild(svg);
+
+          makeLabel('CAPTACIÓN DE LEADS', padX, capY - 0.032 * H, false);
+          makeLabel('VENTAS', padX, vTop - 0.032 * H, false);
+          makeLabel('ATENCIÓN AL CLIENTE', padX, atY - 0.05 * H, false);
+
+          captacion.forEach(function (n, i) {
+            makeBox('adv-flow__box--edge', padX + i * (capW + gap), capY, capW, capH, capFont, n.label);
+          });
+          ventas.forEach(function (n, i) {
+            makeBox('adv-flow__box--core', vX, vTop + i * (vH + vGap), vW, vH, vFont, n.label);
+          });
+          atencion.forEach(function (n, i) {
+            makeBox('adv-flow__box--edge', padX + i * (atW + gap), atY, atW, atH, capFont, n.label);
+          });
+        }
+
+        var lastW = 0, lastH = 0;
+
+        function build() {
+          var W = mount.clientWidth || 1140;
+          var H = mount.clientHeight || 520;
+          if (W === lastW && H === lastH) return;
+          lastW = W; lastH = H;
+
+          mount.innerHTML = '';
+          if (W < 760) buildNarrow(W, H);
+          else buildWide(W, H);
+        }
+
+        build();
+        if (typeof ResizeObserver !== 'undefined') {
+          var ro = new ResizeObserver(function () { build(); });
+          ro.observe(mount);
+        } else {
+          window.addEventListener('resize', build);
+        }
       }
 
-      build();
-      var ro = new ResizeObserver(function () { build(); });
-      ro.observe(mount);
-    }
+      function init() {
+        renderChaos();
+        renderFlow();
+      }
 
-    function init() {
-      renderChaos();
-      renderFlow();
-    }
-
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', init);
-    } else {
-      init();
-    }
-  })();
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
   </script>
 
   <script>

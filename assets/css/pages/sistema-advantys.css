@@ -184,6 +184,8 @@
   box-sizing: border-box;
   padding: 0 8px;
   overflow: hidden;
+  line-height: 1.15;
+  white-space: normal;
 }
 
 .adv-flow__box--edge {
@@ -479,8 +481,9 @@
 .adv-compare-hint i { font-size: 1rem; }
 
 /* Mobile: taller panel on small screens */
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   .adv-compare-wrapper { height: 640px; }
+  .adv-flow__box { padding: 0 3px; }
   .adv-mock-alerts { display: none; }
   .adv-compare-mockup { padding: 3rem 1rem 1rem; }
 }

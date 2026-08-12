@@ -3,29 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Solicitud | Advantys AI</title>
+  <title>Advantys AI</title>
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
   <link href="/assets/css/main.css" rel="stylesheet">
-  <link href="/assets/css/pages/contacto.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link href="/assets/css/pages/autodiagnostico.css" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
 </head>
 
-<body class="page-contacto">
-
+<body>
+<!-- HEADER SECTION -->
 <header class="adv-header-island">
   <div class="adv-nav-island">
-
+    
     <a href="/" class="adv-logo-island">
       <img src="/assets/images/Logo advantys blanco y color.png" alt="Advantys AI Logo">
     </a>
-
+ 
     <nav class="adv-links-island">
       <div class="nav-glass-pill" id="nav-glasser"></div>
-
+      
       <div class="adv-dropdown">
         <a href="/soluciones-ia" class="adv-link-island">
-          Soluciones IA
+          Soluciones IA 
           <i class="ph ph-caret-down" style="font-size: 0.9em;"></i>
         </a>
         <div class="adv-dropdown-content">
@@ -35,12 +35,13 @@
           <a href="/trazabilidad-agroalimentaria">Advantys AI Trazabilidad Agroalimentaria</a>
         </div>
       </div>
-
+      
       <a href="/iso-42001" class="adv-link-island">Auditoría ISO 42001</a>
       <a href="/sistema-advantys" class="adv-link-island">Sistema Advantys</a>
       <a href="/partners" class="adv-link-island">Partners</a>
+      <span class="adv-link-island adv-link-island--disabled" aria-disabled="true" title="Próximamente">Noticias <i class="ph ph-lock"></i></span>
     </nav>
-
+ 
     <div class="adv-cta-island">
       <a href="/area-privada" class="adv-btn-private">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -49,116 +50,211 @@
         Área privada
       </a>
     </div>
-
+ 
     <button class="adv-mobile-btn-island" aria-label="Abrir menú" id="mobile-menu-toggle">
       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
+      
+  </div>
+ 
+  <div class="adv-mobile-menu" id="mobile-menu">
+    <button class="adv-mobile-menu__close" aria-label="Cerrar menú" id="mobile-menu-close">
+      <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    <nav class="adv-mobile-menu__links">
+      <a href="/soluciones-ia" class="adv-mobile-link">Soluciones IA</a>
+      <a href="/iso-42001" class="adv-mobile-link">Auditoría ISO 42001</a>
+      <a href="/sistema-advantys" class="adv-mobile-link">Sistema Advantys</a>
+      <a href="/partners" class="adv-mobile-link">Partners</a>
+      <span class="adv-mobile-link adv-mobile-link--disabled" aria-disabled="true" title="Próximamente">Noticias <i class="ph ph-lock"></i></span>
+      <a href="/area-privada" class="adv-mobile-link adv-mobile-link--cta">Área privada</a>
+    </nav>
   </div>
 </header>
+  <!-- HEADER END -->
 
-<main class="adv-contact-section">
-  <div class="adv-contact-container">
+  <!-- HEADER END -->
 
-    <div class="adv-contact-intro">
-      <h1 class="adv-contact-title" id="solicitud-title">Hablemos de tu proyecto</h1>
-      <p class="adv-contact-subtitle" id="solicitud-subtitle">
-        Déjanos tus datos y nuestro equipo se pondrá en contacto contigo en menos de 24h.
-      </p>
-    </div>
+<main class="adv-page-content">
 
-    <form id="adv-solicitud-form" class="adv-contact-card" novalidate>
+<!-- =========================================
+     PAGE: AUTODIAGNÓSTICO ISO 42001
+     ========================================= -->
 
-      <!-- Contexto precargado (spin-off / rol). Solo visible si viene de un enlace con parámetros -->
-      <div class="adv-solicitud-context" id="solicitud-context" hidden>
-        <span class="adv-solicitud-context__chip" id="solicitud-context-chip"></span>
-      </div>
-
-      <!-- Fallback: si alguien llega sin parámetros (acceso directo a /solicitud), se le pregunta -->
-      <div class="adv-form__group" id="solicitud-fallback-line" hidden>
-        <label class="adv-form__label" for="solicitud-line">¿Qué te interesa?</label>
-        <select id="solicitud-line" name="line" class="adv-form__input adv-form__select">
-          <option value="" disabled selected>Selecciona una opción</option>
-          <option value="Consultoria Tecnologica">Implantar una solución en mi empresa</option>
-          <option value="Joint Venture Builder">Invertir o participar en una spin-off</option>
-          <option value="Auditoria ISO 42001">Auditoría ISO 42001</option>
-        </select>
-      </div>
-
-      <div class="adv-form__group" id="solicitud-fallback-role" hidden>
-        <label class="adv-form__label" for="solicitud-role">Rol</label>
-        <select id="solicitud-role" name="role" class="adv-form__input adv-form__select">
-          <option value="" disabled selected>Selecciona una opción</option>
-          <option value="Cliente Final">Cliente Final</option>
-          <option value="Inversor">Inversor</option>
-        </select>
-      </div>
-
-      <div class="adv-form__group" id="solicitud-fallback-spinoff" hidden>
-        <label class="adv-form__label" for="solicitud-spinoff">Spin-off</label>
-        <select id="solicitud-spinoff" name="spinoff" class="adv-form__input adv-form__select">
-          <option value="" disabled selected>Selecciona una spin-off</option>
-          <!-- Poblado por solicitud-form.js -->
-        </select>
-      </div>
-
-      <div class="adv-form__group">
-        <label class="adv-form__label" for="solicitud-name">Nombre completo</label>
-        <input type="text" id="solicitud-name" name="name" class="adv-form__input"
-               placeholder="Nombre y apellidos" autocomplete="name" required>
-        <span class="adv-form__error" data-error-for="solicitud-name"></span>
-      </div>
-
-      <div class="adv-form__group">
-        <label class="adv-form__label" for="solicitud-email">Email</label>
-        <input type="email" id="solicitud-email" name="email" class="adv-form__input"
-               placeholder="tunombre@empresa.com" autocomplete="email" required>
-        <span class="adv-form__error" data-error-for="solicitud-email"></span>
-      </div>
-
-      <div class="adv-form__group">
-        <label class="adv-form__label" for="solicitud-phone">Teléfono</label>
-        <input type="tel" id="solicitud-phone" name="phone" class="adv-form__input"
-               placeholder="+376 000 000" autocomplete="tel" required>
-        <span class="adv-form__error" data-error-for="solicitud-phone"></span>
-      </div>
-
-      <div class="adv-form__group">
-        <label class="adv-form__label" for="solicitud-company">Empresa</label>
-        <input type="text" id="solicitud-company" name="company" class="adv-form__input"
-               placeholder="Nombre de tu empresa" autocomplete="organization" required>
-        <span class="adv-form__error" data-error-for="solicitud-company"></span>
-      </div>
-
-      <div class="adv-form__group">
-        <label class="adv-form__label" for="solicitud-location">Ciudad / País</label>
-        <input type="text" id="solicitud-location" name="location" class="adv-form__input"
-               placeholder="Ciudad, país" autocomplete="address-level2" required>
-        <span class="adv-form__error" data-error-for="solicitud-location"></span>
-      </div>
-
-      <button type="submit" class="adv-contact-submit" id="solicitud-submit">
-        <span class="adv-contact-submit__label">Enviar solicitud</span>
-        <svg class="adv-contact-submit__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-        </svg>
-      </button>
-
-      <p class="adv-contact-legal">
-        Al enviar este formulario aceptas nuestra
-        <a href="/politica-privacidad">Política de Privacidad</a>.
-      </p>
-
-      <div class="adv-contact-feedback" id="solicitud-feedback" role="status" aria-live="polite"></div>
-
-    </form>
-
+<!-- 1. HERO -->
+<section class="adv-auto-hero">
+  <div class="adv-herobg adv-herobg--iso">
+    <div class="adv-herobg__grid-plain"></div>
+    <div class="adv-herobg__radar"><div class="adv-herobg__radar-sweep"></div></div>
+    <div class="adv-herobg__orb-a"></div>
+    <div class="adv-herobg__orb-b"></div>
+    <span class="adv-herobg__particle"></span>
+    <span class="adv-herobg__particle"></span>
+    <span class="adv-herobg__particle"></span>
+    <span class="adv-herobg__particle"></span>
+    <span class="adv-herobg__particle"></span>
+    <span class="adv-herobg__particle"></span>
+    <span class="adv-herobg__particle"></span>
+    <span class="adv-herobg__particle"></span>
+    <span class="adv-herobg__particle"></span>
+    <span class="adv-herobg__particle"></span>
+    <span class="adv-herobg__particle"></span>
+    <span class="adv-herobg__particle"></span>
+    <span class="adv-herobg__particle"></span>
+    <span class="adv-herobg__particle"></span>
+    <span class="adv-herobg__particle"></span>
+    <span class="adv-herobg__particle"></span>
   </div>
-</main>
-  <!-- METODOLOGÍA END -->
 
-  <!-- FOOTER SECTION -->
+  <div class="container adv-auto-hero__content">
+    <span class="adv-badge-iso">Autodiagnóstico gratuito · 3 minutos</span>
+    <h1 class="adv-auto-hero__title">¿Está tu empresa preparada para la ISO/IEC 42001 y el AI Act?</h1>
+    <p class="adv-auto-hero__lead">
+      Responde 15 preguntas en lenguaje llano y obtén al instante tu nivel de madurez en gobernanza de inteligencia artificial, con un desglose por áreas al estilo de una auditoría real y tus prioridades de actuación.
+    </p>
+  </div>
+</section>
+
+<!-- 2. APP DE AUTODIAGNÓSTICO -->
+<section class="adv-auto">
+  <div class="container">
+    <div class="adv-auto__shell adv-glass-panel">
+
+      <!-- PANTALLA 1: INTRO -->
+      <div class="adv-auto__screen" id="auto-s-intro">
+        <h2 class="adv-auto__title">Qué obtendrás al terminar</h2>
+        <p class="adv-auto__text">
+          El diagnóstico evalúa las 6 áreas sobre las que se estructura la norma: contexto, liderazgo, riesgos, soporte, operación y proveedores, y mejora continua.
+        </p>
+        <ul class="adv-auto__list">
+          <li><i class="ph ph-gauge"></i><span>Tu puntuación global de preparación, de 0 a 100.</span></li>
+          <li><i class="ph ph-chart-bar"></i><span>Un mapa de madurez por las 6 áreas clave de la ISO/IEC 42001.</span></li>
+          <li><i class="ph ph-list-checks"></i><span>Las 3 acciones prioritarias según tus áreas más débiles.</span></li>
+        </ul>
+        <div class="adv-auto__actions">
+          <button type="button" class="btn-glass-primary" data-auto-go="auto-s-datos">
+            Empezar el diagnóstico
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </button>
+          <a href="/iso-42001" class="btn-glass">Ver el servicio de auditoría</a>
+        </div>
+        <p class="adv-auto__meta">Sin coste y sin compromiso. Tus respuestas solo se usan para generar tu informe.</p>
+      </div>
+
+      <!-- PANTALLA 2: DATOS -->
+      <div class="adv-auto__screen" id="auto-s-datos" hidden>
+        <p class="adv-auto__area">Paso 1 de 2 · Tus datos</p>
+        <h2 class="adv-auto__title">Cuéntanos quién eres</h2>
+        <p class="adv-auto__text">Necesitamos estos datos para poder enviarte el informe y contextualizar el resultado.</p>
+
+        <div class="adv-auto__form">
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="auto-nombre">Nombre y apellidos *</label>
+            <input type="text" id="auto-nombre" class="adv-form__input" placeholder="Nombre y apellidos" autocomplete="name" required>
+          </div>
+
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="auto-empresa">Empresa *</label>
+            <input type="text" id="auto-empresa" class="adv-form__input" placeholder="Nombre de tu empresa" autocomplete="organization" required>
+          </div>
+
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="auto-email">Email profesional *</label>
+            <input type="email" id="auto-email" class="adv-form__input" placeholder="tunombre@empresa.com" autocomplete="email" required>
+          </div>
+
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="auto-tel">Teléfono</label>
+            <input type="tel" id="auto-tel" class="adv-form__input" placeholder="+376 000 000" autocomplete="tel">
+          </div>
+
+          <div class="adv-form__group adv-auto__group--full">
+            <label class="adv-form__label" for="auto-rol">Tu relación con la IA en la empresa *</label>
+            <select id="auto-rol" class="adv-form__input adv-form__select" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="Desarrollamos sistemas de IA propios">Desarrollamos sistemas de IA propios</option>
+              <option value="Usamos IA de terceros en nuestros procesos">Usamos IA de terceros en nuestros procesos</option>
+              <option value="Ambas cosas">Ambas cosas</option>
+              <option value="Todavia no usamos IA">Todavía no usamos IA, pero lo estamos valorando</option>
+            </select>
+          </div>
+        </div>
+
+        <p class="adv-auto__error" id="auto-error">
+          Revisa los campos obligatorios: falta algún dato o el email no es válido.
+        </p>
+
+        <div class="adv-auto__actions">
+          <button type="button" class="btn-glass-primary" id="auto-btn-continuar">
+            Continuar al cuestionario
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </button>
+          <button type="button" class="btn-glass" data-auto-go="auto-s-intro">Volver</button>
+        </div>
+
+        <p class="adv-auto__legal">
+          Al continuar aceptas que usemos estos datos para enviarte tu informe de diagnóstico, conforme a nuestra
+          <a href="/politica-privacidad">Política de Privacidad</a>.
+        </p>
+      </div>
+
+      <!-- PANTALLA 3: CUESTIONARIO -->
+      <div class="adv-auto__screen" id="auto-s-quiz" hidden>
+        <p class="adv-auto__area">Paso 2 de 2 · Cuestionario</p>
+        <div class="adv-auto__progress"><div id="auto-pbar"></div></div>
+        <p class="adv-auto__qcount" id="auto-qcount"></p>
+
+        <p class="adv-auto__area" id="auto-qarea"></p>
+        <p class="adv-auto__question" id="auto-qtext"></p>
+        <div class="adv-auto__options" id="auto-qopts"></div>
+
+        <button type="button" class="adv-auto__back" id="auto-qback">← Pregunta anterior</button>
+      </div>
+
+      <!-- PANTALLA 4: RESULTADO -->
+      <div class="adv-auto__screen" id="auto-s-result" hidden>
+        <p class="adv-auto__area">Resultado del autodiagnóstico</p>
+        <h2 class="adv-auto__title" id="auto-rtitle"></h2>
+
+        <div class="adv-auto__score-band">
+          <span class="adv-auto__score" id="auto-rscore"></span>
+          <span class="adv-auto__score-max">/ 100</span>
+          <span class="adv-auto__band" id="auto-rband"></span>
+        </div>
+        <p class="adv-auto__band-desc" id="auto-rdesc"></p>
+
+        <div class="adv-auto__divider"></div>
+
+        <h3 class="adv-auto__subtitle">Madurez por áreas de la norma</h3>
+        <div id="auto-rareas"></div>
+
+        <div class="adv-auto__divider"></div>
+
+        <h3 class="adv-auto__subtitle">Tus 3 prioridades</h3>
+        <div class="adv-auto__recs" id="auto-rrecs"></div>
+
+        <div class="adv-auto__cta">
+          <h3 id="auto-cta-title"></h3>
+          <p>Un consultor revisará tus respuestas y te propondrá una hoja de ruta concreta hacia la certificación, adaptada a tu empresa y al calendario del AI Act.</p>
+          <button type="button" class="btn-glass-primary" id="auto-btn-cta">
+            Solicitar diagnóstico completo gratuito
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </button>
+          <p class="adv-auto__feedback" id="auto-feedback" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+    <!-- FOOTER SECTION -->
   <footer class="footer-wrapper">
     <div class="container">
 
@@ -191,8 +287,8 @@
           <h3 class="footer-heading">Empresa</h3>
           <nav class="footer-nav">
             <span class="footer-link footer-link--disabled" aria-disabled="true" title="Próximamente">Noticias y Blog <i class="ph ph-lock"></i></span>
-            <a href="/aviso-legal" class="footer-link">Aviso Legal</a>
-            <a href="/politica-priv" class="footer-link">Política de Privacidad</a>
+            <a href="/aviso-legal" class="footer-link">Aviso legal</a>
+            <a href="/politica-priv" class="footer-link">Política de privacidad</a>
             <a href="/politica-cookies" class="footer-link">Política de Cookies</a>
           </nav>
         </div>
@@ -329,10 +425,10 @@
         
         <!-- Social Links -->
         <div class="footer-socials">
-          <a href="#" aria-label="LinkedIn" class="icon-link">
+          <a href="https://www.linkedin.com/company/advantys-ai" aria-label="LinkedIn" class="icon-link">
             <svg fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
           </a>
-          <a href="https://www.instagram.com/advantys_ai" target="_blank" aria-label="Instagram" class="icon-link">
+          <a href="https://www.instagram.com/advantys_ai/" aria-label="Instagram" class="icon-link">
             <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
           </a>
         </div>
@@ -342,9 +438,10 @@
   </footer>
   <!-- FOOTER END -->
 
-<script src="/assets/js/main.js"></script>
-<script src="/assets/js/config.js"></script>
-<script src="/assets/js/solicitud-form.js"></script>
-<script src="/assets/js/footer-contact-form.js"></script>
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/config.js"></script>
+  <script src="/assets/js/footer-contact-form.js"></script>
+  <script src="/assets/js/autodiagnostico.js"></script>
 </body>
+
 </html>
