@@ -288,16 +288,85 @@
   <!-- CTA FINAL: DOBLE AUDIENCIA -->
   <section class="adv-vertical-cta container" id="inversores">
     <div class="adv-vertical-cta__grid">
+
       <div class="adv-vertical-cta__card adv-vertical-cta__card--highlight">
         <h3>¿Resides fiscalmente en Andorra?</h3>
         <p>Advantys AI Residencia Fiscal está en desarrollo. Déjanos tus datos para tener acceso anticipado en cuanto esté disponible.</p>
-        <div data-advantys-lead-form data-variant="spinoff" data-spinoff="residencia-fiscal" data-role="cliente_final" data-submit-label="Quiero acceso anticipado"></div>
+        <form class="adv-vertical-cta__form" data-role="Cliente Final" data-spinoff="Residencia Fiscal Soberana" data-source="Web Advantys — Residencia Fiscal — Cliente" novalidate>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="rf-cli-name">Nombre completo</label>
+            <input type="text" id="rf-cli-name" name="name" class="adv-form__input" placeholder="Nombre y apellidos" autocomplete="name" required>
+            <span class="adv-form__error" data-error-for="name"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="rf-cli-email">Email</label>
+            <input type="email" id="rf-cli-email" name="email" class="adv-form__input" placeholder="tunombre@empresa.com" autocomplete="email" required>
+            <span class="adv-form__error" data-error-for="email"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="rf-cli-phone">Teléfono</label>
+            <input type="tel" id="rf-cli-phone" name="phone" class="adv-form__input" placeholder="+376 000 000" autocomplete="tel" required>
+            <span class="adv-form__error" data-error-for="phone"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="rf-cli-company">Empresa</label>
+            <input type="text" id="rf-cli-company" name="company" class="adv-form__input" placeholder="Nombre de tu empresa" autocomplete="organization" required>
+            <span class="adv-form__error" data-error-for="company"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="rf-cli-location">Ciudad / País</label>
+            <input type="text" id="rf-cli-location" name="location" class="adv-form__input" placeholder="Ciudad, país" autocomplete="address-level2" required>
+            <span class="adv-form__error" data-error-for="location"></span>
+          </div>
+          <button type="submit" class="adv-contact-submit adv-vertical-cta__submit">
+            <span class="adv-contact-submit__label">Quiero acceso anticipado</span>
+            <svg class="adv-contact-submit__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+          <div class="adv-contact-feedback" data-feedback role="status" aria-live="polite"></div>
+        </form>
       </div>
+
       <div class="adv-vertical-cta__card">
         <h3>¿Eres inversor?</h3>
         <p>Advantys AI Residencia Fiscal es una de nuestras iniciativas del Joint Venture Builder. Si te interesa participar en su capitalización, hablamos.</p>
-        <div data-advantys-lead-form data-variant="spinoff" data-spinoff="residencia-fiscal" data-role="inversor" data-submit-label="Quiero saber más"></div>
+        <form class="adv-vertical-cta__form" data-role="Inversor" data-spinoff="Residencia Fiscal Soberana" data-source="Web Advantys — Residencia Fiscal — Inversor" novalidate>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="rf-inv-name">Nombre completo</label>
+            <input type="text" id="rf-inv-name" name="name" class="adv-form__input" placeholder="Nombre y apellidos" autocomplete="name" required>
+            <span class="adv-form__error" data-error-for="name"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="rf-inv-email">Email</label>
+            <input type="email" id="rf-inv-email" name="email" class="adv-form__input" placeholder="tunombre@empresa.com" autocomplete="email" required>
+            <span class="adv-form__error" data-error-for="email"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="rf-inv-phone">Teléfono</label>
+            <input type="tel" id="rf-inv-phone" name="phone" class="adv-form__input" placeholder="+376 000 000" autocomplete="tel" required>
+            <span class="adv-form__error" data-error-for="phone"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="rf-inv-company">Empresa</label>
+            <input type="text" id="rf-inv-company" name="company" class="adv-form__input" placeholder="Nombre de tu empresa" autocomplete="organization" required>
+            <span class="adv-form__error" data-error-for="company"></span>
+          </div>
+          <div class="adv-form__group">
+            <label class="adv-form__label" for="rf-inv-location">Ciudad / País</label>
+            <input type="text" id="rf-inv-location" name="location" class="adv-form__input" placeholder="Ciudad, país" autocomplete="address-level2" required>
+            <span class="adv-form__error" data-error-for="location"></span>
+          </div>
+          <button type="submit" class="adv-contact-submit adv-vertical-cta__submit">
+            <span class="adv-contact-submit__label">Quiero saber más</span>
+            <svg class="adv-contact-submit__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+          <div class="adv-contact-feedback" data-feedback role="status" aria-live="polite"></div>
+        </form>
       </div>
+
     </div>
   </section>
   <!-- CTA FINAL END -->
@@ -381,6 +450,8 @@
 <!-- FOOTER END -->
 
 <script src="/assets/js/main.js"></script>
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/vertical-cta-form.js"></script>
 
 </body>
 </html>
