@@ -2,7 +2,6 @@
   "cleanUrls": false,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/area-privada", "destination": "/pages/area-privada.html" },
     { "source": "/aviso-legal", "destination": "/pages/aviso-legal.html" },
     { "source": "/blog", "destination": "/pages/blog.html" },
     { "source": "/consultoria-estrategica", "destination": "/pages/consultoria-estrategica.html" },
@@ -21,7 +20,6 @@
   ],
   "redirects": [
     { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/pages/area-privada.html", "destination": "/area-privada", "permanent": true },
     { "source": "/pages/aviso-legal.html", "destination": "/aviso-legal", "permanent": true },
     { "source": "/pages/blog.html", "destination": "/blog", "permanent": true },
     { "source": "/pages/consultoria-estrategica.html", "destination": "/consultoria-estrategica", "permanent": true },
