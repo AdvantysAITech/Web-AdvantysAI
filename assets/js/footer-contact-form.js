@@ -19,6 +19,13 @@
   const form = document.getElementById('adv-footer-contact-form');
   if (!form) return;
 
+  const nuevoUuid = () =>
+    (window.crypto && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : `web-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+
+  let envioUuid = nuevoUuid();
+
   const submitBtn = document.getElementById('footer-contact-submit');
   const feedback = document.getElementById('footer-contact-feedback');
   const jvBlock = document.getElementById('footer-contact-jv-block');
@@ -148,6 +155,12 @@
       rol_jv: isJv ? fields.role.value : null,
       spinoff: isJv ? fields.spinoff.value : null,
       fuente: 'Web Advantys — Footer',
+      servicio: '',
+      modalidad: '',
+      estado_presupuesto: '',
+      uuid: envioUuid,
+      calificacion: 'SIN_CALIFICAR',
+      fase_entrada: 'Prospecto Identificado',
       fecha: new Date().toISOString(),
     };
 
@@ -165,6 +178,7 @@
 
       form.reset();
       jvBlock.hidden = true;
+      envioUuid = nuevoUuid();
       showFeedback('success', 'Gracias, hemos recibido tu solicitud. Te contactaremos en breve.');
     } catch (err) {
       showFeedback('error', 'No hemos podido enviar el formulario. Inténtalo de nuevo o escríbenos directamente.');

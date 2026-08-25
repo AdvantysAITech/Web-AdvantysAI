@@ -11,6 +11,13 @@
   const form = document.getElementById('adv-solicitud-form');
   if (!form) return;
 
+  const nuevoUuid = () =>
+    (window.crypto && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : `web-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+
+  let envioUuid = nuevoUuid();
+
   const params = new URLSearchParams(window.location.search);
   const urlRole = params.get('role');       // 'Cliente Final' | 'Inversor'
   const urlSpinoff = params.get('spinoff'); // nombre exacto de la spin-off
@@ -171,6 +178,12 @@
       rol_jv: isJv ? roleSelect.value : null,
       spinoff: isJv ? spinoffSelect.value : null,
       fuente: 'Web Advantys — Página de solicitud',
+      servicio: '',
+      modalidad: '',
+      estado_presupuesto: '',
+      uuid: envioUuid,
+      calificacion: 'SIN_CALIFICAR',
+      fase_entrada: 'Prospecto Identificado',
       fecha: new Date().toISOString(),
     };
 
@@ -187,6 +200,7 @@
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
       form.reset();
+      envioUuid = nuevoUuid();
       showFeedback('success', '¡Gracias! Hemos recibido tu solicitud. Te contactaremos en breve.');
     } catch (err) {
       showFeedback('error', 'No hemos podido enviar el formulario. Inténtalo de nuevo o escríbenos directamente.');
