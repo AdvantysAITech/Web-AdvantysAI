@@ -2,10 +2,10 @@
   const WEBHOOK_URL = window.ADV_WEBHOOK_URL || 'https://TU-WEBHOOK-GHL.com/webhook/web-lead';
 
   const SPIN_OFFS = [
-    'Residencia Fiscal Soberana',
-    'ROAT',
-    'Trazabilidad Industrial',
-    'IA con Criterio',
+    { valor: 'Educación',   nombre: 'Advantys AI Educación' },
+    { valor: 'Agro',        nombre: 'Advantys AI Trazabilidad Agroalimentaria' },
+    { valor: 'Hospitality', nombre: 'Advantys AI Hospitality' },
+    { valor: 'Residencia',  nombre: 'Advantys AI Residencia Fiscal' },
   ];
 
   const form = document.getElementById('adv-solicitud-form');
@@ -39,10 +39,10 @@
   };
 
   // --- Poblar el select de Spin-offs (placeholder estático, sync GHL pendiente) ---
-  SPIN_OFFS.forEach((name) => {
+  SPIN_OFFS.forEach(({ valor, nombre }) => {
     const opt = document.createElement('option');
-    opt.value = name;
-    opt.textContent = name;
+    opt.value = valor;
+    opt.textContent = nombre;
     spinoffSelect.appendChild(opt);
   });
 
@@ -56,14 +56,18 @@
       return;
     }
 
+    // Para los textos visibles usamos el nombre comercial, no el identificador interno.
+    const entry = SPIN_OFFS.find((s) => s.valor === spinoff);
+    const label = entry ? entry.nombre : spinoff;
+
     contextEl.hidden = false;
-    contextChip.textContent = `${spinoff} · ${role}`;
+    contextChip.textContent = `${label} · ${role}`;
 
     if (role === 'Inversor') {
-      titleEl.textContent = `Quiero invertir en ${spinoff}`;
+      titleEl.textContent = `Quiero invertir en ${label}`;
       subtitleEl.textContent = 'Déjanos tus datos y te enviamos el business case y las condiciones de participación.';
     } else {
-      titleEl.textContent = `Solicitar información — ${spinoff}`;
+      titleEl.textContent = `Solicitar información — ${label}`;
       subtitleEl.textContent = 'Déjanos tus datos y agendamos una demo personalizada de la solución.';
     }
   }
