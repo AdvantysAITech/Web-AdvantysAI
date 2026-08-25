@@ -2,7 +2,7 @@
   // ===========================================================
   // CONFIG — sustituye por la URL real del webhook de GHL
   // ===========================================================
-  const WEBHOOK_URL = 'https://TU-WEBHOOK-GHL.com/webhook/web-lead-footer';
+  const WEBHOOK_URL = window.ADV_WEBHOOK_URL || 'https://n8n.advantys.ai/webhook/web-lead';
 
   // ===========================================================
   // PLACEHOLDER — listado de Spin-offs activas.

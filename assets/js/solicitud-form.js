@@ -1,5 +1,5 @@
 (() => {
-  const WEBHOOK_URL = window.ADV_WEBHOOK_URL || 'https://TU-WEBHOOK-GHL.com/webhook/web-lead';
+  const WEBHOOK_URL = window.ADV_WEBHOOK_URL || 'https://n8n.advantys.ai/webhook/web-lead';
 
   const SPIN_OFFS = [
     { valor: 'Educación',   nombre: 'Advantys AI Educación' },
