@@ -10,10 +10,10 @@
   // en cuanto Alex confirme el endpoint/mecanismo (ALR-10).
   // ===========================================================
   const SPIN_OFFS = [
-    'Residencia Fiscal Soberana',
-    'ROAT',
-    'Trazabilidad Industrial',
-    'IA con Criterio',
+    { valor: 'Educación',   nombre: 'Advantys AI Educación' },
+    { valor: 'Agro',        nombre: 'Advantys AI Trazabilidad Agroalimentaria' },
+    { valor: 'Hospitality', nombre: 'Advantys AI Hospitality' },
+    { valor: 'Residencia',  nombre: 'Advantys AI Residencia Fiscal' },
   ];
 
   const form = document.getElementById('adv-footer-contact-form');
@@ -35,10 +35,10 @@
   };
 
   // --- Poblar el select de Spin-offs (placeholder estático) ---
-  SPIN_OFFS.forEach((name) => {
+  SPIN_OFFS.forEach(({ valor, nombre }) => {
     const opt = document.createElement('option');
-    opt.value = name;
-    opt.textContent = name;
+    opt.value = valor;
+    opt.textContent = nombre;
     fields.spinoff.appendChild(opt);
   });
 
