@@ -4,12 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Programa de Partners | Advantys AI</title>
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link href="/assets/css/main.css" rel="stylesheet">
   <link href="/assets/css/pages/sistema-advantys.css" rel="stylesheet">
   <link href="/assets/css/pages/partners.css" rel="stylesheet">
   <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Colabora con Advantys AI como referidor, integrador o partner tecnol&#243;gico. Un modelo de colaboraci&#243;n con condiciones claras y acompa&#241;amiento t&#233;cnico real.">
+  <link rel="canonical" href="https://advantys.ai/partners">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Advantys AI">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:url" content="https://advantys.ai/partners">
+  <meta property="og:title" content="Programa de Partners | Advantys AI">
+  <meta property="og:description" content="Colabora con Advantys AI como referidor, integrador o partner tecnol&#243;gico. Un modelo de colaboraci&#243;n con condiciones claras y acompa&#241;amiento t&#233;cnico real.">
+  <meta property="og:image" content="https://advantys.ai/assets/images/Logo%20advantys%20blanco%20y%20color.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Programa de Partners | Advantys AI">
+  <meta name="twitter:description" content="Colabora con Advantys AI como referidor, integrador o partner tecnol&#243;gico. Un modelo de colaboraci&#243;n con condiciones claras y acompa&#241;amiento t&#233;cnico real.">
+  <meta name="twitter:image" content="https://advantys.ai/assets/images/Logo%20advantys%20blanco%20y%20color.png">
 </head>
 
 <body class="page-partners">
@@ -37,14 +52,14 @@
         </div>
       </div>
       
-      <a href="/iso-42001" class="adv-link-island">Auditoría ISO 42001</a>
+      <a href="/iso-42001" class="adv-link-island">ISO 42001</a>
       <a href="/sistema-advantys" class="adv-link-island">Sistema Advantys</a>
       <a href="/partners" class="adv-link-island">Partners</a>
       <span class="adv-link-island adv-link-island--disabled" aria-disabled="true" title="Próximamente">Noticias <i class="ph ph-lock"></i></span>
     </nav>
 
     <div class="adv-cta-island">
-      <a href="/area-privada" class="adv-btn-private">
+      <a href="https://plataforma-advantys-chi.vercel.app/" class="adv-btn-private">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.071 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path>
         </svg>
@@ -68,11 +83,11 @@
     </button>
     <nav class="adv-mobile-menu__links">
       <a href="/soluciones-ia" class="adv-mobile-link">Soluciones IA</a>
-      <a href="/iso-42001" class="adv-mobile-link">Auditoría ISO 42001</a>
+      <a href="/iso-42001" class="adv-mobile-link">ISO 42001</a>
       <a href="/sistema-advantys" class="adv-mobile-link">Sistema Advantys</a>
       <a href="/partners" class="adv-mobile-link">Partners</a>
       <span class="adv-mobile-link adv-mobile-link--disabled" aria-disabled="true" title="Próximamente">Noticias <i class="ph ph-lock"></i></span>
-      <a href="/area-privada" class="adv-mobile-link adv-mobile-link--cta">Área privada</a>
+      <a href="https://plataforma-advantys-chi.vercel.app/" class="adv-mobile-link adv-mobile-link--cta">Área privada</a>
     </nav>
   </div>
 </header>
@@ -299,7 +314,7 @@
             <div class="adv-form__group adv-form__group--full" style="margin-top: 1.25rem;">
               <label class="adv-form__check-label">
                 <input type="checkbox" class="adv-form__checkbox" id="input-privacy" required>
-                Entiendo y acepto la <a href="/politica-priv" class="adv-form__link" target="_blank">política de privacidad</a> y el tratamiento de mis datos para evaluar la alianza estratégica.
+                Entiendo y acepto la <a href="/politica-privacidad" class="adv-form__link" target="_blank" rel="noopener noreferrer">política de privacidad</a> y el tratamiento de mis datos para evaluar la alianza estratégica.
               </label>
             </div>
 
@@ -311,6 +326,8 @@
                 <i class="ph ph-paper-plane-tilt"></i> Solicitar evaluación
               </button>
             </div>
+
+            <div class="adv-contact-feedback" id="partners-feedback" role="status" aria-live="polite"></div>
 
             <!-- Estado de envío -->
             <div class="adv-form-success adv-form-panel--hidden" id="adv-success">
@@ -345,8 +362,7 @@
           <nav class="footer-nav">
             <a href="/soluciones-ia" class="footer-link">Soluciones IA</a>
             <a href="/sistema-advantys" class="footer-link">Sistema Advantys</a>
-            <a href="/iso-42001" class="footer-link">Auditoría ISO 42001</a>
-            <a href="/casos-exito" class="footer-link">Casos de Éxito</a>
+            <a href="/iso-42001" class="footer-link">ISO 42001</a>
             <a href="/partners" class="footer-link">Partners</a>
           </nav>
         </div>
@@ -354,33 +370,13 @@
         <div class="footer-card">
           <h3 class="footer-heading">Empresa</h3>
           <nav class="footer-nav">
-            <a href="/about-us" class="footer-link">Sobre nosotros</a>
             <span class="footer-link footer-link--disabled" aria-disabled="true" title="Próximamente">Noticias y Blog <i class="ph ph-lock"></i></span>
             <a href="/aviso-legal" class="footer-link">Aviso legal</a>
-            <a href="/politica-priv" class="footer-link">Política de privacidad</a>
+            <a href="/politica-privacidad" class="footer-link">Política de privacidad</a>
             <a href="/politica-cookies" class="footer-link">Política de Cookies</a>
           </nav>
         </div>
 
-        <div class="footer-card">
-          <h3 class="footer-heading">
-            <svg style="width: 18px; height: 18px; color: var(--accent-coral);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-            </svg>
-            Últimas novedades
-          </h3>
-          <p class="footer-text" style="margin-bottom: 1rem;">
-            Suscríbete para recibir insights sobre implementación de IA y normativas corporativas.
-          </p>
-          <form class="newsletter-form" onsubmit="event.preventDefault();">
-            <input type="email" placeholder="Tu correo electrónico" class="newsletter-input" required>
-            <button type="submit" class="btn-primary" style="padding: 0.625rem 1rem;">
-              <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-              </svg>
-            </button>
-          </form>
-        </div>
 
       </div>
 
@@ -436,7 +432,7 @@
                 <option value="" disabled selected>Selecciona una opción</option>
                 <option value="Consultoria Tecnologica">Implantar una solución en mi empresa</option>
                 <option value="Joint Venture Builder">Invertir o participar en una spin-off de Advantys</option>
-                <option value="Auditoria ISO 42001">Auditoría ISO 42001</option>
+                <option value="Auditoria ISO 42001">ISO 42001</option>
               </select>
               <span class="adv-form__error" data-error-for="footer-contact-line"></span>
             </div>
@@ -504,6 +500,8 @@
   </footer>
 
   <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/config.js"></script>
   <script src="/assets/js/partners-form.js"></script>
+  <script src="/assets/js/footer-contact-form.js"></script>
 </body>
 </html>

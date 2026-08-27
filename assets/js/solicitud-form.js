@@ -1,19 +1,26 @@
 (() => {
-  const WEBHOOK_URL = window.ADV_WEBHOOK_URL || 'https://TU-WEBHOOK-GHL.com/webhook/web-lead';
+  const WEBHOOK_URL = window.ADV_WEBHOOK_URL || 'https://n8n.advantys.ai/webhook/web-lead';
 
   const SPIN_OFFS = [
-    'Residencia Fiscal Soberana',
-    'ROAT',
-    'Trazabilidad Industrial',
-    'IA con Criterio',
+    { valor: 'Educación',   nombre: 'Advantys AI Educación' },
+    { valor: 'Agro',        nombre: 'Advantys AI Trazabilidad Agroalimentaria' },
+    { valor: 'Hospitality', nombre: 'Advantys AI Hospitality' },
+    { valor: 'Residencia',  nombre: 'Advantys AI Residencia Fiscal' },
   ];
 
   const form = document.getElementById('adv-solicitud-form');
   if (!form) return;
 
+  const nuevoUuid = () =>
+    (window.crypto && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : `web-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+
+  let envioUuid = nuevoUuid();
+
   const params = new URLSearchParams(window.location.search);
-  const role = params.get('role');       // 'Cliente Final' | 'Inversor'
-  const spinoff = params.get('spinoff'); // nombre exacto de la spin-off
+  const urlRole = params.get('role');       // 'Cliente Final' | 'Inversor'
+  const urlSpinoff = params.get('spinoff'); // nombre exacto de la spin-off
 
   const titleEl = document.getElementById('solicitud-title');
   const subtitleEl = document.getElementById('solicitud-subtitle');
@@ -38,21 +45,53 @@
     location: document.getElementById('solicitud-location'),
   };
 
-  let resolvedRole = role;
-  let resolvedSpinoff = spinoff;
+  // --- Poblar el select de Spin-offs (placeholder estático, sync GHL pendiente) ---
+  SPIN_OFFS.forEach(({ valor, nombre }) => {
+    const opt = document.createElement('option');
+    opt.value = valor;
+    opt.textContent = nombre;
+    spinoffSelect.appendChild(opt);
+  });
 
-  if (role && spinoff) {
-    // --- Caso normal: viene de un botón "Solicitar demo" / "Quiero invertir" ---
+  // --- Actualiza título / subtítulo / chip según el Rol y Spin-off actuales ---
+  function updateContext() {
+    const role = roleSelect.value;
+    const spinoff = spinoffSelect.value;
+
+    if (!role || !spinoff) {
+      contextEl.hidden = true;
+      return;
+    }
+
+    // Para los textos visibles usamos el nombre comercial, no el identificador interno.
+    const entry = SPIN_OFFS.find((s) => s.valor === spinoff);
+    const label = entry ? entry.nombre : spinoff;
+
     contextEl.hidden = false;
-    contextChip.textContent = `${spinoff} · ${role === 'Inversor' ? 'Inversor' : 'Cliente Final'}`;
+    contextChip.textContent = `${label} · ${role}`;
 
     if (role === 'Inversor') {
-      titleEl.textContent = `Quiero invertir en ${spinoff}`;
+      titleEl.textContent = `Quiero invertir en ${label}`;
       subtitleEl.textContent = 'Déjanos tus datos y te enviamos el business case y las condiciones de participación.';
     } else {
-      titleEl.textContent = `Solicitar información — ${spinoff}`;
+      titleEl.textContent = `Solicitar información — ${label}`;
       subtitleEl.textContent = 'Déjanos tus datos y agendamos una demo personalizada de la solución.';
     }
+  }
+
+  if (urlRole && urlSpinoff) {
+    // --- Caso normal: viene de un botón "Solicitar demo" / "Quiero invertir" ---
+    // Mostramos Rol y Spin-off YA preseleccionados, pero editables por si el usuario
+    // quiere corregirlos (ej. llegó al enlace equivocado).
+    fallbackRole.hidden = false;
+    fallbackSpinoff.hidden = false;
+    roleSelect.required = true;
+    spinoffSelect.required = true;
+
+    roleSelect.value = urlRole;
+    spinoffSelect.value = urlSpinoff;
+
+    updateContext();
   } else {
     // --- Fallback: acceso directo sin parámetros ---
     fallbackLine.hidden = false;
@@ -64,15 +103,18 @@
       fallbackSpinoff.hidden = !isJv;
       roleSelect.required = isJv;
       spinoffSelect.required = isJv;
-    });
-
-    SPIN_OFFS.forEach((name) => {
-      const opt = document.createElement('option');
-      opt.value = name;
-      opt.textContent = name;
-      spinoffSelect.appendChild(opt);
+      if (!isJv) {
+        roleSelect.value = '';
+        spinoffSelect.value = '';
+        contextEl.hidden = true;
+      }
     });
   }
+
+  // Si el usuario cambia manualmente el Rol o la Spin-off (venga de URL o de fallback),
+  // el título/subtítulo/chip se mantienen sincronizados.
+  roleSelect.addEventListener('change', updateContext);
+  spinoffSelect.addEventListener('change', updateContext);
 
   function clearErrors() {
     form.querySelectorAll('.adv-form__error').forEach((el) => { el.textContent = ''; });
@@ -100,17 +142,10 @@
     if (fields.company.value.trim().length < 2) { setError('company', 'Introduce el nombre de tu empresa.'); valid = false; }
     if (fields.location.value.trim().length < 2) { setError('location', 'Introduce ciudad y país.'); valid = false; }
 
-    if (!role || !spinoff) {
-      if (!lineSelect.value) valid = false;
-      if (lineSelect.value === 'Joint Venture Builder') {
-        if (!roleSelect.value) valid = false;
-        if (!spinoffSelect.value) valid = false;
-        resolvedRole = roleSelect.value;
-        resolvedSpinoff = spinoffSelect.value;
-      } else {
-        resolvedRole = null;
-        resolvedSpinoff = null;
-      }
+    if (!fallbackLine.hidden && !lineSelect.value) valid = false;
+    if (!fallbackRole.hidden) {
+      if (!roleSelect.value) valid = false;
+      if (!spinoffSelect.value) valid = false;
     }
 
     return valid;
@@ -131,7 +166,7 @@
     event.preventDefault();
     if (!validate()) return;
 
-    const isJv = Boolean(resolvedRole && resolvedSpinoff);
+    const isJv = !fallbackRole.hidden;
 
     const payload = {
       nombre: fields.name.value.trim(),
@@ -139,10 +174,16 @@
       telefono: fields.phone.value.trim(),
       empresa: fields.company.value.trim(),
       ciudad_pais: fields.location.value.trim(),
-      linea_negocio: (role && spinoff) || isJv ? 'Joint Venture Builder' : (lineSelect ? lineSelect.value : 'Joint Venture Builder'),
-      rol_jv: resolvedRole,
-      spinoff: resolvedSpinoff,
+      linea_negocio: isJv ? 'Joint Venture Builder' : (lineSelect.value || 'Joint Venture Builder'),
+      rol_jv: isJv ? roleSelect.value : null,
+      spinoff: isJv ? spinoffSelect.value : null,
       fuente: 'Web Advantys — Página de solicitud',
+      servicio: '',
+      modalidad: '',
+      estado_presupuesto: '',
+      uuid: envioUuid,
+      calificacion: 'SIN_CALIFICAR',
+      fase_entrada: 'Prospecto Identificado',
       fecha: new Date().toISOString(),
     };
 
@@ -159,6 +200,7 @@
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
       form.reset();
+      envioUuid = nuevoUuid();
       showFeedback('success', '¡Gracias! Hemos recibido tu solicitud. Te contactaremos en breve.');
     } catch (err) {
       showFeedback('error', 'No hemos podido enviar el formulario. Inténtalo de nuevo o escríbenos directamente.');

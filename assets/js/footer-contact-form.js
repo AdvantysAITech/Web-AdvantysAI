@@ -2,7 +2,7 @@
   // ===========================================================
   // CONFIG — sustituye por la URL real del webhook de GHL
   // ===========================================================
-  const WEBHOOK_URL = 'https://TU-WEBHOOK-GHL.com/webhook/web-lead-footer';
+  const WEBHOOK_URL = window.ADV_WEBHOOK_URL || 'https://n8n.advantys.ai/webhook/web-lead';
 
   // ===========================================================
   // PLACEHOLDER — listado de Spin-offs activas.
@@ -10,14 +10,21 @@
   // en cuanto Alex confirme el endpoint/mecanismo (ALR-10).
   // ===========================================================
   const SPIN_OFFS = [
-    'Residencia Fiscal Soberana',
-    'ROAT',
-    'Trazabilidad Industrial',
-    'IA con Criterio',
+    { valor: 'Educación',   nombre: 'Advantys AI Educación' },
+    { valor: 'Agro',        nombre: 'Advantys AI Trazabilidad Agroalimentaria' },
+    { valor: 'Hospitality', nombre: 'Advantys AI Hospitality' },
+    { valor: 'Residencia',  nombre: 'Advantys AI Residencia Fiscal' },
   ];
 
   const form = document.getElementById('adv-footer-contact-form');
   if (!form) return;
+
+  const nuevoUuid = () =>
+    (window.crypto && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : `web-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+
+  let envioUuid = nuevoUuid();
 
   const submitBtn = document.getElementById('footer-contact-submit');
   const feedback = document.getElementById('footer-contact-feedback');
@@ -35,10 +42,10 @@
   };
 
   // --- Poblar el select de Spin-offs (placeholder estático) ---
-  SPIN_OFFS.forEach((name) => {
+  SPIN_OFFS.forEach(({ valor, nombre }) => {
     const opt = document.createElement('option');
-    opt.value = name;
-    opt.textContent = name;
+    opt.value = valor;
+    opt.textContent = nombre;
     fields.spinoff.appendChild(opt);
   });
 
@@ -148,6 +155,12 @@
       rol_jv: isJv ? fields.role.value : null,
       spinoff: isJv ? fields.spinoff.value : null,
       fuente: 'Web Advantys — Footer',
+      servicio: '',
+      modalidad: '',
+      estado_presupuesto: '',
+      uuid: envioUuid,
+      calificacion: 'SIN_CALIFICAR',
+      fase_entrada: 'Prospecto Identificado',
       fecha: new Date().toISOString(),
     };
 
@@ -165,6 +178,7 @@
 
       form.reset();
       jvBlock.hidden = true;
+      envioUuid = nuevoUuid();
       showFeedback('success', 'Gracias, hemos recibido tu solicitud. Te contactaremos en breve.');
     } catch (err) {
       showFeedback('error', 'No hemos podido enviar el formulario. Inténtalo de nuevo o escríbenos directamente.');

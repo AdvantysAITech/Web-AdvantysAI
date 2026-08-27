@@ -3,12 +3,17 @@
 
   const forms = document.querySelectorAll('.adv-vertical-cta__form');
   if (!forms.length) return;
+  const nuevoUuid = () =>
+    (window.crypto && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : `web-${Date.now()}-${Math.random().toString(16).slice(2)}`;
 
   forms.forEach(initForm);
 
   function initForm(form) {
     const submitBtn = form.querySelector('.adv-vertical-cta__submit');
     const feedback = form.querySelector('[data-feedback]');
+    let envioUuid = nuevoUuid();
 
     const fieldNames = ['name', 'email', 'phone', 'company', 'location'];
 
@@ -86,6 +91,12 @@
         rol_jv: form.dataset.role,
         spinoff: form.dataset.spinoff,
         fuente: form.dataset.source || 'Web Advantys — Página Spin-off',
+        servicio: '',
+        modalidad: '',
+        estado_presupuesto: '',
+        uuid: envioUuid,
+        calificacion: 'SIN_CALIFICAR',
+        fase_entrada: 'Prospecto Identificado',
         fecha: new Date().toISOString(),
       };
 
@@ -102,6 +113,7 @@
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
         form.reset();
+        envioUuid = nuevoUuid();
         showFeedback('success', '¡Gracias! Hemos recibido tu solicitud. Te contactaremos en breve.');
       } catch (err) {
         showFeedback('error', 'No hemos podido enviar el formulario. Inténtalo de nuevo o escríbenos directamente.');

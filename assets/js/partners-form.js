@@ -144,14 +144,78 @@
   // Step 3 — Back
   document.getElementById('btn-back-2')?.addEventListener('click', () => goToStep(2));
 
-  // Step 3 — Submit
-  document.getElementById('partners-form')?.addEventListener('submit', () => {
-    const form = document.getElementById('adv-step-3');
-    const success = document.getElementById('adv-success');
-    // Hide all form content except success message
-    form.querySelectorAll(':scope > *:not(#adv-success)').forEach((el) => {
-      el.style.display = 'none';
-    });
-    success?.classList.remove('adv-form-panel--hidden');
+  const WEBHOOK_URL = window.ADV_WEBHOOK_URL || 'https://n8n.advantys.ai/webhook/web-lead';
+
+  const nuevoUuid = () =>
+    (window.crypto && crypto.randomUUID)
+      ? crypto.randomUUID()
+      : `web-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+
+  let envioUuid = nuevoUuid();
+
+  const partnersForm = document.getElementById('partners-form');
+  const submitBtn = document.getElementById('btn-submit');
+  const feedbackEl = document.getElementById('partners-feedback');
+
+  function showFeedback(type, message) {
+    if (!feedbackEl) return;
+    feedbackEl.textContent = message;
+    feedbackEl.classList.remove('adv-contact-feedback--success', 'adv-contact-feedback--error');
+    feedbackEl.classList.add(type === 'success' ? 'adv-contact-feedback--success' : 'adv-contact-feedback--error');
+  }
+
+  partnersForm?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const payload = {
+      nombre: document.getElementById('input-nombre').value.trim(),
+      email: document.getElementById('input-email').value.trim(),
+      telefono: '',
+      empresa: '',
+      ciudad_pais: '',
+      linea_negocio: 'Programa de Partners',
+      rol_jv: null,
+      spinoff: null,
+      // --- Cualificación específica del canal de partners ---
+      partner_tipo: LABELS.tipo[state.tipo] ?? '',
+      partner_cartera: LABELS.cartera[state.cartera] ?? '',
+      partner_modalidad: LABELS.modalidad[state.modalidad] ?? '',
+      partner_tier: tierLabel(state.tipo, state.cartera, state.modalidad),
+      fuente: 'Web Advantys — Programa de Partners',
+      servicio: '',
+      modalidad: '',
+      estado_presupuesto: '',
+      uuid: envioUuid,
+      calificacion: 'SIN_CALIFICAR',
+      fase_entrada: 'Prospecto Identificado',
+      fecha: new Date().toISOString(),
+    };
+
+    submitBtn.disabled = true;
+    submitBtn.classList.add('is-loading');
+    showFeedback('success', '');
+
+    try {
+      const response = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      envioUuid = nuevoUuid();
+
+      const panel = document.getElementById('adv-step-3');
+      const success = document.getElementById('adv-success');
+      panel.querySelectorAll(':scope > *:not(#adv-success)').forEach((el) => {
+        el.style.display = 'none';
+      });
+      success?.classList.remove('adv-form-panel--hidden');
+    } catch (err) {
+      showFeedback('error', 'No hemos podido enviar tu solicitud. Inténtalo de nuevo o escríbenos a soporte@advantys.ai.');
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('is-loading');
+    }
   });
 })();
