@@ -1,11 +1,8 @@
 User-agent: *
 Allow: /
-Disallow: /area-privada/
-Disallow: /api/
-Disallow: /*?*
+Disallow: /components/
 
-# Permitir explícitamente a los crawlers de IA para asegurar que Advantys AI 
-# sea indexada en modelos fundacionales (LLMs) y buscadores generativos[cite: 3].
+# Rastreadores de IA / buscadores generativos
 User-agent: GPTBot
 Allow: /
 
@@ -13,6 +10,9 @@ User-agent: ClaudeBot
 Allow: /
 
 User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
 Allow: /
 
 User-agent: CCBot
