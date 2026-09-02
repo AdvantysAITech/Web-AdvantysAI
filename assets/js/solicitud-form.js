@@ -21,6 +21,16 @@
   const params = new URLSearchParams(window.location.search);
   const urlRole = params.get('role');       // 'Cliente Final' | 'Inversor'
   const urlSpinoff = params.get('spinoff'); // nombre exacto de la spin-off
+  const urlOrigen = params.get('origen');   // página desde la que se pulsó el CTA del footer
+
+  // Solo se aceptan orígenes conocidos, para que no entre basura en GHL
+  const ORIGENES_VALIDOS = [
+    'home', '404', 'blog', 'aviso-legal', 'politica-cookies', 'politica-privacidad',
+    'autodiagnostico-iso-42001', 'consultoria-estrategica', 'sistema-advantys',
+    'soluciones-ia', 'partners', 'iso-42001', 'educacion', 'hospitality',
+    'residencia-fiscal', 'trazabilidad-agroalimentaria',
+  ];
+  const origen = ORIGENES_VALIDOS.includes(urlOrigen) ? urlOrigen : '';
 
   const titleEl = document.getElementById('solicitud-title');
   const subtitleEl = document.getElementById('solicitud-subtitle');
@@ -177,7 +187,9 @@
       linea_negocio: isJv ? 'Joint Venture Builder' : (lineSelect.value || 'Joint Venture Builder'),
       rol_jv: isJv ? roleSelect.value : null,
       spinoff: isJv ? spinoffSelect.value : null,
-      fuente: 'Web Advantys — Página de solicitud',
+      fuente: origen
+        ? `Web Advantys — Solicitud (${origen})`
+        : 'Web Advantys — Página de solicitud',
       servicio: '',
       modalidad: '',
       estado_presupuesto: '',
