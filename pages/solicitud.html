@@ -84,6 +84,13 @@
     </div>
 
     <form id="adv-solicitud-form" class="adv-contact-card" novalidate>
+      <!-- Honeypot antispam. Invisible para personas, los bots sí lo rellenan.
+           No usar display:none: muchos bots ignoran los campos ocultos así. -->
+      <div class="adv-form__hp" aria-hidden="true">
+        <label for="solicitud-website">No rellenes este campo</label>
+        <input type="text" id="solicitud-website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
 
       <!-- Contexto precargado (spin-off / rol). Solo visible si viene de un enlace con parámetros -->
       <div class="adv-solicitud-context" id="solicitud-context" hidden>

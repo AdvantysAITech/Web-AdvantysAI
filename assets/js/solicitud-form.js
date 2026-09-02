@@ -18,6 +18,15 @@
 
   let envioUuid = nuevoUuid();
 
+  // --- Antispam -----------------------------------------------------------
+  // El webhook de GHL es público y cada ejecución cuesta dinero, así que
+  // filtramos en cliente antes de gastar una llamada.
+  const cargadoEn = Date.now();
+  const MIN_SEGUNDOS = 3;   // un humano no rellena 8 campos en menos de 3 s
+  const MAX_ENVIOS = 3;     // tope por carga de página
+  let enviosRealizados = 0;
+  const honeypot = document.getElementById('solicitud-website');
+
   const params = new URLSearchParams(window.location.search);
   const urlRole = params.get('role');       // 'Cliente Final' | 'Inversor'
   const urlSpinoff = params.get('spinoff'); // nombre exacto de la spin-off
@@ -176,6 +185,26 @@
     event.preventDefault();
     if (!validate()) return;
 
+    // Honeypot: campo invisible para humanos. Si viene relleno es un bot.
+    // Le enseñamos el mensaje de éxito para que no reintente, pero no enviamos.
+    if (honeypot && honeypot.value.trim() !== '') {
+      form.reset();
+      showFeedback('success', '¡Gracias! Hemos recibido tu solicitud. Te contactaremos en breve.');
+      return;
+    }
+
+    // Envío demasiado rápido tras cargar la página: casi con seguridad un script.
+    if ((Date.now() - cargadoEn) < MIN_SEGUNDOS * 1000) {
+      showFeedback('error', 'Revisa los datos e inténtalo de nuevo.');
+      return;
+    }
+
+    // Tope de envíos por carga de página, para cortar bucles y clics repetidos.
+    if (enviosRealizados >= MAX_ENVIOS) {
+      showFeedback('error', 'Ya hemos recibido tu solicitud. Si necesitas algo más, escríbenos a info@advantys.ai.');
+      return;
+    }
+
     const isJv = !fallbackRole.hidden;
 
     const payload = {
@@ -185,8 +214,8 @@
       empresa: fields.company.value.trim(),
       ciudad_pais: fields.location.value.trim(),
       linea_negocio: isJv ? 'Joint Venture Builder' : (lineSelect.value || 'Joint Venture Builder'),
-      rol_jv: isJv ? roleSelect.value : null,
-      spinoff: isJv ? spinoffSelect.value : null,
+      rol_jv: isJv ? roleSelect.value : '',
+      spinoff: isJv ? spinoffSelect.value : '',
       fuente: origen
         ? `Web Advantys — Solicitud (${origen})`
         : 'Web Advantys — Página de solicitud',
@@ -212,6 +241,7 @@
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
       form.reset();
+      enviosRealizados += 1;
       envioUuid = nuevoUuid();
       showFeedback('success', '¡Gracias! Hemos recibido tu solicitud. Te contactaremos en breve.');
     } catch (err) {

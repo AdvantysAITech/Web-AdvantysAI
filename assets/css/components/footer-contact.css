@@ -188,3 +188,12 @@
   color: var(--color-red);
 }
 
+
+/* --- Honeypot antispam: fuera de pantalla, no display:none --- */
+.adv-form__hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
