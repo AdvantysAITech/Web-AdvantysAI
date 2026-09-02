@@ -126,10 +126,17 @@
       </div>
 
       <div class="adv-form__group">
-        <label class="adv-form__label" for="solicitud-name">Nombre completo</label>
-        <input type="text" id="solicitud-name" name="name" class="adv-form__input"
-               placeholder="Nombre y apellidos" autocomplete="name" required>
-        <span class="adv-form__error" data-error-for="solicitud-name"></span>
+        <label class="adv-form__label" for="solicitud-firstname">Nombre</label>
+        <input type="text" id="solicitud-firstname" name="firstname" class="adv-form__input"
+               placeholder="Tu nombre" autocomplete="given-name" required>
+        <span class="adv-form__error" data-error-for="solicitud-firstname"></span>
+      </div>
+
+      <div class="adv-form__group">
+        <label class="adv-form__label" for="solicitud-lastname">Apellidos</label>
+        <input type="text" id="solicitud-lastname" name="lastname" class="adv-form__input"
+               placeholder="Tus apellidos" autocomplete="family-name" required>
+        <span class="adv-form__error" data-error-for="solicitud-lastname"></span>
       </div>
 
       <div class="adv-form__group">
@@ -154,10 +161,50 @@
       </div>
 
       <div class="adv-form__group">
-        <label class="adv-form__label" for="solicitud-location">Ciudad / País</label>
-        <input type="text" id="solicitud-location" name="location" class="adv-form__input"
-               placeholder="Ciudad, país" autocomplete="address-level2" required>
-        <span class="adv-form__error" data-error-for="solicitud-location"></span>
+        <label class="adv-form__label" for="solicitud-city">Ciudad</label>
+        <input type="text" id="solicitud-city" name="city" class="adv-form__input"
+               placeholder="Andorra la Vella" autocomplete="address-level2" required>
+        <span class="adv-form__error" data-error-for="solicitud-city"></span>
+      </div>
+
+      <div class="adv-form__group">
+        <label class="adv-form__label" for="solicitud-country">País</label>
+        <select id="solicitud-country" name="country" class="adv-form__input adv-form__select" required>
+          <option value="" disabled selected>Selecciona un país</option>
+          <option value="AD">Andorra</option>
+          <option value="ES">España</option>
+          <option value="FR">Francia</option>
+          <option value="PT">Portugal</option>
+          <option value="IT">Italia</option>
+          <option value="DE">Alemania</option>
+          <option value="GB">Reino Unido</option>
+          <option value="IE">Irlanda</option>
+          <option value="NL">Países Bajos</option>
+          <option value="BE">Bélgica</option>
+          <option value="LU">Luxemburgo</option>
+          <option value="CH">Suiza</option>
+          <option value="AT">Austria</option>
+          <option value="MC">Mónaco</option>
+          <option value="MT">Malta</option>
+          <option value="PL">Polonia</option>
+          <option value="SE">Suecia</option>
+          <option value="NO">Noruega</option>
+          <option value="DK">Dinamarca</option>
+          <option value="FI">Finlandia</option>
+          <option value="US">Estados Unidos</option>
+          <option value="CA">Canadá</option>
+          <option value="MX">México</option>
+          <option value="AR">Argentina</option>
+          <option value="CL">Chile</option>
+          <option value="CO">Colombia</option>
+          <option value="PE">Perú</option>
+          <option value="UY">Uruguay</option>
+          <option value="BR">Brasil</option>
+          <option value="AE">Emiratos Árabes Unidos</option>
+          <option value="MA">Marruecos</option>
+          <option value="OTRO">Otro</option>
+        </select>
+        <span class="adv-form__error" data-error-for="solicitud-country"></span>
       </div>
 
       <button type="submit" class="adv-contact-submit" id="solicitud-submit">

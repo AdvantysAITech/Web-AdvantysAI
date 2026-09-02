@@ -57,11 +57,13 @@
   const feedback = document.getElementById('solicitud-feedback');
 
   const fields = {
-    name: document.getElementById('solicitud-name'),
+    firstname: document.getElementById('solicitud-firstname'),
+    lastname: document.getElementById('solicitud-lastname'),
     email: document.getElementById('solicitud-email'),
     phone: document.getElementById('solicitud-phone'),
     company: document.getElementById('solicitud-company'),
-    location: document.getElementById('solicitud-location'),
+    city: document.getElementById('solicitud-city'),
+    country: document.getElementById('solicitud-country'),
   };
 
   // --- Poblar el select de Spin-offs (placeholder estático, sync GHL pendiente) ---
@@ -150,7 +152,8 @@
     clearErrors();
     let valid = true;
 
-    if (fields.name.value.trim().length < 3) { setError('name', 'Introduce tu nombre completo.'); valid = false; }
+    if (fields.firstname.value.trim().length < 2) { setError('firstname', 'Introduce tu nombre.'); valid = false; }
+    if (fields.lastname.value.trim().length < 2) { setError('lastname', 'Introduce tus apellidos.'); valid = false; }
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(fields.email.value.trim())) { setError('email', 'Introduce un email válido.'); valid = false; }
@@ -159,7 +162,8 @@
     if (phoneDigits.length < 6) { setError('phone', 'Introduce un teléfono válido.'); valid = false; }
 
     if (fields.company.value.trim().length < 2) { setError('company', 'Introduce el nombre de tu empresa.'); valid = false; }
-    if (fields.location.value.trim().length < 2) { setError('location', 'Introduce ciudad y país.'); valid = false; }
+    if (fields.city.value.trim().length < 2) { setError('city', 'Introduce tu ciudad.'); valid = false; }
+    if (!fields.country.value) { setError('country', 'Selecciona tu país.'); valid = false; }
 
     if (!fallbackLine.hidden && !lineSelect.value) valid = false;
     if (!fallbackRole.hidden) {
@@ -208,11 +212,14 @@
     const isJv = !fallbackRole.hidden;
 
     const payload = {
-      nombre: fields.name.value.trim(),
+      nombre: fields.firstname.value.trim(),
+      apellidos: fields.lastname.value.trim(),
       email: fields.email.value.trim(),
       telefono: fields.phone.value.trim(),
       empresa: fields.company.value.trim(),
-      ciudad_pais: fields.location.value.trim(),
+      ciudad: fields.city.value.trim(),
+      pais: fields.country.value,
+      pais_nombre: fields.country.options[fields.country.selectedIndex].textContent.trim(),
       linea_negocio: isJv ? 'Joint Venture Builder' : (lineSelect.value || 'Joint Venture Builder'),
       rol_jv: isJv ? roleSelect.value : '',
       spinoff: isJv ? spinoffSelect.value : '',
