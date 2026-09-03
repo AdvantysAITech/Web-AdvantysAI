@@ -206,6 +206,13 @@
 
       envioUuid = nuevoUuid();
 
+      if (window.advTrack) window.advTrack('generate_lead', {
+        formulario: 'partners',
+        linea_negocio: 'Programa de Partners',
+        partner_modalidad: payload.partner_modalidad,
+        partner_tier: payload.partner_tier,
+      });
+
       const panel = document.getElementById('adv-step-3');
       const success = document.getElementById('adv-success');
       panel.querySelectorAll(':scope > *:not(#adv-success)').forEach((el) => {

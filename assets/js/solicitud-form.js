@@ -250,6 +250,13 @@
       form.reset();
       enviosRealizados += 1;
       envioUuid = nuevoUuid();
+      if (window.advTrack) window.advTrack('generate_lead', {
+        formulario: 'solicitud',
+        linea_negocio: payload.linea_negocio,
+        spinoff: payload.spinoff || '(ninguna)',
+        rol_jv: payload.rol_jv || '(ninguno)',
+        origen: origen || '(directo)',
+      });
       showFeedback('success', '¡Gracias! Hemos recibido tu solicitud. Te contactaremos en breve.');
     } catch (err) {
       showFeedback('error', 'No hemos podido enviar el formulario. Inténtalo de nuevo o escríbenos directamente.');

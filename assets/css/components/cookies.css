@@ -1,0 +1,92 @@
+/* ===========================================================
+   BANNER DE COOKIES
+   =========================================================== */
+.adv-cookies {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 9999;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border-thin);
+  border-radius: 16px;
+  background: rgba(9, 13, 22, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.adv-cookies--visible { opacity: 1; transform: translateY(0); }
+
+.adv-cookies__titulo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.adv-cookies__cuerpo {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.adv-cookies__cuerpo a {
+  color: var(--color-coral);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.adv-cookies__acciones {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.adv-cookies__btn {
+  flex: 1 1 auto;
+  padding: 0.7rem 1.25rem;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border: 1px solid transparent;
+}
+
+.adv-cookies__btn--principal {
+  background: var(--gradient-brand);
+  color: #ffffff;
+}
+.adv-cookies__btn--principal:hover { filter: brightness(1.08); }
+
+.adv-cookies__btn--fantasma {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: var(--border-thin);
+}
+.adv-cookies__btn--fantasma:hover {
+  color: var(--text-main);
+  border-color: var(--border-hover);
+}
+
+@media (min-width: 640px) {
+  .adv-cookies { flex-direction: row; align-items: center; }
+  .adv-cookies__acciones { flex: 0 0 auto; }
+  .adv-cookies__btn { flex: 0 0 auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adv-cookies { transition: none; }
+}
