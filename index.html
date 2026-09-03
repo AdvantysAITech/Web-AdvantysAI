@@ -728,12 +728,27 @@
         document.head.appendChild(s);
       }
 
+      // El globo solo se monta en pantallas grandes. En movil la esfera se ve
+      // diminuta y arrancar WebGL cuesta segundos de CPU, asi que el hero se
+      // queda con su degradado de fondo. Tampoco se monta si el usuario ha
+      // pedido reducir el movimiento.
+      const consultaEscritorio = window.matchMedia('(min-width: 1024px)');
+      const sinMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)');
+
       function programarArranque() {
+        if (!consultaEscritorio.matches || sinMovimiento.matches) return;
         if (window.requestIdleCallback) {
           requestIdleCallback(cargarThreeYArrancar, { timeout: 2500 });
         } else {
           setTimeout(cargarThreeYArrancar, 800);
         }
+      }
+
+      // Si se agranda la ventana (girar tablet, maximizar), se monta entonces.
+      if (consultaEscritorio.addEventListener) {
+        consultaEscritorio.addEventListener('change', function (e) {
+          if (e.matches) programarArranque();
+        });
       }
 
       if (document.readyState === 'complete') programarArranque();
