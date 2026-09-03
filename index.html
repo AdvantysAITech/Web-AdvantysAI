@@ -492,9 +492,10 @@
   <script src="/assets/js/main.js"></script>
   <script>
     (function () {
-      const NODE_COUNT = 150;
+      const NODE_COUNT = 110;      // antes 150
       const RADIUS = 2.15;
-      const CONNECT_DIST = 0.85;
+      const CONNECT_DIST = 0.99;   // antes 0.85: compensa la menor densidad de nodos
+      const MAX_PIXEL_RATIO = 1.5; // antes 2. Bajar a 1 si aun pesa; subir a 2 para maxima nitidez
 
       function initAdvantysGlobeHero() {
         const mount = document.getElementById('advantys-globe-mount');
@@ -545,8 +546,8 @@
         const camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
         camera.position.set(0, 0, 6.4);
 
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true, powerPreference: 'low-power' });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, MAX_PIXEL_RATIO));
         mount.appendChild(renderer.domElement);
 
         const group = new THREE.Group();
@@ -616,7 +617,7 @@
         group.add(lines);
 
         // --- Esfera de cristal envolvente ---
-        const glassGeometry = new THREE.SphereGeometry(RADIUS * 1.03, 48, 48);
+        const glassGeometry = new THREE.SphereGeometry(RADIUS * 1.03, 24, 24);
         const glassMaterial = new THREE.MeshBasicMaterial({
           color: 0x2a1512,
           transparent: true,
@@ -627,7 +628,7 @@
         group.add(glass);
 
         // --- Polvo ambiental de fondo ---
-        const dustCount = 200;
+        const dustCount = 120;
         const dustPositions = new Float32Array(dustCount * 3);
         for (let i = 0; i < dustCount; i++) {
           dustPositions[i * 3] = (Math.random() - 0.5) * 16;
