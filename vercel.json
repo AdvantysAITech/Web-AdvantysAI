@@ -2,39 +2,180 @@
   "cleanUrls": false,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/aviso-legal", "destination": "/pages/aviso-legal.html" },
-    { "source": "/blog", "destination": "/pages/blog.html" },
-    { "source": "/consultoria-estrategica", "destination": "/pages/consultoria-estrategica.html" },
-    { "source": "/educacion", "destination": "/pages/soluciones/educacion.html" },
-    { "source": "/hospitality", "destination": "/pages/soluciones/hospitality.html" },
-    { "source": "/residencia-fiscal", "destination": "/pages/soluciones/residencia-fiscal.html" },
-    { "source": "/trazabilidad-agroalimentaria", "destination": "/pages/soluciones/trazabilidad-agroalimentaria.html" },
-    { "source": "/iso-42001", "destination": "/pages/iso-42001.html" },
-    { "source": "/autodiagnostico-iso-42001", "destination": "/pages/autodiagnostico-iso-42001.html" },
-    { "source": "/partners", "destination": "/pages/partners.html" },
-    { "source": "/politica-cookies", "destination": "/pages/politica-cookies.html" },
-    { "source": "/politica-privacidad", "destination": "/pages/politica-privacidad.html" },
-    { "source": "/sistema-advantys", "destination": "/pages/sistema-advantys.html" },
-    { "source": "/soluciones-ia", "destination": "/pages/soluciones-ia.html" },
-    { "source": "/solicitud", "destination": "/pages/solicitud.html" }
+    {
+      "source": "/aviso-legal",
+      "destination": "/pages/aviso-legal.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/pages/blog.html"
+    },
+    {
+      "source": "/consultoria-estrategica",
+      "destination": "/pages/consultoria-estrategica.html"
+    },
+    {
+      "source": "/educacion",
+      "destination": "/pages/soluciones/educacion.html"
+    },
+    {
+      "source": "/hospitality",
+      "destination": "/pages/soluciones/hospitality.html"
+    },
+    {
+      "source": "/residencia-fiscal",
+      "destination": "/pages/soluciones/residencia-fiscal.html"
+    },
+    {
+      "source": "/trazabilidad-agroalimentaria",
+      "destination": "/pages/soluciones/trazabilidad-agroalimentaria.html"
+    },
+    {
+      "source": "/iso-42001",
+      "destination": "/pages/iso-42001.html"
+    },
+    {
+      "source": "/autodiagnostico-iso-42001",
+      "destination": "/pages/autodiagnostico-iso-42001.html"
+    },
+    {
+      "source": "/partners",
+      "destination": "/pages/partners.html"
+    },
+    {
+      "source": "/politica-cookies",
+      "destination": "/pages/politica-cookies.html"
+    },
+    {
+      "source": "/politica-privacidad",
+      "destination": "/pages/politica-privacidad.html"
+    },
+    {
+      "source": "/sistema-advantys",
+      "destination": "/pages/sistema-advantys.html"
+    },
+    {
+      "source": "/soluciones-ia",
+      "destination": "/pages/soluciones-ia.html"
+    },
+    {
+      "source": "/solicitud",
+      "destination": "/pages/solicitud.html"
+    }
   ],
   "redirects": [
-    { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/pages/aviso-legal.html", "destination": "/aviso-legal", "permanent": true },
-    { "source": "/pages/blog.html", "destination": "/blog", "permanent": true },
-    { "source": "/pages/consultoria-estrategica.html", "destination": "/consultoria-estrategica", "permanent": true },
-    { "source": "/pages/iso-42001.html", "destination": "/iso-42001", "permanent": true },
-    { "source": "/pages/autodiagnostico-iso-42001.html", "destination": "/autodiagnostico-iso-42001", "permanent": true },
-    { "source": "/pages/partners.html", "destination": "/partners", "permanent": true },
-    { "source": "/pages/politica-cookies.html", "destination": "/politica-cookies", "permanent": true },
-    { "source": "/pages/politica-privacidad.html", "destination": "/politica-privacidad", "permanent": true },
-    { "source": "/politica-priv", "destination": "/politica-privacidad", "permanent": true },
-    { "source": "/pages/educacion.html", "destination": "/educacion", "permanent": true },
-    { "source": "/pages/hospitality.html", "destination": "/hospitality", "permanent": true },
-    { "source": "/pages/residencia-fiscal.html", "destination": "/residencia-fiscal", "permanent": true },
-    { "source": "/pages/trazabilidad-agroalimentaria.html", "destination": "/trazabilidad-agroalimentaria", "permanent": true },
-    { "source": "/pages/sistema-advantys.html", "destination": "/sistema-advantys", "permanent": true },
-    { "source": "/pages/soluciones-ia.html", "destination": "/soluciones-ia", "permanent": true },
-    { "source": "/pages/solicitud.html", "destination": "/solicitud", "permanent": true }
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pages/aviso-legal.html",
+      "destination": "/aviso-legal",
+      "permanent": true
+    },
+    {
+      "source": "/pages/blog.html",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/pages/consultoria-estrategica.html",
+      "destination": "/consultoria-estrategica",
+      "permanent": true
+    },
+    {
+      "source": "/pages/iso-42001.html",
+      "destination": "/iso-42001",
+      "permanent": true
+    },
+    {
+      "source": "/pages/autodiagnostico-iso-42001.html",
+      "destination": "/autodiagnostico-iso-42001",
+      "permanent": true
+    },
+    {
+      "source": "/pages/partners.html",
+      "destination": "/partners",
+      "permanent": true
+    },
+    {
+      "source": "/pages/politica-cookies.html",
+      "destination": "/politica-cookies",
+      "permanent": true
+    },
+    {
+      "source": "/pages/politica-privacidad.html",
+      "destination": "/politica-privacidad",
+      "permanent": true
+    },
+    {
+      "source": "/politica-priv",
+      "destination": "/politica-privacidad",
+      "permanent": true
+    },
+    {
+      "source": "/pages/educacion.html",
+      "destination": "/educacion",
+      "permanent": true
+    },
+    {
+      "source": "/pages/hospitality.html",
+      "destination": "/hospitality",
+      "permanent": true
+    },
+    {
+      "source": "/pages/residencia-fiscal.html",
+      "destination": "/residencia-fiscal",
+      "permanent": true
+    },
+    {
+      "source": "/pages/trazabilidad-agroalimentaria.html",
+      "destination": "/trazabilidad-agroalimentaria",
+      "permanent": true
+    },
+    {
+      "source": "/pages/sistema-advantys.html",
+      "destination": "/sistema-advantys",
+      "permanent": true
+    },
+    {
+      "source": "/pages/soluciones-ia.html",
+      "destination": "/soluciones-ia",
+      "permanent": true
+    },
+    {
+      "source": "/pages/solicitud.html",
+      "destination": "/solicitud",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
+      ]
+    }
   ]
 }

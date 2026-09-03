@@ -10,8 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
-  <script src="https://unpkg.com/@phosphor-icons/web" defer></script>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
   <meta name="description" content="Dise&#241;amos, implantamos y auditamos soluciones de inteligencia artificial orientadas a la rentabilidad operativa. Consultor&#237;a tecnol&#243;gica y auditor&#237;a ISO 42001 desde Andorra.">
   <link rel="canonical" href="https://advantys.ai/">
   <meta property="og:type" content="website">
@@ -20,11 +19,11 @@
   <meta property="og:url" content="https://advantys.ai/">
   <meta property="og:title" content="Advantys AI &#8212; Consultor&#237;a, automatizaci&#243;n y auditor&#237;a de IA para empresas">
   <meta property="og:description" content="Dise&#241;amos, implantamos y auditamos soluciones de inteligencia artificial orientadas a la rentabilidad operativa. Consultor&#237;a tecnol&#243;gica y auditor&#237;a ISO 42001 desde Andorra.">
-  <meta property="og:image" content="https://advantys.ai/assets/images/Logo%20advantys%20blanco%20y%20color.png">
+  <meta property="og:image" content="https://advantys.ai/assets/images/og-cover.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Advantys AI &#8212; Consultor&#237;a, automatizaci&#243;n y auditor&#237;a de IA para empresas">
   <meta name="twitter:description" content="Dise&#241;amos, implantamos y auditamos soluciones de inteligencia artificial orientadas a la rentabilidad operativa. Consultor&#237;a tecnol&#243;gica y auditor&#237;a ISO 42001 desde Andorra.">
-  <meta name="twitter:image" content="https://advantys.ai/assets/images/Logo%20advantys%20blanco%20y%20color.png">
+  <meta name="twitter:image" content="https://advantys.ai/assets/images/og-cover.png">
   <!-- JSON-LD Advantys -->
   <script type="application/ld+json">
 {
@@ -39,8 +38,8 @@
       "logo": {
         "@type": "ImageObject",
         "@id": "https://advantys.ai/#logo",
-        "url": "https://advantys.ai/assets/images/Logo%20advantys%20blanco%20y%20color.png",
-        "contentUrl": "https://advantys.ai/assets/images/Logo%20advantys%20blanco%20y%20color.png",
+        "url": "https://advantys.ai/assets/images/og-cover.png",
+        "contentUrl": "https://advantys.ai/assets/images/og-cover.png",
         "caption": "Advantys AI"
       },
       "image": {
@@ -140,7 +139,7 @@
   <div class="adv-nav-island">
     
     <a href="/" class="adv-logo-island">
-      <img src="/assets/images/Logo advantys blanco y color.png" alt="Advantys AI Logo">
+      <img src="/assets/images/Logo advantys blanco y color.png" alt="Advantys AI Logo" width="900" height="159" decoding="async">
     </a>
  
     <nav class="adv-links-island">
@@ -417,7 +416,7 @@
         <!-- Brand Info -->
         <div class="footer-card brand-card">
           <a href="/" class="logo-area" style="margin-bottom: 1rem;">
-            <img src="/assets/images/Logo advantys blanco y color.png" alt="Advantys AI Logo" style="width: 120px; height: 120px; object-fit: contain;">
+            <img src="/assets/images/Logo advantys blanco y color.png" alt="Advantys AI Logo" width="900" height="159" loading="lazy" decoding="async" style="width: 120px; height: 120px; object-fit: contain;">
           </a>
           <p class="footer-text">
             Impulsando el futuro corporativo mediante soluciones de Inteligencia Artificial seguras, éticas y alineadas con los más altos estándares de auditoría tecnológica.
@@ -671,32 +670,74 @@
 
         // --- Loop de animación ---
         let autoAngle = 0;
-        let frameId;
-        function animate() {
+        let frameId = null;
+        let ultimoFrame = 0;
+        const INTERVALO = 1000 / 30;   // 30 fps: la rotacion es tan lenta que no se distingue de 60
+
+        function animate(ahora) {
+          frameId = requestAnimationFrame(animate);
+          if (ahora - ultimoFrame < INTERVALO) return;
+          ultimoFrame = ahora;
+
           if (!prefersReducedMotion) {
-            autoAngle += 0.0016;
-            group.rotation.y += (autoAngle + mouse.x * 0.25 - group.rotation.y) * 0.03;
-            group.rotation.x += (mouse.y * 0.12 - group.rotation.x) * 0.03;
-            dust.rotation.y += 0.00025;
+            autoAngle += 0.0032;       // el doble por frame, a la mitad de frames: misma velocidad
+            group.rotation.y += (autoAngle + mouse.x * 0.25 - group.rotation.y) * 0.06;
+            group.rotation.x += (mouse.y * 0.12 - group.rotation.x) * 0.06;
+            dust.rotation.y += 0.0005;
           }
           renderer.render(scene, camera);
-          frameId = requestAnimationFrame(animate);
         }
-        animate();
+
+        function arrancarBucle() {
+          if (frameId === null) { ultimoFrame = 0; frameId = requestAnimationFrame(animate); }
+        }
+        function pararBucle() {
+          if (frameId !== null) { cancelAnimationFrame(frameId); frameId = null; }
+        }
+
+        // Sin trabajo de GPU si el hero no esta en pantalla o la pestaña esta oculta
+        let visible = true;
+        const io = new IntersectionObserver(function (entradas) {
+          visible = entradas[0].isIntersecting;
+          if (visible && !document.hidden) arrancarBucle(); else pararBucle();
+        }, { threshold: 0 });
+        io.observe(mount);
+
+        document.addEventListener('visibilitychange', function () {
+          if (!document.hidden && visible) arrancarBucle(); else pararBucle();
+        });
+
+        arrancarBucle();
 
         // Limpieza opcional si en algún momento se quita el hero del DOM
         window.addEventListener('beforeunload', () => {
-          cancelAnimationFrame(frameId);
+          pararBucle();
+          io.disconnect();
           ro.disconnect();
           window.removeEventListener('mousemove', onMouseMove);
         });
       }
 
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initAdvantysGlobeHero);
-      } else {
-        initAdvantysGlobeHero();
+      // three.js (600 KB) no se descarga hasta que la pagina esta cargada y la
+      // CPU libre. El globo se ve igual, solo aparece unas decimas mas tarde.
+      function cargarThreeYArrancar() {
+        if (window.THREE) return initAdvantysGlobeHero();
+        var s = document.createElement('script');
+        s.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+        s.onload = initAdvantysGlobeHero;
+        document.head.appendChild(s);
       }
+
+      function programarArranque() {
+        if (window.requestIdleCallback) {
+          requestIdleCallback(cargarThreeYArrancar, { timeout: 2500 });
+        } else {
+          setTimeout(cargarThreeYArrancar, 800);
+        }
+      }
+
+      if (document.readyState === 'complete') programarArranque();
+      else window.addEventListener('load', programarArranque);
     })();
   </script>
 
