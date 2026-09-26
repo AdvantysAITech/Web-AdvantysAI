@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon/icon-192.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png">
+  <meta name="theme-color" content="#090d16">
   <title>Advantys AI Residencia Fiscal &#8212; Certificaci&#243;n soberana de residencia</title>
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link href="/assets/css/main.css" rel="stylesheet">
@@ -334,14 +339,14 @@
         Un sistema de identidad autosoberana (SSI) con verificación biométrica en el propio dispositivo, pensado para que acreditar tu presencia efectiva en Andorra sea continuo, verificable y admisible ante requerimientos fiscales — sin depender de procesos administrativos fragmentados.
       </p>
       <div class="adv-vertical-hero__actions">
-        <a href="/solicitud?role=Cliente%20Final&spinoff=Residencia" class="btn-glass-primary">
+        <a href="/solicitud?interes=solucion_sectorial&spinoff=residencia&origen=residencia-fiscal" class="btn-glass-primary">
           Quiero saber más
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="7" y1="17" x2="17" y2="7"></line>
             <polyline points="7 7 17 7 17 17"></polyline>
           </svg>
         </a>
-        <a href="/solicitud?role=Inversor&spinoff=Residencia" class="btn-glass">Soy inversor</a>
+        <a href="/solicitud?interes=invertir&spinoff=residencia&origen=residencia-fiscal" class="btn-glass">Soy inversor</a>
       </div>
     </div>
   </section>
@@ -462,7 +467,7 @@
       <div class="adv-vertical-cta__card adv-vertical-cta__card--highlight">
         <h3>¿Resides fiscalmente en Andorra?</h3>
         <p>Advantys AI Residencia Fiscal está en desarrollo. Déjanos tus datos para tener acceso anticipado en cuanto esté disponible.</p>
-        <form class="adv-vertical-cta__form" data-role="Cliente Final" data-spinoff="Residencia" data-source="Web Advantys — Residencia Fiscal — Cliente" novalidate>
+        <form class="adv-vertical-cta__form" data-role="Cliente Final" data-spinoff="residencia" data-origen="residencia-fiscal" novalidate>
           <div class="adv-form__group">
             <label class="adv-form__label" for="rf-cli-name">Nombre completo</label>
             <input type="text" id="rf-cli-name" name="name" class="adv-form__input" placeholder="Nombre y apellidos" autocomplete="name" required>
@@ -501,7 +506,7 @@
       <div class="adv-vertical-cta__card">
         <h3>¿Eres inversor?</h3>
         <p>Advantys AI Residencia Fiscal es una de nuestras iniciativas del Joint Venture Builder. Si te interesa participar en su capitalización, hablamos.</p>
-        <form class="adv-vertical-cta__form" data-role="Inversor" data-spinoff="Residencia" data-source="Web Advantys — Residencia Fiscal — Inversor" novalidate>
+        <form class="adv-vertical-cta__form" data-role="Inversor" data-spinoff="residencia" data-origen="residencia-fiscal" novalidate>
           <div class="adv-form__group">
             <label class="adv-form__label" for="rf-inv-name">Nombre completo</label>
             <input type="text" id="rf-inv-name" name="name" class="adv-form__input" placeholder="Nombre y apellidos" autocomplete="name" required>
@@ -596,7 +601,6 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
           </svg>
         </a>
-        <a href="mailto:info@advantys.ai" class="adv-footer-cta__mail">info@advantys.ai</a>
       </div>
     </div>
     <!-- FOOTER: CTA DE CONTACTO END -->
@@ -622,6 +626,7 @@
 
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/config.js"></script>
+<script src="/assets/js/lead.js"></script>
 <script src="/assets/js/vertical-cta-form.js"></script>
 
 <!-- Medicion Advantys -->

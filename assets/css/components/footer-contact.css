@@ -90,15 +90,6 @@
   transform: translateX(3px);
 }
 
-.adv-footer-cta__mail {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  text-decoration: none;
-  transition: var(--transition-smooth);
-}
-
-.adv-footer-cta__mail:hover { color: var(--color-coral); }
-
 /* Select — reutiliza el estilo de adv-form__input y añade la flecha */
 .adv-form__select {
   appearance: none;

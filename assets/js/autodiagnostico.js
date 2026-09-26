@@ -9,12 +9,20 @@
     const CONFIG = {
         empresa: 'Advantys AI',
         emailContacto: 'info@advantys.ai',
-        webhookURL: '',            // ← pon aquí la URL del webhook de n8n
         envioAutomatico: true,
         origen: 'autodiagnostico-iso-42001',
     };
 
-  const WEBHOOK = CONFIG.webhookURL || window.ADV_WEBHOOK_URL || '';
+  // El envío al CRM lo hace window.advLead (assets/js/lead.js).
+  // Se envía en tres momentos, siempre con el MISMO uuid y email, para que
+  // GHL actualice el mismo contacto en lugar de duplicarlo:
+  //   1. 'datos'     → al validar el formulario inicial (el contacto entra
+  //                    en el CRM aunque abandone el cuestionario).
+  //   2. 'resultado' → al terminar el cuestionario (puntuación y áreas).
+  //   3. 'solicitud' → al pulsar el CTA final (abre la oportunidad).
+  const L = window.advLead;
+  const UUID = L ? L.nuevoUuid() : '';
+  let solicitudEnviada = false;
 
   // ===========================================================
   // ÁREAS DE LA NORMA
@@ -147,6 +155,7 @@
       return;
     }
     el.error.classList.remove('is-visible');
+    enviarWebhook('datos');
     idx = 0;
     renderQ();
     go('auto-s-quiz');
@@ -248,41 +257,51 @@
       });
     });
 
-    if (CONFIG.envioAutomatico) enviarWebhook(false);
+    if (CONFIG.envioAutomatico) enviarWebhook('resultado');
   }
 
   // ===========================================================
   // ENVÍO DEL LEAD
   // ===========================================================
-  function payload(solicitaInforme) {
-    return {
+  function payload(etapa) {
+    const nombre = L.separarNombre(datos.nombre);
+    const solicita = etapa === 'solicitud';
+    const p = L.construir({
+      uuid: UUID,
+      formulario: 'Autodiagnóstico ISO 42001',
       origen: CONFIG.origen,
-      fecha: new Date().toISOString(),
-      linea_negocio: 'Auditoria ISO 42001',
-      solicita_informe: !!solicitaInforme,
-      nombre: datos.nombre,
-      empresa: datos.empresa,
+      interes: 'iso42001',
+      nombre: nombre.nombre,
+      apellidos: nombre.apellidos,
       email: datos.email,
       telefono: datos.telefono || '',
-      relacion_ia: datos.rol,
-      puntuacion: resultado ? resultado.pct : null,
-      nivel: resultado ? resultado.banda : null,
-      areas: resultado ? Object.fromEntries(AREAS.map((a) => {
-        const d = resultado.porArea[a.id];
-        return [a.nombre, Math.round((d.pts / d.max) * 100)];
-      })) : {},
-      respuestas: PREGUNTAS.map((q, i) => ({ area: q.a, pregunta: q.t, valor: respuestas[i] })),
-    };
+      empresa: datos.empresa,
+      extra: {
+        autodiag_etapa: etapa,
+        autodiag_relacion_ia: datos.rol || '',
+        autodiag_puntuacion: resultado ? resultado.pct : '',
+        autodiag_nivel: resultado ? resultado.banda : '',
+        autodiag_areas: resultado ? AREAS.map((a) => {
+          const d = resultado.porArea[a.id];
+          return `${a.nombre}: ${Math.round((d.pts / d.max) * 100)}%`;
+        }).join(' · ') : '',
+        solicita_revision: solicita ? 'Sí' : 'No',
+      },
+    });
+    // Solo se abre oportunidad cuando pide la revisión con un consultor.
+    // En las etapas previas el contacto entra en el CRM con la línea ISO,
+    // pero sin oportunidad.
+    if (!solicita) {
+      p.abrir_oportunidad = 'No';
+      p.fase_entrada = '';
+    }
+    return p;
   }
 
-  async function enviarWebhook(solicitaInforme) {
-    if (!WEBHOOK) return false;
+  async function enviarWebhook(etapa) {
+    if (!L) return false;
     try {
-      await fetch(WEBHOOK, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload(solicitaInforme)),
-      });
+      await L.enviar(payload(etapa));
       return true;
     } catch (e) {
       return false; // silencioso: no bloquea la experiencia del usuario
@@ -290,31 +309,28 @@
   }
 
   async function solicitarInforme() {
-    const p = payload(true);
-    const enviado = await enviarWebhook(true);
+    if (solicitudEnviada) {
+      el.feedback.textContent = 'Ya hemos recibido tu solicitud. Un consultor te escribirá en menos de 24 h.';
+      return;
+    }
+    const btn = $('auto-btn-cta');
+    if (btn) btn.disabled = true;
+
+    const enviado = await enviarWebhook('solicitud');
 
     if (enviado) {
+      solicitudEnviada = true;
+      if (window.advTrack) window.advTrack('generate_lead', {
+        formulario: 'autodiagnostico_iso',
+        interes: 'iso42001',
+        nivel: resultado ? resultado.banda : '',
+      });
       el.feedback.textContent = 'Solicitud enviada. Un consultor revisará tus respuestas y te escribirá en menos de 24 h.';
       return;
     }
 
-    // Fallback: abrir el gestor de correo con el resumen
-    const cuerpo =
-`Solicitud de diagnóstico completo ISO/IEC 42001
-
-Nombre: ${p.nombre}
-Empresa: ${p.empresa}
-Email: ${p.email}
-Teléfono: ${p.telefono || '-'}
-Relación con la IA: ${p.relacion_ia}
-
-Puntuación: ${p.puntuacion}/100 (${p.nivel})
-${Object.entries(p.areas).map(([k, v]) => `· ${k}: ${v}%`).join('\n')}`;
-
-    window.location.href =
-      `mailto:${CONFIG.emailContacto}?subject=${encodeURIComponent('Diagnóstico ISO 42001 — ' + p.empresa)}&body=${encodeURIComponent(cuerpo)}`;
-    el.feedback.textContent =
-      'Se ha abierto tu gestor de correo con el resumen. Si no se abre, escríbenos a ' + CONFIG.emailContacto + '.';
+    if (btn) btn.disabled = false;
+    el.feedback.textContent = 'No hemos podido enviar la solicitud. Inténtalo de nuevo en unos minutos.';
   }
 
   // ===========================================================
