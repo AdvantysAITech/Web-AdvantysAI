@@ -1,12 +1,10 @@
 (() => {
-  const WEBHOOK_URL = window.ADV_WEBHOOK_URL || 'https://TU-WEBHOOK-GHL.com/webhook/web-lead';
-
+  // El envío lo construye window.advLead (assets/js/lead.js): mismas claves y
+  // mismas etiquetas de GHL que el resto de formularios de la web.
   const forms = document.querySelectorAll('.adv-vertical-cta__form');
-  if (!forms.length) return;
-  const nuevoUuid = () =>
-    (window.crypto && crypto.randomUUID)
-      ? crypto.randomUUID()
-      : `web-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  if (!forms.length || !window.advLead) return;
+  const L = window.advLead;
+  const nuevoUuid = L.nuevoUuid;
 
   forms.forEach(initForm);
 
@@ -81,41 +79,33 @@
       event.preventDefault();
       if (!validate()) return;
 
-      const payload = {
-        nombre: field('name').value.trim(),
+      const esInversor = /inversor/i.test(form.dataset.role || '');
+      const nombre = L.separarNombre(field('name').value);
+      const payload = L.construir({
+        uuid: envioUuid,
+        formulario: esInversor ? 'CTA spin-off — Inversor' : 'CTA spin-off — Cliente',
+        origen: form.dataset.origen || '',
+        interes: esInversor ? 'invertir' : 'solucion_sectorial',
+        spinoff: form.dataset.spinoff,
+        nombre: nombre.nombre,
+        apellidos: nombre.apellidos,
         email: field('email').value.trim(),
         telefono: field('phone').value.trim(),
         empresa: field('company').value.trim(),
-        ciudad_pais: field('location').value.trim(),
-        linea_negocio: 'Joint Venture Builder',
-        rol_jv: form.dataset.role,
-        spinoff: form.dataset.spinoff,
-        fuente: form.dataset.source || 'Web Advantys — Página Spin-off',
-        servicio: '',
-        modalidad: '',
-        estado_presupuesto: '',
-        uuid: envioUuid,
-        calificacion: 'SIN_CALIFICAR',
-        fase_entrada: 'Prospecto Identificado',
-        fecha: new Date().toISOString(),
-      };
+        ciudad: field('location').value.trim(),
+      });
 
       setLoading(true);
       feedback.textContent = '';
 
       try {
-        const response = await fetch(WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        });
-
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        await L.enviar(payload);
 
         form.reset();
         envioUuid = nuevoUuid();
         if (window.advTrack) window.advTrack('generate_lead', {
           formulario: 'cta_vertical',
+          interes: payload.interes,
           linea_negocio: payload.linea_negocio,
           spinoff: payload.spinoff || '(ninguna)',
           rol_jv: payload.rol_jv || '(ninguno)',

@@ -144,12 +144,9 @@
   // Step 3 — Back
   document.getElementById('btn-back-2')?.addEventListener('click', () => goToStep(2));
 
-  const WEBHOOK_URL = window.ADV_WEBHOOK_URL || 'https://n8n.advantys.ai/webhook/web-lead';
-
-  const nuevoUuid = () =>
-    (window.crypto && crypto.randomUUID)
-      ? crypto.randomUUID()
-      : `web-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  // El envío lo construye window.advLead (assets/js/lead.js).
+  const L = window.advLead;
+  const nuevoUuid = L ? L.nuevoUuid : () => `web-${Date.now()}`;
 
   let envioUuid = nuevoUuid();
 
@@ -167,42 +164,31 @@
   partnersForm?.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    const payload = {
-      nombre: document.getElementById('input-nombre').value.trim(),
-      email: document.getElementById('input-email').value.trim(),
-      telefono: '',
-      empresa: '',
-      ciudad_pais: '',
-      linea_negocio: 'Programa de Partners',
-      rol_jv: null,
-      spinoff: null,
-      // --- Cualificación específica del canal de partners ---
-      partner_tipo: LABELS.tipo[state.tipo] ?? '',
-      partner_cartera: LABELS.cartera[state.cartera] ?? '',
-      partner_modalidad: LABELS.modalidad[state.modalidad] ?? '',
-      partner_tier: tierLabel(state.tipo, state.cartera, state.modalidad),
-      fuente: 'Web Advantys — Programa de Partners',
-      servicio: '',
-      modalidad: '',
-      estado_presupuesto: '',
+    const nombre = L.separarNombre(document.getElementById('input-nombre').value);
+    const payload = L.construir({
       uuid: envioUuid,
-      calificacion: 'SIN_CALIFICAR',
-      fase_entrada: 'Prospecto Identificado',
-      fecha: new Date().toISOString(),
-    };
+      formulario: 'Programa de Partners',
+      origen: 'partners',
+      interes: 'partners',
+      nombre: nombre.nombre,
+      apellidos: nombre.apellidos,
+      email: document.getElementById('input-email').value.trim(),
+      extra: {
+        tipo_contacto: 'Partner',
+        // --- Cualificación específica del canal de partners ---
+        partner_tipo: LABELS.tipo[state.tipo] ?? '',
+        partner_cartera: LABELS.cartera[state.cartera] ?? '',
+        partner_modalidad: LABELS.modalidad[state.modalidad] ?? '',
+        partner_tier: tierLabel(state.tipo, state.cartera, state.modalidad),
+      },
+    });
 
     submitBtn.disabled = true;
     submitBtn.classList.add('is-loading');
     showFeedback('success', '');
 
     try {
-      const response = await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      await L.enviar(payload);
 
       envioUuid = nuevoUuid();
 

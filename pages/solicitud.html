@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon/icon-192.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png">
+  <meta name="theme-color" content="#090d16">
   <title>Solicita informaci&#243;n | Advantys AI</title>
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link href="/assets/css/main.css" rel="stylesheet">
@@ -219,37 +224,39 @@
       </div>
 
 
-      <!-- Contexto precargado (spin-off / rol). Solo visible si viene de un enlace con parámetros -->
+      <!-- Contexto precargado (viene de un botón con ?interes= / ?role=&spinoff=) -->
       <div class="adv-solicitud-context" id="solicitud-context" hidden>
         <span class="adv-solicitud-context__chip" id="solicitud-context-chip"></span>
       </div>
 
-      <!-- Fallback: si alguien llega sin parámetros (acceso directo a /solicitud), se le pregunta -->
-      <div class="adv-form__group" id="solicitud-fallback-line" hidden>
-        <label class="adv-form__label" for="solicitud-line">¿Qué te interesa?</label>
-        <select id="solicitud-line" name="line" class="adv-form__input adv-form__select">
-          <option value="" disabled selected>Selecciona una opción</option>
-          <option value="Consultoria Tecnologica">Implantar una solución en mi empresa</option>
-          <option value="Joint Venture Builder">Invertir o participar en una spin-off</option>
-          <option value="Auditoria ISO 42001">ISO 42001</option>
-        </select>
+      <!-- PASO 1 · ¿Qué te interesa? Todas las opciones visibles. El resto del
+           formulario solo se carga cuando se elige una. -->
+      <fieldset class="adv-solicitud-interes" id="solicitud-interes">
+        <legend class="adv-form__label">¿Qué te interesa?</legend>
+        <div class="adv-solicitud-interes__grid" id="solicitud-interes-opciones">
+          <!-- Poblado por solicitud-form.js desde window.advLead.INTERESES -->
+        </div>
+        <span class="adv-form__error" data-error-for="solicitud-interes"></span>
+      </fieldset>
+
+      <!-- Partners: no usa este formulario, tiene el suyo -->
+      <div class="adv-solicitud-aviso" id="solicitud-bloque-partners" hidden>
+        <p>El programa de partners tiene su propio formulario, con las preguntas que necesitamos para proponerte un modelo de colaboración.</p>
+        <a href="/partners#formulario" class="adv-contact-submit">
+          <span class="adv-contact-submit__label">Ir al programa de partners</span>
+        </a>
       </div>
 
-      <div class="adv-form__group" id="solicitud-fallback-role" hidden>
-        <label class="adv-form__label" for="solicitud-role">Rol</label>
-        <select id="solicitud-role" name="role" class="adv-form__input adv-form__select">
-          <option value="" disabled selected>Selecciona una opción</option>
-          <option value="Cliente Final">Cliente Final</option>
-          <option value="Inversor">Inversor</option>
-        </select>
-      </div>
+      <!-- PASO 2 · Datos. Oculto hasta elegir interés -->
+      <div class="adv-solicitud-datos" id="solicitud-bloque-datos" hidden>
 
-      <div class="adv-form__group" id="solicitud-fallback-spinoff" hidden>
-        <label class="adv-form__label" for="solicitud-spinoff">Spin-off</label>
+      <div class="adv-form__group" id="solicitud-bloque-spinoff" hidden>
+        <label class="adv-form__label" for="solicitud-spinoff" id="solicitud-spinoff-label">¿Qué solución te interesa?</label>
         <select id="solicitud-spinoff" name="spinoff" class="adv-form__input adv-form__select">
-          <option value="" disabled selected>Selecciona una spin-off</option>
+          <option value="" disabled selected>Selecciona una opción</option>
           <!-- Poblado por solicitud-form.js -->
         </select>
+        <span class="adv-form__error" data-error-for="solicitud-spinoff"></span>
       </div>
 
       <div class="adv-form__group">
@@ -281,7 +288,7 @@
       </div>
 
       <div class="adv-form__group">
-        <label class="adv-form__label" for="solicitud-company">Empresa</label>
+        <label class="adv-form__label" for="solicitud-company" id="solicitud-company-label">Empresa</label>
         <input type="text" id="solicitud-company" name="company" class="adv-form__input"
                placeholder="Nombre de tu empresa" autocomplete="organization" required>
         <span class="adv-form__error" data-error-for="solicitud-company"></span>
@@ -334,6 +341,12 @@
         <span class="adv-form__error" data-error-for="solicitud-country"></span>
       </div>
 
+      <div class="adv-form__group">
+        <label class="adv-form__label" for="solicitud-message" id="solicitud-message-label">Cuéntanos brevemente qué necesitas (opcional)</label>
+        <textarea id="solicitud-message" name="message" class="adv-form__input adv-form__textarea" rows="4" maxlength="1500"
+                  placeholder="Contexto, plazos, qué te gustaría conseguir..."></textarea>
+      </div>
+
       <button type="submit" class="adv-contact-submit" id="solicitud-submit">
         <span class="adv-contact-submit__label">Enviar solicitud</span>
         <svg class="adv-contact-submit__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -345,6 +358,9 @@
         Al enviar este formulario aceptas nuestra
         <a href="/politica-privacidad">Política de Privacidad</a>.
       </p>
+
+      </div>
+      <!-- /PASO 2 -->
 
       <div class="adv-contact-feedback" id="solicitud-feedback" role="status" aria-live="polite"></div>
 
@@ -420,6 +436,7 @@
 
 <script src="/assets/js/main.js"></script>
 <script src="/assets/js/config.js"></script>
+<script src="/assets/js/lead.js"></script>
 <script src="/assets/js/solicitud-form.js"></script>
 <!-- Medicion Advantys -->
 <script src="/assets/js/cookies.js" defer></script>
