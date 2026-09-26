@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon/icon-192.png">
+  <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png">
+  <meta name="theme-color" content="#090d16">
   <title>Autodiagn&#243;stico ISO 42001 gratuito | Advantys AI</title>
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link href="/assets/css/main.css" rel="stylesheet">
@@ -308,9 +313,9 @@
             Empezar el diagnóstico
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
           </button>
-          <a href="/iso-42001" class="btn-glass">Ver el servicio de auditoría</a>
+          <a href="/iso-42001" class="btn-glass">Ver el servicio de implantación</a>
         </div>
-        <p class="adv-auto__meta">Sin coste y sin compromiso. Tus respuestas solo se usan para generar tu informe.</p>
+        <p class="adv-auto__meta">Sin coste y sin compromiso. Tus respuestas solo se usan para generar tu informe y, si lo pides, para que un consultor lo revise contigo.</p>
       </div>
 
       <!-- PANTALLA 2: DATOS -->
@@ -365,7 +370,7 @@
         </div>
 
         <p class="adv-auto__legal">
-          Al continuar aceptas que usemos estos datos para enviarte tu informe de diagnóstico, conforme a nuestra
+          Al continuar aceptas que guardemos estos datos para enviarte tu informe de diagnóstico y contactarte sobre él, conforme a nuestra
           <a href="/politica-privacidad">Política de Privacidad</a>.
         </p>
       </div>
@@ -409,7 +414,7 @@
           <h3 id="auto-cta-title"></h3>
           <p>Un consultor revisará tus respuestas y te propondrá una hoja de ruta concreta hacia la certificación, adaptada a tu empresa y al calendario del AI Act.</p>
           <button type="button" class="btn-glass-primary" id="auto-btn-cta">
-            Solicitar diagnóstico completo gratuito
+            Solicitar revisión gratuita con un consultor
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
           </button>
           <p class="adv-auto__feedback" id="auto-feedback" role="status" aria-live="polite"></p>
@@ -473,13 +478,12 @@
         </div>
 
         <div class="adv-footer-cta__actions">
-          <a href="/solicitud?origen=autodiagnostico-iso-42001" class="adv-footer-cta__button">
+          <a href="/solicitud?interes=iso42001&amp;origen=autodiagnostico-iso-42001" class="adv-footer-cta__button">
             <span>Solicitar información</span>
             <svg class="adv-footer-cta__icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
             </svg>
           </a>
-          <a href="mailto:info@advantys.ai" class="adv-footer-cta__mail">info@advantys.ai</a>
         </div>
       </div>
       <!-- FOOTER: CTA DE CONTACTO END -->
@@ -507,6 +511,7 @@
 
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/config.js"></script>
+<script src="/assets/js/lead.js"></script>
   <script src="/assets/js/autodiagnostico.js"></script>
 <!-- Medicion Advantys -->
 <script src="/assets/js/cookies.js" defer></script>
