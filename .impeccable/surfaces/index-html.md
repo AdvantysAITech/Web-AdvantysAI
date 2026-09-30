@@ -21,7 +21,8 @@ STORY: Entiendo qué hacen (diseñan, implantan, auditan IA para la rentabilidad
 
 FIRST VIEWPORT: Titular a la izquierda en dos líneas (~5.5rem desktop) sobre 7 columnas, subtítulo debajo a 60ch, CTA primario + secundario alineados a la izquierda. Globo WebGL ocupando la mitad derecha, sangrando fuera del contenedor. Isla de navegación flotante arriba.
 
-FORM: Editorial técnico con bento asimétrico; dirección fijada por el usuario (evolucionar la marca oscura), sin tirada de concepto.
+FORM: Editorial técnico con bento asimétrico. Sin tirada de concepto: el usuario eligió en la ronda de preguntas "Evolucionar la marca oscura" (mantiene fondo oscuro, rojo-coral, Space Grotesk/Inter y el globo, con layout editorial, tipografía y motion premium) y alcance "Sistema global + home"; la forma editorial se deriva de ese encargo.
+Adaptación móvil (<1024px): el globo WebGL no se monta por rendimiento (decisión previa del equipo, puntuación móvil ~95); se sustituye por un halo coral. Titular del hero en tres líneas a 5rem en vez de dos a 5.5rem porque el copy existente (9 palabras) no cabe en dos líneas junto al globo.
 Signature interaction: entrada del hero con líneas del titular que suben desde máscara con desenfoque; pila de fases de metodología pegajosa donde la tarjeta anterior retrocede (scroll-driven) al llegar la siguiente.
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance

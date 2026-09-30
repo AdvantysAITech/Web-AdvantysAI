@@ -127,7 +127,7 @@
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.15); /* Estilo búnker/certificado */
   border-radius: 12px;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease, transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .adv-accordion:hover {

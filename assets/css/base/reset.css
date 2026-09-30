@@ -122,18 +122,15 @@ button, [role="button"], summary {
 @media (prefers-reduced-motion: no-preference) {
   .adv-js [data-reveal] {
     opacity: 0;
-    transform: translateY(24px);
-    filter: blur(6px);
+    transform: translateY(10px);
     transition:
       opacity var(--dur-reveal) var(--ease-out),
-      transform var(--dur-reveal) var(--ease-out),
-      filter var(--dur-reveal) var(--ease-out);
-    transition-delay: calc(var(--reveal-i, 0) * 70ms);
+      transform var(--dur-reveal) var(--ease-out);
+    transition-delay: calc(var(--reveal-i, 0) * 60ms);
   }
   .adv-js [data-reveal].is-revealed {
     opacity: 1;
     transform: none;
-    filter: none;
   }
 }
 

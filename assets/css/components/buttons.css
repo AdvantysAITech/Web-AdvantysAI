@@ -62,7 +62,7 @@
   background: rgba(26, 7, 3, 0.14);
   color: var(--accent-ink);
   opacity: 1;
-  transition: transform var(--dur-base) var(--ease-out), background-color var(--dur-fast) ease;
+  transition: transform var(--dur-fast) var(--ease-out), background-color var(--dur-fast) ease;
 }
 
 .btn-glass-primary:active,

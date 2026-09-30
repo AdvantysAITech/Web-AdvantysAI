@@ -1,0 +1,488 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-30T17:08:58+00:00",
+  "title": "Design System: Advantys Ai",
+  "extensions": {
+    "colorMeta": {
+      "ink-canvas": {
+        "role": "neutral",
+        "displayName": "Lienzo Tinta",
+        "canonical": "oklch(16.0% 0.020 265.6)",
+        "tonalRamp": [
+          "#070b14",
+          "#1f242e",
+          "#3b404b",
+          "#585e6a",
+          "#777d8a",
+          "#989eac",
+          "#bec4d2",
+          "#e8effd"
+        ]
+      },
+      "ink-block": {
+        "role": "neutral",
+        "displayName": "Bloque Tinta",
+        "canonical": "oklch(18.7% 0.024 265.3)",
+        "tonalRamp": [
+          "#070b15",
+          "#1e2430",
+          "#3a404d",
+          "#575e6c",
+          "#767d8c",
+          "#979fae",
+          "#bdc4d4",
+          "#e7effe"
+        ]
+      },
+      "ink-raised": {
+        "role": "neutral",
+        "displayName": "Tinta Elevada",
+        "canonical": "oklch(21.4% 0.027 265.1)",
+        "tonalRamp": [
+          "#060b17",
+          "#1e2432",
+          "#39404f",
+          "#565e6e",
+          "#757d8e",
+          "#969fb0",
+          "#bbc4d7",
+          "#e7efff"
+        ]
+      },
+      "ink-control": {
+        "role": "neutral",
+        "displayName": "Tinta Control",
+        "canonical": "oklch(24.9% 0.032 265.9)",
+        "tonalRamp": [
+          "#050a19",
+          "#1d2434",
+          "#384051",
+          "#555e70",
+          "#747d91",
+          "#959eb3",
+          "#bac4da",
+          "#e7efff"
+        ]
+      },
+      "bunker-navy": {
+        "role": "tertiary",
+        "displayName": "Azul Búnker",
+        "canonical": "oklch(21.7% 0.044 257.4)",
+        "tonalRamp": [
+          "#020b1d",
+          "#162439",
+          "#314157",
+          "#4e5f77",
+          "#6d7f98",
+          "#8da0ba",
+          "#b3c6e1",
+          "#e5effe"
+        ]
+      },
+      "text-main": {
+        "role": "neutral",
+        "displayName": "Blanco Papel",
+        "canonical": "oklch(97.0% 0.003 264.5)",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#232425",
+          "#3f4041",
+          "#5d5e5f",
+          "#7c7d7f",
+          "#9d9ea0",
+          "#c3c4c6",
+          "#edeef0"
+        ]
+      },
+      "text-secondary": {
+        "role": "neutral",
+        "displayName": "Gris Informe",
+        "canonical": "oklch(78.0% 0.016 269.9)",
+        "tonalRamp": [
+          "#080b12",
+          "#21242c",
+          "#3c3f49",
+          "#5a5d67",
+          "#797d87",
+          "#9a9ea9",
+          "#c0c4cf",
+          "#eaeefa"
+        ]
+      },
+      "text-muted": {
+        "role": "neutral",
+        "displayName": "Gris Nota",
+        "canonical": "oklch(65.3% 0.022 267.2)",
+        "tonalRamp": [
+          "#070b14",
+          "#1f242f",
+          "#3a404c",
+          "#585e6a",
+          "#777d8b",
+          "#989ead",
+          "#bec4d3",
+          "#e8eefe"
+        ]
+      },
+      "signal-coral": {
+        "role": "primary",
+        "displayName": "Coral Señal",
+        "canonical": "oklch(68.5% 0.206 32.5)",
+        "tonalRamp": [
+          "#220000",
+          "#4b0200",
+          "#771402",
+          "#aa2307",
+          "#dd3718",
+          "#fe674b",
+          "#fcad9c",
+          "#fee9e5"
+        ]
+      },
+      "brand-coral": {
+        "role": "primary",
+        "displayName": "Coral de Marca",
+        "canonical": "oklch(70.6% 0.189 36.0)",
+        "tonalRamp": [
+          "#220000",
+          "#460d00",
+          "#731d02",
+          "#a42e06",
+          "#d54418",
+          "#fd6941",
+          "#fcae98",
+          "#ffe9e3"
+        ]
+      },
+      "brand-red": {
+        "role": "secondary",
+        "displayName": "Rojo Advantys",
+        "canonical": "oklch(65.3% 0.233 27.4)",
+        "tonalRamp": [
+          "#220000",
+          "#4c0001",
+          "#790c0e",
+          "#b2000d",
+          "#e7161e",
+          "#fb695d",
+          "#ffaba0",
+          "#ffe9e6"
+        ]
+      },
+      "brand-orange": {
+        "role": "secondary",
+        "displayName": "Naranja Tostado",
+        "canonical": "oklch(73.3% 0.116 47.7)",
+        "tonalRamp": [
+          "#1d0200",
+          "#401500",
+          "#682c03",
+          "#914518",
+          "#b4663b",
+          "#d9875c",
+          "#feaf87",
+          "#feeae0"
+        ]
+      },
+      "accent-ink": {
+        "role": "primary",
+        "displayName": "Tinta de Acento",
+        "canonical": "oklch(16.0% 0.037 38.2)",
+        "tonalRamp": [
+          "#180502",
+          "#331e17",
+          "#513932",
+          "#70574f",
+          "#91766e",
+          "#b4978e",
+          "#dabdb3",
+          "#fee9e3"
+        ]
+      },
+      "success-teal": {
+        "role": "tertiary",
+        "displayName": "Verde Verificado",
+        "canonical": "oklch(56.9% 0.096 187.5)",
+        "tonalRamp": [
+          "#000f0e",
+          "#002b28",
+          "#034a46",
+          "#096c66",
+          "#1d8f87",
+          "#4ab2a9",
+          "#73d9cf",
+          "#b9fef7"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Filete",
+        "canonical": "rgba(255, 255, 255, 0.08)"
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Filete Fuerte",
+        "canonical": "rgba(255, 255, 255, 0.14)"
+      },
+      "accent-line": {
+        "role": "primary",
+        "displayName": "Filete Coral",
+        "canonical": "rgba(255, 90, 60, 0.38)"
+      }
+    },
+    "typographyMeta": {
+      "statement": {
+        "displayName": "Statement",
+        "purpose": "Frase de cierre a toda anchura y el titular del cierre del pie; una por página como mucho."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "Titular del hero, por líneas, última línea en Coral de Marca."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Titular de sección, a la izquierda, apilado sobre la entradilla."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Títulos de tarjeta e ítem de lista."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Entradillas y subtítulos a 46–60ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Texto de lectura a 48–62ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Navegación, botones y encabezados de columna del pie; sin mayúsculas forzadas."
+      }
+    },
+    "shadows": [
+      {
+        "name": "canto",
+        "value": "inset 0 1px 0 rgba(255, 255, 255, 0.06)",
+        "purpose": "Brillo superior de todas las tarjetas y paneles en reposo."
+      },
+      {
+        "name": "flotante",
+        "value": "0 2px 6px rgba(2, 4, 10, 0.35), 0 24px 60px -24px rgba(2, 4, 10, 0.8)",
+        "purpose": "Desplegables y capas sobre el contenido."
+      },
+      {
+        "name": "isla",
+        "value": "inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 12px 40px -16px rgba(2, 4, 10, 0.8)",
+        "purpose": "Isla de navegación en reposo; se densifica al hacer scroll."
+      },
+      {
+        "name": "isla-scrolled",
+        "value": "inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 18px 50px -18px rgba(2, 4, 10, 0.95)",
+        "purpose": "Isla de navegación tras desplazarse."
+      },
+      {
+        "name": "halo-accion",
+        "value": "inset 0 1px 0 rgba(255, 255, 255, 0.35), inset 0 -1px 0 rgba(0, 0, 0, 0.12), 0 10px 30px -12px rgba(255, 70, 50, 0.55)",
+        "purpose": "Solo el botón primario."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 2px solid #FF5A3C; outline-offset: 3px",
+        "purpose": "Foco de teclado de todo control."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Curva por defecto de entradas, hovers y pulsaciones."
+      },
+      {
+        "name": "dur-press",
+        "value": "120ms",
+        "purpose": "Pulsación scale(0.97) de controles."
+      },
+      {
+        "name": "dur-fast",
+        "value": "180ms",
+        "purpose": "Cambios de color, desplegables."
+      },
+      {
+        "name": "dur-base",
+        "value": "240ms",
+        "purpose": "Cambios de superficie, menú móvil, sombras."
+      },
+      {
+        "name": "dur-reveal",
+        "value": "450ms",
+        "purpose": "Apariciones al hacer scroll (translateY 10px, escalonado 60ms)."
+      },
+      {
+        "name": "hero-line-in",
+        "value": "1s cubic-bezier(0.23, 1, 0.32, 1); translateY(105%) + blur(8px) → none; 80/160/240ms",
+        "purpose": "Entrada del titular del hero por líneas desde máscara."
+      },
+      {
+        "name": "phase-recede",
+        "value": "animation-timeline: view(); scale(0.94) + velo 0.55",
+        "purpose": "La fase anterior de la pila de metodología retrocede al llegar la siguiente."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "bento",
+        "value": "860px"
+      },
+      {
+        "name": "phases",
+        "value": "900px"
+      },
+      {
+        "name": "editorial",
+        "value": "960px"
+      },
+      {
+        "name": "desktop-nav",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Botón primario con flecha anidada",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal de cada página; relleno de marca y flecha en su propio círculo.",
+      "html": "<a href=\"#\" class=\"ds-btn-primary\">Solicitar consultoría estratégica<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><line x1=\"7\" y1=\"17\" x2=\"17\" y2=\"7\"></line><polyline points=\"7 7 17 7 17 17\"></polyline></svg></a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;gap:.75rem;min-height:3rem;padding:.5rem .5rem .5rem 1.5rem;border:0;border-radius:999px;background:linear-gradient(100deg,#FF3935 0%,#FF6B43 55%,#E49166 100%);color:#1a0703;font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-size:.95rem;font-weight:600;letter-spacing:-.005em;line-height:1.2;text-decoration:none;white-space:nowrap;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.35),inset 0 -1px 0 rgba(0,0,0,.12),0 10px 30px -12px rgba(255,70,50,.55);transition:transform 120ms cubic-bezier(.23,1,.32,1),box-shadow 240ms cubic-bezier(.23,1,.32,1),filter 180ms ease}.ds-btn-primary svg{flex:none;width:2rem;height:2rem;padding:.5rem;border-radius:50%;background:rgba(26,7,3,.14);transition:transform 180ms cubic-bezier(.23,1,.32,1),background-color 180ms ease}.ds-btn-primary:hover{filter:brightness(1.06) saturate(1.05);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),inset 0 -1px 0 rgba(0,0,0,.12),0 16px 40px -14px rgba(255,70,50,.7)}.ds-btn-primary:hover svg{transform:translate(2px,-1px) scale(1.05);background:rgba(26,7,3,.2)}.ds-btn-primary:active{transform:scale(.97)}.ds-btn-primary:focus-visible{outline:2px solid #FF5A3C;outline-offset:3px}"
+    },
+    {
+      "name": "Botón secundario de filete",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Acción alternativa junto al primario; filete sobre superficie.",
+      "html": "<a href=\"#\" class=\"ds-btn-secondary\">Conocer sistema Advantys</a>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:3rem;padding:.75rem 1.4rem;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);color:#f4f5f7;font-family:Inter,ui-sans-serif,system-ui,sans-serif;font-size:.95rem;font-weight:500;line-height:1.2;text-decoration:none;white-space:nowrap;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.06);transition:transform 120ms cubic-bezier(.23,1,.32,1),background-color 180ms ease,border-color 180ms ease}.ds-btn-secondary:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.24)}.ds-btn-secondary:active{transform:scale(.97)}.ds-btn-secondary:focus-visible{outline:2px solid #FF5A3C;outline-offset:3px}"
+    },
+    {
+      "name": "Isla de navegación",
+      "kind": "nav",
+      "refersTo": "nav-island",
+      "description": "Cabecera flotante translúcida en píldora; enlace activo con punto coral.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav__logo\">advantys <b>Ai</b></span><div class=\"ds-nav__links\"><a href=\"#\" class=\"ds-nav__link is-active\">Inicio</a><a href=\"#\" class=\"ds-nav__link\">Soluciones</a><a href=\"#\" class=\"ds-nav__link\">Sistema Advantys</a><a href=\"#\" class=\"ds-nav__link\">ISO 42001</a></div><a href=\"#\" class=\"ds-nav__cta\">Área privada</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;max-width:1120px;min-height:3.5rem;padding:.375rem .375rem .375rem 1.25rem;border-radius:999px;background:rgba(12,16,26,.62);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border:1px solid rgba(255,255,255,.08);box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 12px 40px -16px rgba(2,4,10,.8);font-family:Inter,ui-sans-serif,system-ui,sans-serif}.ds-nav__logo{font-family:'Space Grotesk',ui-sans-serif,sans-serif;font-weight:600;color:#f4f5f7;letter-spacing:-.02em}.ds-nav__logo b{color:#FF6B43;font-weight:600}.ds-nav__links{display:flex;gap:.125rem}.ds-nav__link{position:relative;padding:.55rem .9rem;border-radius:999px;font-size:.875rem;font-weight:500;color:#b3b7c2;text-decoration:none;transition:color 180ms ease,background-color 180ms ease}.ds-nav__link:hover{color:#f4f5f7;background:rgba(255,255,255,.07)}.ds-nav__link:focus-visible{outline:2px solid #FF5A3C;outline-offset:3px;color:#f4f5f7}.ds-nav__link.is-active{color:#f4f5f7}.ds-nav__link.is-active::before{content:'';position:absolute;left:50%;bottom:.25rem;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:#FF5A3C}.ds-nav__cta{display:inline-flex;align-items:center;min-height:2.75rem;padding:.55rem 1.1rem;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.03);color:#f4f5f7;font-size:.875rem;font-weight:600;text-decoration:none;transition:background-color 180ms ease,border-color 180ms ease}.ds-nav__cta:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.24)}"
+    },
+    {
+      "name": "Tarjeta bento",
+      "kind": "card",
+      "refersTo": "card-bento",
+      "description": "Superficie plana escalonada; en hover cambia de superficie, no salta.",
+      "html": "<article class=\"ds-card\"><span class=\"ds-card__icon\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 17l6-6 4 4 8-8\"/><path d=\"M14 7h7v7\"/></svg></span><h3 class=\"ds-card__title\"><a href=\"#\">Obsesión por la rentabilidad (ROI)</a></h3><p class=\"ds-card__desc\">Cada solución responde a qué gana la empresa y en qué plazo.</p></article>",
+      "css": ".ds-card{position:relative;display:flex;flex-direction:column;padding:clamp(1.75rem,1.25rem + 1.5vw,2.5rem);background:#0e131e;border:1px solid rgba(255,255,255,.08);border-radius:24px;box-shadow:inset 0 1px 0 rgba(255,255,255,.06);transition:background-color 240ms ease,border-color 240ms ease}.ds-card:hover{background:#131926;border-color:rgba(255,255,255,.14)}.ds-card:has(a:focus-visible){outline:2px solid #FF5A3C;outline-offset:3px}.ds-card__icon{display:flex;align-items:center;justify-content:center;width:44px;height:44px;margin-bottom:1.75rem;border-radius:14px;background:#090d16;border:1px solid rgba(255,255,255,.08);color:#FF6B43;transition:color 180ms ease,border-color 180ms ease}.ds-card:hover .ds-card__icon{color:#FF5A3C;border-color:rgba(255,90,60,.38)}.ds-card__icon svg{width:22px;height:22px}.ds-card__title{margin:0 0 .75rem;font-family:'Space Grotesk',ui-sans-serif,sans-serif;font-size:clamp(1.25rem,1.1rem + .5vw,1.6rem);font-weight:600;letter-spacing:-.015em;line-height:1.2;color:#f4f5f7}.ds-card__title a{color:inherit;text-decoration:none}.ds-card__title a:focus-visible{outline:none}.ds-card__title a::after{content:'';position:absolute;inset:0;border-radius:inherit}.ds-card__desc{margin:0;color:#b3b7c2;font-family:Inter,ui-sans-serif,sans-serif;font-size:.975rem;line-height:1.65}"
+    },
+    {
+      "name": "Lista con filetes",
+      "kind": "custom",
+      "refersTo": "card-phase",
+      "description": "Ítems separados por filetes de 1 px y marcador coral de 12 x 1 px, sin cajas.",
+      "html": "<ul class=\"ds-rule-list\"><li>Mapeo de procesos críticos</li><li>Diagnóstico de datos disponibles</li><li>Priorización por impacto en rentabilidad</li></ul>",
+      "css": ".ds-rule-list{list-style:none;margin:0;padding:0;font-family:Inter,ui-sans-serif,sans-serif}.ds-rule-list li{position:relative;padding:16px 0 16px 28px;border-top:1px solid rgba(255,255,255,.08);color:#b3b7c2;line-height:24px;transition:color 180ms ease}.ds-rule-list li:last-child{border-bottom:1px solid rgba(255,255,255,.08)}.ds-rule-list li::before{content:'';position:absolute;left:0;top:28px;width:12px;height:1px;background:#FF6B43}.ds-rule-list li:hover{color:#f4f5f7}"
+    },
+    {
+      "name": "Campo de texto",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Campo oscuro con filete; foco en borde coral.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field__label\">Email corporativo</span><input class=\"ds-input\" type=\"email\" placeholder=\"nombre@empresa.com\"></label>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:.5rem;font-family:Inter,ui-sans-serif,sans-serif}.ds-field__label{font-size:.875rem;font-weight:500;color:#f4f5f7}.ds-input{width:100%;padding:.875rem 1rem;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(0,0,0,.2);color:#f4f5f7;font:inherit;font-size:.95rem;outline:none;transition:border-color 180ms ease,box-shadow 240ms cubic-bezier(.23,1,.32,1),background-color 180ms ease}.ds-input::placeholder{color:#8a909e}.ds-input:hover{border-color:rgba(255,255,255,.14)}.ds-input:focus{border-color:#FF6B43;box-shadow:0 0 0 1px rgba(255,107,67,.2);background:rgba(0,0,0,.4)}"
+    },
+    {
+      "name": "Tarjeta de fase",
+      "kind": "card",
+      "refersTo": "card-phase",
+      "description": "Fase de la pila pegajosa de metodología: número tabular, título y descripción.",
+      "html": "<article class=\"ds-phase\"><span class=\"ds-phase__step\">01</span><h3 class=\"ds-phase__title\">Mapeo de procesos y diagnóstico profundo</h3><p class=\"ds-phase__desc\">Entendemos cómo opera la empresa antes de proponer tecnología.</p></article>",
+      "css": ".ds-phase{display:flex;flex-direction:column;gap:.9rem;padding:clamp(1.75rem,1rem + 3vw,3.5rem);border:1px solid rgba(255,255,255,.14);border-radius:24px;background:linear-gradient(180deg,#131926 0%,#0e131e 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 -12px 24px -16px rgba(2,4,10,.9);transition:transform 240ms cubic-bezier(.23,1,.32,1)}.ds-phase:hover{border-color:rgba(255,255,255,.24)}.ds-phase__step{font-family:'Space Grotesk',ui-sans-serif,sans-serif;font-size:clamp(2.5rem,1.8rem + 2.5vw,4rem);font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:-.04em;line-height:1;color:#8a909e;opacity:.7}.ds-phase__title{margin:0;font-family:'Space Grotesk',ui-sans-serif,sans-serif;font-size:clamp(1.6rem,1.2rem + 1.6vw,2.5rem);font-weight:600;letter-spacing:-.035em;line-height:1.05;color:#f4f5f7}.ds-phase__desc{margin:0;max-width:48ch;color:#b3b7c2;font-family:Inter,ui-sans-serif,sans-serif;line-height:1.7}"
+    },
+    {
+      "name": "Cabecera de sección editorial",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "Titular de sección a la izquierda, blanco sólido, con entradilla apilada a 60ch.",
+      "html": "<header class=\"ds-section-head\"><h2 class=\"ds-section-head__title\">Ecosistema de soluciones</h2><p class=\"ds-section-head__lead\">Tres líneas de servicio y cuatro verticales reales, con metodología y gobernanza propias.</p></header>",
+      "css": ".ds-section-head{text-align:left}.ds-section-head__title{margin:0 0 1.25rem;font-family:'Space Grotesk',ui-sans-serif,sans-serif;font-size:clamp(2rem,1.3rem + 2.6vw,3.5rem);font-weight:600;letter-spacing:-.035em;line-height:1.02;color:#f4f5f7;text-wrap:balance}.ds-section-head__lead{margin:0;max-width:60ch;font-family:Inter,ui-sans-serif,sans-serif;font-size:clamp(1.05rem,1rem + .3vw,1.25rem);line-height:1.6;color:#b3b7c2}"
+    }
+  ],
+  "narrative": {
+    "northStar": "El Informe Técnico Nocturno",
+    "overview": "La web de Advantys se lee como el informe de un despacho de ingeniería impreso sobre tinta azulada casi negra, no como una landing de IA. Los titulares son Space Grotesk blanco sólido, alineados a la izquierda y con tracking cerrado; el texto de lectura es Inter en gris frío. La estructura es editorial: columnas asimétricas (5/7, 7/5), listas separadas por filetes de 1 px en lugar de cajas, y un bento asimétrico cuando hay que agrupar servicios. La densidad es baja y el ritmo vertical amplio: cada sección respira entre 5 y 10 rem.\n\nEl color trabaja por escasez. Todo el sistema es una escala de superficies del mismo tono tinta, escalonadas por luminosidad, y una única familia cálida (rojo-coral) que actúa como señal: foco, estado activo, iconos, una línea del titular del hero y el relleno del CTA principal. El degradado de marca rojo→coral→naranja existe, pero solo como relleno del botón primario; nunca en texto. La pieza de firma es el globo WebGL de nodos coral en la mitad derecha del hero (metáfora del tejido empresarial); en pantallas por debajo de 1024 px se sustituye por un halo coral radial.\n\nEl movimiento es sobrio y con intención: una entrada del titular por líneas que suben desde su máscara con desenfoque, apariciones suaves al hacer scroll y una pila pegajosa de fases de metodología donde la tarjeta anterior retrocede cuando llega la siguiente. Todo respeta `prefers-reduced-motion`. Esta es una evolución de la marca oscura existente, no un cambio de identidad.",
+    "keyCharacteristics": [
+      "Tinta azulada casi negra con cuatro superficies escalonadas por luminosidad.",
+      "Una sola señal cálida (coral); el degradado de marca solo rellena el CTA principal.",
+      "Titulares Space Grotesk 600, blanco sólido, a la izquierda, tracking negativo según tamaño.",
+      "Filetes de 1 px como estructura; listas con línea, no con tarjetas.",
+      "Radios de un solo sistema: bloques 24 px, internos 14 px, controles en píldora.",
+      "Botón primario con flecha anidada en su propio círculo.",
+      "Globo de nodos coral como firma del hero (halo radial en móvil)."
+    ],
+    "rules": [
+      {
+        "name": "La Regla de la Señal Única",
+        "body": "La única tinta cromática de la interfaz es la familia coral. Ningún otro tono compite con ella salvo el Azul Búnker, que solo identifica la línea ISO 42001.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla del Degradado Encerrado",
+        "body": "El degradado de marca solo rellena controles de acción primaria (CTA, envío de formulario, aceptar cookies, casillas marcadas). Nunca en texto, titulares, bordes ni fondos de sección.",
+        "section": "colors"
+      },
+      {
+        "name": "La Regla del Tracking Proporcional",
+        "body": "Cuanto mayor el titular, más cerrado: −0.04em en display y statement, −0.035em en headline, −0.015em en title. El texto de lectura nunca lleva tracking negativo.",
+        "section": "typography"
+      },
+      {
+        "name": "La Regla del Blanco Sólido",
+        "body": "Los titulares son `text-main` sólido. El énfasis dentro de un titular es una línea o palabra en Coral de Marca sólido, nunca texto con degradado.",
+        "section": "typography"
+      },
+      {
+        "name": "La Regla de la Superficie, no del Salto",
+        "body": "Una tarjeta en hover cambia de superficie (`ink-block` → `ink-raised`) y de filete; no se levanta ni rebota.",
+        "section": "elevation"
+      },
+      {
+        "name": "La Regla del Cristal Fijo",
+        "body": "El desenfoque de fondo solo se usa en elementos fijos sobre el contenido, con fallback opaco y respeto a `prefers-reduced-transparency`.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** alinear titulares y entradillas a la izquierda, con el titular de sección en `headline` y la entradilla en `lead` a 60ch máximo.",
+      "**Do** expresar la jerarquía de superficies con Lienzo → Bloque → Elevada y filetes de 1 px (`line` / `line-strong`).",
+      "**Do** reservar el degradado de marca para el relleno de la acción primaria, con texto Tinta de Acento.",
+      "**Do** usar el botón primario con flecha anidada en círculo para la acción principal de cada página (una por página).",
+      "**Do** separar ítems de lista con filetes y marcadores coral de 12 × 1 px en lugar de encerrarlos en tarjetas.",
+      "**Do** limitar los hovers a `(hover: hover) and (pointer: fine)` y dar a cada control una pulsación `scale(0.97)`.",
+      "**Do** usar las curvas `ease-out` `cubic-bezier(0.23, 1, 0.32, 1)` y duraciones 120 / 180 / 240 / 450 ms, y desactivar desplazamientos con `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "**Don't** aplicar degradado a texto ni a titulares; el énfasis es coral sólido.",
+      "**Don't** centrar titulares de sección ni componer filas de tres tarjetas iguales como estructura por defecto.",
+      "**Don't** añadir antetítulos o etiquetas en píldora sobre los titulares.",
+      "**Don't** introducir un segundo color de acento; el Azul Búnker es exclusivo de la línea ISO 42001.",
+      "**Don't** hacer que las tarjetas salten o reboten en hover; cambian de superficie.",
+      "**Don't** envolver una tarjeta entera en `<a>`; el enlace va en el título y extiende su área con un pseudo-elemento.",
+      "**Don't** usar emojis en la interfaz; los iconos son Phosphor o SVG en línea."
+    ]
+  }
+}

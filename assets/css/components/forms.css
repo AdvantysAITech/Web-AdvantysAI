@@ -58,7 +58,7 @@
 .auth-input::placeholder,
 .adv-newsletter__input::placeholder,
 .newsletter-input::placeholder {
-  color: rgba(255, 255, 255, 0.2);
+  color: var(--text-muted);
 }
 
 .adv-form__textarea {
@@ -135,7 +135,7 @@
   border-radius: 0.25em;
   display: grid;
   place-content: center;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease, transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
   flex-shrink: 0;
   margin-top: 0.15rem;
 }
@@ -147,8 +147,9 @@
   content: "";
   width: 0.65em;
   height: 0.65em;
-  transform: scale(0);
-  transition: 120ms transform ease-in-out;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: transform 140ms cubic-bezier(0.23, 1, 0.32, 1), opacity 140ms cubic-bezier(0.23, 1, 0.32, 1);
   box-shadow: inset 1em 1em var(--text-main);
 }
 
@@ -166,4 +167,4 @@
 }
 
 .adv-form__checkbox:checked::before,
-.adv-form__radio:checked::before { transform: scale(1); }
+.adv-form__radio:checked::before { transform: scale(1); opacity: 1; }

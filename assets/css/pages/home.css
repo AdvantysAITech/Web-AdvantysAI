@@ -23,8 +23,7 @@
 /* Cabeceras de sección: titular y entradilla apilados, a la izquierda */
 .adv-dna__title,
 .adv-matrix__section-title,
-.adv-method-stack__title,
-.adv-statement__title {
+.adv-method-stack__title {
   font-size: var(--fs-h2);
   font-weight: 600;
   letter-spacing: -0.035em;
@@ -140,15 +139,20 @@
 
   .adv-hero__subtitle,
   .adv-hero__actions {
-    animation: adv-fade-up 900ms var(--ease-out) both;
+    animation: adv-fade-up 600ms var(--ease-out) both;
   }
-  .adv-hero__subtitle { animation-delay: 420ms; }
-  .adv-hero__actions { animation-delay: 520ms; }
+  .adv-hero__subtitle { animation-delay: 260ms; }
+  .adv-hero__actions { animation-delay: 320ms; }
 }
 
 @keyframes adv-line-in {
   from { transform: translateY(105%); filter: blur(8px); }
   to { transform: none; filter: none; }
+}
+
+@keyframes adv-rise {
+  from { transform: translateY(12px); }
+  to { transform: none; }
 }
 
 @keyframes adv-fade-up {
@@ -166,7 +170,7 @@
   .adv-hero__line { display: inline; overflow: visible; }
   .adv-hero__line--accent { display: block; }
   .adv-hero__line > span { display: inline; animation: none; }
-  .adv-hero__title { animation: adv-fade-up 900ms var(--ease-out) both; }
+  .adv-hero__title { animation: adv-rise 500ms var(--ease-out) both; }
   .adv-hero__actions { flex-direction: column; align-items: stretch; }
   .adv-hero__actions > a { width: 100%; }
   .adv-hero__actions .btn-glass-primary { justify-content: space-between; }
@@ -302,17 +306,6 @@
   line-height: 1.65;
 }
 
-/* Glifo grande de fondo: firma visual de cada línea */
-.adv-matrix__glyph {
-  position: absolute;
-  z-index: -1;
-  right: -1.5rem;
-  bottom: -2rem;
-  font-size: 11rem;
-  color: rgba(255, 255, 255, 0.035);
-  transition: transform 600ms var(--ease-out), color var(--dur-base) ease;
-}
-
 /* Verticales: lista de enlaces reales por encima del enlace de la tarjeta */
 .adv-matrix__verticals {
   position: relative;
@@ -357,12 +350,12 @@
 }
 
 .adv-matrix__card--iso {
+  /* Búnker Digital: el fondo marino propio de la línea ISO 42001 */
   background:
-    radial-gradient(100% 90% at 0% 100%, rgba(16, 137, 129, 0.16), transparent 60%),
+    linear-gradient(160deg, rgba(255, 255, 255, 0.035), transparent 45%),
     #0c1a2e;
   border-color: rgba(120, 170, 220, 0.12);
 }
-.adv-matrix__card--iso .adv-matrix__glyph { color: rgba(16, 137, 129, 0.12); }
 
 @media (hover: hover) and (pointer: fine) {
   .adv-matrix__card:hover { border-color: var(--line-strong); }
@@ -371,7 +364,6 @@
     color: var(--text-main);
     border-color: var(--accent-line);
   }
-  .adv-matrix__card:hover .adv-matrix__glyph { transform: translate(-6px, -6px) rotate(-4deg); }
   .adv-matrix__verticals a:hover { color: var(--color-coral); }
   .adv-matrix__verticals a:hover .adv-matrix__v-arrow { transform: translateX(4px); color: var(--color-coral); }
 }
@@ -390,7 +382,17 @@
    La fase anterior retrocede cuando llega la siguiente
    (animación ligada al scroll, solo si el navegador la soporta).
    ========================================= */
-.adv-method-stack { padding: var(--section-y) 0; border-top: 1px solid var(--line); }
+.adv-method-stack { padding: 0 0 var(--section-y); }
+.adv-method-stack__container { padding-top: var(--section-y); position: relative; }
+.adv-method-stack__container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--gutter);
+  right: var(--gutter);
+  height: 1px;
+  background: var(--line);
+}
 
 .adv-method-stack__header { margin-bottom: clamp(3rem, 2rem + 3vw, 5rem); }
 
@@ -465,12 +467,14 @@
 .adv-method-stack__phase-info { display: flex; flex-direction: column; gap: 0.9rem; }
 
 .adv-method-stack__step {
-  font-family: var(--font-body);
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 1.8rem + 2.5vw, 4rem);
+  font-weight: 600;
   font-variant-numeric: tabular-nums;
-  letter-spacing: 0;
-  color: var(--color-coral);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--text-muted);
+  opacity: 0.7;
 }
 
 .adv-method-stack__card-title {
@@ -495,10 +499,10 @@
 
 .adv-method-stack__list-item {
   position: relative;
-  padding: 0.95rem 0 0.95rem 1.75rem;
+  padding: 16px 0 16px 28px;
   border-top: 1px solid var(--line);
   color: var(--text-secondary);
-  line-height: 1.55;
+  line-height: 24px;
 }
 .adv-method-stack__list-item:last-child { border-bottom: 1px solid var(--line); }
 
@@ -506,8 +510,8 @@
   content: '';
   position: absolute;
   left: 0;
-  top: 1.45rem;
-  width: 0.75rem;
+  top: 28px;
+  width: 12px;
   height: 1px;
   background: var(--color-coral);
 }
@@ -525,22 +529,23 @@
 .adv-statement { padding: 0 0 var(--section-y); }
 
 .adv-statement__container {
+  position: relative;
   display: grid;
   gap: 1.5rem;
   padding-top: clamp(3rem, 2rem + 3vw, 5rem);
-  border-top: 1px solid var(--line);
 }
-
-.adv-statement__title {
-  font-size: var(--fs-lead);
-  font-family: var(--font-body);
-  font-weight: 500;
-  letter-spacing: 0;
-  color: var(--text-muted);
-  margin: 0;
+.adv-statement__container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: var(--gutter);
+  right: var(--gutter);
+  height: 1px;
+  background: var(--line);
 }
 
 .adv-statement__claim {
+  margin: 0;
   font-family: var(--font-heading);
   font-size: clamp(2.75rem, 1rem + 7.5vw, 7.5rem);
   font-weight: 600;
@@ -549,6 +554,8 @@
   color: var(--text-main);
   text-wrap: balance;
 }
+
+.adv-statement__text strong { color: var(--text-main); font-weight: 600; }
 
 .adv-statement__text {
   max-width: 58ch;
@@ -559,7 +566,6 @@
 
 @media (min-width: 960px) {
   .adv-statement__container { grid-template-columns: 5fr 7fr; column-gap: 5rem; row-gap: 2rem; }
-  .adv-statement__title { grid-column: 1 / -1; }
   .adv-statement__claim { grid-column: 1 / -1; }
   .adv-statement__text { grid-column: 2; }
 }
