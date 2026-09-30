@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon/icon-192.png">
@@ -138,6 +138,7 @@
 </head>
 
 <body>
+<a class="adv-skip" href="#contenido">Saltar al contenido</a>
 
 <!-- HEADER SECTION -->
 <header class="adv-header-island">
@@ -204,212 +205,190 @@
 </header>
   <!-- HEADER END -->
   
+  <main id="contenido" class="adv-home">
+
   <!-- HERO CORPORATIVO [HOME-01] -->
-  <section class="adv-hero">
-    <div id="advantys-globe-mount" class="adv-hero__canvas"></div>
+  <section class="adv-hero" aria-labelledby="adv-hero-title">
+    <div id="advantys-globe-mount" class="adv-hero__canvas" aria-hidden="true"></div>
 
     <div class="adv-hero__container">
+      <div class="adv-hero__copy">
+        <h1 class="adv-hero__title" id="adv-hero-title">
+          <span class="adv-hero__line"><span>Optimizando el tejido</span></span>
+          <span class="adv-hero__line"><span>empresarial global</span></span>
+          <span class="adv-hero__line adv-hero__line--accent"><span>a través de la IA.</span></span>
+        </h1>
 
-      <!-- Titular Principal Corporativo -->
-      <h1 class="adv-hero__title">
-        Optimizando el tejido empresarial global a través de la IA.
-      </h1>
+        <p class="adv-hero__subtitle">
+          En Advantys AI diseñamos, implantamos y auditamos soluciones de IA vertical orientadas estrictamente a la rentabilidad operativa y la eficiencia interna de corporaciones internacionales.
+        </p>
 
-      <!-- Manifiesto de Intenciones -->
-      <p class="adv-hero__subtitle">
-        En Advantys AI diseñamos, implantamos y auditamos soluciones de IA vertical orientadas estrictamente a la rentabilidad operativa y la eficiencia interna de corporaciones internacionales.
-      </p>
-
-      <!-- Bloque de Conversión Estratégica (CTAs) -->
-      <div class="adv-hero__actions">
-        <a href="/consultoria-estrategica" class="btn-glass-primary">
-        Solicitar consultoría estratégica
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
-        </a>
-        <a href="/sistema-advantys" class="btn-glass">
-        Conocer sistema Advantys
-        </a>
+        <div class="adv-hero__actions">
+          <a href="/consultoria-estrategica" class="btn-glass-primary">
+            Solicitar consultoría estratégica
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </a>
+          <a href="/sistema-advantys" class="btn-glass">
+            Conocer sistema Advantys
+          </a>
+        </div>
       </div>
-
     </div>
   </section>
   <!-- HERO END -->
 
   <!-- ADN CORPORATIVO & VISION -->
-<section class="adv-dna">
-  <div class="adv-dna__container">
-    <header class="adv-dna__header">
-      <h2 class="adv-dna__title">ADN Advantys</h2>
-      <p class="adv-dna__subtitle">Validamos nuestra identidad tecnológica a través de una comprensión profunda de la empresa. No solo escribimos código; estructuramos ventajas competitivas.</p>
-    </header>
+  <section class="adv-dna" aria-labelledby="adv-dna-title">
+    <div class="adv-dna__container">
+      <header class="adv-dna__header">
+        <h2 class="adv-dna__title" id="adv-dna-title">ADN Advantys</h2>
+        <p class="adv-dna__subtitle">Validamos nuestra identidad tecnológica a través de una comprensión profunda de la empresa. No solo escribimos código; estructuramos ventajas competitivas.</p>
+      </header>
 
-    <div class="adv-dna__grid">
-      <!-- Pilar 1: ROI -->
-      <article class="adv-dna__card adv-bento-card">
-        <div class="adv-dna__icon-wrapper adv-bento-card__icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-            <polyline points="16 7 22 7 22 13"></polyline>
-          </svg>
-        </div>
-        <h3 class="adv-dna__card-title adv-bento-card__title">Obsesión por la rentabilidad (ROI)</h3>
-        <p class="adv-dna__card-text adv-bento-card__desc">No implantamos Inteligencia Artificial porque sea la tendencia del mercado. Desarrollamos soluciones algorítmicas con un único mandato: optimizar de forma drástica los costes operativos y multiplicar el margen de beneficio neto de nuestros clientes.</p>
-      </article>
+      <div class="adv-dna__list" data-reveal-group>
+        <article class="adv-dna__item" data-reveal>
+          <i class="ph ph-gauge adv-dna__icon" aria-hidden="true"></i>
+          <h3 class="adv-dna__item-title">Obsesión por la rentabilidad (ROI)</h3>
+          <p class="adv-dna__item-text">No implantamos Inteligencia Artificial porque sea la tendencia del mercado. Desarrollamos soluciones algorítmicas con un único mandato: optimizar de forma drástica los costes operativos y multiplicar el margen de beneficio neto de nuestros clientes.</p>
+        </article>
 
-      <!-- Pilar 2: Valores e Identidad -->
-      <article class="adv-dna__card adv-bento-card">
-        <div class="adv-dna__icon-wrapper adv-bento-card__icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            <path d="M9 12l2 2 4-4"></path>
-          </svg>
-        </div>
-        <h3 class="adv-dna__card-title adv-bento-card__title">Identidad y valores</h3>
-        <p class="adv-dna__card-text adv-bento-card__desc">Sustentamos nuestro trabajo en el rigor de ingeniería absoluto, la transparencia algorítmica y la excelencia en la ejecución consultiva. Auditamos y diseñamos bajo los estándares más exigentes (ISO 42001 / AI Act) garantizando un cumplimiento normativo impecable.</p>
-      </article>
+        <article class="adv-dna__item" data-reveal>
+          <i class="ph ph-shield-check adv-dna__icon" aria-hidden="true"></i>
+          <h3 class="adv-dna__item-title">Identidad y valores</h3>
+          <p class="adv-dna__item-text">Sustentamos nuestro trabajo en el rigor de ingeniería absoluto, la transparencia algorítmica y la excelencia en la ejecución consultiva. Auditamos y diseñamos bajo los estándares más exigentes (ISO 42001 / AI Act) garantizando un cumplimiento normativo impecable.</p>
+        </article>
 
-      <!-- Pilar 3: Perspectiva Global -->
-      <article class="adv-dna__card adv-bento-card">
-        <div class="adv-dna__icon-wrapper adv-bento-card__icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="2" y1="12" x2="22" y2="12"></line>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-          </svg>
-        </div>
-        <h3 class="adv-dna__card-title adv-bento-card__title">Perspectiva Global</h3>
-        <p class="adv-dna__card-text adv-bento-card__desc">Diseñamos soluciones dotadas de arquitecturas de alta escalabilidad y visión internacional. Nuestros sistemas están preparados desde el primer despliegue para operar sin fricción en mercados globales, superando barreras y adaptándose a estándares transfronterizos.</p>
-      </article>
+        <article class="adv-dna__item" data-reveal>
+          <i class="ph ph-map-trifold adv-dna__icon" aria-hidden="true"></i>
+          <h3 class="adv-dna__item-title">Perspectiva Global</h3>
+          <p class="adv-dna__item-text">Diseñamos soluciones dotadas de arquitecturas de alta escalabilidad y visión internacional. Nuestros sistemas están preparados desde el primer despliegue para operar sin fricción en mercados globales, superando barreras y adaptándose a estándares transfronterizos.</p>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
   <!-- ADN CORPORATIVO & VISIÓN END -->
 
   <!-- MATRIZ DE CAPACIDADES -->
-  <section class="adv-matrix">
-  <div class="adv-matrix__container">
-    
-    <header class="adv-matrix__header">
-      <h2 class="adv-matrix__section-title">Ecosistema de soluciones</h2>
-      <p class="adv-matrix__section-subtitle">Arquitecturas de inteligencia artificial diseñadas para maximizar el ROI, blindar el cumplimiento normativo y escalar la eficiencia operativa de tu negocio.</p>
-    </header>
+  <section class="adv-matrix" aria-labelledby="adv-matrix-title">
+    <div class="adv-matrix__container">
 
-    <div class="adv-matrix__grid">
-      
-      <!-- Caja 1: Soluciones IA Verticales -->
-      <a href="/soluciones-ia" class="adv-matrix__card">
-        <h3 class="adv-matrix__title">Soluciones IA verticales</h3>
-        <p class="adv-matrix__desc">
-          Arquitecturas predictivas y generativas para nuestras cuatro soluciones verticales: Educación, Hospitality, Residencia Fiscal y Trazabilidad Agroalimentaria.
-        </p>
-        <svg class="adv-matrix__arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-        </svg>
-      </a>
+      <header class="adv-matrix__header">
+        <h2 class="adv-matrix__section-title" id="adv-matrix-title">Ecosistema de soluciones</h2>
+        <p class="adv-matrix__section-subtitle">Arquitecturas de inteligencia artificial diseñadas para maximizar el ROI, blindar el cumplimiento normativo y escalar la eficiencia operativa de tu negocio.</p>
+      </header>
 
-      <!-- Caja 3: Sistema Advantys -->
-      <a href="/sistema-advantys" class="adv-matrix__card">
-        <h3 class="adv-matrix__title">Sistema Advantys</h3>
-        <p class="adv-matrix__desc">
-          Nuestra metodología propia de transformación digital. Sistematizamos el conocimiento y automatizamos flujos críticos para proteger y expandir el núcleo de tu empresa.
-        </p>
-        <svg class="adv-matrix__arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-        </svg>
-      </a>
+      <div class="adv-matrix__grid" data-reveal-group>
 
-      <!-- Caja 4: Auditoría e ISO 42001 -->
-      <a href="/iso-42001" class="adv-matrix__card">
-        <h3 class="adv-matrix__title">Auditoría e ISO 42001</h3>
-        <p class="adv-matrix__desc">
-          Aseguramiento algorítmico y cumplimiento del reglamento UE AI Act 2024/1689. Auditoría técnica estructurada para la mitigación de riesgos y obtención de certificación.
-        </p>
-        <svg class="adv-matrix__arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-        </svg>
-      </a>
+        <!-- Soluciones IA verticales -->
+        <article class="adv-matrix__card adv-matrix__card--verticals" data-reveal>
+          <div class="adv-matrix__head">
+            <h3 class="adv-matrix__title"><a href="/soluciones-ia" class="adv-matrix__link">Soluciones IA verticales</a></h3>
+            <span class="adv-matrix__arrow" aria-hidden="true"><i class="ph ph-arrow-right"></i></span>
+          </div>
+          <p class="adv-matrix__desc">Arquitecturas predictivas y generativas para nuestras cuatro soluciones verticales: Educación, Hospitality, Residencia Fiscal y Trazabilidad Agroalimentaria.</p>
+          <ul class="adv-matrix__verticals" aria-label="Soluciones verticales">
+            <li><a href="/educacion"><i class="ph ph-users-three" aria-hidden="true"></i><span>Educación</span><i class="ph ph-arrow-right adv-matrix__v-arrow" aria-hidden="true"></i></a></li>
+            <li><a href="/hospitality"><i class="ph ph-buildings" aria-hidden="true"></i><span>Hospitality</span><i class="ph ph-arrow-right adv-matrix__v-arrow" aria-hidden="true"></i></a></li>
+            <li><a href="/residencia-fiscal"><i class="ph ph-signature" aria-hidden="true"></i><span>Residencia Fiscal</span><i class="ph ph-arrow-right adv-matrix__v-arrow" aria-hidden="true"></i></a></li>
+            <li><a href="/trazabilidad-agroalimentaria"><i class="ph ph-package" aria-hidden="true"></i><span>Trazabilidad Agroalimentaria</span><i class="ph ph-arrow-right adv-matrix__v-arrow" aria-hidden="true"></i></a></li>
+          </ul>
+        </article>
 
+        <!-- Sistema Advantys -->
+        <article class="adv-matrix__card adv-matrix__card--system" data-reveal>
+          <div class="adv-matrix__head">
+            <h3 class="adv-matrix__title"><a href="/sistema-advantys" class="adv-matrix__link">Sistema Advantys</a></h3>
+            <span class="adv-matrix__arrow" aria-hidden="true"><i class="ph ph-arrow-right"></i></span>
+          </div>
+          <p class="adv-matrix__desc">Nuestra metodología propia de transformación digital. Sistematizamos el conocimiento y automatizamos flujos críticos para proteger y expandir el núcleo de tu empresa.</p>
+          <i class="ph ph-database adv-matrix__glyph" aria-hidden="true"></i>
+        </article>
+
+        <!-- Auditoría e ISO 42001 -->
+        <article class="adv-matrix__card adv-matrix__card--iso" data-reveal>
+          <div class="adv-matrix__head">
+            <h3 class="adv-matrix__title"><a href="/iso-42001" class="adv-matrix__link">Auditoría e ISO 42001</a></h3>
+            <span class="adv-matrix__arrow" aria-hidden="true"><i class="ph ph-arrow-right"></i></span>
+          </div>
+          <p class="adv-matrix__desc">Aseguramiento algorítmico y cumplimiento del reglamento UE AI Act 2024/1689. Auditoría técnica estructurada para la mitigación de riesgos y obtención de certificación.</p>
+          <i class="ph ph-shield-check adv-matrix__glyph" aria-hidden="true"></i>
+        </article>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
   <!-- MATRIZ DE CAPACIDADES END -->
 
   <!-- METODOLOGÍA -->
-<section class="adv-method-stack">
-  <div class="adv-method-stack__container">
-    
-    <!-- HEADER -->
-    <header class="adv-method-stack__header">
-      <h2 class="adv-method-stack__title">Así trabajamos</h2>
-      <p class="adv-method-stack__subtitle">En el entorno corporativo internacional, la capacidad de adaptación y la precisión operativa no son ventajas competitivas; son requisitos de supervivencia. Nuestro enfoque combina la rigurosidad de la consultoría estratégica tradicional con la flexibilidad de las metodologías más avanzadas del mercado.</p>
-      <p class="adv-method-stack__highlight">No replicamos fórmulas genéricas. Diseñamos un camino a medida para optimizar, escalar y asegurar el futuro de tu organización.</p>
-    </header>
+  <section class="adv-method-stack" aria-labelledby="adv-method-title">
+    <div class="adv-method-stack__container">
 
-    <!-- STACKING WRAPPER -->
-    <div class="adv-method-stack__wrapper">
-      
-      <!-- FASE 1 -->
-      <article class="adv-method-stack__card adv-method-stack__card--1">
-        <div class="adv-method-stack__phase-info">
-          <span class="adv-method-stack__step">Fase 01</span>
-          <h3 class="adv-method-stack__card-title">Mapeo de procesos y diagnóstico profundo</h3>
-          <p class="adv-method-stack__card-desc">Antes de proponer una solución, entendemos tu realidad a la perfección. Nos sumergimos en la arquitectura de tu organización para visibilizar los flujos de trabajo actuales.</p>
-        </div>
-        <div class="adv-method-stack__list-wrapper">
+      <header class="adv-method-stack__header">
+        <h2 class="adv-method-stack__title" id="adv-method-title">Así trabajamos</h2>
+        <p class="adv-method-stack__subtitle">En el entorno corporativo internacional, la capacidad de adaptación y la precisión operativa no son ventajas competitivas; son requisitos de supervivencia. Nuestro enfoque combina la rigurosidad de la consultoría estratégica tradicional con la flexibilidad de las metodologías más avanzadas del mercado.</p>
+        <p class="adv-method-stack__highlight">No replicamos fórmulas genéricas. Diseñamos un camino a medida para optimizar, escalar y asegurar el futuro de tu organización.</p>
+      </header>
+
+      <ol class="adv-method-stack__wrapper">
+
+        <li class="adv-method-stack__card adv-method-stack__card--1">
+          <div class="adv-method-stack__phase-info">
+            <span class="adv-method-stack__step">Fase 01</span>
+            <h3 class="adv-method-stack__card-title">Mapeo de procesos y diagnóstico profundo</h3>
+            <p class="adv-method-stack__card-desc">Antes de proponer una solución, entendemos tu realidad a la perfección. Nos sumergimos en la arquitectura de tu organización para visibilizar los flujos de trabajo actuales.</p>
+          </div>
           <ul class="adv-method-stack__list">
             <li class="adv-method-stack__list-item">Identificación de cuellos de botella y redundancias operativas.</li>
             <li class="adv-method-stack__list-item">Auditoría de capacidades tecnológicas y humanas.</li>
             <li class="adv-method-stack__list-item">Modelado de procesos "As-Is" para establecer una línea base de eficiencia.</li>
           </ul>
-        </div>
-      </article>
+        </li>
 
-      <!-- FASE 2 -->
-      <article class="adv-method-stack__card adv-method-stack__card--2">
-        <div class="adv-method-stack__phase-info">
-          <span class="adv-method-stack__step">Fase 02</span>
-          <h3 class="adv-method-stack__card-title">Consultoría estratégica y rediseño operativo</h3>
-          <p class="adv-method-stack__card-desc">Con el mapa en la mano, nuestros consultores senior diseñan la arquitectura del cambio. Transformamos la complejidad en flujos de trabajo optimizados y orientados a objetivos globales.</p>
-        </div>
-        <div class="adv-method-stack__list-wrapper">
+        <li class="adv-method-stack__card adv-method-stack__card--2">
+          <div class="adv-method-stack__phase-info">
+            <span class="adv-method-stack__step">Fase 02</span>
+            <h3 class="adv-method-stack__card-title">Consultoría estratégica y rediseño operativo</h3>
+            <p class="adv-method-stack__card-desc">Con el mapa en la mano, nuestros consultores senior diseñan la arquitectura del cambio. Transformamos la complejidad en flujos de trabajo optimizados y orientados a objetivos globales.</p>
+          </div>
           <ul class="adv-method-stack__list">
             <li class="adv-method-stack__list-item">Diseño de procesos "To-Be" alineados con los estándares internacionales más exigentes.</li>
             <li class="adv-method-stack__list-item">Mitigación de riesgos y cumplimiento normativo global (AI Act / ISO 42001).</li>
             <li class="adv-method-stack__list-item">Definición de KPIs y métricas clave para el control directivo y ROI.</li>
           </ul>
-        </div>
-      </article>
+        </li>
 
-      <!-- FASE 3 -->
-      <article class="adv-method-stack__card adv-method-stack__card--3">
-        <div class="adv-method-stack__phase-info">
-          <span class="adv-method-stack__step">Fase 03</span>
-          <h3 class="adv-method-stack__card-title">Implementación con metodología Agile</h3>
-          <p class="adv-method-stack__card-desc">La estrategia solo es útil si se ejecuta con éxito. Implementamos los nuevos modelos permitiendo que tu organización absorba el cambio de manera orgánica, rápida y sin fricciones.</p>
-        </div>
-        <div class="adv-method-stack__list-wrapper">
+        <li class="adv-method-stack__card adv-method-stack__card--3">
+          <div class="adv-method-stack__phase-info">
+            <span class="adv-method-stack__step">Fase 03</span>
+            <h3 class="adv-method-stack__card-title">Implementación con metodología Agile</h3>
+            <p class="adv-method-stack__card-desc">La estrategia solo es útil si se ejecuta con éxito. Implementamos los nuevos modelos permitiendo que tu organización absorba el cambio de manera orgánica, rápida y sin fricciones.</p>
+          </div>
           <ul class="adv-method-stack__list">
             <li class="adv-method-stack__list-item">Entregas de valor iterativas (Sprints) para visibilizar resultados desde las primeras semanas.</li>
             <li class="adv-method-stack__list-item">Cultura de mejora continua y adaptabilidad ante mercados volátiles.</li>
             <li class="adv-method-stack__list-item">Gestión del cambio analítica, minimizando la resistencia interna y maximizando la adopción.</li>
           </ul>
-        </div>
-      </article>
+        </li>
 
+      </ol>
     </div>
-
-    <!-- FOOTER -->
-    <footer class="adv-method-stack__footer">
-      <h3 class="adv-method-stack__footer-title">¿Por qué nuestro enfoque marca la diferencia?</h3>
-      <p class="adv-method-stack__footer-text"><strong>Visión global, ejecución ágil.</strong> Fusionamos la profundidad analítica de la consultoría internacional con la velocidad del ecosistema tech. El resultado es una estructura organizacional esbelta, resiliente y preparada para el liderazgo de tu sector.</p>
-    </footer>
-
-  </div>
-</section>
+  </section>
   <!-- METODOLOGÍA END -->
+
+  <!-- DIFERENCIAL -->
+  <section class="adv-statement" aria-labelledby="adv-statement-title">
+    <div class="adv-statement__container" data-reveal>
+      <h2 class="adv-statement__title" id="adv-statement-title">¿Por qué nuestro enfoque marca la diferencia?</h2>
+      <p class="adv-statement__claim">Visión global, ejecución ágil.</p>
+      <p class="adv-statement__text">Fusionamos la profundidad analítica de la consultoría internacional con la velocidad del ecosistema tech. El resultado es una estructura organizacional esbelta, resiliente y preparada para el liderazgo de tu sector.</p>
+    </div>
+  </section>
+  <!-- DIFERENCIAL END -->
+
+  </main>
 
   <!-- FOOTER SECTION -->
   <footer class="footer-wrapper">

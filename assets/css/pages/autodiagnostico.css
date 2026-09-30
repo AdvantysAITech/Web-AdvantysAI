@@ -22,14 +22,11 @@
 
 .adv-auto-hero__title {
   font-size: clamp(2rem, 4.5vw, 3.25rem);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.15;
   margin: 1.25rem 0 1.25rem;
   max-width: 900px;
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-main);
   padding-bottom: 0.15em;
 }
 
@@ -253,12 +250,9 @@
 
 .adv-auto__score {
   font-size: 3.75rem;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1;
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-coral);
 }
 
 .adv-auto__score-max {

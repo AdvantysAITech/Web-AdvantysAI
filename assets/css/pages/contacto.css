@@ -22,7 +22,7 @@
 
 .adv-contact-title {
   font-size: clamp(1.9rem, 4vw, 2.5rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
   margin: 0 0 0.75rem 0;
   color: var(--text-main);
@@ -57,38 +57,14 @@
 }
 
 .adv-contact-submit {
+  /* Estilo base en components/buttons.css (primario). Aquí solo el encaje en formulario. */
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background: var(--gradient-brand);
-  color: #fff;
-  font-weight: 700;
-  font-size: 1rem;
-  border: none;
-  border-radius: 0.75rem;
-  padding: 1rem 1.5rem;
-  cursor: pointer;
-  transition: var(--transition-smooth);
+  width: 100%;
+  justify-content: space-between;
   margin-top: 0.5rem;
 }
 
-.adv-contact-submit:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 57, 53, 0.25);
-}
-
-.adv-contact-submit:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-}
-
-.adv-contact-submit__icon {
-  width: 18px;
-  height: 18px;
-  transition: transform 0.2s;
-}
+.adv-contact-submit__icon { flex: none; }
 
 .adv-contact-submit.is-loading .adv-contact-submit__icon {
   animation: adv-contact-spin 0.8s linear infinite;

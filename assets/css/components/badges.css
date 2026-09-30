@@ -75,10 +75,7 @@
 .adv-metric-badge__value {
   font-size: 1.25rem;
   font-weight: 700;
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-coral);
   margin-bottom: 0.25rem;
 }
 

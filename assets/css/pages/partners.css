@@ -31,7 +31,7 @@
 
 .adv-hero__title {
   font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.15;
   color: var(--gradient-brand);
   margin-bottom: 1.5rem;

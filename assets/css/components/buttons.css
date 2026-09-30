@@ -1,119 +1,152 @@
 /* =========================================
    COMPONENTS: BOTONES Y CTAS
+   Un sistema: controles en píldora. Primario = relleno de marca
+   con texto tinta (AA), flecha anidada en círculo. Secundario =
+   filete sobre superficie. Hover solo con puntero fino.
    ========================================= */
-   
-/* Botón Newsletter (Footer) */
-.btn-primary {
+
+/* ---- Primario ---- */
+.btn-glass-primary,
+.btn-primary,
+.adv-btn--submit,
+.adv-btn--subscribe,
+.adv-footer-cta__button,
+.adv-contact-submit {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 3rem;
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  border: 0;
+  border-radius: var(--radius-pill);
   background: var(--gradient-brand);
-  color: var(--text-main);
-  padding: 0.625rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 0 15px rgba(255, 107, 67, 0.25);
-  transition: var(--transition-smooth);
-}
-
-.btn-primary:hover {
-  box-shadow: 0 0 25px rgba(255, 107, 67, 0.5);
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
-
-/* Botón Glassmorphism (Estilo Secundario) */
-.btn-glass {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
-  border-radius: 9999px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #ffffff;
-  text-decoration: none;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 
-    0 4px 24px -1px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.btn-glass:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.15);
-  transform: translateY(-2px);
-  box-shadow: 
-    0 8px 32px -2px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25);
-}
-
-.btn-glass svg {
-  width: 18px;
-  height: 18px;
-  opacity: 0.8;
-  transition: transform 0.3s ease;
-}
-
-.btn-glass:hover svg {
-  opacity: 1;
-  transform: translateX(3px);
-}
-
-/* Botón Glassmorphism Primario (Cristal Tintado Corporativo) */
-.btn-glass-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
-  border-radius: 9999px;
+  color: var(--accent-ink);
+  font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 600;
-  color: #ffffff;
+  letter-spacing: -0.005em;
+  line-height: 1.2;
   text-decoration: none;
+  white-space: nowrap;
   cursor: pointer;
-  background: linear-gradient(135deg, rgba(255, 57, 53, 0.15), rgba(228, 145, 102, 0.15));
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 107, 67, 0.3);
-  box-shadow: 
-    0 4px 24px -1px rgba(255, 107, 67, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.35),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.12),
+    0 10px 30px -12px rgba(255, 70, 50, 0.55);
+  transition:
+    transform var(--dur-press) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out),
+    filter var(--dur-fast) ease;
 }
 
-.btn-glass-primary:hover {
-  background: linear-gradient(135deg, rgba(255, 57, 53, 0.25), rgba(228, 145, 102, 0.25));
-  border-color: rgba(255, 107, 67, 0.5);
-  transform: translateY(-2px);
-  box-shadow: 
-    0 8px 32px -2px rgba(255, 107, 67, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+/* Sin icono: padding simétrico */
+.btn-primary,
+.adv-btn--subscribe,
+.adv-btn--submit {
+  padding: 0.75rem 1.5rem;
 }
 
-.btn-glass-primary svg {
-  width: 18px;
-  height: 18px;
-  transition: transform 0.3s ease;
+.adv-btn--submit { width: 100%; }
+
+/* Flecha anidada: el svg se convierte en su propio círculo */
+.btn-glass-primary svg,
+.adv-footer-cta__button svg,
+.adv-contact-submit svg {
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: rgba(26, 7, 3, 0.14);
+  color: var(--accent-ink);
+  opacity: 1;
+  transition: transform var(--dur-base) var(--ease-out), background-color var(--dur-fast) ease;
 }
 
-.btn-glass-primary:hover svg {
-  transform: translate(3px, -3px); 
+.btn-glass-primary:active,
+.btn-primary:active,
+.adv-btn--submit:active,
+.adv-btn--subscribe:active,
+.adv-footer-cta__button:active,
+.adv-contact-submit:active {
+  transform: scale(0.97);
 }
 
-/* Modificador ancho completo */
-.btn-glass-primary.w-full {
-  width: 100%;
+@media (hover: hover) and (pointer: fine) {
+  .btn-glass-primary:hover,
+  .btn-primary:hover,
+  .adv-btn--submit:hover,
+  .adv-btn--subscribe:hover,
+  .adv-footer-cta__button:hover,
+  .adv-contact-submit:hover {
+    filter: brightness(1.06) saturate(1.05);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.4),
+      inset 0 -1px 0 rgba(0, 0, 0, 0.12),
+      0 16px 40px -14px rgba(255, 70, 50, 0.7);
+  }
+  .btn-glass-primary:hover svg,
+  .adv-footer-cta__button:hover svg,
+  .adv-contact-submit:hover svg {
+    transform: translate(2px, -1px) scale(1.05);
+    background: rgba(26, 7, 3, 0.2);
+  }
 }
 
-/* FIX: Clase base .adv-btn que faltaba — usada como base de modificadores */
+.btn-glass-primary.w-full { width: 100%; justify-content: space-between; }
+
+/* ---- Secundario ---- */
+.btn-glass,
+.adv-btn-private {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: var(--highlight-top);
+  transition:
+    transform var(--dur-press) var(--ease-out),
+    background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease;
+}
+
+.btn-glass svg,
+.adv-btn-private svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex: none;
+  color: var(--text-secondary);
+  transition: transform var(--dur-base) var(--ease-out), color var(--dur-fast) ease;
+}
+
+.btn-glass:active,
+.adv-btn-private:active { transform: scale(0.97); }
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-glass:hover,
+  .adv-btn-private:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.24);
+  }
+  .btn-glass:hover svg { transform: translateX(3px); color: var(--text-main); }
+  .adv-btn-private:hover svg { color: var(--accent); }
+}
+
+/* ---- Base heredada ---- */
 .adv-btn {
   display: inline-flex;
   align-items: center;
@@ -126,35 +159,13 @@
   transition: var(--transition-smooth);
 }
 
-/* Botones genéricos de Formularios (Submit y Subscribe) */
-.adv-btn--submit,
-.adv-btn--subscribe {
-  background: var(--gradient-brand);
-  color: #fff;
-  border: none;
-  padding: 1.25rem;
-  border-radius: 0.5rem;
-  font-weight: 700;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: var(--transition-smooth);
-  box-shadow: 0 4px 15px rgba(255, 107, 67, 0.25);
-}
-
-.adv-btn--submit {
-  width: 100%;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.adv-btn--subscribe {
-  padding: 1rem 1.5rem;
-  border-radius: 0.75rem;
-  white-space: nowrap;
-}
-
-.adv-btn--submit:hover,
-.adv-btn--subscribe:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 107, 67, 0.4);
+/* Estados deshabilitado y carga */
+.btn-glass-primary[aria-disabled="true"],
+.btn-glass-primary:disabled,
+.adv-btn--submit:disabled,
+.adv-contact-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  filter: saturate(0.6);
+  transform: none;
 }

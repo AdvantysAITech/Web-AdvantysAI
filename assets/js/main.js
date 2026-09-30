@@ -1,89 +1,180 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const navContainer = document.querySelector('.adv-links-island');
-  const glassPill = document.getElementById('nav-glasser');
-  const links = document.querySelectorAll('.adv-link-island');
+/* =========================================
+   ADVANTYS AI — Interacciones globales
+   1. Píldora de navegación que sigue al puntero
+   2. Estado de cabecera al desplazarse (sin listener de scroll)
+   3. Desplegable accesible por teclado y táctil
+   4. Menú móvil (aria, Escape, bloqueo de scroll)
+   5. Entradas al hacer scroll con IntersectionObserver
+   ========================================= */
+(function () {
+  'use strict';
 
-  if (!navContainer || !glassPill || links.length === 0) return;
+  var root = document.documentElement;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  const currentPath = window.location.pathname;
-  let activeLink = null;
+  function ready(fn) {
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
+  }
 
-  // 1. Detección Inteligente de página activa
-  links.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href && href !== '#' && currentPath.includes(href.split('/').pop()) && href.split('/').pop() !== '') {
-      link.classList.add('active');
-      activeLink = link;
+  /* ---------- 1. Píldora de navegación ---------- */
+  function initNavPill() {
+    var nav = document.querySelector('.adv-links-island');
+    var pill = document.getElementById('nav-glasser');
+    var links = document.querySelectorAll('.adv-link-island:not(.adv-link-island--disabled)');
+    if (!nav || !pill || !links.length) return;
+
+    var path = window.location.pathname.replace(/\.html$/, '').replace(/\/$/, '');
+    var active = null;
+
+    links.forEach(function (link) {
+      var href = (link.getAttribute('href') || '').replace(/\.html$/, '').replace(/\/$/, '');
+      var slug = href.split('/').pop();
+      if (slug && path.split('/').pop() === slug) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+        active = link;
+      }
+    });
+
+    function moveTo(el, instant) {
+      if (!el) return;
+      var r = el.getBoundingClientRect();
+      var c = nav.getBoundingClientRect();
+      pill.classList.toggle('no-anim', !!instant);
+      pill.style.setProperty('--pill-x', (r.left - c.left) + 'px');
+      pill.style.width = r.width + 'px';
+      pill.classList.add('is-visible');
     }
-  });
 
-  // 2. Calcula la posición matemáticamente dentro de la isla
-  function updatePillPosition(targetElement) {
-    if (!targetElement) return;
-    
-    const targetRect = targetElement.getBoundingClientRect();
-    const containerRect = navContainer.getBoundingClientRect();
-    
-    const leftPos = targetRect.left - containerRect.left;
-    
-    glassPill.style.width = `${targetRect.width}px`;
-    glassPill.style.height = `${targetRect.height}px`; 
-    glassPill.style.left = `${leftPos}px`;
-    glassPill.classList.add('is-visible');
+    var hasShown = false;
+    links.forEach(function (link) {
+      link.addEventListener('pointerenter', function (e) {
+        if (e.pointerType !== 'mouse') return;
+        moveTo(link, !hasShown);
+        hasShown = true;
+      });
+    });
+
+    nav.addEventListener('pointerleave', function () {
+      hasShown = false;
+      pill.classList.remove('is-visible');
+    });
   }
 
-  // 3. Inicialización retardada para precisión de renderizado
-  if (activeLink) {
-    setTimeout(() => updatePillPosition(activeLink), 100);
+  /* ---------- 2. Estado de cabecera ---------- */
+  function initHeaderState() {
+    var header = document.querySelector('.adv-header-island');
+    if (!header || !('IntersectionObserver' in window)) return;
+    var sentinel = document.createElement('div');
+    sentinel.setAttribute('aria-hidden', 'true');
+    sentinel.style.cssText = 'position:absolute;top:0;left:0;width:1px;height:48px;pointer-events:none;';
+    document.body.prepend(sentinel);
+    new IntersectionObserver(function (entries) {
+      header.classList.toggle('is-scrolled', !entries[0].isIntersecting);
+    }).observe(sentinel);
   }
 
-  // 4. Tracker del ratón
-  links.forEach(link => {
-    link.addEventListener('mouseenter', () => updatePillPosition(link));
-  });
+  /* ---------- 3. Desplegable ---------- */
+  function initDropdown() {
+    document.querySelectorAll('.adv-dropdown').forEach(function (dd) {
+      var trigger = dd.querySelector('.adv-link-island');
+      var menu = dd.querySelector('.adv-dropdown-content');
+      if (!trigger || !menu) return;
+      if (!menu.id) menu.id = 'adv-dropdown-' + Math.random().toString(36).slice(2, 8);
+      trigger.setAttribute('aria-haspopup', 'true');
+      trigger.setAttribute('aria-expanded', 'false');
+      trigger.setAttribute('aria-controls', menu.id);
 
-  // 5. Retorno al estado activo
-  navContainer.addEventListener('mouseleave', () => {
-    if (activeLink) {
-      updatePillPosition(activeLink);
-    } else {
-      glassPill.classList.remove('is-visible');
+      function set(open) {
+        dd.classList.toggle('is-open', open);
+        trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+
+      dd.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') set(true); });
+      dd.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') set(false); });
+      dd.addEventListener('focusin', function () { set(true); });
+      dd.addEventListener('focusout', function (e) { if (!dd.contains(e.relatedTarget)) set(false); });
+      dd.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { set(false); trigger.focus(); }
+      });
+    });
+  }
+
+  /* ---------- 4. Menú móvil ---------- */
+  function initMobileMenu() {
+    var toggle = document.getElementById('mobile-menu-toggle');
+    var menu = document.getElementById('mobile-menu');
+    var close = document.getElementById('mobile-menu-close');
+    if (!toggle || !menu) return;
+
+    toggle.setAttribute('aria-controls', 'mobile-menu');
+    toggle.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+
+    function set(open) {
+      menu.classList.toggle('is-open', open);
+      document.body.classList.toggle('no-scroll', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+      if (open && close) close.focus({ preventScroll: true });
+      if (!open) toggle.focus({ preventScroll: true });
     }
-  });
-  
-  // 6. Recalcular al redimensionar la pantalla
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 1024 && activeLink) {
-      updatePillPosition(activeLink);
-    }
-  });
-});
 
-// 7. Menú móvil
-document.addEventListener('DOMContentLoaded', () => {
-  const mobileToggle = document.getElementById('mobile-menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileClose = document.getElementById('mobile-menu-close');
-
-  if (!mobileToggle || !mobileMenu) return;
-
-  function closeMenu() {
-    mobileMenu.classList.remove('is-open');
-    document.body.classList.remove('no-scroll');
+    toggle.addEventListener('click', function () { set(!menu.classList.contains('is-open')); });
+    if (close) close.addEventListener('click', function () { set(false); });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        menu.classList.remove('is-open');
+        document.body.classList.remove('no-scroll');
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('is-open')) set(false);
+    });
+    window.matchMedia('(min-width: 1024px)').addEventListener('change', function (e) {
+      if (e.matches && menu.classList.contains('is-open')) set(false);
+    });
   }
 
-  mobileToggle.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('is-open');
-    document.body.classList.toggle('no-scroll', isOpen);
-  });
+  /* ---------- 5. Entradas al hacer scroll ---------- */
+  function initReveal() {
+    var items = document.querySelectorAll('[data-reveal]');
+    if (!items.length || reduceMotion.matches || !('IntersectionObserver' in window)) return;
 
-  // Cerrar con el botón X del panel
-  if (mobileClose) {
-    mobileClose.addEventListener('click', closeMenu);
+    // Índice de escalonado dentro de cada grupo
+    document.querySelectorAll('[data-reveal-group]').forEach(function (group) {
+      group.querySelectorAll('[data-reveal]').forEach(function (el, i) {
+        el.style.setProperty('--reveal-i', i);
+      });
+    });
+
+    // Medir antes de ocultar nada: lo que ya está en pantalla nunca parpadea
+    var vh = window.innerHeight;
+    var inView = [];
+    items.forEach(function (el) { inView.push(el.getBoundingClientRect().top < vh * 0.9); });
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.01 });
+
+    items.forEach(function (el, i) {
+      if (inView[i]) el.classList.add('is-revealed');
+      else io.observe(el);
+    });
+    root.classList.add('adv-js');
   }
 
-  // Cerrar al pulsar un enlace
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
+  ready(function () {
+    initNavPill();
+    initHeaderState();
+    initDropdown();
+    initMobileMenu();
+    initReveal();
   });
-});
+})();
