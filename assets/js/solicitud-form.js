@@ -34,7 +34,7 @@
   // Textos que cambian según el interés elegido
   const TEXTOS = {
     sistema:            { titulo: 'Automatiza tu negocio con el Sistema Advantys', sub: 'Déjanos tus datos y te llamamos para entender tus procesos y proponerte por dónde empezar.', mensaje: '¿Qué procesos te gustaría automatizar? (opcional)' },
-    consultoria:        { titulo: 'Solicitar jornada de consultoría estratégica', sub: 'Nuestro equipo comercial te llamará para cerrar contigo el alcance, las áreas y la fecha de la jornada.', mensaje: '¿Qué áreas te interesa revisar? Marketing, venta, posventa, gestión... (opcional)' },
+    consultoria:        { titulo: 'Solicitar el Diagnóstico de Operaciones', sub: 'Te llamamos, comprobamos que el diagnóstico encaja con tu empresa y te enviamos el contrato para firmar.', mensaje: '¿Dónde crees que se te escapa más dinero? Almacén, rutas, administración... (opcional)' },
     proyecto_ia:        { titulo: 'Cuéntanos tu proyecto de IA', sub: 'Revisamos tu caso y te contactamos en menos de 24 h.', mensaje: 'Describe el proceso que quieres resolver con IA (opcional)' },
     solucion_sectorial: { titulo: 'Solicitar información de una solución sectorial', sub: 'Déjanos tus datos y agendamos una demo personalizada de la solución.', mensaje: '¿Qué te gustaría ver en la demo? (opcional)' },
     invertir:           { titulo: 'Quiero invertir en una spin-off de Advantys', sub: 'Déjanos tus datos y te enviamos el business case y las condiciones de participación.', mensaje: '¿Algo que debamos saber sobre tu perfil inversor? (opcional)' },
