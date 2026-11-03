@@ -634,32 +634,20 @@
 .adv-herobg__mote:nth-child(12) { left: 94.3%; bottom: 23%; animation-delay: 9.9s; animation-duration: 12s; }
 
 /* =========================================
-   8) DIAGNÓSTICO DE OPERACIONES — mapa de procesos de la operación,
-      una lupa que lo recorre y fugas de dinero que se encienden
-      al encontrarlas (€ que se escapa). Ciclo de 16 s.
+   8) DIAGNÓSTICO DE OPERACIONES — el recorrido de la operación a los
+      lados, discreto; una lupa lo revisa y, al encontrar una fuga,
+      se encienden el punto, el € que se escapa y las dos etapas
+      afectadas. El centro queda limpio para el mensaje. Ciclo de 16 s.
    ========================================= */
-@keyframes advbgDiagLeak {
-  0%        { opacity: 1; }
-  18%       { opacity: 1; }
-  35%, 100% { opacity: 0.6; }
-}
-@keyframes advbgDiagRing {
-  0%        { transform: scale(1);   opacity: 0.9; }
-  20%       { transform: scale(4.5); opacity: 0; }
-  100%      { transform: scale(4.5); opacity: 0; }
-}
-@keyframes advbgDiagEuro {
-  0%        { transform: translateY(0);    opacity: 0; }
-  4%        { opacity: 1; }
-  22%       { transform: translateY(26px); opacity: 0; }
-  100%      { transform: translateY(26px); opacity: 0; }
-}
-.adv-herobg--diag .adv-herobg__flow {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-}
+@keyframes advbgDiagLeak { 0%, 18% { opacity: 1; } 35%, 100% { opacity: 0.3; } }
+@keyframes advbgDiagRing { 0% { transform: scale(1); opacity: 0.8; } 20%, 100% { transform: scale(4); opacity: 0; } }
+@keyframes advbgDiagEuro { 0% { transform: translateY(0); opacity: 0; } 4% { opacity: 0.9; } 22%, 100% { transform: translateY(22px); opacity: 0; } }
+@keyframes advbgDiagStepRect { 0%, 16% { stroke: rgba(254, 116, 71, 0.7); fill: rgba(254, 116, 71, 0.08); } 32%, 100% { stroke: rgba(255, 255, 255, 0.1); fill: rgba(255, 255, 255, 0.015); } }
+@keyframes advbgDiagStepText { 0%, 16% { fill: rgba(254, 144, 102, 0.95); } 32%, 100% { fill: rgba(244, 245, 247, 0.38); } }
+@keyframes advbgDiagIn { from { opacity: 0; } to { opacity: 1; } }
+
+.adv-herobg--diag { animation: advbgDiagIn 1.6s ease-out both; }
+.adv-herobg--diag .adv-herobg__flow { position: absolute; inset: 0; width: 100%; height: 100%; }
 .adv-herobg--diag .adv-herobg__flow--movil { display: none; }
 @media (max-width: 767px) {
   .adv-herobg--diag .adv-herobg__flow--desk { display: none; }
@@ -667,58 +655,53 @@
 }
 .adv-herobg--diag .adv-herobg__link {
   fill: none;
-  stroke: rgba(254, 116, 71, 0.75);
-  stroke-width: 1.6;
-  filter: drop-shadow(0 0 4px rgba(254, 116, 71, 0.6));
-  stroke-dasharray: 4 6;
+  stroke: rgba(254, 116, 71, 0.28);
+  stroke-width: 1;
+  stroke-dasharray: 2 7;
+  stroke-linecap: round;
   animation: advbgTrazLineFlow 3s linear infinite;
 }
 .adv-herobg--diag .adv-herobg__step rect {
-  fill: rgba(30, 20, 22, 0.92);
-  stroke: rgba(254, 116, 71, 0.75);
-  stroke-width: 1.4;
+  fill: rgba(255, 255, 255, 0.015);
+  stroke: rgba(255, 255, 255, 0.1);
   stroke-width: 1;
 }
 .adv-herobg--diag .adv-herobg__step text {
-  fill: #f4f5f7;
-  font: 600 13px 'JetBrains Mono', ui-monospace, monospace;
-  letter-spacing: 0.04em;
+  fill: rgba(244, 245, 247, 0.38);
+  font: 500 10.5px 'JetBrains Mono', ui-monospace, monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
   text-anchor: middle;
 }
-.adv-herobg--diag .adv-herobg__leak {
-  opacity: 0.6;
-  animation: advbgDiagLeak 16s linear infinite;
-}
-.adv-herobg--diag .adv-herobg__leak-dot  { fill: #FF3935; filter: drop-shadow(0 0 8px rgba(255, 57, 53, 1)); }
+.adv-herobg--diag .adv-herobg__step--vivo rect { animation: advbgDiagStepRect 16s ease-in-out infinite; animation-delay: inherit; }
+.adv-herobg--diag .adv-herobg__step--vivo text { animation: advbgDiagStepText 16s ease-in-out infinite; animation-delay: inherit; }
+.adv-herobg--diag .adv-herobg__leak { opacity: 0.3; animation: advbgDiagLeak 16s linear infinite; }
+.adv-herobg--diag .adv-herobg__leak-dot  { fill: #FF3935; }
 .adv-herobg--diag .adv-herobg__leak-ring {
-  fill: none;
-  stroke: #FF3935;
-  stroke-width: 2;
-  transform-box: fill-box;
-  transform-origin: center;
-  opacity: 0;
+  fill: none; stroke: #FF3935; stroke-width: 1.2;
+  transform-box: fill-box; transform-origin: center; opacity: 0;
   animation: advbgDiagRing 16s ease-out infinite;
 }
 .adv-herobg--diag .adv-herobg__euro {
   fill: #FE9066;
-  font: 700 20px 'Space Grotesk', ui-sans-serif, sans-serif;
+  font: 600 15px 'Space Grotesk', ui-sans-serif, sans-serif;
   opacity: 0;
   animation: advbgDiagEuro 16s ease-in infinite;
 }
-.adv-herobg--diag .adv-herobg__lens-rim {
-  fill: none;
-  stroke: rgba(254, 116, 71, 1);
-  stroke-width: 2.2;
-  filter: drop-shadow(0 0 8px rgba(254, 116, 71, 0.8));
+.adv-herobg--diag .adv-herobg__lens-rim { fill: none; stroke: rgba(254, 116, 71, 0.65); stroke-width: 1.2; }
+.adv-herobg--diag .adv-herobg__lens-handle { stroke: rgba(254, 116, 71, 0.55); stroke-width: 3; stroke-linecap: round; }
+.adv-herobg--diag .adv-herobg__lens-cross { stroke: rgba(254, 144, 102, 0.5); stroke-width: 1; }
+
+/* Foco: el centro, donde va el mensaje, queda limpio */
+.adv-herobg__focus {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 34% 42% at 50% 46%, rgba(9, 13, 22, 0.92) 0%, rgba(9, 13, 22, 0.7) 45%, transparent 100%);
 }
-.adv-herobg--diag .adv-herobg__lens-handle {
-  stroke: rgba(254, 116, 71, 1);
-  stroke-width: 5;
-  stroke-linecap: round;
-}
-.adv-herobg--diag .adv-herobg__lens-cross {
-  stroke: rgba(254, 144, 102, 0.6);
-  stroke-width: 1;
+@media (max-width: 767px) {
+  .adv-herobg--diag .adv-herobg__layer { opacity: 0.55; }
+  .adv-herobg__focus { background: radial-gradient(ellipse 80% 40% at 50% 40%, rgba(9, 13, 22, 0.85) 0%, transparent 100%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -777,6 +760,3 @@
 .adv-herobg--traz .adv-herobg__lote      { fill: #FFB08A; filter: drop-shadow(0 0 10px rgba(254, 116, 71, 1)); }
 .adv-herobg--traz .adv-herobg__lote-halo { fill: rgba(254, 116, 71, 0.25); }
 .adv-herobg--traz .adv-herobg__grid--accent { opacity: 1.4; }
-
-/* Diagnóstico: cuadrícula algo más marcada */
-.adv-herobg--diag .adv-herobg__grid { opacity: 1.6; background-image: linear-gradient(rgba(255,255,255,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.07) 1px, transparent 1px); }
