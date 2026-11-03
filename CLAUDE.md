@@ -6,7 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Static HTML/CSS/JS website for Advantys AI — a Spanish-language B2B AI consulting company. No build system, no package manager, no framework. Files are served directly[cite: 1].
 
 ## Development & Guardrails
-- **CRITICAL (Dev Env):** Every HTML page *must* contain `<meta name="robots" content="noindex, nofollow">` in the `<head>` during this phase[cite: 1].
+- **Indexación:** la web está en producción e indexada. Las páginas públicas llevan `<meta name="robots" content="index, follow, ...">`; no volver a poner `noindex` salvo en `area-privada.html` y `blog.html`.
+- **Líneas que vende la web (nov 2026):** Diagnóstico de Operaciones, Transporte y logística, Trazabilidad agroalimentaria, Educación, Sistema Advantys y el curso gratis de IA. ISO 42001 y AI Act se llevan desde jacobruiz.es: no añadir contenido de ISO 42001 aquí.
 - **SEO Link Constraint:** Never wrap entire feature/sector cards in an `<a>` tag[cite: 1]. Links go ONLY on titles (H2/H3), images, or CTA buttons to avoid anchor text dilution[cite: 1].
 - **Double Audience Architecture:** Content must serve both CEO (skimmable, benefit-driven) and CTO (technical depth)[cite: 1]. Implement this via a reusable vanilla HTML/JS disclosure pattern (`.adv-disclosure-block`) using hidden technical panels toggled via a "Ver detalle técnico" button[cite: 1].
 - **Local Server:** Open `index.html` directly or use `python -m http.server 8000`[cite: 1].
