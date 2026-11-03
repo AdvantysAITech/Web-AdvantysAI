@@ -24,7 +24,7 @@
     });
     if (cta) {
       var thumb = frame.querySelector('img');
-      if (thumb && !thumb.getAttribute('src')) thumb.src = 'https://i.ytimg.com/vi/' + encodeURIComponent(id) + '/maxresdefault.jpg';
+      if (thumb && !thumb.getAttribute('src')) thumb.src = 'https://i.ytimg.com/vi/' + encodeURIComponent(id) + '/hqdefault.jpg';
     }
   });
 })();
