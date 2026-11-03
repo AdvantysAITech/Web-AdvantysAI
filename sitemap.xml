@@ -11,6 +11,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://advantys.ai/autodiagnostico-operaciones</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://advantys.ai/transporte-logistica</loc>
     <lastmod>2026-11-03</lastmod>
     <priority>0.9</priority>
@@ -41,24 +46,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://advantys.ai/quienes-somos</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://advantys.ai/inversores</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://advantys.ai/partners</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://advantys.ai/solicitud</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/hospitality</loc>
-    <lastmod>2026-09-03</lastmod>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/residencia-fiscal</loc>
-    <lastmod>2026-09-03</lastmod>
-    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://advantys.ai/aviso-legal</loc>
@@ -74,5 +79,15 @@
     <loc>https://advantys.ai/politica-cookies</loc>
     <lastmod>2026-09-03</lastmod>
     <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/diagnostic-operacions</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
   </url>
 </urlset>

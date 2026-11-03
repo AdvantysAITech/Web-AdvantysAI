@@ -5,7 +5,7 @@
 // Paso 2: solo se cargan los campos que aplican a esa opción.
 // El envío lo construye window.advLead (assets/js/lead.js), que
 // traduce el interés a línea de negocio, servicio, ruta, rol y
-// spin-off con las etiquetas exactas de GHL.
+// spin-off con las etiquetas exactas de Sistema Advantys.
 //
 // Parámetros de URL admitidos:
 //   ?interes=consultoria|sistema|proyecto_ia|solucion_sectorial|invertir|iso42001|partners|otro
@@ -76,7 +76,7 @@
   const SUB_INICIAL = subtitleEl.textContent.trim();
 
   // --- Antispam -----------------------------------------------------------
-  // El webhook de GHL es público y cada ejecución cuesta dinero, así que
+  // El webhook de Sistema Advantys es público y cada ejecución cuesta dinero, así que
   // filtramos en cliente antes de gastar una llamada.
   const cargadoEn = Date.now();
   const MIN_SEGUNDOS = 3;
@@ -114,7 +114,7 @@
     label.innerHTML =
       `<input type="radio" name="interes" value="${clave}">` +
       `<i class="ph ${ICONOS[clave] || 'ph-circle'}" aria-hidden="true"></i>` +
-      `<span>${def.texto}</span>`;
+      `<span>${def.etiqueta || def.texto}</span>`;
     opcionesEl.appendChild(label);
   });
 
@@ -194,8 +194,8 @@
 
     contextEl.hidden = false;
     contextChip.textContent = nombreSpin
-      ? `${L.INTERESES[clave].texto} · ${nombreSpin}`
-      : L.INTERESES[clave].texto;
+      ? `${L.INTERESES[clave].etiqueta || L.INTERESES[clave].texto} · ${nombreSpin}`
+      : (L.INTERESES[clave].etiqueta || L.INTERESES[clave].texto);
   }
 
   opcionesEl.addEventListener('change', aplicarInteres);
@@ -237,13 +237,10 @@
     if (def.requiereSpinoff && !spinoffSelect.value) {
       setError('spinoff', 'Selecciona una opción.', spinoffSelect); valid = false;
     }
-    if (fields.firstname.value.trim().length < 2) { setError('firstname', 'Introduce tu nombre.', fields.firstname); valid = false; }
-    if (fields.lastname.value.trim().length < 2) { setError('lastname', 'Introduce tus apellidos.', fields.lastname); valid = false; }
+    if (fields.firstname.value.trim().length < 2) { setError('firstname', 'Introduce tu nombre y apellidos.', fields.firstname); valid = false; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email.value.trim())) { setError('email', 'Introduce un email válido.', fields.email); valid = false; }
     if (fields.phone.value.replace(/[^\d]/g, '').length < 6) { setError('phone', 'Introduce un teléfono válido.', fields.phone); valid = false; }
     if (fields.company.required && fields.company.value.trim().length < 2) { setError('company', 'Introduce el nombre de tu empresa.', fields.company); valid = false; }
-    if (fields.city.value.trim().length < 2) { setError('city', 'Introduce tu ciudad.', fields.city); valid = false; }
-    if (!fields.country.value) { setError('country', 'Selecciona tu país.', fields.country); valid = false; }
 
     return valid;
   }
@@ -290,14 +287,14 @@
       origen,
       interes: interesActual(),
       spinoff: spinoffSelect.value,
-      nombre: fields.firstname.value.trim(),
-      apellidos: fields.lastname.value.trim(),
+      nombre: L.separarNombre(fields.firstname.value).nombre,
+      apellidos: L.separarNombre(fields.firstname.value).apellidos,
       email: fields.email.value.trim(),
       telefono: fields.phone.value.trim(),
       empresa: fields.company.value.trim(),
       ciudad: fields.city.value.trim(),
       pais: fields.country.value,
-      pais_nombre: fields.country.options[fields.country.selectedIndex].textContent.trim(),
+      pais_nombre: fields.country.value ? fields.country.options[fields.country.selectedIndex].textContent.trim() : '',
       mensaje: fields.message ? fields.message.value.trim() : '',
     });
 

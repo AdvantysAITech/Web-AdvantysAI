@@ -328,3 +328,12 @@ body.no-scroll { overflow: hidden; }
   color: var(--color-coral);
   transform: translateX(4px);
 }
+/* Botón principal del menú: pedir el diagnóstico */
+.adv-btn-cta {
+  color: #fff;
+  background: var(--gradient-brand);
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(255, 57, 53, 0.25);
+}
+.adv-btn-cta:hover { filter: brightness(1.08); box-shadow: 0 8px 26px rgba(255, 57, 53, 0.35); }
+.adv-btn-cta svg { width: 1rem; height: 1rem; }

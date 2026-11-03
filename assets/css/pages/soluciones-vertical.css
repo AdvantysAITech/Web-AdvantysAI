@@ -269,3 +269,15 @@
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
+/* Una sola tarjeta en el cierre de las páginas de sector */
+.adv-vertical-cta__grid--solo { grid-template-columns: minmax(0, 640px) !important; justify-content: center; }
+.adv-inv-link { text-align: center; color: var(--text-secondary); font-size: .95rem; margin-top: 1.5rem; }
+.adv-inv-link a { color: var(--color-coral); }
+
+/* Vídeo de cada solución: portada y reproductor bajo demanda */
+.adv-video { padding-top: 0; }
+.adv-video__frame { position: relative; max-width: 960px; margin: 0 auto; aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: #0e131e; box-shadow: 0 30px 80px rgba(0,0,0,.45); }
+.adv-video__frame img, .adv-video__frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; }
+.adv-video__play { position: absolute; left: 50%; top: 50%; translate: -50% -50%; width: 84px; height: 84px; border-radius: 50%; border: 0; cursor: pointer; background: var(--gradient-brand); color: #fff; font-size: 34px; display: grid; place-items: center; box-shadow: 0 10px 40px rgba(255,57,53,.45); transition: transform .2s; }
+.adv-video__play:hover { transform: scale(1.06); }
+.adv-video__cta { text-align: center; margin-top: 1.75rem; }

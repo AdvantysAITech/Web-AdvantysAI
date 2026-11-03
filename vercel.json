@@ -3,12 +3,28 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/autodiagnostico-operaciones",
+      "destination": "/pages/autodiagnostico-operaciones.html"
+    },
+    {
       "source": "/aviso-legal",
       "destination": "/pages/aviso-legal.html"
     },
     {
       "source": "/blog",
       "destination": "/pages/blog.html"
+    },
+    {
+      "source": "/ca",
+      "destination": "/pages/ca/index.html"
+    },
+    {
+      "source": "/ca/",
+      "destination": "/pages/ca/index.html"
+    },
+    {
+      "source": "/ca/diagnostic-operacions",
+      "destination": "/pages/ca/diagnostic-operacions.html"
     },
     {
       "source": "/curso-ia-empresas",
@@ -27,6 +43,10 @@
       "destination": "/pages/soluciones/hospitality.html"
     },
     {
+      "source": "/inversores",
+      "destination": "/pages/inversores.html"
+    },
+    {
       "source": "/partners",
       "destination": "/pages/partners.html"
     },
@@ -37,6 +57,10 @@
     {
       "source": "/politica-privacidad",
       "destination": "/pages/politica-privacidad.html"
+    },
+    {
+      "source": "/quienes-somos",
+      "destination": "/pages/quienes-somos.html"
     },
     {
       "source": "/residencia-fiscal",
@@ -187,6 +211,26 @@
     {
       "source": "/pages/curso-ia-empresas.html",
       "destination": "/curso-ia-empresas",
+      "permanent": true
+    },
+    {
+      "source": "/pages/autodiagnostico-operaciones.html",
+      "destination": "/autodiagnostico-operaciones",
+      "permanent": true
+    },
+    {
+      "source": "/pages/quienes-somos.html",
+      "destination": "/quienes-somos",
+      "permanent": true
+    },
+    {
+      "source": "/pages/inversores.html",
+      "destination": "/inversores",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/diagnostic-operacions.html",
+      "destination": "/ca/diagnostic-operacions",
       "permanent": true
     }
   ],

@@ -54,7 +54,7 @@
         body: JSON.stringify(datos)
       });
       if (!r.ok) throw new Error('HTTP ' + r.status);
-      if (window.gtag) window.gtag('event', 'inscripcion_curso', { origen: 'web' });
+      if (window.advTrack) window.advTrack('generate_lead', { formulario: 'curso_ia', interes: 'curso', origen: 'web' });
       const ok = document.createElement('div');
       ok.className = 'adv-curso-ok';
       ok.setAttribute('role', 'status');

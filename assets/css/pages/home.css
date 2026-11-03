@@ -581,3 +581,7 @@
 @media (max-width: 1023px) {
   .adv-hero__movil { display: block; }
 }
+
+.adv-home-cta { text-align: center; margin-top: 2.5rem; }
+.adv-dna--usos { padding-top: 0; }
+.adv-method-stack__footer-text a { color: var(--color-coral); font-weight: 600; }

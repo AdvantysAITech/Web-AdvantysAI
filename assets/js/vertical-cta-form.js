@@ -1,6 +1,6 @@
 (() => {
   // El envío lo construye window.advLead (assets/js/lead.js): mismas claves y
-  // mismas etiquetas de GHL que el resto de formularios de la web.
+  // mismas etiquetas de Sistema Advantys que el resto de formularios de la web.
   const forms = document.querySelectorAll('.adv-vertical-cta__form');
   if (!forms.length || !window.advLead) return;
   const L = window.advLead;

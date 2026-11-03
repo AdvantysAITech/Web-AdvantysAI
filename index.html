@@ -14,17 +14,22 @@
   <link href="/assets/css/pages/home.css?v=20261103g" rel="stylesheet">
   <meta name="description" content="Encontramos dónde se te va el margen y lo recuperamos con IA. Diagnóstico de Operaciones para transporte, logística y agro, IA para colegios y CRM.">
   <link rel="canonical" href="https://advantys.ai/">
+  <link rel="alternate" hreflang="es" href="https://advantys.ai/">
+  <link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/">
+  <link rel="alternate" hreflang="x-default" href="https://advantys.ai/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Advantys AI">
   <meta property="og:locale" content="es_ES">
   <meta property="og:url" content="https://advantys.ai/">
   <meta property="og:title" content="Advantys AI | IA para transporte, logística, agro y educación">
   <meta property="og:description" content="Encontramos dónde se te va el margen y lo recuperamos con IA. Diagnóstico de Operaciones para transporte, logística y agro, IA para colegios y CRM.">
-  <meta property="og:image" content="https://advantys.ai/assets/images/og-cover.png">
+  <meta property="og:image" content="https://advantys.ai/assets/images/og/home.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Advantys AI | IA para transporte, logística, agro y educación">
   <meta name="twitter:description" content="Encontramos dónde se te va el margen y lo recuperamos con IA. Diagnóstico de Operaciones para transporte, logística y agro, IA para colegios y CRM.">
-  <meta name="twitter:image" content="https://advantys.ai/assets/images/og-cover.png">
+  <meta name="twitter:image" content="https://advantys.ai/assets/images/og/home.jpg">
   <!-- JSON-LD Advantys -->
   <script type="application/ld+json">
 {
@@ -163,18 +168,26 @@
         </div>
       </div>
 
-      <a href="/diagnostico-operaciones" class="adv-link-island">Diagnóstico</a>
+      <div class="adv-dropdown">
+        <a href="/diagnostico-operaciones" class="adv-link-island">
+          Diagnóstico
+          <i class="ph ph-caret-down" style="font-size: 0.9em;"></i>
+        </a>
+        <div class="adv-dropdown-content">
+          <a href="/diagnostico-operaciones">Diagnóstico de Operaciones</a>
+          <a href="/autodiagnostico-operaciones">Autodiagnóstico gratis</a>
+        </div>
+      </div>
       <a href="/sistema-advantys" class="adv-link-island">Sistema Advantys</a>
       <a href="/partners" class="adv-link-island">Partners</a>
       <a href="/curso-ia-empresas" class="adv-link-island">Curso gratis</a>
+      <a href="/ca/" class="adv-link-island" hreflang="ca" lang="ca">CA</a>
     </nav>
  
     <div class="adv-cta-island">
-      <a href="https://plataforma-advantys-chi.vercel.app/" class="adv-btn-private">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.071 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path>
-        </svg>
-        Área privada
+      <a href="/solicitud?interes=consultoria&amp;origen=menu" class="adv-btn-private adv-btn-cta">
+        Pide tu diagnóstico
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
       </a>
     </div>
  
@@ -200,7 +213,9 @@
       <a href="/sistema-advantys" class="adv-mobile-link">Sistema Advantys</a>
       <a href="/partners" class="adv-mobile-link">Partners</a>
       <a href="/curso-ia-empresas" class="adv-mobile-link">Curso gratis de IA</a>
-      <a href="https://plataforma-advantys-chi.vercel.app/" class="adv-mobile-link adv-mobile-link--cta">Área privada</a>
+      <a href="/ca/" class="adv-mobile-link" hreflang="ca" lang="ca">Català</a>
+      <a href="/autodiagnostico-operaciones" class="adv-mobile-link">Autodiagnóstico gratis</a>
+      <a href="/solicitud?interes=consultoria&amp;origen=menu" class="adv-mobile-link adv-mobile-link--cta">Pide tu diagnóstico</a>
     </nav>
   </div>
 </header>
@@ -253,8 +268,8 @@
             <polyline points="7 7 17 7 17 17"></polyline>
         </svg>
         </a>
-        <a href="/curso-ia-empresas" class="btn-glass">
-        Curso gratis de IA
+        <a href="/autodiagnostico-operaciones" class="btn-glass">
+        Autodiagnóstico gratis
         </a>
       </div>
 
@@ -266,48 +281,28 @@
 <section class="adv-dna">
   <div class="adv-dna__container">
     <header class="adv-dna__header">
-      <h2 class="adv-dna__title">ADN Advantys</h2>
-      <p class="adv-dna__subtitle">Validamos nuestra identidad tecnológica a través de una comprensión profunda de la empresa. No solo escribimos código; estructuramos ventajas competitivas.</p>
+      <h2 class="adv-dna__title">El margen no se pierde en la venta. Se pierde en la operación.</h2>
+      <p class="adv-dna__subtitle">Lo ves cada día y ya no te sorprende. Precisamente por eso sigue costando dinero.</p>
     </header>
 
     <div class="adv-dna__grid">
-      <!-- Pilar 1: ROI -->
       <article class="adv-dna__card adv-bento-card">
-        <div class="adv-dna__icon-wrapper adv-bento-card__icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
-            <polyline points="16 7 22 7 22 13"></polyline>
-          </svg>
-        </div>
-        <h3 class="adv-dna__card-title adv-bento-card__title">Obsesión por la rentabilidad (ROI)</h3>
-        <p class="adv-dna__card-text adv-bento-card__desc">No implantamos Inteligencia Artificial porque sea la tendencia del mercado. Desarrollamos soluciones algorítmicas con un único mandato: optimizar de forma drástica los costes operativos y multiplicar el margen de beneficio neto de nuestros clientes.</p>
+        <div class="adv-dna__icon-wrapper adv-bento-card__icon"><i class="ph ph-receipt" style="font-size:24px"></i></div>
+        <h3 class="adv-dna__card-title adv-bento-card__title">Datos que se teclean dos veces</h3>
+        <p class="adv-dna__card-text adv-bento-card__desc">Del papel al sistema y del sistema a la factura. Cada copia es tiempo perdido y un error que luego hay que perseguir.</p>
       </article>
-
-      <!-- Pilar 2: Valores e Identidad -->
       <article class="adv-dna__card adv-bento-card">
-        <div class="adv-dna__icon-wrapper adv-bento-card__icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            <path d="M9 12l2 2 4-4"></path>
-          </svg>
-        </div>
-        <h3 class="adv-dna__card-title adv-bento-card__title">Identidad y valores</h3>
-        <p class="adv-dna__card-text adv-bento-card__desc">Alcance cerrado, precio conocido desde el primer día y entregables concretos. Antes de proponer cualquier tecnología revisamos el Reglamento europeo de IA y la protección de datos, para que no haya sorpresas después.</p>
+        <div class="adv-dna__icon-wrapper adv-bento-card__icon"><i class="ph ph-users-three" style="font-size:24px"></i></div>
+        <h3 class="adv-dna__card-title adv-bento-card__title">Todo depende de una persona</h3>
+        <p class="adv-dna__card-text adv-bento-card__desc">La que cuadra las rutas, la que entiende la hoja de cálculo, la que sabe dónde está cada palé. El día que falta, se nota.</p>
       </article>
-
-      <!-- Pilar 3: Perspectiva Global -->
       <article class="adv-dna__card adv-bento-card">
-        <div class="adv-dna__icon-wrapper adv-bento-card__icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"></circle>
-            <line x1="2" y1="12" x2="22" y2="12"></line>
-            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-          </svg>
-        </div>
-        <h3 class="adv-dna__card-title adv-bento-card__title">Perspectiva Global</h3>
-        <p class="adv-dna__card-text adv-bento-card__desc">Diseñamos soluciones dotadas de arquitecturas de alta escalabilidad y visión internacional. Nuestros sistemas están preparados desde el primer despliegue para operar sin fricción en mercados globales, superando barreras y adaptándose a estándares transfronterizos.</p>
+        <div class="adv-dna__icon-wrapper adv-bento-card__icon"><i class="ph ph-chart-bar" style="font-size:24px"></i></div>
+        <h3 class="adv-dna__card-title adv-bento-card__title">Decisiones sin datos</h3>
+        <p class="adv-dna__card-text adv-bento-card__desc">Los números llegan a final de mes, cuando ya no se puede hacer nada. Mientras, se decide a ojo.</p>
       </article>
     </div>
+    <p class="adv-home-cta"><a href="/autodiagnostico-operaciones" class="btn-glass">Haz el autodiagnóstico gratis y mira cuánto te cuesta</a></p>
   </div>
 </section>
   <!-- ADN CORPORATIVO & VISIÓN END -->
@@ -317,7 +312,7 @@
   <div class="adv-matrix__container">
     
     <header class="adv-matrix__header">
-      <h2 class="adv-matrix__section-title">Ecosistema de soluciones</h2>
+      <h2 class="adv-matrix__section-title">Cómo te ayudamos</h2>
       <p class="adv-matrix__section-subtitle">Primero entendemos tu operación. Después ponemos solo la tecnología que encaja y se paga sola.</p>
     </header>
 
@@ -372,6 +367,35 @@
 </section>
   <!-- MATRIZ DE CAPACIDADES END -->
 
+  <!-- CASOS DE USO -->
+<section class="adv-dna adv-dna--usos">
+  <div class="adv-dna__container">
+    <header class="adv-dna__header">
+      <h2 class="adv-dna__title">Casos de uso</h2>
+      <p class="adv-dna__subtitle">Situaciones habituales en las que la IA recupera margen. No son clientes concretos: son los problemas que más se repiten en cada sector.</p>
+    </header>
+    <div class="adv-dna__grid">
+      <article class="adv-dna__card adv-bento-card">
+        <div class="adv-dna__icon-wrapper adv-bento-card__icon"><i class="ph ph-path" style="font-size:24px"></i></div>
+        <h3 class="adv-dna__card-title adv-bento-card__title">Transporte: rutas y grupajes</h3>
+        <p class="adv-dna__card-text adv-bento-card__desc">Cada mañana alguien cuadra a mano las rutas y las cargas del día. La IA propone la planificación con los pedidos reales y el jefe de tráfico solo revisa y decide.</p>
+      </article>
+      <article class="adv-dna__card adv-bento-card">
+        <div class="adv-dna__icon-wrapper adv-bento-card__icon"><i class="ph ph-package" style="font-size:24px"></i></div>
+        <h3 class="adv-dna__card-title adv-bento-card__title">Almacén: dónde está cada palé</h3>
+        <p class="adv-dna__card-text adv-bento-card__desc">Se pierden horas buscando mercancía mal ubicada. Con visión artificial cada palé queda registrado al entrar, moverse y salir, sin que nadie lo apunte.</p>
+      </article>
+      <article class="adv-dna__card adv-bento-card">
+        <div class="adv-dna__icon-wrapper adv-bento-card__icon"><i class="ph ph-file-text" style="font-size:24px"></i></div>
+        <h3 class="adv-dna__card-title adv-bento-card__title">Administración: albaranes y facturas</h3>
+        <p class="adv-dna__card-text adv-bento-card__desc">Los albaranes firmados se teclean para poder facturar. La lectura automática los pasa al sistema y la factura sale el mismo día.</p>
+      </article>
+    </div>
+  </div>
+</section>
+  <!-- CASOS DE USO END -->
+
+
   <!-- METODOLOGÍA -->
 <section class="adv-method-stack">
   <div class="adv-method-stack__container">
@@ -379,8 +403,8 @@
     <!-- HEADER -->
     <header class="adv-method-stack__header">
       <h2 class="adv-method-stack__title">Así trabajamos</h2>
-      <p class="adv-method-stack__subtitle">Combinamos el rigor de la consultoría de procesos con la rapidez de implantar por fases. Cada fase tiene un objetivo medible y un precio cerrado.</p>
-      <p class="adv-method-stack__highlight">No replicamos fórmulas genéricas. Diseñamos un camino a medida para optimizar, escalar y asegurar el futuro de tu organización.</p>
+      <p class="adv-method-stack__subtitle">Comprar tecnología antes de entender el proceso es la forma más cara de no arreglar nada. Por eso todos los proyectos siguen el mismo camino.</p>
+      <p class="adv-method-stack__highlight">Cada fase tiene un objetivo medible y un precio cerrado.</p>
     </header>
 
     <!-- STACKING WRAPPER -->
@@ -390,14 +414,14 @@
       <article class="adv-method-stack__card adv-method-stack__card--1">
         <div class="adv-method-stack__phase-info">
           <span class="adv-method-stack__step">Fase 01</span>
-          <h3 class="adv-method-stack__card-title">Mapeo de procesos y diagnóstico profundo</h3>
-          <p class="adv-method-stack__card-desc">Antes de proponer una solución, entendemos tu realidad a la perfección. Nos sumergimos en la arquitectura de tu organización para visibilizar los flujos de trabajo actuales.</p>
+          <h3 class="adv-method-stack__card-title">Diagnóstico de Operaciones</h3>
+          <p class="adv-method-stack__card-desc">Cuatro semanas para ver la operación entera y analizar a fondo hasta tres procesos. Sabes lo que pagas desde el primer día.</p>
         </div>
         <div class="adv-method-stack__list-wrapper">
           <ul class="adv-method-stack__list">
-            <li class="adv-method-stack__list-item">Identificación de cuellos de botella y redundancias operativas.</li>
-            <li class="adv-method-stack__list-item">Auditoría de capacidades tecnológicas y humanas.</li>
-            <li class="adv-method-stack__list-item">Modelado de procesos "As-Is" para establecer una línea base de eficiencia.</li>
+            <li class="adv-method-stack__list-item">Mapa de toda la operación con la dirección.</li>
+            <li class="adv-method-stack__list-item">Análisis a fondo de los procesos que más cuestan.</li>
+            <li class="adv-method-stack__list-item">Informe con prioridades, inversión, ahorro y hoja de ruta.</li>
           </ul>
         </div>
       </article>
@@ -406,14 +430,14 @@
       <article class="adv-method-stack__card adv-method-stack__card--2">
         <div class="adv-method-stack__phase-info">
           <span class="adv-method-stack__step">Fase 02</span>
-          <h3 class="adv-method-stack__card-title">Consultoría estratégica y rediseño operativo</h3>
-          <p class="adv-method-stack__card-desc">Con el mapa en la mano, nuestros consultores senior diseñan la arquitectura del cambio. Transformamos la complejidad en flujos de trabajo optimizados y orientados a objetivos globales.</p>
+          <h3 class="adv-method-stack__card-title">Proyecto por fases</h3>
+          <p class="adv-method-stack__card-desc">Implantamos primero lo que más margen recupera. Si una fase no da lo previsto, se para y se replantea.</p>
         </div>
         <div class="adv-method-stack__list-wrapper">
           <ul class="adv-method-stack__list">
-            <li class="adv-method-stack__list-item">Diseño de procesos "To-Be" alineados con los estándares internacionales más exigentes.</li>
-            <li class="adv-method-stack__list-item">Revisión del Reglamento europeo de IA y de la protección de datos antes de invertir.</li>
-            <li class="adv-method-stack__list-item">Definición de KPIs y métricas clave para el control directivo y ROI.</li>
+            <li class="adv-method-stack__list-item">Presupuesto cerrado para cada fase.</li>
+            <li class="adv-method-stack__list-item">Tecnología que encaja con cómo trabajas, no al revés.</li>
+            <li class="adv-method-stack__list-item">Reglamento europeo de IA y protección de datos revisados antes de invertir.</li>
           </ul>
         </div>
       </article>
@@ -422,14 +446,14 @@
       <article class="adv-method-stack__card adv-method-stack__card--3">
         <div class="adv-method-stack__phase-info">
           <span class="adv-method-stack__step">Fase 03</span>
-          <h3 class="adv-method-stack__card-title">Implementación con metodología Agile</h3>
-          <p class="adv-method-stack__card-desc">La estrategia solo es útil si se ejecuta con éxito. Implementamos los nuevos modelos permitiendo que tu organización absorba el cambio de manera orgánica, rápida y sin fricciones.</p>
+          <h3 class="adv-method-stack__card-title">Medición</h3>
+          <p class="adv-method-stack__card-desc">Medimos el antes y el después con los mismos indicadores del diagnóstico.</p>
         </div>
         <div class="adv-method-stack__list-wrapper">
           <ul class="adv-method-stack__list">
-            <li class="adv-method-stack__list-item">Entregas de valor iterativas (Sprints) para visibilizar resultados desde las primeras semanas.</li>
-            <li class="adv-method-stack__list-item">Cultura de mejora continua y adaptabilidad ante mercados volátiles.</li>
-            <li class="adv-method-stack__list-item">Gestión del cambio analítica, minimizando la resistencia interna y maximizando la adopción.</li>
+            <li class="adv-method-stack__list-item">Horas, errores, kilómetros y tiempos de espera.</li>
+            <li class="adv-method-stack__list-item">Ajustes mientras el equipo se acostumbra.</li>
+            <li class="adv-method-stack__list-item">Siguiente mejora, solo si se paga sola.</li>
           </ul>
         </div>
       </article>
@@ -438,8 +462,8 @@
 
     <!-- FOOTER -->
     <footer class="adv-method-stack__footer">
-      <h3 class="adv-method-stack__footer-title">¿Por qué nuestro enfoque marca la diferencia?</h3>
-      <p class="adv-method-stack__footer-text"><strong>Visión global, ejecución ágil.</strong> Fusionamos la profundidad analítica de la consultoría internacional con la velocidad del ecosistema tech. El resultado es una estructura organizacional esbelta, resiliente y preparada para el liderazgo de tu sector.</p>
+      <h3 class="adv-method-stack__footer-title">¿Por dónde empiezo?</h3>
+      <p class="adv-method-stack__footer-text"><strong>Por el autodiagnóstico, si quieres hacerte una idea en diez minutos.</strong> Por el Diagnóstico de Operaciones, si quieres saber con tus números dónde se escapa el dinero y qué arreglar primero. <a href="/autodiagnostico-operaciones">Hacer el autodiagnóstico</a> · <a href="/diagnostico-operaciones">Ver el Diagnóstico</a></p>
     </footer>
 
   </div>
@@ -468,6 +492,7 @@
           <h3 class="footer-heading">Plataforma</h3>
           <nav class="footer-nav">
             <a href="/diagnostico-operaciones" class="footer-link">Diagnóstico de Operaciones</a>
+            <a href="/autodiagnostico-operaciones" class="footer-link">Autodiagnóstico gratis</a>
             <a href="/transporte-logistica" class="footer-link">Transporte y logística</a>
             <a href="/trazabilidad-agroalimentaria" class="footer-link">Trazabilidad agroalimentaria</a>
             <a href="/educacion" class="footer-link">Educación</a>
@@ -481,11 +506,13 @@
         <div class="footer-card">
           <h3 class="footer-heading">Empresa</h3>
           <nav class="footer-nav">
-            <span class="footer-link footer-link--disabled" aria-disabled="true" title="Próximamente">Noticias y Blog <i class="ph ph-lock"></i></span>
-            <a href="/aviso-legal" class="footer-link">Aviso Legal</a>
-            <a href="/politica-privacidad" class="footer-link">Política de Privacidad</a>
-            <a href="/politica-cookies" class="footer-link">Política de Cookies</a>
+            <a href="/quienes-somos" class="footer-link">Quiénes somos</a>
+            <a href="/inversores" class="footer-link">Inversores</a>
+            <a href="/aviso-legal" class="footer-link">Aviso legal</a>
+            <a href="/politica-privacidad" class="footer-link">Política de privacidad</a>
+            <a href="/politica-cookies" class="footer-link">Política de cookies</a>
             <a href="#" class="footer-link" data-adv-preferencias-cookies>Preferencias de cookies</a>
+            <a href="https://plataforma-advantys-chi.vercel.app/" class="footer-link" rel="nofollow">Área privada</a>
           </nav>
         </div>
 
