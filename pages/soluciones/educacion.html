@@ -276,9 +276,8 @@
   <!-- HERO -->
   <section class="adv-vertical-hero container">
     <div class="adv-herobg adv-herobg--edu">
-      <div class="adv-herobg__grid"></div>
-
-      <svg class="adv-herobg__graph" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <div class="adv-herobg__layer" data-adv-parallax="0.12"><div class="adv-herobg__grid"></div></div>
+      <div class="adv-herobg__layer" data-adv-parallax="0.3"><svg class="adv-herobg__graph" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
         <g class="adv-herobg__graph-lines">
           <line x1="180" y1="110" x2="360" y2="70"/>
           <line x1="360" y1="70"  x2="560" y2="120"/>
@@ -315,12 +314,10 @@
           <circle cx="740" cy="350" r="3"/>
           <circle cx="940" cy="400" r="3"/>
         </g>
-      </svg>
-
-      <div class="adv-herobg__scan"></div>
+      </svg></div>
+      <div class="adv-herobg__layer" data-adv-parallax="0.45"><div class="adv-herobg__scan"></div></div>
       <div class="adv-herobg__vignette"></div>
     </div>
-
     <div class="adv-vertical-hero__content">
       <span class="adv-badge adv-badge--regulatory">EdTech · Gobernanza de IA en el aula</span>
       <h1 class="adv-vertical-hero__title">IA para colegios: gobierna el uso de la IA en el aula</h1>
@@ -611,6 +608,7 @@
 <!-- FOOTER END -->
 
 <script src="/assets/js/main.js"></script>
+<script src="/assets/js/parallax.js" defer></script>
 
   <script src="/assets/js/config.js"></script>
   <script src="/assets/js/lead.js"></script>
