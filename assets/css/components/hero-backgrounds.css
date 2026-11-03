@@ -311,7 +311,7 @@
   to { stroke-dashoffset: -30; }
 }
 @keyframes advbgTrazNodeLight {
-  0%, 100% { opacity: 0.25; }
+  0%, 100% { opacity: 0.5; }
   12%      { opacity: 1; }
   24%      { opacity: 0.4; }
 }
@@ -325,13 +325,15 @@
 .adv-herobg--traz .adv-herobg__path-line {
   fill: none;
   stroke: #FE7447;
-  stroke-width: 1.2;
-  stroke-dasharray: 5 5;
-  opacity: 0.3;
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 6px rgba(254, 116, 71, 0.8));
   animation: advbgTrazLineFlow 3s linear infinite;
 }
 .adv-herobg--traz .adv-herobg__path-nodes circle {
   fill: #FE9066;
+  filter: drop-shadow(0 0 10px rgba(254, 116, 71, 0.95));
   animation-name: advbgTrazNodeLight;
   animation-duration: 5s;
   animation-timing-function: ease-in-out;
@@ -602,19 +604,19 @@
    ========================================= */
 @keyframes advbgMoteRise {
   0%   { transform: translate(0, 0); opacity: 0; }
-  15%  { opacity: 0.7; }
+  15%  { opacity: 1; }
   50%  { transform: translate(14px, -90px); }
-  85%  { opacity: 0.6; }
+  85%  { opacity: 0.9; }
   100% { transform: translate(-6px, -180px); opacity: 0; }
 }
 .adv-herobg__mote {
   position: absolute;
   bottom: 8%;
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #FE9066;
-  box-shadow: 0 0 8px rgba(254, 116, 71, 0.6);
+  box-shadow: 0 0 12px rgba(254, 116, 71, 0.9);
   opacity: 0;
   animation: advbgMoteRise 11s ease-in-out infinite;
 }
@@ -737,7 +739,7 @@
 @keyframes advbgPartner  { 0%, 40%, 100% { opacity: 0.45; transform: scale(1); } 48% { opacity: 1; transform: scale(1.35); } 60% { opacity: 0.8; transform: scale(1); } }
 
 .adv-herobg__crm { position: absolute; inset: 0; width: 100%; height: 100%; }
-.adv-herobg--crm .adv-herobg__orbit { transform-box: view-box; transform-origin: 600px 300px; }
+.adv-herobg--crm .adv-herobg__orbit { transform-box: view-box; transform-origin: 600px 575px; }
 .adv-herobg--crm .adv-herobg__orbit--a { animation: advbgOrbit 60s linear infinite; }
 .adv-herobg--crm .adv-herobg__orbit--b { animation: advbgOrbitRev 90s linear infinite; }
 .adv-herobg--crm .adv-herobg__orbit--c { animation: advbgOrbit 130s linear infinite; }
@@ -745,7 +747,7 @@
 .adv-herobg--crm .adv-herobg__orbit-dot { fill: #FE9066; filter: drop-shadow(0 0 6px rgba(254, 116, 71, 0.9)); }
 .adv-herobg--crm .adv-herobg__spoke { fill: none; stroke: rgba(254, 116, 71, 0.12); stroke-width: 1; }
 .adv-herobg--crm .adv-herobg__lead { fill: #FF5A3C; filter: drop-shadow(0 0 5px rgba(255, 90, 60, 0.9)); }
-.adv-herobg__hub-core { fill: rgba(254, 116, 71, 0.85); filter: drop-shadow(0 0 18px rgba(254, 66, 55, 0.8)); }
+.adv-herobg__hub-core { fill: rgba(254, 116, 71, 0.9); filter: drop-shadow(0 0 18px rgba(254, 66, 55, 0.8)); }
 .adv-herobg__hub-pulse {
   fill: none; stroke: rgba(254, 116, 71, 0.7); stroke-width: 1.5;
   transform-box: fill-box; transform-origin: center;
@@ -767,3 +769,8 @@
   .adv-herobg--crm *, .adv-herobg--net * { animation: none !important; }
   .adv-herobg--net .adv-herobg__partner { opacity: 0.8; }
 }
+
+/* Agro: lote que recorre la línea de trazabilidad, del árbol al palé */
+.adv-herobg--traz .adv-herobg__lote      { fill: #FFB08A; filter: drop-shadow(0 0 10px rgba(254, 116, 71, 1)); }
+.adv-herobg--traz .adv-herobg__lote-halo { fill: rgba(254, 116, 71, 0.25); }
+.adv-herobg--traz .adv-herobg__grid--accent { opacity: 1.4; }
