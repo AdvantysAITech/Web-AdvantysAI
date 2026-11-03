@@ -30,6 +30,7 @@
       perfil: d.get('perfil') || '',
       sector: d.get('sector') || '',
       idioma_curso: d.get('idioma_curso') || 'es',
+      idioma_web: window.advLang || 'es',
       acepta_privacidad: d.get('acepta_privacidad') === 'on',
       acepta_novedades: d.get('acepta_novedades') === 'on',
       web: String(d.get('web') || '')
