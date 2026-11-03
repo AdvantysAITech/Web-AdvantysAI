@@ -9,20 +9,20 @@
    ========================================= */
 
 /* 1. Base (Variables y Reseteos) */
-@import url('base/variables.css?v=20261103f');
-@import url('base/reset.css?v=20261103f');
+@import url('base/variables.css?v=20261103g');
+@import url('base/reset.css?v=20261103g');
 
 /* 2. Layout (Estructura global) */
-@import url('layout/grid.css?v=20261103f');
-@import url('layout/header.css?v=20261103f');
-@import url('layout/footer.css?v=20261103f');
+@import url('layout/grid.css?v=20261103g');
+@import url('layout/header.css?v=20261103g');
+@import url('layout/footer.css?v=20261103g');
 
 /* 3. Componentes Reutilizables */
-@import url('components/buttons.css?v=20261103f');
-@import url('components/cards.css?v=20261103f');
-@import url('components/forms.css?v=20261103f');
-@import url('components/badges.css?v=20261103f');
+@import url('components/buttons.css?v=20261103g');
+@import url('components/cards.css?v=20261103g');
+@import url('components/forms.css?v=20261103g');
+@import url('components/badges.css?v=20261103g');
 
-@import url('components/hero-backgrounds.css?v=20261103f');
-@import url('components/footer-contact.css?v=20261103f');
-@import url('components/vertical-cta-form.css?v=20261103f');
+@import url('components/hero-backgrounds.css?v=20261103g');
+@import url('components/footer-contact.css?v=20261103g');
+@import url('components/vertical-cta-form.css?v=20261103g');
