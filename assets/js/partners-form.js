@@ -65,16 +65,16 @@
 
   function populateSummary() {
     document.getElementById('sum-tipo').textContent =
-      LABELS.tipo[state.tipo] ?? '—';
+      advT(LABELS.tipo[state.tipo] ?? '—');
     document.getElementById('sum-cartera').textContent =
-      LABELS.cartera[state.cartera] ?? '—';
+      advT(LABELS.cartera[state.cartera] ?? '—');
     document.getElementById('sum-modalidad').textContent =
-      LABELS.modalidad[state.modalidad] ?? '—';
-    document.getElementById('sum-tier-label').textContent = tierLabel(
+      advT(LABELS.modalidad[state.modalidad] ?? '—');
+    document.getElementById('sum-tier-label').textContent = advT(tierLabel(
       state.tipo,
       state.cartera,
       state.modalidad
-    );
+    ));
   }
 
   function applyRecommendation() {
