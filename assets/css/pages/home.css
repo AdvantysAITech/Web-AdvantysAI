@@ -575,3 +575,9 @@
   .adv-hero-showcase { padding: 6rem 2rem 10rem 2rem; margin-top: -5rem; }
   .adv-hero-showcase__bento { border-radius: 24px; transform: perspective(1500px) rotateX(5deg); }
 }
+/* Movimiento del hero en móvil y tableta: el globo 3D solo se carga
+   en escritorio (≥1024px), así que aquí se usa el radar animado en CSS. */
+.adv-hero__movil { display: none; }
+@media (max-width: 1023px) {
+  .adv-hero__movil { display: block; }
+}
