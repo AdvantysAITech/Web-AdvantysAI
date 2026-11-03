@@ -74,7 +74,7 @@
   // --- Ponle precio ---------------------------------------------------------
   const calc = (k) => Number(document.querySelector(`[data-calc="${k}"]`).value) || 0;
   const euros = document.getElementById('adv-ado-euros');
-  const fmt = new Intl.NumberFormat(window.advLang === 'en' ? 'en-GB' : 'es-ES', { maximumFractionDigits: 0 });
+  const fmt = new Intl.NumberFormat(window.advLang === "en" ? "en-GB" : "es-ES", { maximumFractionDigits: 0 });
   const recalcular = () => {
     const v = (calc('min') * calc('veces') * calc('personas') * calc('dias') * calc('hora')) / 60;
     euros.textContent = `${fmt.format(Math.round(v))} €`;

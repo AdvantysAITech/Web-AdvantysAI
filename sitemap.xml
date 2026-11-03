@@ -1,93 +1,435 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://advantys.ai/</loc>
     <lastmod>2026-11-03</lastmod>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/en/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/"/>
   </url>
   <url>
     <loc>https://advantys.ai/diagnostico-operaciones</loc>
     <lastmod>2026-11-03</lastmod>
     <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/autodiagnostico-operaciones</loc>
-    <lastmod>2026-11-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/transporte-logistica</loc>
-    <lastmod>2026-11-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/trazabilidad-agroalimentaria</loc>
-    <lastmod>2026-11-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/educacion</loc>
-    <lastmod>2026-11-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/curso-ia-empresas</loc>
-    <lastmod>2026-11-03</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/sistema-advantys</loc>
-    <lastmod>2026-11-03</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/soluciones-ia</loc>
-    <lastmod>2026-11-03</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/quienes-somos</loc>
-    <lastmod>2026-11-03</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/inversores</loc>
-    <lastmod>2026-11-03</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/partners</loc>
-    <lastmod>2026-11-03</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/solicitud</loc>
-    <lastmod>2026-11-03</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/aviso-legal</loc>
-    <lastmod>2026-09-03</lastmod>
-    <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/politica-privacidad</loc>
-    <lastmod>2026-09-03</lastmod>
-    <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/politica-cookies</loc>
-    <lastmod>2026-09-03</lastmod>
-    <priority>0.2</priority>
-  </url>
-  <url>
-    <loc>https://advantys.ai/ca/</loc>
-    <lastmod>2026-11-03</lastmod>
-    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/diagnostico-operaciones"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/diagnostic-operacions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/operations-diagnostic"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/diagnostico-operaciones"/>
   </url>
   <url>
     <loc>https://advantys.ai/ca/diagnostic-operacions</loc>
     <lastmod>2026-11-03</lastmod>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/diagnostico-operaciones"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/diagnostic-operacions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/operations-diagnostic"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/diagnostico-operaciones"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/en/operations-diagnostic</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/diagnostico-operaciones"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/diagnostic-operacions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/operations-diagnostic"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/diagnostico-operaciones"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/autodiagnostico-operaciones</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/autodiagnostico-operaciones"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/autodiagnostic-operacions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/operations-self-assessment"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/autodiagnostico-operaciones"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/autodiagnostic-operacions</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/autodiagnostico-operaciones"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/autodiagnostic-operacions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/operations-self-assessment"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/autodiagnostico-operaciones"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/en/operations-self-assessment</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/autodiagnostico-operaciones"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/autodiagnostic-operacions"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/operations-self-assessment"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/autodiagnostico-operaciones"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/transporte-logistica</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/transporte-logistica"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/transport-logistica"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/transport-logistics"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/transporte-logistica"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/transport-logistica</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/transporte-logistica"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/transport-logistica"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/transport-logistics"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/transporte-logistica"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/en/transport-logistics</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/transporte-logistica"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/transport-logistica"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/transport-logistics"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/transporte-logistica"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/trazabilidad-agroalimentaria</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/trazabilidad-agroalimentaria"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/tracabilitat-agroalimentaria"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/agri-food-traceability"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/trazabilidad-agroalimentaria"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/tracabilitat-agroalimentaria</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/trazabilidad-agroalimentaria"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/tracabilitat-agroalimentaria"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/agri-food-traceability"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/trazabilidad-agroalimentaria"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/en/agri-food-traceability</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/trazabilidad-agroalimentaria"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/tracabilitat-agroalimentaria"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/agri-food-traceability"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/trazabilidad-agroalimentaria"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/educacion</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/educacion"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/educacio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/education"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/educacion"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/educacio</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/educacion"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/educacio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/education"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/educacion"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/en/education</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/educacion"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/educacio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/education"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/educacion"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/sistema-advantys</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/sistema-advantys"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/sistema-advantys"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/advantys-system"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/sistema-advantys"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/sistema-advantys</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/sistema-advantys"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/sistema-advantys"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/advantys-system"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/sistema-advantys"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/en/advantys-system</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/sistema-advantys"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/sistema-advantys"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/advantys-system"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/sistema-advantys"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/curso-ia-empresas</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/curso-ia-empresas"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/curs-ia-empreses"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/free-ai-course"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/curso-ia-empresas"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/curs-ia-empreses</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/curso-ia-empresas"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/curs-ia-empreses"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/free-ai-course"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/curso-ia-empresas"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/en/free-ai-course</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/curso-ia-empresas"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/curs-ia-empreses"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/free-ai-course"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/curso-ia-empresas"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/soluciones-ia</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/soluciones-ia"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/solucions-ia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/ai-solutions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/soluciones-ia"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/solucions-ia</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/soluciones-ia"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/solucions-ia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/ai-solutions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/soluciones-ia"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/en/ai-solutions</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/soluciones-ia"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/solucions-ia"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/ai-solutions"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/soluciones-ia"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/quienes-somos</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/quienes-somos"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/qui-som"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/about-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/quienes-somos"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/qui-som</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/quienes-somos"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/qui-som"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/about-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/quienes-somos"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/en/about-us</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/quienes-somos"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/qui-som"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/about-us"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/quienes-somos"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/inversores</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/inversores"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/inversors"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/investors"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/inversores"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/inversors</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/inversores"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/inversors"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/investors"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/inversores"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/en/investors</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/inversores"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/inversors"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/investors"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/inversores"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/partners</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/partners"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/partners"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/partners"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/partners"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/partners</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/partners"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/partners"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/partners"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/partners"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/en/partners</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/partners"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/partners"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/partners"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/partners"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/solicitud</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/solicitud"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/sol-licitud"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/solicitud"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/sol-licitud</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/solicitud"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/sol-licitud"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/solicitud"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/en/contact</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/solicitud"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/sol-licitud"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/solicitud"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/aviso-legal</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/aviso-legal"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/avis-legal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/aviso-legal"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/avis-legal</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.1</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/aviso-legal"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/avis-legal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/aviso-legal"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/en/legal-notice</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.1</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/aviso-legal"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/avis-legal"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/legal-notice"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/aviso-legal"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/politica-privacidad</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/politica-privacidad"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/politica-privacitat"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/politica-privacidad"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/politica-privacitat</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.1</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/politica-privacidad"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/politica-privacitat"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/politica-privacidad"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/en/privacy-policy</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.1</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/politica-privacidad"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/politica-privacitat"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/politica-privacidad"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/politica-cookies</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/politica-cookies"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/politica-galetes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/cookie-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/politica-cookies"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/ca/politica-galetes</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.1</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/politica-cookies"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/politica-galetes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/cookie-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/politica-cookies"/>
+  </url>
+  <url>
+    <loc>https://advantys.ai/en/cookie-policy</loc>
+    <lastmod>2026-11-03</lastmod>
+    <priority>0.1</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://advantys.ai/politica-cookies"/>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/politica-galetes"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://advantys.ai/en/cookie-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://advantys.ai/politica-cookies"/>
   </url>
 </urlset>
