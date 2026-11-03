@@ -25,7 +25,7 @@
     if (hero && y > hero.offsetHeight * 1.2) return;
     capas.forEach((capa) => {
       const f = parseFloat(capa.dataset.advParallax) || 0;
-      capa.style.transform = `translate3d(${(mx * f * 40).toFixed(1)}px, ${(y * f + my * f * 24).toFixed(1)}px, 0)`;
+      capa.style.transform = `translate3d(${(mx * f * 70).toFixed(1)}px, ${(y * f + my * f * 24).toFixed(1)}px, 0)`;
     });
   }
   function pedir() {

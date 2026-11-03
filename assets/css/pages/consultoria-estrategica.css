@@ -862,3 +862,15 @@
   font-size: 1rem;
   max-width: 60ch;
 }
+
+/* Formulario de inscripción del curso (página /curso-ia-empresas) */
+.adv-curso-form { max-width: 640px; margin: 0 auto; text-align: left; }
+.adv-curso-form .adv-form__group + .adv-form__check-label { margin-top: 0.75rem; }
+.adv-curso-form .adv-form__check-label + .adv-form__check-label { margin-top: 0.75rem; }
+.adv-curso-form .adv-form__check-label a { color: var(--color-coral); }
+.adv-curso-form__opcional { color: var(--text-muted, #8a909e); font-weight: 400; }
+.adv-curso-form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.adv-curso-form .adv-contact-submit { width: 100%; margin-top: 1.25rem; }
+.adv-curso-ok { text-align: center; padding: 1rem 0; }
+.adv-curso-ok h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--text-main); }
+.adv-curso-ok p { color: var(--text-secondary); }
