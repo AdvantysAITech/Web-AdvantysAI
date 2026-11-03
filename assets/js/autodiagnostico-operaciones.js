@@ -89,8 +89,8 @@
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   // PDF del autodiagnóstico en el idioma de la página
   const PDF = ({
-    ca: '/assets/descargas/autodiagnostic-operacions-ca-v1.pdf',
-    en: '/assets/descargas/operations-self-assessment-en-v1.pdf',
+    ca: 'https://assets.cdn.filesafe.space/tT0GAvtx8iOs64cDrzg2/media/6aea5b9ee322309abfa095dd.pdf',
+    en: 'https://assets.cdn.filesafe.space/tT0GAvtx8iOs64cDrzg2/media/6aea5b9d3fe7ef7efa4a3790.pdf',
   })[window.advLang] || 'https://assets.cdn.filesafe.space/tT0GAvtx8iOs64cDrzg2/media/6ae763cb36aa4a07e8be18b1.pdf';
 
   const err = (c, t) => {
