@@ -1,18 +1,18 @@
 // ===========================================================
-// LEAD — Contrato único web → GHL (webhook entrante)
+// LEAD — Contrato único web → Sistema Advantys (webhook entrante)
 //
 // Todos los formularios de la web (solicitud, CTA de spin-off,
 // autodiagnóstico ISO 42001 y partners) construyen su envío con
-// window.advLead.construir(), de modo que el webhook de GHL recibe
+// window.advLead.construir(), de modo que el webhook de Sistema Advantys recibe
 // SIEMPRE las mismas claves y con los valores EXACTOS de las opciones
-// de los campos de GHL (mayúsculas y tildes incluidas). GHL descarta
+// de los campos de Sistema Advantys (mayúsculas y tildes incluidas). Sistema Advantys descarta
 // en silencio cualquier valor que no coincida con una opción.
 //
-// Si cambian las opciones en GHL, este archivo es el único sitio a tocar.
+// Si cambian las opciones en Sistema Advantys, este archivo es el único sitio a tocar.
 // Debe cargarse DESPUÉS de config.js y ANTES del script del formulario.
 // ===========================================================
 (() => {
-  // --- Opciones exactas de GHL ---------------------------------------------
+  // --- Opciones exactas de Sistema Advantys ---------------------------------------------
   const LINEA = {
     consultoria: 'Consultoría Tecnológica',
     jv: 'Joint Venture Builder',
@@ -30,8 +30,8 @@
     inversor: 'Inversor',
   };
 
-  // Opción del campo «Spin-off» de GHL (clave interna → etiqueta GHL)
-  const SPINOFF_GHL = {
+  // Opción del campo «Spin-off» de Sistema Advantys (clave interna → etiqueta Sistema Advantys)
+  const SPINOFF_CRM = {
     educacion: 'Educación',
     hospitality: 'Hospitality',
     residencia: 'Residencia',
@@ -46,13 +46,13 @@
     agro: 'Advantys AI Trazabilidad Agroalimentaria',
   };
 
-  // Acepta la clave interna, la etiqueta GHL o valores antiguos de enlaces
+  // Acepta la clave interna, la etiqueta Sistema Advantys o valores antiguos de enlaces
   // ya publicados (?spinoff=Agro, ?spinoff=Educación...).
   function claveSpinoff(valor) {
     if (!valor) return '';
     const v = String(valor).trim().toLowerCase()
       .normalize('NFD').replace(/[̀-ͯ]/g, '');
-    return SPINOFF_GHL[v] ? v : '';
+    return SPINOFF_CRM[v] ? v : '';
   }
 
   // --- Intereses (misma lógica que el árbol T1 de la App Comercial) --------
@@ -65,6 +65,7 @@
     },
     consultoria: {
       texto: 'Jornada de consultoría estratégica',
+      etiqueta: 'Diagnóstico de Operaciones',
       linea: LINEA.consultoria, servicio: SERVICIO.sistema, ruta: 'RUTA_1',
       oportunidad: true,
     },
@@ -136,7 +137,7 @@
       ciudad: d.ciudad || '',
       pais: d.pais || '',
       pais_nombre: d.pais_nombre || '',
-      idioma_preferido: 'Español',
+      idioma_preferido: ({ ca: 'Català', en: 'English' })[window.advLang] || 'Español',
       fuente_captacion: 'Web',
       fuente: `Web Advantys — ${d.formulario || 'formulario'}${d.origen ? ` (${d.origen})` : ''}`,
 
@@ -147,7 +148,7 @@
       servicio: i.servicio || '',
       ruta: i.ruta || '',
       rol_jv: i.rol || '',
-      spinoff: spin ? SPINOFF_GHL[spin] : '',
+      spinoff: spin ? SPINOFF_CRM[spin] : '',
       spinoff_nombre: spin ? SPINOFF_NOMBRE[spin] : '',
       mensaje: d.mensaje || '',
 
@@ -171,7 +172,7 @@
   }
 
   window.advLead = {
-    INTERESES, SPINOFF_GHL, SPINOFF_NOMBRE,
+    INTERESES, SPINOFF_CRM, SPINOFF_NOMBRE,
     claveSpinoff, separarNombre, nuevoUuid, construir, enviar,
   };
 })();

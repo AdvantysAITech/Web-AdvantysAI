@@ -1,6 +1,7 @@
 (() => {
+  const advT = window.advT || ((x) => x);
   // El envío lo construye window.advLead (assets/js/lead.js): mismas claves y
-  // mismas etiquetas de GHL que el resto de formularios de la web.
+  // mismas etiquetas de Sistema Advantys que el resto de formularios de la web.
   const forms = document.querySelectorAll('.adv-vertical-cta__form');
   if (!forms.length || !window.advLead) return;
   const L = window.advLead;
@@ -35,29 +36,29 @@
       let valid = true;
 
       if (field('name').value.trim().length < 3) {
-        setError('name', 'Introduce tu nombre completo.');
+        setError('name', advT('Introduce tu nombre completo.'));
         valid = false;
       }
 
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(field('email').value.trim())) {
-        setError('email', 'Introduce un email válido.');
+        setError('email', advT('Introduce un email válido.'));
         valid = false;
       }
 
       const phoneDigits = field('phone').value.replace(/[^\d]/g, '');
       if (phoneDigits.length < 6) {
-        setError('phone', 'Introduce un teléfono válido.');
+        setError('phone', advT('Introduce un teléfono válido.'));
         valid = false;
       }
 
       if (field('company').value.trim().length < 2) {
-        setError('company', 'Introduce el nombre de tu empresa.');
+        setError('company', advT('Introduce el nombre de tu empresa.'));
         valid = false;
       }
 
       if (field('location').value.trim().length < 2) {
-        setError('location', 'Introduce ciudad y país.');
+        setError('location', advT('Introduce ciudad y país.'));
         valid = false;
       }
 
@@ -110,9 +111,9 @@
           spinoff: payload.spinoff || '(ninguna)',
           rol_jv: payload.rol_jv || '(ninguno)',
         });
-        showFeedback('success', '¡Gracias! Hemos recibido tu solicitud. Te contactaremos en breve.');
+        showFeedback('success', advT('¡Gracias! Hemos recibido tu solicitud. Te contactaremos en breve.'));
       } catch (err) {
-        showFeedback('error', 'No hemos podido enviar el formulario. Inténtalo de nuevo o escríbenos directamente.');
+        showFeedback('error', advT('No hemos podido enviar el formulario. Inténtalo de nuevo o escríbenos directamente.'));
       } finally {
         setLoading(false);
       }

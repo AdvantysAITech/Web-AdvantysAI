@@ -328,3 +328,21 @@ body.no-scroll { overflow: hidden; }
   color: var(--color-coral);
   transform: translateX(4px);
 }
+/* Botón principal del menú: pedir el diagnóstico */
+.adv-btn-cta {
+  color: #fff;
+  background: var(--gradient-brand);
+  border-color: transparent;
+  box-shadow: 0 6px 20px rgba(255, 57, 53, 0.25);
+}
+.adv-btn-cta:hover { filter: brightness(1.08); box-shadow: 0 8px 26px rgba(255, 57, 53, 0.35); }
+.adv-btn-cta svg { width: 1rem; height: 1rem; }
+
+/* Selector de idioma ES · CA · EN */
+.adv-lang { display: inline-flex; align-items: center; gap: .15rem; margin-right: .75rem; padding: .2rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.08); font-size: .75rem; font-weight: 600; letter-spacing: .04em; }
+.adv-lang a, .adv-lang span[aria-current] { padding: .25rem .5rem; border-radius: 999px; color: var(--text-secondary); line-height: 1; }
+.adv-lang a:hover { color: var(--text-main); }
+.adv-lang span[aria-current] { background: rgba(255,255,255,0.08); color: var(--text-main); }
+.adv-lang--movil { margin: 0 0 1rem; align-self: flex-start; font-size: .85rem; }
+.adv-mobile-menu .adv-lang--movil a, .adv-mobile-menu .adv-lang--movil span[aria-current] { padding: .4rem .75rem; }
+@media (max-width: 1023px) { .adv-nav-island > .adv-lang { display: none; } }

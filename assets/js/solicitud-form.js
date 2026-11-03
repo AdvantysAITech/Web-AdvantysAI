@@ -5,7 +5,7 @@
 // Paso 2: solo se cargan los campos que aplican a esa opción.
 // El envío lo construye window.advLead (assets/js/lead.js), que
 // traduce el interés a línea de negocio, servicio, ruta, rol y
-// spin-off con las etiquetas exactas de GHL.
+// spin-off con las etiquetas exactas de Sistema Advantys.
 //
 // Parámetros de URL admitidos:
 //   ?interes=consultoria|sistema|proyecto_ia|solucion_sectorial|invertir|iso42001|partners|otro
@@ -14,6 +14,7 @@
 //   ?origen=<página del CTA>
 // ===========================================================
 (() => {
+  const advT = window.advT || ((x) => x);
   const form = document.getElementById('adv-solicitud-form');
   if (!form || !window.advLead) return;
 
@@ -33,13 +34,13 @@
 
   // Textos que cambian según el interés elegido
   const TEXTOS = {
-    sistema:            { titulo: 'Automatiza tu negocio con el Sistema Advantys', sub: 'Déjanos tus datos y te llamamos para entender tus procesos y proponerte por dónde empezar.', mensaje: '¿Qué procesos te gustaría automatizar? (opcional)' },
-    consultoria:        { titulo: 'Solicitar el Diagnóstico de Operaciones', sub: 'Te llamamos, comprobamos que el diagnóstico encaja con tu empresa y te enviamos el contrato para firmar.', mensaje: '¿Dónde crees que se te escapa más dinero? Almacén, rutas, administración... (opcional)' },
-    proyecto_ia:        { titulo: 'Cuéntanos tu proyecto de IA', sub: 'Revisamos tu caso y te contactamos en menos de 24 h.', mensaje: 'Describe el proceso que quieres resolver con IA (opcional)' },
-    solucion_sectorial: { titulo: 'Solicitar información de una solución sectorial', sub: 'Déjanos tus datos y agendamos una demo personalizada de la solución.', mensaje: '¿Qué te gustaría ver en la demo? (opcional)' },
-    invertir:           { titulo: 'Quiero invertir en una spin-off de Advantys', sub: 'Déjanos tus datos y te enviamos el business case y las condiciones de participación.', mensaje: '¿Algo que debamos saber sobre tu perfil inversor? (opcional)' },
-    iso42001:           { titulo: 'Implantar la ISO/IEC 42001', sub: 'Te contactamos para valorar tu punto de partida y el calendario hacia la certificación.', mensaje: '¿Usáis o desarrolláis sistemas de IA? Cuéntanos brevemente (opcional)' },
-    otro:               { titulo: 'Hablemos de tu proyecto', sub: 'Déjanos tus datos y nuestro equipo se pondrá en contacto contigo en menos de 24h.', mensaje: 'Cuéntanos brevemente qué necesitas (opcional)' },
+    sistema:            { titulo: advT('Automatiza tu negocio con el Sistema Advantys'), sub: advT('Déjanos tus datos y te llamamos para entender tus procesos y proponerte por dónde empezar.'), mensaje: advT('¿Qué procesos te gustaría automatizar? (opcional)') },
+    consultoria:        { titulo: advT('Solicitar el Diagnóstico de Operaciones'), sub: advT('Te llamamos, comprobamos que el diagnóstico encaja con tu empresa y te enviamos el contrato para firmar.'), mensaje: advT('¿Dónde crees que se te escapa más dinero? Almacén, rutas, administración... (opcional)') },
+    proyecto_ia:        { titulo: advT('Cuéntanos tu proyecto de IA'), sub: advT('Revisamos tu caso y te contactamos en menos de 24 h.'), mensaje: advT('Describe el proceso que quieres resolver con IA (opcional)') },
+    solucion_sectorial: { titulo: advT('Solicitar información de una solución sectorial'), sub: advT('Déjanos tus datos y agendamos una demo personalizada de la solución.'), mensaje: advT('¿Qué te gustaría ver en la demo? (opcional)') },
+    invertir:           { titulo: advT('Quiero invertir en una spin-off de Advantys'), sub: advT('Déjanos tus datos y te enviamos el business case y las condiciones de participación.'), mensaje: advT('¿Algo que debamos saber sobre tu perfil inversor? (opcional)') },
+    iso42001:           { titulo: advT('Implantar la ISO/IEC 42001'), sub: advT('Te contactamos para valorar tu punto de partida y el calendario hacia la certificación.'), mensaje: advT('¿Usáis o desarrolláis sistemas de IA? Cuéntanos brevemente (opcional)') },
+    otro:               { titulo: advT('Hablemos de tu proyecto'), sub: advT('Déjanos tus datos y nuestro equipo se pondrá en contacto contigo en menos de 24h.'), mensaje: advT('Cuéntanos brevemente qué necesitas (opcional)') },
   };
 
   const $ = (id) => document.getElementById(id);
@@ -76,7 +77,7 @@
   const SUB_INICIAL = subtitleEl.textContent.trim();
 
   // --- Antispam -----------------------------------------------------------
-  // El webhook de GHL es público y cada ejecución cuesta dinero, así que
+  // El webhook de Sistema Advantys es público y cada ejecución cuesta dinero, así que
   // filtramos en cliente antes de gastar una llamada.
   const cargadoEn = Date.now();
   const MIN_SEGUNDOS = 3;
@@ -114,7 +115,7 @@
     label.innerHTML =
       `<input type="radio" name="interes" value="${clave}">` +
       `<i class="ph ${ICONOS[clave] || 'ph-circle'}" aria-hidden="true"></i>` +
-      `<span>${def.texto}</span>`;
+      `<span>${advT(def.etiqueta || def.texto)}</span>`;
     opcionesEl.appendChild(label);
   });
 
@@ -148,8 +149,8 @@
     if (clave === 'partners') {
       bloqueDatos.hidden = true;
       bloquePartners.hidden = false;
-      titleEl.textContent = 'Programa de partners';
-      subtitleEl.textContent = 'Colabora con Advantys como integrador, consultora o prescriptor.';
+      titleEl.textContent = advT('Programa de partners');
+      subtitleEl.textContent = advT('Colabora con Advantys como integrador, consultora o prescriptor.');
       contextEl.hidden = true;
       return;
     }
@@ -162,13 +163,13 @@
     spinoffSelect.required = !!def.requiereSpinoff;
     if (!def.requiereSpinoff) spinoffSelect.value = '';
     spinoffLabel.textContent = clave === 'invertir'
-      ? '¿En qué spin-off te interesa invertir?'
-      : '¿Qué solución te interesa?';
+      ? advT('¿En qué spin-off te interesa invertir?')
+      : advT('¿Qué solución te interesa?');
 
     // Empresa: opcional para inversores (pueden ser particulares)
     const empresaOpcional = clave === 'invertir';
     fields.company.required = !empresaOpcional;
-    companyLabel.textContent = empresaOpcional ? 'Empresa (opcional)' : 'Empresa';
+    companyLabel.textContent = empresaOpcional ? advT('Empresa (opcional)') : advT('Empresa');
 
     const t = TEXTOS[clave] || TEXTOS.otro;
     messageLabel.textContent = t.mensaje;
@@ -187,15 +188,15 @@
     const spin = spinoffSelect.value;
     const nombreSpin = spin ? L.SPINOFF_NOMBRE[spin] : '';
 
-    if (clave === 'invertir' && nombreSpin) titleEl.textContent = `Quiero invertir en ${nombreSpin}`;
-    else if (clave === 'solucion_sectorial' && nombreSpin) titleEl.textContent = `Solicitar información — ${nombreSpin}`;
+    if (clave === 'invertir' && nombreSpin) titleEl.textContent = `${advT('Quiero invertir en')} ${nombreSpin}`;
+    else if (clave === 'solucion_sectorial' && nombreSpin) titleEl.textContent = `${advT('Solicitar información')} — ${nombreSpin}`;
     else titleEl.textContent = t.titulo;
     subtitleEl.textContent = t.sub;
 
     contextEl.hidden = false;
     contextChip.textContent = nombreSpin
-      ? `${L.INTERESES[clave].texto} · ${nombreSpin}`
-      : L.INTERESES[clave].texto;
+      ? `${advT(L.INTERESES[clave].etiqueta || L.INTERESES[clave].texto)} · ${nombreSpin}`
+      : advT(L.INTERESES[clave].etiqueta || L.INTERESES[clave].texto);
   }
 
   opcionesEl.addEventListener('change', aplicarInteres);
@@ -230,20 +231,17 @@
 
     if (!def) {
       interesBox.classList.add('adv-solicitud-interes--error');
-      setError('interes', 'Elige una opción para continuar.');
+      setError('interes', advT('Elige una opción para continuar.'));
       return false;
     }
 
     if (def.requiereSpinoff && !spinoffSelect.value) {
-      setError('spinoff', 'Selecciona una opción.', spinoffSelect); valid = false;
+      setError('spinoff', advT('Selecciona una opción.'), spinoffSelect); valid = false;
     }
-    if (fields.firstname.value.trim().length < 2) { setError('firstname', 'Introduce tu nombre.', fields.firstname); valid = false; }
-    if (fields.lastname.value.trim().length < 2) { setError('lastname', 'Introduce tus apellidos.', fields.lastname); valid = false; }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email.value.trim())) { setError('email', 'Introduce un email válido.', fields.email); valid = false; }
-    if (fields.phone.value.replace(/[^\d]/g, '').length < 6) { setError('phone', 'Introduce un teléfono válido.', fields.phone); valid = false; }
-    if (fields.company.required && fields.company.value.trim().length < 2) { setError('company', 'Introduce el nombre de tu empresa.', fields.company); valid = false; }
-    if (fields.city.value.trim().length < 2) { setError('city', 'Introduce tu ciudad.', fields.city); valid = false; }
-    if (!fields.country.value) { setError('country', 'Selecciona tu país.', fields.country); valid = false; }
+    if (fields.firstname.value.trim().length < 2) { setError('firstname', advT('Introduce tu nombre y apellidos.'), fields.firstname); valid = false; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email.value.trim())) { setError('email', advT('Introduce un email válido.'), fields.email); valid = false; }
+    if (fields.phone.value.replace(/[^\d]/g, '').length < 6) { setError('phone', advT('Introduce un teléfono válido.'), fields.phone); valid = false; }
+    if (fields.company.required && fields.company.value.trim().length < 2) { setError('company', advT('Introduce el nombre de tu empresa.'), fields.company); valid = false; }
 
     return valid;
   }
@@ -272,15 +270,15 @@
     // Honeypot: si viene relleno es un bot. Fingimos éxito y no enviamos.
     if (honeypot && honeypot.value.trim() !== '') {
       reiniciar();
-      showFeedback('success', '¡Gracias! Hemos recibido tu solicitud. Te contactaremos en breve.');
+      showFeedback('success', advT('¡Gracias! Hemos recibido tu solicitud. Te contactaremos en breve.'));
       return;
     }
     if ((Date.now() - cargadoEn) < MIN_SEGUNDOS * 1000) {
-      showFeedback('error', 'Revisa los datos e inténtalo de nuevo.');
+      showFeedback('error', advT('Revisa los datos e inténtalo de nuevo.'));
       return;
     }
     if (enviosRealizados >= MAX_ENVIOS) {
-      showFeedback('error', 'Ya hemos recibido tu solicitud. Nuestro equipo se pondrá en contacto contigo.');
+      showFeedback('error', advT('Ya hemos recibido tu solicitud. Nuestro equipo se pondrá en contacto contigo.'));
       return;
     }
 
@@ -290,14 +288,14 @@
       origen,
       interes: interesActual(),
       spinoff: spinoffSelect.value,
-      nombre: fields.firstname.value.trim(),
-      apellidos: fields.lastname.value.trim(),
+      nombre: L.separarNombre(fields.firstname.value).nombre,
+      apellidos: L.separarNombre(fields.firstname.value).apellidos,
       email: fields.email.value.trim(),
       telefono: fields.phone.value.trim(),
       empresa: fields.company.value.trim(),
       ciudad: fields.city.value.trim(),
       pais: fields.country.value,
-      pais_nombre: fields.country.options[fields.country.selectedIndex].textContent.trim(),
+      pais_nombre: fields.country.value ? fields.country.options[fields.country.selectedIndex].textContent.trim() : '',
       mensaje: fields.message ? fields.message.value.trim() : '',
     });
 
@@ -317,9 +315,9 @@
         origen: origen || '(directo)',
       });
       reiniciar();
-      showFeedback('success', '¡Gracias! Hemos recibido tu solicitud. Te contactaremos en menos de 24 h.');
+      showFeedback('success', advT('¡Gracias! Hemos recibido tu solicitud. Te contactaremos en menos de 24 h.'));
     } catch (err) {
-      showFeedback('error', 'No hemos podido enviar el formulario. Inténtalo de nuevo en unos minutos.');
+      showFeedback('error', advT('No hemos podido enviar el formulario. Inténtalo de nuevo en unos minutos.'));
     } finally {
       setLoading(false);
     }

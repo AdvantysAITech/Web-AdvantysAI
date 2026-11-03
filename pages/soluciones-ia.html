@@ -12,19 +12,27 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link href="/assets/css/main.css?v=20261103g" rel="stylesheet">
   <link href="/assets/css/pages/soluciones-ia.css?v=20261103g" rel="stylesheet">
+  <link href="/assets/css/pages/soluciones-vertical.css?v=20261103g" rel="stylesheet">
+  <link href="/assets/css/pages/consultoria-estrategica.css?v=20261103g" rel="stylesheet">
   <meta name="description" content="Soluciones de IA por sector: transporte y logística, trazabilidad agroalimentaria y gobernanza de la IA en colegios. Todas empiezan por entender tu operación.">
   <link rel="canonical" href="https://advantys.ai/soluciones-ia">
+  <link rel="alternate" hreflang="es" href="https://advantys.ai/soluciones-ia">
+  <link rel="alternate" hreflang="ca" href="https://advantys.ai/ca/solucions-ia">
+  <link rel="alternate" hreflang="en" href="https://advantys.ai/en/ai-solutions">
+  <link rel="alternate" hreflang="x-default" href="https://advantys.ai/soluciones-ia">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Advantys AI">
   <meta property="og:locale" content="es_ES">
   <meta property="og:url" content="https://advantys.ai/soluciones-ia">
   <meta property="og:title" content="Soluciones de IA para transporte, agro y educación | Advantys AI">
   <meta property="og:description" content="Soluciones de IA por sector: transporte y logística, trazabilidad agroalimentaria y gobernanza de la IA en colegios. Todas empiezan por entender tu operación.">
-  <meta property="og:image" content="https://advantys.ai/assets/images/og-cover.png">
+  <meta property="og:image" content="https://advantys.ai/assets/images/og/soluciones-ia.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Soluciones de IA para transporte, agro y educación | Advantys AI">
   <meta name="twitter:description" content="Soluciones de IA por sector: transporte y logística, trazabilidad agroalimentaria y gobernanza de la IA en colegios. Todas empiezan por entender tu operación.">
-  <meta name="twitter:image" content="https://advantys.ai/assets/images/og-cover.png">
+  <meta name="twitter:image" content="https://advantys.ai/assets/images/og/soluciones-ia.jpg">
   <!-- JSON-LD Advantys -->
   <script type="application/ld+json">
 {
@@ -172,6 +180,7 @@
 }
   </script>
   <!-- /JSON-LD Advantys -->
+  <script src="/assets/js/i18n.js?v=20261103g"></script>
   <!-- Medicion Advantys -->
   <link href="/assets/css/components/cookies.css?v=20261103g" rel="stylesheet">
   <script src="/assets/js/analytics.js?v=20261103g"></script>
@@ -208,18 +217,26 @@
         </div>
       </div>
 
-      <a href="/diagnostico-operaciones" class="adv-link-island">Diagnóstico</a>
+      <div class="adv-dropdown">
+        <a href="/diagnostico-operaciones" class="adv-link-island">
+          Diagnóstico
+          <i class="ph ph-caret-down" style="font-size: 0.9em;"></i>
+        </a>
+        <div class="adv-dropdown-content">
+          <a href="/diagnostico-operaciones">Diagnóstico de Operaciones</a>
+          <a href="/autodiagnostico-operaciones">Autodiagnóstico gratis</a>
+        </div>
+      </div>
       <a href="/sistema-advantys" class="adv-link-island">Sistema Advantys</a>
       <a href="/partners" class="adv-link-island">Partners</a>
       <a href="/curso-ia-empresas" class="adv-link-island">Curso gratis</a>
     </nav>
  
+    <span class="adv-lang" aria-label="Idioma"><span aria-current="true">ES</span><a href="/ca/solucions-ia" hreflang="ca" lang="ca">CA</a><a href="/en/ai-solutions" hreflang="en" lang="en">EN</a></span>
     <div class="adv-cta-island">
-      <a href="https://plataforma-advantys-chi.vercel.app/" class="adv-btn-private">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.071 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path>
-        </svg>
-        Área privada
+      <a href="/solicitud?interes=consultoria&amp;origen=menu" class="adv-btn-private adv-btn-cta">
+        Pide tu diagnóstico
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
       </a>
     </div>
  
@@ -238,6 +255,7 @@
       </svg>
     </button>
     <nav class="adv-mobile-menu__links">
+      <span class="adv-lang adv-lang--movil" aria-label="Idioma"><span aria-current="true">ES</span><a href="/ca/solucions-ia" hreflang="ca" lang="ca">CA</a><a href="/en/ai-solutions" hreflang="en" lang="en">EN</a></span>
       <a href="/diagnostico-operaciones" class="adv-mobile-link">Diagnóstico de Operaciones</a>
       <a href="/transporte-logistica" class="adv-mobile-link">Transporte y logística</a>
       <a href="/trazabilidad-agroalimentaria" class="adv-mobile-link">Trazabilidad agroalimentaria</a>
@@ -245,7 +263,8 @@
       <a href="/sistema-advantys" class="adv-mobile-link">Sistema Advantys</a>
       <a href="/partners" class="adv-mobile-link">Partners</a>
       <a href="/curso-ia-empresas" class="adv-mobile-link">Curso gratis de IA</a>
-      <a href="https://plataforma-advantys-chi.vercel.app/" class="adv-mobile-link adv-mobile-link--cta">Área privada</a>
+      <a href="/autodiagnostico-operaciones" class="adv-mobile-link">Autodiagnóstico gratis</a>
+      <a href="/solicitud?interes=consultoria&amp;origen=menu" class="adv-mobile-link adv-mobile-link--cta">Pide tu diagnóstico</a>
     </nav>
   </div>
 </header>
@@ -387,6 +406,21 @@
       </div>
     </section>
 
+    <section class="adv-vertical-section container">
+      <div class="adv-vertical-section__header">
+        <span class="adv-diag-eyebrow">Por dónde empezar</span>
+        <h2 class="adv-vertical-section__title">Cada sector pierde dinero en sitios distintos</h2>
+        <p class="adv-vertical-section__lead">No hay una inteligencia artificial que sirva para todo. Por eso trabajamos en pocos sectores y conocemos sus problemas de cerca.</p>
+      </div>
+      <ul class="adv-vertical-list">
+        <li><span><strong><a href="/transporte-logistica">Transporte y logística</a>.</strong> El margen se escapa en la mercancía que no se encuentra, en las rutas y grupajes que se cuadran a mano y en los albaranes que se teclean dos veces. Ahí la IA ayuda a localizar palets con visión artificial, a proponer rutas y cargas con los pedidos del día y a leer la documentación sin volver a escribirla.</span></li>
+        <li><span><strong><a href="/trazabilidad-agroalimentaria">Agroalimentario</a>.</strong> Cooperativas y almacenes hortofrutícolas que liquidan al agricultor con una media del almacén y no pueden demostrar el origen de cada lote. La trazabilidad del árbol al palé conecta los sensores, la calibradora y la liquidación por calidad real.</span></li>
+        <li><span><strong><a href="/educacion">Educación</a>.</strong> Colegios privados y concertados que necesitan decidir, documentar y demostrar cómo se usa la IA en cada actividad, con niveles de uso, un contrato de uso entre centro, profesor y alumno y evidencias trazables.</span></li>
+      </ul>
+      <p class="adv-vertical-section__lead adv-vertical-section__lead--wide">En transporte y agro todo empieza por el <a href="/diagnostico-operaciones">Diagnóstico de Operaciones</a>: cuatro semanas, precio cerrado y un informe con lo que hay que hacer primero, cuánto cuesta y cuánto ahorra. Si quieres hacerte una idea antes, el <a href="/autodiagnostico-operaciones">autodiagnóstico gratis</a> te lleva diez minutos.</p>
+      <p class="adv-home-cta" style="text-align:center;margin-top:2rem"><a href="/solicitud?interes=consultoria&amp;origen=soluciones-ia" class="btn-glass-primary">Pide tu diagnóstico</a></p>
+    </section>
+
   </main>
 
   <footer class="footer-wrapper">
@@ -410,6 +444,7 @@
           <h3 class="footer-heading">Plataforma</h3>
           <nav class="footer-nav">
             <a href="/diagnostico-operaciones" class="footer-link">Diagnóstico de Operaciones</a>
+            <a href="/autodiagnostico-operaciones" class="footer-link">Autodiagnóstico gratis</a>
             <a href="/transporte-logistica" class="footer-link">Transporte y logística</a>
             <a href="/trazabilidad-agroalimentaria" class="footer-link">Trazabilidad agroalimentaria</a>
             <a href="/educacion" class="footer-link">Educación</a>
@@ -423,11 +458,13 @@
         <div class="footer-card">
           <h3 class="footer-heading">Empresa</h3>
           <nav class="footer-nav">
-            <span class="footer-link footer-link--disabled" aria-disabled="true" title="Próximamente">Noticias y blog <i class="ph ph-lock"></i></span>
+            <a href="/quienes-somos" class="footer-link">Quiénes somos</a>
+            <a href="/inversores" class="footer-link">Inversores</a>
             <a href="/aviso-legal" class="footer-link">Aviso legal</a>
             <a href="/politica-privacidad" class="footer-link">Política de privacidad</a>
-            <a href="/politica-cookies" class="footer-link">Política de Cookies</a>
+            <a href="/politica-cookies" class="footer-link">Política de cookies</a>
             <a href="#" class="footer-link" data-adv-preferencias-cookies>Preferencias de cookies</a>
+            <a href="https://plataforma-advantys-chi.vercel.app/" class="footer-link" rel="nofollow">Área privada</a>
           </nav>
         </div>
 

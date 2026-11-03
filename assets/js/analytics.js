@@ -76,3 +76,9 @@
     try { gtag('event', evento, parametros || {}); } catch (e) { /* silencioso */ }
   };
 })();
+
+// Clics en llamada y WhatsApp: <a data-adv-evento="llamada|whatsapp">
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('[data-adv-evento]');
+  if (a && window.advTrack) window.advTrack('contacto_' + a.getAttribute('data-adv-evento'), { pagina: location.pathname });
+});

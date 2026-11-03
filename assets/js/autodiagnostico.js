@@ -15,7 +15,7 @@
 
   // El envío al CRM lo hace window.advLead (assets/js/lead.js).
   // Se envía en tres momentos, siempre con el MISMO uuid y email, para que
-  // GHL actualice el mismo contacto en lugar de duplicarlo:
+  // Sistema Advantys actualice el mismo contacto en lugar de duplicarlo:
   //   1. 'datos'     → al validar el formulario inicial (el contacto entra
   //                    en el CRM aunque abandone el cuestionario).
   //   2. 'resultado' → al terminar el cuestionario (puntuación y áreas).

@@ -584,3 +584,9 @@
   line-height: 1.6;
   max-width: 380px;
 }
+/* Pasos del formulario en móvil: que quepan sin desbordar */
+@media (max-width: 480px) {
+  .adv-steps { gap: .4rem; }
+  .adv-steps__item { min-width: 0; flex: 1 1 0; }
+  .adv-steps__label { font-size: .72rem; white-space: normal; line-height: 1.2; }
+}

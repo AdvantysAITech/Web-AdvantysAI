@@ -1,4 +1,5 @@
 (() => {
+  const advT = window.advT || ((x) => x);
   const state = { tipo: null, cartera: null, modalidad: null };
 
   const RECOMMENDED = {
@@ -64,16 +65,16 @@
 
   function populateSummary() {
     document.getElementById('sum-tipo').textContent =
-      LABELS.tipo[state.tipo] ?? '—';
+      advT(LABELS.tipo[state.tipo] ?? '—');
     document.getElementById('sum-cartera').textContent =
-      LABELS.cartera[state.cartera] ?? '—';
+      advT(LABELS.cartera[state.cartera] ?? '—');
     document.getElementById('sum-modalidad').textContent =
-      LABELS.modalidad[state.modalidad] ?? '—';
-    document.getElementById('sum-tier-label').textContent = tierLabel(
+      advT(LABELS.modalidad[state.modalidad] ?? '—');
+    document.getElementById('sum-tier-label').textContent = advT(tierLabel(
       state.tipo,
       state.cartera,
       state.modalidad
-    );
+    ));
   }
 
   function applyRecommendation() {
@@ -206,7 +207,7 @@
       });
       success?.classList.remove('adv-form-panel--hidden');
     } catch (err) {
-      showFeedback('error', 'No hemos podido enviar tu solicitud. Inténtalo de nuevo o escríbenos a soporte@advantys.ai.');
+      showFeedback('error', advT('No hemos podido enviar tu solicitud. Inténtalo de nuevo o escríbenos a soporte@advantys.ai.'));
       submitBtn.disabled = false;
       submitBtn.classList.remove('is-loading');
     }

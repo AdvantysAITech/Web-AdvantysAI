@@ -3,12 +3,84 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/autodiagnostico-operaciones",
+      "destination": "/pages/autodiagnostico-operaciones.html"
+    },
+    {
       "source": "/aviso-legal",
       "destination": "/pages/aviso-legal.html"
     },
     {
       "source": "/blog",
       "destination": "/pages/blog.html"
+    },
+    {
+      "source": "/ca",
+      "destination": "/pages/ca/index.html"
+    },
+    {
+      "source": "/ca/",
+      "destination": "/pages/ca/index.html"
+    },
+    {
+      "source": "/ca/autodiagnostic-operacions",
+      "destination": "/pages/ca/autodiagnostic-operacions.html"
+    },
+    {
+      "source": "/ca/avis-legal",
+      "destination": "/pages/ca/avis-legal.html"
+    },
+    {
+      "source": "/ca/curs-ia-empreses",
+      "destination": "/pages/ca/curs-ia-empreses.html"
+    },
+    {
+      "source": "/ca/diagnostic-operacions",
+      "destination": "/pages/ca/diagnostic-operacions.html"
+    },
+    {
+      "source": "/ca/educacio",
+      "destination": "/pages/ca/educacio.html"
+    },
+    {
+      "source": "/ca/inversors",
+      "destination": "/pages/ca/inversors.html"
+    },
+    {
+      "source": "/ca/partners",
+      "destination": "/pages/ca/partners.html"
+    },
+    {
+      "source": "/ca/politica-galetes",
+      "destination": "/pages/ca/politica-galetes.html"
+    },
+    {
+      "source": "/ca/politica-privacitat",
+      "destination": "/pages/ca/politica-privacitat.html"
+    },
+    {
+      "source": "/ca/qui-som",
+      "destination": "/pages/ca/qui-som.html"
+    },
+    {
+      "source": "/ca/sistema-advantys",
+      "destination": "/pages/ca/sistema-advantys.html"
+    },
+    {
+      "source": "/ca/sol-licitud",
+      "destination": "/pages/ca/sol-licitud.html"
+    },
+    {
+      "source": "/ca/solucions-ia",
+      "destination": "/pages/ca/solucions-ia.html"
+    },
+    {
+      "source": "/ca/tracabilitat-agroalimentaria",
+      "destination": "/pages/ca/tracabilitat-agroalimentaria.html"
+    },
+    {
+      "source": "/ca/transport-logistica",
+      "destination": "/pages/ca/transport-logistica.html"
     },
     {
       "source": "/curso-ia-empresas",
@@ -23,8 +95,80 @@
       "destination": "/pages/soluciones/educacion.html"
     },
     {
+      "source": "/en",
+      "destination": "/pages/en/index.html"
+    },
+    {
+      "source": "/en/",
+      "destination": "/pages/en/index.html"
+    },
+    {
+      "source": "/en/about-us",
+      "destination": "/pages/en/about-us.html"
+    },
+    {
+      "source": "/en/advantys-system",
+      "destination": "/pages/en/advantys-system.html"
+    },
+    {
+      "source": "/en/agri-food-traceability",
+      "destination": "/pages/en/agri-food-traceability.html"
+    },
+    {
+      "source": "/en/ai-solutions",
+      "destination": "/pages/en/ai-solutions.html"
+    },
+    {
+      "source": "/en/contact",
+      "destination": "/pages/en/contact.html"
+    },
+    {
+      "source": "/en/cookie-policy",
+      "destination": "/pages/en/cookie-policy.html"
+    },
+    {
+      "source": "/en/education",
+      "destination": "/pages/en/education.html"
+    },
+    {
+      "source": "/en/free-ai-course",
+      "destination": "/pages/en/free-ai-course.html"
+    },
+    {
+      "source": "/en/investors",
+      "destination": "/pages/en/investors.html"
+    },
+    {
+      "source": "/en/legal-notice",
+      "destination": "/pages/en/legal-notice.html"
+    },
+    {
+      "source": "/en/operations-diagnostic",
+      "destination": "/pages/en/operations-diagnostic.html"
+    },
+    {
+      "source": "/en/operations-self-assessment",
+      "destination": "/pages/en/operations-self-assessment.html"
+    },
+    {
+      "source": "/en/partners",
+      "destination": "/pages/en/partners.html"
+    },
+    {
+      "source": "/en/privacy-policy",
+      "destination": "/pages/en/privacy-policy.html"
+    },
+    {
+      "source": "/en/transport-logistics",
+      "destination": "/pages/en/transport-logistics.html"
+    },
+    {
       "source": "/hospitality",
       "destination": "/pages/soluciones/hospitality.html"
+    },
+    {
+      "source": "/inversores",
+      "destination": "/pages/inversores.html"
     },
     {
       "source": "/partners",
@@ -37,6 +181,10 @@
     {
       "source": "/politica-privacidad",
       "destination": "/pages/politica-privacidad.html"
+    },
+    {
+      "source": "/quienes-somos",
+      "destination": "/pages/quienes-somos.html"
     },
     {
       "source": "/residencia-fiscal",
@@ -187,6 +335,181 @@
     {
       "source": "/pages/curso-ia-empresas.html",
       "destination": "/curso-ia-empresas",
+      "permanent": true
+    },
+    {
+      "source": "/pages/autodiagnostico-operaciones.html",
+      "destination": "/autodiagnostico-operaciones",
+      "permanent": true
+    },
+    {
+      "source": "/pages/quienes-somos.html",
+      "destination": "/quienes-somos",
+      "permanent": true
+    },
+    {
+      "source": "/pages/inversores.html",
+      "destination": "/inversores",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/index.html",
+      "destination": "/ca/",
+      "permanent": true
+    },
+    {
+      "source": "/pages/en/index.html",
+      "destination": "/en/",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/diagnostic-operacions.html",
+      "destination": "/ca/diagnostic-operacions",
+      "permanent": true
+    },
+    {
+      "source": "/pages/en/operations-diagnostic.html",
+      "destination": "/en/operations-diagnostic",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/autodiagnostic-operacions.html",
+      "destination": "/ca/autodiagnostic-operacions",
+      "permanent": true
+    },
+    {
+      "source": "/pages/en/operations-self-assessment.html",
+      "destination": "/en/operations-self-assessment",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/transport-logistica.html",
+      "destination": "/ca/transport-logistica",
+      "permanent": true
+    },
+    {
+      "source": "/pages/en/transport-logistics.html",
+      "destination": "/en/transport-logistics",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/tracabilitat-agroalimentaria.html",
+      "destination": "/ca/tracabilitat-agroalimentaria",
+      "permanent": true
+    },
+    {
+      "source": "/pages/en/agri-food-traceability.html",
+      "destination": "/en/agri-food-traceability",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/educacio.html",
+      "destination": "/ca/educacio",
+      "permanent": true
+    },
+    {
+      "source": "/pages/en/education.html",
+      "destination": "/en/education",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/sistema-advantys.html",
+      "destination": "/ca/sistema-advantys",
+      "permanent": true
+    },
+    {
+      "source": "/pages/en/advantys-system.html",
+      "destination": "/en/advantys-system",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/curs-ia-empreses.html",
+      "destination": "/ca/curs-ia-empreses",
+      "permanent": true
+    },
+    {
+      "source": "/pages/en/free-ai-course.html",
+      "destination": "/en/free-ai-course",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/solucions-ia.html",
+      "destination": "/ca/solucions-ia",
+      "permanent": true
+    },
+    {
+      "source": "/pages/en/ai-solutions.html",
+      "destination": "/en/ai-solutions",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/qui-som.html",
+      "destination": "/ca/qui-som",
+      "permanent": true
+    },
+    {
+      "source": "/pages/en/about-us.html",
+      "destination": "/en/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/inversors.html",
+      "destination": "/ca/inversors",
+      "permanent": true
+    },
+    {
+      "source": "/pages/en/investors.html",
+      "destination": "/en/investors",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/partners.html",
+      "destination": "/ca/partners",
+      "permanent": true
+    },
+    {
+      "source": "/pages/en/partners.html",
+      "destination": "/en/partners",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/sol-licitud.html",
+      "destination": "/ca/sol-licitud",
+      "permanent": true
+    },
+    {
+      "source": "/pages/en/contact.html",
+      "destination": "/en/contact",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/avis-legal.html",
+      "destination": "/ca/avis-legal",
+      "permanent": true
+    },
+    {
+      "source": "/pages/en/legal-notice.html",
+      "destination": "/en/legal-notice",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/politica-privacitat.html",
+      "destination": "/ca/politica-privacitat",
+      "permanent": true
+    },
+    {
+      "source": "/pages/en/privacy-policy.html",
+      "destination": "/en/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/pages/ca/politica-galetes.html",
+      "destination": "/ca/politica-galetes",
+      "permanent": true
+    },
+    {
+      "source": "/pages/en/cookie-policy.html",
+      "destination": "/en/cookie-policy",
       "permanent": true
     }
   ],

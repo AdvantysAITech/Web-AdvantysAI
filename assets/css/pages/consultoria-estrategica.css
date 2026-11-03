@@ -874,3 +874,77 @@
 .adv-curso-ok { text-align: center; padding: 1rem 0; }
 .adv-curso-ok h3 { font-size: 1.4rem; margin-bottom: 0.5rem; color: var(--text-main); }
 .adv-curso-ok p { color: var(--text-secondary); }
+
+/* =========================================
+   AUTODIAGNÓSTICO DE OPERACIONES (/autodiagnostico-operaciones)
+   ========================================= */
+.adv-ado { max-width: 860px; margin: 0 auto; }
+.adv-ado-progress { position: sticky; top: 88px; z-index: 5; height: 4px; border-radius: 4px; background: rgba(255,255,255,0.06); overflow: hidden; }
+.adv-ado-progress span { display: block; height: 100%; width: 0; background: var(--gradient-brand); transition: width .35s ease; }
+.adv-ado-count { margin: .75rem 0 2rem; font-size: .85rem; color: var(--text-secondary); text-align: right; }
+.adv-ado-block { margin-bottom: 2.5rem; }
+.adv-ado-block__head { display: flex; align-items: center; gap: .75rem; margin-bottom: 1rem; }
+.adv-ado-block__head i { font-size: 22px; color: var(--color-coral); }
+.adv-ado-block__head h3 { font-size: 1.15rem; color: var(--text-main); }
+.adv-ado-q { border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 1.1rem 1.25rem; margin: 0 0 .75rem; background: rgba(255,255,255,0.02); transition: border-color .2s; }
+.adv-ado-q:has(input:checked) { border-color: rgba(255,107,67,0.35); }
+.adv-ado-q legend { display: flex; gap: .75rem; padding: 0; margin-bottom: .9rem; color: var(--text-main); line-height: 1.5; float: left; width: 100%; }
+.adv-ado-q__n { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .8rem; color: var(--color-coral); padding-top: .15rem; }
+.adv-ado-opts { clear: both; display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; }
+.adv-ado-opt { position: relative; cursor: pointer; }
+.adv-ado-opt input { position: absolute; opacity: 0; inset: 0; }
+.adv-ado-opt span { display: block; text-align: center; padding: .6rem .5rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); font-size: .9rem; transition: all .2s; }
+.adv-ado-opt:hover span { border-color: rgba(255,107,67,0.4); color: var(--text-main); }
+.adv-ado-opt input:checked + span { background: var(--gradient-brand); color: #fff; border-color: transparent; }
+.adv-ado-opt input:focus-visible + span { outline: 2px solid var(--color-coral); outline-offset: 2px; }
+.adv-ado-submit { width: 100%; max-width: 420px; margin: 1rem auto 0; display: flex; }
+.adv-ado-submit:disabled { opacity: .45; cursor: not-allowed; }
+
+.adv-ado-result { display: grid; grid-template-columns: 220px 1fr; gap: 2rem; align-items: center; max-width: 900px; margin: 0 auto 2.5rem; }
+.adv-ado-score { text-align: center; padding: 1.75rem 1rem; border-radius: 20px; border: 1px solid rgba(255,107,67,0.35); background: radial-gradient(circle at 50% 0%, rgba(255,107,67,0.15), transparent 70%); }
+.adv-ado-score__label { display: block; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-secondary); }
+.adv-ado-score strong { font-family: 'Space Grotesk', sans-serif; font-size: 4rem; line-height: 1; background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.adv-ado-score small { font-size: 1.4rem; }
+.adv-ado-band h2 { font-size: clamp(1.4rem, 2.6vw, 2rem); margin: .4rem 0 .6rem; color: var(--text-main); }
+.adv-ado-band p { color: var(--text-secondary); line-height: 1.6; }
+.adv-ado-areas { max-width: 900px; margin: 0 auto 4rem; display: grid; gap: .8rem; }
+.adv-ado-area { display: grid; grid-template-columns: 200px 1fr 48px; gap: 1rem; align-items: center; }
+.adv-ado-area__name { color: var(--text-secondary); font-size: .95rem; }
+.adv-ado-area__track { height: 8px; border-radius: 8px; background: rgba(255,255,255,0.06); overflow: hidden; }
+.adv-ado-area__fill { display: block; height: 100%; width: 0; background: rgba(255,107,67,0.55); border-radius: 8px; transition: width .8s ease; }
+.adv-ado-area--peor .adv-ado-area__fill { background: var(--gradient-brand); }
+.adv-ado-area--peor .adv-ado-area__name { color: var(--text-main); font-weight: 600; }
+.adv-ado-area__val { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: .85rem; color: var(--text-secondary); text-align: right; }
+.adv-ado-calc { max-width: 900px; margin: 0 auto 4rem; }
+.adv-ado-calc__grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: .75rem; }
+.adv-ado-calc__result { margin-top: 1.5rem; font-size: 1.25rem; color: var(--text-main); text-align: center; }
+.adv-ado-calc__result strong { font-family: 'Space Grotesk', sans-serif; font-size: 2rem; color: var(--color-coral); }
+.adv-ado-calc__note { text-align: center; font-size: .85rem; color: var(--text-secondary); margin-top: .5rem; }
+.adv-ado-lead { margin-bottom: 4rem; }
+.adv-curso-ok .btn-glass { margin-top: 1rem; display: inline-flex; }
+@media (max-width: 767px) {
+  .adv-ado-result { grid-template-columns: 1fr; text-align: center; }
+  .adv-ado-area { grid-template-columns: 1fr 44px; }
+  .adv-ado-area__name { grid-column: 1 / -1; }
+  .adv-ado-calc__grid { grid-template-columns: 1fr 1fr; }
+  .adv-ado-progress { top: 76px; }
+}
+
+/* Quiénes somos */
+.adv-team { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1100px; margin: 0 auto; }
+.adv-team__card { border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; overflow: hidden; background: rgba(255,255,255,0.02); display: flex; flex-direction: column; }
+.adv-team__card img { width: 100%; height: 360px; object-fit: cover; object-position: center 20%; }
+.adv-team__body { padding: 1.75rem; }
+.adv-team__body h2 { font-size: 1.6rem; color: var(--text-main); }
+.adv-team__role { color: var(--color-coral); font-weight: 600; margin: .25rem 0 1rem; }
+.adv-team__body p { color: var(--text-secondary); line-height: 1.65; margin-bottom: .9rem; }
+.adv-team__link { color: var(--color-coral); font-weight: 600; }
+@media (max-width: 860px) { .adv-team { grid-template-columns: 1fr; } }
+
+/* Contacto rápido en el hero: llamada y WhatsApp */
+.adv-contact-quick { margin-top: 1.25rem; color: var(--text-secondary); font-size: .95rem; display: flex; flex-wrap: wrap; gap: .5rem 1rem; justify-content: center; align-items: center; }
+.adv-contact-quick a { display: inline-flex; align-items: center; gap: .4rem; color: var(--text-main); padding: .35rem .8rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.12); transition: border-color .2s, color .2s; }
+.adv-contact-quick a:hover { border-color: var(--color-coral); color: var(--color-coral); }
+
+/* Diagnóstico: el nombre del servicio dentro del H1 */
+.adv-diag-kicker { display: block; font-size: .32em; letter-spacing: .14em; text-transform: uppercase; color: var(--color-coral); margin-bottom: .6em; font-weight: 600; -webkit-text-fill-color: var(--color-coral); }

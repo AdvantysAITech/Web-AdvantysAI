@@ -12,17 +12,18 @@
     wrap.className = 'adv-cookies';
     wrap.setAttribute('role', 'dialog');
     wrap.setAttribute('aria-live', 'polite');
-    wrap.setAttribute('aria-label', 'Preferencias de cookies');
+    var advT = window.advT || function (x) { return x; };
+    var rutaCookies = { ca: '/ca/politica-galetes', en: '/en/cookie-policy' }[window.advLang] || '/politica-cookies';
+    wrap.setAttribute('aria-label', advT('Preferencias de cookies'));
     wrap.innerHTML =
       '<div class="adv-cookies__texto">' +
-        '<p class="adv-cookies__titulo">Usamos cookies</p>' +
-        '<p class="adv-cookies__cuerpo">Las técnicas son necesarias para que el sitio funcione. ' +
-        'Las analíticas nos ayudan a entender cómo se usa la web y solo se activan si las aceptas. ' +
-        'Más detalle en la <a href="/politica-cookies">Política de Cookies</a>.</p>' +
+        '<p class="adv-cookies__titulo">' + advT('Usamos cookies') + '</p>' +
+        '<p class="adv-cookies__cuerpo">' + advT('Las técnicas son necesarias para que el sitio funcione. Las analíticas nos ayudan a entender cómo se usa la web y solo se activan si las aceptas. Más detalle en la') +
+        ' <a href="' + rutaCookies + '">' + advT('Política de Cookies') + '</a>.</p>' +
       '</div>' +
       '<div class="adv-cookies__acciones">' +
-        '<button type="button" class="adv-cookies__btn adv-cookies__btn--fantasma" data-adv-cookies="rechazar">Solo necesarias</button>' +
-        '<button type="button" class="adv-cookies__btn adv-cookies__btn--principal" data-adv-cookies="aceptar">Aceptar</button>' +
+        '<button type="button" class="adv-cookies__btn adv-cookies__btn--fantasma" data-adv-cookies="rechazar">' + advT('Solo necesarias') + '</button>' +
+        '<button type="button" class="adv-cookies__btn adv-cookies__btn--principal" data-adv-cookies="aceptar">' + advT('Aceptar') + '</button>' +
       '</div>';
 
     document.body.appendChild(wrap);
