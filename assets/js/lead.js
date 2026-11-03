@@ -137,7 +137,7 @@
       ciudad: d.ciudad || '',
       pais: d.pais || '',
       pais_nombre: d.pais_nombre || '',
-      idioma_preferido: 'Español',
+      idioma_preferido: ({ ca: 'Català', en: 'English' })[window.advLang] || 'Español',
       fuente_captacion: 'Web',
       fuente: `Web Advantys — ${d.formulario || 'formulario'}${d.origen ? ` (${d.origen})` : ''}`,
 

@@ -1,4 +1,5 @@
 (() => {
+  const advT = window.advT || ((x) => x);
   const state = { tipo: null, cartera: null, modalidad: null };
 
   const RECOMMENDED = {
@@ -206,7 +207,7 @@
       });
       success?.classList.remove('adv-form-panel--hidden');
     } catch (err) {
-      showFeedback('error', 'No hemos podido enviar tu solicitud. Inténtalo de nuevo o escríbenos a soporte@advantys.ai.');
+      showFeedback('error', advT('No hemos podido enviar tu solicitud. Inténtalo de nuevo o escríbenos a soporte@advantys.ai.'));
       submitBtn.disabled = false;
       submitBtn.classList.remove('is-loading');
     }
