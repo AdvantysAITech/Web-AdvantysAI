@@ -612,3 +612,130 @@
   .adv-herobg--trans *::before,
   .adv-herobg--trans *::after { animation: none !important; }
 }
+
+
+/* =========================================
+   7) PARTÍCULAS DE PRIMER PLANO (Agro) — semillas que flotan
+   ========================================= */
+@keyframes advbgMoteRise {
+  0%   { transform: translate(0, 0); opacity: 0; }
+  15%  { opacity: 0.7; }
+  50%  { transform: translate(14px, -90px); }
+  85%  { opacity: 0.6; }
+  100% { transform: translate(-6px, -180px); opacity: 0; }
+}
+.adv-herobg__mote {
+  position: absolute;
+  bottom: 8%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #FE9066;
+  box-shadow: 0 0 8px rgba(254, 116, 71, 0.6);
+  opacity: 0;
+  animation: advbgMoteRise 11s ease-in-out infinite;
+}
+.adv-herobg__mote:nth-child(1) { left: 3.0%; bottom: 6%; animation-delay: 0.0s; animation-duration: 9s; }
+.adv-herobg__mote:nth-child(2) { left: 11.3%; bottom: 13%; animation-delay: 0.9s; animation-duration: 10s; }
+.adv-herobg__mote:nth-child(3) { left: 19.6%; bottom: 20%; animation-delay: 1.8s; animation-duration: 11s; }
+.adv-herobg__mote:nth-child(4) { left: 27.9%; bottom: 27%; animation-delay: 2.7s; animation-duration: 12s; }
+.adv-herobg__mote:nth-child(5) { left: 36.2%; bottom: 34%; animation-delay: 3.6s; animation-duration: 9s; }
+.adv-herobg__mote:nth-child(6) { left: 44.5%; bottom: 11%; animation-delay: 4.5s; animation-duration: 10s; }
+.adv-herobg__mote:nth-child(7) { left: 52.8%; bottom: 18%; animation-delay: 5.4s; animation-duration: 11s; }
+.adv-herobg__mote:nth-child(8) { left: 61.1%; bottom: 25%; animation-delay: 6.3s; animation-duration: 12s; }
+.adv-herobg__mote:nth-child(9) { left: 69.4%; bottom: 32%; animation-delay: 7.2s; animation-duration: 9s; }
+.adv-herobg__mote:nth-child(10) { left: 77.7%; bottom: 9%; animation-delay: 8.1s; animation-duration: 10s; }
+.adv-herobg__mote:nth-child(11) { left: 86.0%; bottom: 16%; animation-delay: 9.0s; animation-duration: 11s; }
+.adv-herobg__mote:nth-child(12) { left: 94.3%; bottom: 23%; animation-delay: 9.9s; animation-duration: 12s; }
+
+/* =========================================
+   8) DIAGNÓSTICO DE OPERACIONES — mapa de procesos de la operación,
+      una lupa que lo recorre y fugas de dinero que se encienden
+      al encontrarlas (€ que se escapa). Ciclo de 16 s.
+   ========================================= */
+@keyframes advbgDiagLeak {
+  0%        { opacity: 1; }
+  18%       { opacity: 1; }
+  35%, 100% { opacity: 0.25; }
+}
+@keyframes advbgDiagRing {
+  0%        { transform: scale(1);   opacity: 0.9; }
+  20%       { transform: scale(4.5); opacity: 0; }
+  100%      { transform: scale(4.5); opacity: 0; }
+}
+@keyframes advbgDiagEuro {
+  0%        { transform: translateY(0);    opacity: 0; }
+  4%        { opacity: 1; }
+  22%       { transform: translateY(26px); opacity: 0; }
+  100%      { transform: translateY(26px); opacity: 0; }
+}
+.adv-herobg--diag .adv-herobg__flow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.adv-herobg--diag .adv-herobg__flow--movil { display: none; }
+@media (max-width: 767px) {
+  .adv-herobg--diag .adv-herobg__flow--desk { display: none; }
+  .adv-herobg--diag .adv-herobg__flow--movil { display: block; }
+}
+.adv-herobg--diag .adv-herobg__link {
+  fill: none;
+  stroke: rgba(254, 116, 71, 0.35);
+  stroke-width: 1;
+  stroke-dasharray: 4 6;
+  animation: advbgTrazLineFlow 3s linear infinite;
+}
+.adv-herobg--diag .adv-herobg__step rect {
+  fill: rgba(14, 19, 30, 0.85);
+  stroke: rgba(254, 116, 71, 0.3);
+  stroke-width: 1;
+}
+.adv-herobg--diag .adv-herobg__step text {
+  fill: rgba(244, 245, 247, 0.75);
+  font: 600 11px 'JetBrains Mono', ui-monospace, monospace;
+  letter-spacing: 0.04em;
+  text-anchor: middle;
+}
+.adv-herobg--diag .adv-herobg__leak {
+  opacity: 0.25;
+  animation: advbgDiagLeak 16s linear infinite;
+}
+.adv-herobg--diag .adv-herobg__leak-dot  { fill: #FF3935; }
+.adv-herobg--diag .adv-herobg__leak-ring {
+  fill: none;
+  stroke: #FF3935;
+  stroke-width: 1;
+  transform-box: fill-box;
+  transform-origin: center;
+  opacity: 0;
+  animation: advbgDiagRing 16s ease-out infinite;
+}
+.adv-herobg--diag .adv-herobg__euro {
+  fill: #FE9066;
+  font: 700 13px 'Space Grotesk', ui-sans-serif, sans-serif;
+  opacity: 0;
+  animation: advbgDiagEuro 16s ease-in infinite;
+}
+.adv-herobg--diag .adv-herobg__lens-rim {
+  fill: none;
+  stroke: rgba(254, 116, 71, 0.7);
+  stroke-width: 1.5;
+}
+.adv-herobg--diag .adv-herobg__lens-handle {
+  stroke: rgba(254, 116, 71, 0.7);
+  stroke-width: 4;
+  stroke-linecap: round;
+}
+.adv-herobg--diag .adv-herobg__lens-cross {
+  stroke: rgba(254, 144, 102, 0.6);
+  stroke-width: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adv-herobg__mote,
+  .adv-herobg--diag * { animation: none !important; }
+  .adv-herobg__mote { opacity: 0.4; }
+  .adv-herobg--diag .adv-herobg__leak { opacity: 1; }
+}
