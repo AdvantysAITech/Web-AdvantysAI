@@ -87,7 +87,11 @@
   const lead = document.getElementById('adv-ado-lead');
   const L = window.advLead;
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-  const PDF = 'https://assets.cdn.filesafe.space/tT0GAvtx8iOs64cDrzg2/media/6ae763cb36aa4a07e8be18b1.pdf';
+  // PDF del autodiagnóstico en el idioma de la página
+  const PDF = ({
+    ca: '/assets/descargas/autodiagnostic-operacions-ca-v1.pdf',
+    en: '/assets/descargas/operations-self-assessment-en-v1.pdf',
+  })[window.advLang] || 'https://assets.cdn.filesafe.space/tT0GAvtx8iOs64cDrzg2/media/6ae763cb36aa4a07e8be18b1.pdf';
 
   const err = (c, t) => {
     const el = lead.querySelector(`[data-error-for="${c}"]`);
