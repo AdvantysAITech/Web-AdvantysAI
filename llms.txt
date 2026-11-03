@@ -1,0 +1,21 @@
+# Advantys AI
+
+> Advantys Ai SL es una consultora tecnológica con sede en Andorra la Vella que aplica inteligencia artificial a las operaciones de empresas de transporte, logística y agroalimentación, y a la gobernanza de la IA en colegios. Trabaja en Andorra y en España. Web en español.
+
+## Por dónde empezar
+- [Diagnóstico de Operaciones](https://advantys.ai/diagnostico-operaciones): cuatro semanas, precio cerrado. Mapa de toda la operación, análisis a fondo de hasta tres procesos y un informe con prioridades, inversión, ahorro y hoja de ruta. Para transporte, logística y agro.
+- [Curso gratis de IA para empresas](https://advantys.ai/curso-ia-empresas): cuatro horas de vídeos prácticos para usar ChatGPT, Gemini y Claude en el trabajo. Gratuito (valorado en 250 €), con certificado, en castellano y catalán.
+
+## Soluciones por sector
+- [IA para transporte y logística](https://advantys.ai/transporte-logistica): localización de palets con visión artificial, trazabilidad de la mercancía, rutas y grupaje, y lectura automática de albaranes.
+- [Trazabilidad agroalimentaria](https://advantys.ai/trazabilidad-agroalimentaria): del árbol al palé para cooperativas y almacenes hortofrutícolas, con sensórica IoT, integración con la maquinaria de calibrado y liquidación al agricultor por calidad real.
+- [IA para colegios](https://advantys.ai/educacion): plataforma para que el centro decida, documente y demuestre cómo se usa la IA en cada actividad.
+- [Todas las soluciones](https://advantys.ai/soluciones-ia)
+
+## Automatización comercial
+- [Sistema Advantys](https://advantys.ai/sistema-advantys): CRM y automatización de marketing, ventas y atención al cliente en un solo sistema.
+
+## Empresa
+- [Programa de partners](https://advantys.ai/partners)
+- [Contacto](https://advantys.ai/solicitud) · contacto@advantys.ai
+- Dirección: Av. Nacions Unides, 35, Despatx D6, Edifici Torre Zenit, AD500 Andorra la Vella

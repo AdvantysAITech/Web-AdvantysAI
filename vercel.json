@@ -11,8 +11,12 @@
       "destination": "/pages/blog.html"
     },
     {
-      "source": "/consultoria-estrategica",
-      "destination": "/pages/consultoria-estrategica.html"
+      "source": "/curso-ia-empresas",
+      "destination": "/pages/curso-ia-empresas.html"
+    },
+    {
+      "source": "/diagnostico-operaciones",
+      "destination": "/pages/diagnostico-operaciones.html"
     },
     {
       "source": "/educacion",
@@ -21,22 +25,6 @@
     {
       "source": "/hospitality",
       "destination": "/pages/soluciones/hospitality.html"
-    },
-    {
-      "source": "/residencia-fiscal",
-      "destination": "/pages/soluciones/residencia-fiscal.html"
-    },
-    {
-      "source": "/trazabilidad-agroalimentaria",
-      "destination": "/pages/soluciones/trazabilidad-agroalimentaria.html"
-    },
-    {
-      "source": "/iso-42001",
-      "destination": "/pages/iso-42001.html"
-    },
-    {
-      "source": "/autodiagnostico-iso-42001",
-      "destination": "/pages/autodiagnostico-iso-42001.html"
     },
     {
       "source": "/partners",
@@ -51,16 +39,28 @@
       "destination": "/pages/politica-privacidad.html"
     },
     {
+      "source": "/residencia-fiscal",
+      "destination": "/pages/soluciones/residencia-fiscal.html"
+    },
+    {
       "source": "/sistema-advantys",
       "destination": "/pages/sistema-advantys.html"
+    },
+    {
+      "source": "/solicitud",
+      "destination": "/pages/solicitud.html"
     },
     {
       "source": "/soluciones-ia",
       "destination": "/pages/soluciones-ia.html"
     },
     {
-      "source": "/solicitud",
-      "destination": "/pages/solicitud.html"
+      "source": "/transporte-logistica",
+      "destination": "/pages/soluciones/transporte-logistica.html"
+    },
+    {
+      "source": "/trazabilidad-agroalimentaria",
+      "destination": "/pages/soluciones/trazabilidad-agroalimentaria.html"
     }
   ],
   "redirects": [
@@ -82,21 +82,6 @@
     {
       "source": "/pages/blog.html",
       "destination": "/blog",
-      "permanent": true
-    },
-    {
-      "source": "/pages/consultoria-estrategica.html",
-      "destination": "/consultoria-estrategica",
-      "permanent": true
-    },
-    {
-      "source": "/pages/iso-42001.html",
-      "destination": "/iso-42001",
-      "permanent": true
-    },
-    {
-      "source": "/pages/autodiagnostico-iso-42001.html",
-      "destination": "/autodiagnostico-iso-42001",
       "permanent": true
     },
     {
@@ -152,6 +137,56 @@
     {
       "source": "/pages/solicitud.html",
       "destination": "/solicitud",
+      "permanent": true
+    },
+    {
+      "source": "/consultoria-estrategica",
+      "destination": "/diagnostico-operaciones",
+      "permanent": true
+    },
+    {
+      "source": "/pages/consultoria-estrategica.html",
+      "destination": "/diagnostico-operaciones",
+      "permanent": true
+    },
+    {
+      "source": "/pages/diagnostico-operaciones.html",
+      "destination": "/diagnostico-operaciones",
+      "permanent": true
+    },
+    {
+      "source": "/iso-42001",
+      "destination": "https://jacobruiz.es/iso-42001",
+      "permanent": true
+    },
+    {
+      "source": "/autodiagnostico-iso-42001",
+      "destination": "https://jacobruiz.es/iso-42001",
+      "permanent": true
+    },
+    {
+      "source": "/pages/iso-42001.html",
+      "destination": "https://jacobruiz.es/iso-42001",
+      "permanent": true
+    },
+    {
+      "source": "/pages/autodiagnostico-iso-42001.html",
+      "destination": "https://jacobruiz.es/iso-42001",
+      "permanent": true
+    },
+    {
+      "source": "/pages/soluciones/transporte-logistica.html",
+      "destination": "/transporte-logistica",
+      "permanent": true
+    },
+    {
+      "source": "/pages/transporte-logistica.html",
+      "destination": "/transporte-logistica",
+      "permanent": true
+    },
+    {
+      "source": "/pages/curso-ia-empresas.html",
+      "destination": "/curso-ia-empresas",
       "permanent": true
     }
   ],

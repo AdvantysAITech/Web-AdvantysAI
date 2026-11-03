@@ -88,7 +88,7 @@
   const params = new URLSearchParams(window.location.search);
   const ORIGENES_VALIDOS = [
     'home', '404', 'blog', 'aviso-legal', 'politica-cookies', 'politica-privacidad',
-    'autodiagnostico-iso-42001', 'consultoria-estrategica', 'sistema-advantys',
+    'autodiagnostico-iso-42001', 'consultoria-estrategica', 'diagnostico-operaciones', 'transporte-logistica', 'sistema-advantys',
     'soluciones-ia', 'partners', 'iso-42001', 'educacion', 'hospitality',
     'residencia-fiscal', 'trazabilidad-agroalimentaria',
   ];
@@ -104,7 +104,11 @@
   const spinoffUrl = L.claveSpinoff(params.get('spinoff'));
 
   // --- Pintar opciones de interés ------------------------------------------
+  // ISO 42001 se lleva desde jacobruiz.es: la opción no se muestra aquí,
+  // pero la clave sigue existiendo para enlaces antiguos.
+  const OCULTOS = ['iso42001'];
   Object.entries(L.INTERESES).forEach(([clave, def]) => {
+    if (OCULTOS.includes(clave)) return;
     const label = document.createElement('label');
     label.className = 'adv-solicitud-interes__opcion';
     label.innerHTML =

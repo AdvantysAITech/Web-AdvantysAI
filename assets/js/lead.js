@@ -64,7 +64,7 @@
       oportunidad: true,
     },
     consultoria: {
-      texto: 'Jornada de consultoría estratégica',
+      texto: 'Diagnóstico de Operaciones',
       linea: LINEA.consultoria, servicio: SERVICIO.sistema, ruta: 'RUTA_1',
       oportunidad: true,
     },
