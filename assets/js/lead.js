@@ -117,6 +117,8 @@
    *   nombre, apellidos, email, telefono, empresa, ciudad, pais, pais_nombre,
    *   mensaje, extra (objeto con campos propios del formulario)
    */
+  const IDIOMA = () => (['ca', 'en'].includes(window.advLang) ? window.advLang : 'es');
+
   function construir(d) {
     const i = INTERESES[d.interes] || INTERESES.otro;
     const spin = i.requiereSpinoff ? claveSpinoff(d.spinoff) : '';
@@ -138,6 +140,11 @@
       pais: d.pais || '',
       pais_nombre: d.pais_nombre || '',
       idioma_preferido: ({ ca: 'Català', en: 'English' })[window.advLang] || 'Español',
+      // Código corto del idioma de la página (es/ca/en): el Sistema Advantys lo usa
+      // para etiquetar el contacto (idioma-xx) y elegir los emails en su idioma.
+      idioma: IDIOMA(),
+      // Etiqueta que dispara la comunicación automática en el idioma del lead
+      flujo: (d.formulario === 'Autodiagnóstico de operaciones' ? 'autodiagnostico-web-' : 'web-confirmacion-') + IDIOMA(),
       fuente_captacion: 'Web',
       fuente: `Web Advantys — ${d.formulario || 'formulario'}${d.origen ? ` (${d.origen})` : ''}`,
 

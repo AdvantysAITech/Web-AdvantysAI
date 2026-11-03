@@ -39,7 +39,7 @@ module.exports = async function handler(req, res) {
     idioma_curso: b.idioma_curso === 'ca' ? 'ca' : 'es',
     acepta_privacidad: b.acepta_privacidad === true,
     acepta_novedades: b.acepta_novedades === true,
-    idioma_web: 'es',
+    idioma_web: ['ca', 'en'].includes(b.idioma_web) ? b.idioma_web : 'es',
     origen: 'web',
     fecha: new Date().toISOString()
   };
