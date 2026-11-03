@@ -317,20 +317,61 @@
 
   <!-- HERO -->
   <section class="adv-vertical-hero container">
-    <div class="adv-herobg adv-herobg--traz">
-      <div class="adv-herobg__grid adv-herobg__grid--accent"></div>
+    <div class="adv-herobg adv-herobg--trans" aria-hidden="true">
+      <div class="adv-herobg__layer" data-adv-parallax="0.12"><div class="adv-herobg__road"></div></div>
+      <div class="adv-herobg__layer" data-adv-parallax="0.28">
+        <svg class="adv-herobg__net" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice">
+          <path id="trans-r1" class="adv-herobg__route" d="M-40,150 C180,120 300,260 470,250 C640,240 700,120 880,130 C1040,140 1120,220 1240,200"/>
+          <path id="trans-r2" class="adv-herobg__route" d="M-40,400 C160,420 260,330 430,330 C600,330 640,420 820,410 C980,400 1080,300 1240,320"/>
+          <path id="trans-r3" class="adv-herobg__route" d="M220,-30 C240,120 380,180 470,250 C560,320 600,420 640,560"/>
+          <path id="trans-r4" class="adv-herobg__route" d="M1000,-30 C960,90 900,110 880,130 C840,180 840,330 820,410 C800,470 760,520 740,560"/>
+          <circle class="adv-herobg__hub" cx="470" cy="250" r="3"/>
+          <circle class="adv-herobg__hub" cx="880" cy="130" r="3"/>
+          <circle class="adv-herobg__hub" cx="430" cy="330" r="3"/>
+          <circle class="adv-herobg__hub" cx="820" cy="410" r="3"/>
+          <circle class="adv-herobg__hub" cx="160" cy="138" r="3"/>
+          <circle class="adv-herobg__hub" cx="1060" cy="310" r="3"/>
+          <g>
+            <circle class="adv-herobg__trail" r="9"><animateMotion dur="11s" begin="0.0s" repeatCount="indefinite"><mpath href="#trans-r1"/></animateMotion></circle>
+            <rect class="adv-herobg__truck" x="-7" y="-3.5" width="14" height="7" rx="2"><animateMotion dur="11s" begin="0.0s" repeatCount="indefinite" rotate="auto"><mpath href="#trans-r1"/></animateMotion></rect>
+          </g>
+          <g>
+            <circle class="adv-herobg__trail" r="9"><animateMotion dur="11s" begin="-5.5s" repeatCount="indefinite"><mpath href="#trans-r1"/></animateMotion></circle>
+            <rect class="adv-herobg__truck" x="-7" y="-3.5" width="14" height="7" rx="2"><animateMotion dur="11s" begin="-5.5s" repeatCount="indefinite" rotate="auto"><mpath href="#trans-r1"/></animateMotion></rect>
+          </g>
+          <g>
+            <circle class="adv-herobg__trail" r="9"><animateMotion dur="14s" begin="-4.0s" repeatCount="indefinite"><mpath href="#trans-r2"/></animateMotion></circle>
+            <rect class="adv-herobg__truck" x="-7" y="-3.5" width="14" height="7" rx="2"><animateMotion dur="14s" begin="-4.0s" repeatCount="indefinite" rotate="auto"><mpath href="#trans-r2"/></animateMotion></rect>
+          </g>
+          <g>
+            <circle class="adv-herobg__trail" r="9"><animateMotion dur="14s" begin="-11.0s" repeatCount="indefinite"><mpath href="#trans-r2"/></animateMotion></circle>
+            <rect class="adv-herobg__truck" x="-7" y="-3.5" width="14" height="7" rx="2"><animateMotion dur="14s" begin="-11.0s" repeatCount="indefinite" rotate="auto"><mpath href="#trans-r2"/></animateMotion></rect>
+          </g>
+          <g>
+            <circle class="adv-herobg__trail" r="9"><animateMotion dur="9s" begin="-2.0s" repeatCount="indefinite"><mpath href="#trans-r3"/></animateMotion></circle>
+            <rect class="adv-herobg__truck" x="-7" y="-3.5" width="14" height="7" rx="2"><animateMotion dur="9s" begin="-2.0s" repeatCount="indefinite" rotate="auto"><mpath href="#trans-r3"/></animateMotion></rect>
+          </g>
+          <g>
+            <circle class="adv-herobg__trail" r="9"><animateMotion dur="9s" begin="-6.5s" repeatCount="indefinite"><mpath href="#trans-r3"/></animateMotion></circle>
+            <rect class="adv-herobg__truck" x="-7" y="-3.5" width="14" height="7" rx="2"><animateMotion dur="9s" begin="-6.5s" repeatCount="indefinite" rotate="auto"><mpath href="#trans-r3"/></animateMotion></rect>
+          </g>
+          <g>
+            <circle class="adv-herobg__trail" r="9"><animateMotion dur="12s" begin="-7.0s" repeatCount="indefinite"><mpath href="#trans-r4"/></animateMotion></circle>
+            <rect class="adv-herobg__truck" x="-7" y="-3.5" width="14" height="7" rx="2"><animateMotion dur="12s" begin="-7.0s" repeatCount="indefinite" rotate="auto"><mpath href="#trans-r4"/></animateMotion></rect>
+          </g>
+          <g>
+            <circle class="adv-herobg__trail" r="9"><animateMotion dur="12s" begin="-13.0s" repeatCount="indefinite"><mpath href="#trans-r4"/></animateMotion></circle>
+            <rect class="adv-herobg__truck" x="-7" y="-3.5" width="14" height="7" rx="2"><animateMotion dur="12s" begin="-13.0s" repeatCount="indefinite" rotate="auto"><mpath href="#trans-r4"/></animateMotion></rect>
+          </g>
+        </svg>
+      </div>
       <div class="adv-herobg__vignette adv-herobg__vignette--wide"></div>
-      <svg class="adv-herobg__path" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <path class="adv-herobg__path-line" d="M100,140 C260,140 300,260 440,260 C580,260 600,170 740,170 C880,170 900,360 1040,360 C1080,360 1090,390 1110,400"/>
-        <g class="adv-herobg__path-nodes">
-          <circle cx="100" cy="140" r="5"/>
-          <circle cx="440" cy="260" r="5"/>
-          <circle cx="740" cy="170" r="5"/>
-          <circle cx="1040" cy="360" r="5"/>
-          <circle cx="1110" cy="400" r="5"/>
-        </g>
-      </svg>
-      <div class="adv-herobg__vignette"></div>
+      <div class="adv-herobg__layer" data-adv-parallax="0.5">
+        <div class="adv-herobg__pallet adv-herobg__pallet--a"><span>PAL-0418 · A3</span></div>
+        <div class="adv-herobg__pallet adv-herobg__pallet--b"><span>PAL-1127 · C1</span></div>
+        <div class="adv-herobg__pallet adv-herobg__pallet--c"><span>PAL-0932 · B7</span></div>
+        <div class="adv-herobg__laser"></div>
+      </div>
     </div>
 
     <div class="adv-vertical-hero__content">
@@ -631,6 +672,7 @@
 <!-- FOOTER END -->
 
 <script src="/assets/js/main.js"></script>
+<script src="/assets/js/parallax.js" defer></script>
 <script src="/assets/js/config.js"></script>
 
 <!-- Medicion Advantys -->
