@@ -34,7 +34,7 @@
         return;
       }
       var f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0&cc_load_policy=1&hl=es&cc_lang_pref=es';
+      f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) + '?autoplay=1&rel=0&hl=es';
       f.title = btn.getAttribute('aria-label') || 'Vídeo';
       f.allow = 'autoplay; encrypted-media; picture-in-picture';
       f.allowFullscreen = true;
